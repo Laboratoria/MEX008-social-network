@@ -114,6 +114,33 @@ una de tus Historias de Usuario debe tener:
     usuarios como mejoras.
   - Desplegaron su aplicación y etiquetaron la versión (git tag).
 
+* Te dejamos un ejemplo de una historia de Usuario, pero va a depender de lo
+  que encuentren durante su investigación.
+    
+
+    > Como usuario nuevo debo poder crear una cuenta con email y password para 
+    > poder iniciar sesion. Por otro lado, necesito también tener la opción de 
+    > iniciar sesión con mi cuenta de Google o Facebook.
+    >
+    > **Criterios de aceptación**
+    > - Si el mail o password no es válido, al momento de logearme, debo poder 
+    >   ver un mensaje de error.
+    > - Debe ser visible si hay algún mensaje de error.
+    > - Debo poder ver esta página de creación en Móviles y desktop (responsive). 
+    > - No debe necesitar recargar la página para crear una cuenta (SPA).
+    >
+    >
+    > **Definición de terminado**
+    > - La funcionalidad cumple satisface los criterios de aceptación.
+    > - La funcionalidad tiene _test unitarios_.
+    > - El diseño visual corresponde al prototipo de alta fidelidad.
+    > - El código de esta funcionalidad recibió code review.
+    > - La funcionalidad esta desplegada y pública para ser probada. 
+    > - La funcionalidad fue probada manualmente.
+    > - Se hicieron pruebas de usuabilidad y se implementó el feedback si se 
+    >   consideró necesario.
+
+
 ### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
 Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
