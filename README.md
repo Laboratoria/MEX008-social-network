@@ -31,9 +31,7 @@ más comentado.
 
 En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
 Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+salud, energías renovables, amantes de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), o de lo que sea.
 
 Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
 acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
@@ -41,8 +39,8 @@ acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
 ## 3. Objetivos de aprendizaje
 
 El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
+**[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application), 
+[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)**
  (con más de una vista / página) en la que podamos **leer y escribir datos.**
 
 ## 4. Consideraciones generales
@@ -55,16 +53,18 @@ El objetivo principal de aprendizaje de este proyecto es construir una
 
 * La división y organización del trabajo debe permitir, sin excepciones, que
   **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
-  en **cada historia**. _No se dividan el trabajo como en una fábrica._
-  - ¿Hasta acá has avanzado en tus proyectos con cierta fluidez y sin mayores
-    problemas? Sé generosa con tus compañeras, permíteles aprender y practicar
-    sin restricciones, aunque tome un poco más de tiempo. Aproveha de
-    _coachearlas_, de hacer _pair programming_, una de las mejores maneras de
-    aprender es explicando verbalmente.
+  en **cada historia**. _Eviten dividirse el trabajo como en una fábrica._
+  - ¿Sientes hasta momemnto que has avanzado en tus proyectos con cierta fluidez 
+    y sin mayores  problemas? Sé generosa con tus compañeras, permíteles aprender
+    y practicar sin restricciones, aunque tome un poco más de tiempo. Aproveha para
+    _coachearlas_, hacer _pair programming_. Una de las mejores maneras de
+    aprender es explicando verbalmente lo que has aprendido.
 
   - ¿Se te está haciendo difícil y te cuesta un poco más avanzar? No te quedes
     con las partes "fáciles" del proyecto, conversa, negocia, exige tu oportunidad
     para practicar y aprender lo que se te hace más difícil.
+
+  - Prioricen el aprendizaje.
 
 * Solamente pueden trabajar en una única historia por vez, no pueden avanzar a
   la siguiente sin haber completado la anterior. La historia se completa cuando
@@ -105,7 +105,7 @@ una de tus Historias de Usuario debe tener:
   incluir estos aspectos en su Definición de Terminado (más todo lo que
   necesiten agregar):
 
-  - Debe ser una SPA.
+  - Debe ser una **SPA**.
   - Debe ser _responsive_.
   - Deben haber recibido _code review_ de al menos una compañera de otro equipo.
   - Hicieron los _test_ unitarios
@@ -181,8 +181,8 @@ tus H.U.:
   la estructura de tu proyecto. Algo que no debes de olvidar es pensar en éstas
   pruebas, te pueden ayudar a definir la estructura y nomenclatura de tu lógica.
 
-* Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-  _lines_, y _branches_.
+* Los tests unitarios deben cubrir un **mínimo del 70%** de _statements_,
+  _functions_, _lines_, y _branches_.
 
 ### 5.8 Consideraciones técnicas UX
 
@@ -201,7 +201,8 @@ profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
 * Permite crear posts con imágenes.
 * Permite buscar usuarios, agregar y eliminar "amigos".
 * Permite definir la privacidad de los _posts_ (público o solamente para amigos).
-* Permite ver su muro de cualquier usuario "no-amigo" (solamente los
+* Permite ver su muro de cualquier usuario "no-amigo
+(solamente los
   posts _públicos_).
 * Permite comentar o responder una publicación.
 * Permite editar perfil.
@@ -215,8 +216,9 @@ puedas haber encontrado en el camino.
 ## 8. Evaluación
 
 NOTA: Esta sección incluye una lista de habilidades que se podrán tener en
-cuenta a la hora de evaluar el proyecto. Los niveles esperados son _sugerencias_
-así como _guías_ en el diseño curricular, pero no reglas absolutas.
+cuenta a la hora de tu autoevaluación sobre el proyecto. Recuerda que los
+niveles son fotografías de momento, y la rúbrica puede guiarte en tus siguientes
+pasos durante tu autoaprendizaje.
 
 Te aconsejamos revisar [nuestra rúbrica](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
 para ver la descripción detallada de cada _habilidad_ y cada _nivel_. Te
@@ -299,7 +301,7 @@ con [`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/hist
 En este proyecto te invitamos a explorar opciones y decidir una opción
 de implementación.
 
-### Escritura de datos
+### Escritura de datos, persistencia
 
 En los proyectos anteriores hemos consumido (leído) datos, pero todavía no
 habíamos escrito datos (salvar cambios, crear datos, borrar, ...). En este
