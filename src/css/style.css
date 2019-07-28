@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0
+}
+
+.login-text{
+  margin-right: 2%;
+  color: black;
+}
+
+.login-text:hover{
+  cursor: pointer;
+}
+
+.mi-nav{
+  background: white;
+}
+
+.logo-text{
+  color: black !important; 
+}
+
+.esconder{
+  display: none;
+}
+
+.mi-btn{
+  background: black;
+}

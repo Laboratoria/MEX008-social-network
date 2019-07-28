@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="mi-nav z-depth-4">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo logo-text">App</a>
+      <a href="#" id="login-text" class="right login-text">Login</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section id="video-section" class="esconder">
+      <div class="center">
+        <h1>App start</h1>
+
+      </div>
+      <div class="video-container">
+        <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+      <h5>Para poder usar la App de red social tienes que logearte</h5>
+    </section>
+    <section id="login-section" class="esconder1">
+      <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader">Loading...</div>
+      <div class="center">
+        <a id="button-cancel" class="waves-effect waves-light btn-small mi-btn">Cancel</a>
+      </div>
+    </section>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+  <script src="../js/firebaseCredentials.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
