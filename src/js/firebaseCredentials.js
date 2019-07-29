@@ -23,69 +23,20 @@ if (user) {
   // No user is signed in.
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+
+
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-  console.log(user);
+    if (location.pathname == "/MEX008-social-network/src/views/login" || location.pathname == "/src/views/login") {
+      console.log(user);
+      // location.assign('wall.html');
+    }
     // User is signed in.
   } else {
-  console.log(user);
-
+    if (location.pathname == "/MEX008-social-network/src/views/wall" || location.pathname == "/src/views/wall") {
+      // location.replace('login.html');
+      console.log('no hay usuario');
+    }
     // No user is signed in.
   }
-});
-
-var uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      return true;
-    },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-      document.getElementById('loader').style.display = 'none';
-    }
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: 'popup',
-  signInSuccessUrl: 'wall.html',
-  signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID
-  ],
-  // Terms of service url.
-  tosUrl: 'https://github.com/Jonhks/MEX008-social-network/blob/master/README.md',
-  // Privacy policy url.
-  privacyPolicyUrl: 'https://github.com/Jonhks/MEX008-social-network/blob/master/README.md'
-};
-ui.start('#firebaseui-auth-container', uiConfig);
-
-
-// Initialize the FirebaseUI Widget using Firebase.
-
-ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    // List of OAuth providers supported.
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID
-  ],
-  // Other config options...
-});
-
-firebase.auth().signOut().then(function() {
-  // Sign-out successful.
-}).catch(function(error) {
-  console.log(error)
-  // An error happened.
 });

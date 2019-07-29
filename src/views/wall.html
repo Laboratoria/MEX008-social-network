@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
   <title>Wall</title>
 </head>
+
 <body>
+  <nav class="mi-nav z-depth-4">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo logo-text">App</a>
+      <a href="#" id="signgup-text" class="right login-text">SignUp</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <h1>Hi prro</h1>
   </div>
@@ -17,5 +30,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
   <script src="../js/firebaseCredentials.js"></script>
+  <script src="../js/wall.js"></script>
 </body>
+
 </html>
