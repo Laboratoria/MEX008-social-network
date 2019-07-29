@@ -23,6 +23,17 @@ if (user) {
   // No user is signed in.
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+  console.log(user);
+    // User is signed in.
+  } else {
+  console.log(user);
+
+    // No user is signed in.
+  }
+});
+
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
@@ -72,4 +83,9 @@ ui.start('#firebaseui-auth-container', {
   // Other config options...
 });
 
-
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  console.log(error)
+  // An error happened.
+});
