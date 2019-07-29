@@ -200,6 +200,10 @@ tus H.U.:
 * Alterar y persistir datos. Los datos que agregues o modifiques deberán
   persistir a lo largo de la aplicación. Te recomendamos que uses
   [Firebase](https://firebase.google.com/) para eso también.
+* Puedes usar un framework de CSS si lo consideras necesario. Algunos existentes
+  son Bootstrap, Materialize, entre otros. 
+  Puedes encontrar los populares en 
+  [state Of CSS 2019](https://2019.stateofcss.com/technologies/css-frameworks/)
 
 #### Pruebas unitarias (unit tests)
 
