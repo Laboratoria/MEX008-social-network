@@ -54,7 +54,7 @@ El objetivo principal de aprendizaje de este proyecto es construir una
 * La división y organización del trabajo debe permitir, sin excepciones, que
   **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
   en **cada historia**. _Eviten dividirse el trabajo como en una fábrica._
-  - ¿Sientes hasta momemnto que has avanzado en tus proyectos con cierta fluidez 
+  - ¿Sientes hasta momento que has avanzado en tus proyectos con cierta fluidez 
     y sin mayores  problemas? Sé generosa con tus compañeras, permíteles aprender
     y practicar sin restricciones, aunque tome un poco más de tiempo. Aproveha para
     _coachearlas_, hacer _pair programming_. Una de las mejores maneras de
@@ -128,7 +128,6 @@ una de tus Historias de Usuario debe tener:
     > - Debe ser visible si hay algún mensaje de error.
     > - Debo poder ver esta página de creación en Móviles y desktop (responsive). 
     > - No debe necesitar recargar la página para crear una cuenta (SPA).
-    >
     >
     > **Definición de terminado**
     > - La funcionalidad cumple satisface los criterios de aceptación.
