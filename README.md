@@ -49,7 +49,7 @@ El objetivo principal de aprendizaje de este proyecto es construir una
 
 * La lógica del proyecto debe estar implementada completamente en JavaScript
   (ES6+), HTML y CSS :smiley:. Para este proyecto **no está permitido** utilizar
-  _frameworks_ o librerías de CSS y JS.
+  _frameworks_ o librerías de JS.
 
 * La división y organización del trabajo debe permitir, sin excepciones, que
   **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
