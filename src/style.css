@@ -1,0 +1,26 @@
+body{
+    margin:0;
+    padding: 0;
+}
+
+body .header{
+    background-color: #00D3B0;
+    margin: 0;
+    padding: 0;
+    height: 6rem;
+}
+
+.logo-one{
+    width: 50%;
+}
+
+.inicia-sesion{
+    color: #00D3B0;
+}
+
+
+#pantalla-registro{
+    display: none;
+}
+
+
