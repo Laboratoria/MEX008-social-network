@@ -22,12 +22,14 @@
 
 ## Prototipo
 Mobile
+
 ![PrototipoMobile](imagenes/Prototipo-mobile.png)
 
 Desktop
+
 ![PrototipoDesktop1](imagenes/Prototipo-desktop1.png)
 ![PrototipoDesktop2](imagenes/Prototipo-desktop2.png)
-![PrototipoDesktop3](imagenes/Prototipo-desktop3.png)
+![PrototipoDesktop3](imagenes/Prototipo-destop3.png)
 
 ## Problema que resolvemos 
 Creamos un ecosistema en donde pueden interactuar novias, novios, proveedores, padrinos e invitados.
