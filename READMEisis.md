@@ -1,10 +1,10 @@
 # TOGETHER-CLICK
 
-El espacio incluyente donde toda la comunidad de bodas se reúne/conecta.
+El espacio incluyente donde toda la comunidad de bodas se conecta.
 
 ## Definición del producto
 
-Planear una boda puede resultar muy complicado, quieres que sea perfecta, lo que siempre has soñado, pero a la vez que se ajuste a la realidad/pero... ¿cómo volver realidad tu sueño?.
+Planear una boda puede resultar muy complicado, quieres que sea perfecta, lo que siempre has soñado, pero a la vez que se ajuste a la realidad.
 
 - ¿Por dónde comenzamos?
 - ¿A quién acudir para que nos aconseje?
@@ -28,7 +28,7 @@ Además estás plataformas tienen en común que están dirigidos principalmente 
 - las novias
 - parejas heterosexuales
 
-Consideramos/ Creemos que la industria de las bodas no se está adaptando del todo a los tiempos actuales, de mujeres enfocadas a su desarrollo profesional, hombres involucrados en su crecimiento personal y de familias diversas.
+Consideramos que la industria de las bodas no se está adaptando del todo a los tiempos actuales, de mujeres enfocadas a su desarrollo profesional, hombres involucrados en su crecimiento personal y de familias diversas.
 
 Nuestra propuesta es una red social donde **todos** los involucrados en una boda, puedan entrar en contacto, obtengan la información que necesitan interactuando entre ellos, y las novias y novios se sientan acompañados durante este arduo proceso y consigan la boda que sueñan.
 
@@ -62,6 +62,7 @@ El mercado de las bodas tiene un gran potencial económico para los prestadores 
 
 ```text
 ./
+├── img
 ├── src
 │   ├── lib
 │   │   └──index.js
@@ -79,7 +80,7 @@ El mercado de las bodas tiene un gran potencial económico para los prestadores 
 
 ## Diseño de la Interfaz de Usuario (prototipo alta fidelidad?)
 
-## Bibliografía/Referencias
+## Referencias
 
 [INEGI](https://www.inegi.org.mx/temas/nupcialidad/)
 
