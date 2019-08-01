@@ -23,7 +23,7 @@ const registrar = () => {
     let password = document.getElementById("password-registro").value;
 
     firebase.auth().createUserWithEmailAndPassword(mail, password)
-    .then(verificar())
+    /*.then(verificar())*/
     .catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -101,7 +101,7 @@ const muro = () =>{
 }
 buttonCerrarSesionDos.addEventListener("click",cerrarSesion);
 
-const verificar = () =>{
+/*const verificar = () =>{
     var user = firebase.auth().currentUser;
     user.sendEmailVerification()
     .then(function() {
@@ -111,7 +111,7 @@ const verificar = () =>{
     // An error happened.
     console.log(error);
     });
-}
+}*/
 
 
 
