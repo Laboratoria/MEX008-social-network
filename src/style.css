@@ -23,4 +23,23 @@ body .header{
     display: none;
 }
 
+.linea {
+    margin:0px 20px;
+    width:90px;    
+    border-top:1px solid #00D3B0;
+    position: relative;
+    top:10px;
+    float:left;
+    }
+  
+  .leyenda {
+    font-weight:bold;
+    float:left;
+    color: #00D3B0;
+   }
+
+   .divider{
+    width:400px;
+    margin:auto;
+   }
 
