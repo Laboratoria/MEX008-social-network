@@ -73,13 +73,28 @@
 @media (max-width: 768px){
   .black{
     background-color: black;
-    width: 100%;
-    height: 100vh;
+    width: 20%;
+    height: 110vh;
   }
   
   #election_page1_mobile{
     background-color: antiquewhite;
-    width: 100%;
-    height: 100vh;
+    width: 80%;
+    height: 110vh;
+    text-align: center;
+  }
+
+  #img_novios{
+    width: 50vh;
+    height: 40vh;
+  }
+
+ 
+
+  .btn_initials{
+    background-color: black;
+    color: white;
+    width: 25vh;
+    height: 5vh;
   }
 }
