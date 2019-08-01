@@ -3,6 +3,7 @@
 //import { myFunction } from './lib/index.js';
 
 //myFunction();
+
 let pantallaInicioSesion = document.getElementById("pantalla-login");
 let pantallaRegistro = document.getElementById("pantalla-registro");
 let pantallaMuro = document.getElementById("pantalla-muro");
