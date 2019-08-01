@@ -1,9 +1,9 @@
-# HuertApp
+### Agosto, 2019
 
 # Resumen del proyecto
-HuertApp es una comunidad creada para aquellos usuarios que deseen obtener información útil relacionada con la horticultura (Persona que tiene por oficio cultivar y cuidar una huerta).
+HuertApp es una comunidad creada para todos aquellos usuarios que deseen obtener información útil relacionada con la horticultura (Persona que tiene por oficio cultivar y cuidar una huerta).
 
-En ella, podrán encontrar desde cómo iniciar tu huerta si no te consideras como un gran experto; sin embargo, tiene el interés de empezar a crear uno. Hasta problemáticas específicas de tus plantíos que quisieras resolver. 
+En ella, podrás encontrar desde cómo iniciar tu huerta, si es que no te consideras como un gran experto; sin embargo, tiene el gran interés de empezar a crear uno ;) . También vas a poder consultar e intercambiar ideas y/o problemáticas específicas entre la comunidad de HuertApp de tus plantíos que quisieras resolver. 
 
 # Historias de usuario
 Para HuertApp lo único que necesitan los usuarios es ingresar con una cuenta de correo electrónico, crear una contraseña o directamente de tu cuenta de Facebook, en caso de tenerlo.  
