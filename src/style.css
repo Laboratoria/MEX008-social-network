@@ -27,13 +27,15 @@ h3,
     margin:0.9rem 0;
 }
 
-.pantalla-registro{
+.pantalla-registro,
+.pantalla-muro,
+.pantalla-intereses{
     display: none;
 }
 
 
 .linea {
-    margin:0px 20px;
+    margin:20px;
     width:90px;    
     border-top:1px solid #00D3B0;
     position: relative;
@@ -45,16 +47,16 @@ h3,
     font-weight:bold;
     float:left;
     color: #00D3B0;
+    margin: 20px 0;
    }
 
    .divider{
     width:400px;
-    margin:auto;
+    margin-left: 2rem;
    }
-=======
+
 .logo-two{
-    width: 20%;
-    
+    width: 20%; 
     margin: 0.8rem 0;
 }
 
