@@ -14,8 +14,13 @@ body .header{
     width: 50%;
 }
 
-.inicia-sesion{
+h3,
+.pantalla-registro label{
     color: #00D3B0;
+}
+
+.pantalla-registro label{
+    width: 20%;
 }
 
 .login-input{
@@ -54,7 +59,7 @@ body .header{
 }
 
 .input-register{
-    margin:0.9rem 0;
+    margin:1rem 0;
 }
 
 
