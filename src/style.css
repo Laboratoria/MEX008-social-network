@@ -18,10 +18,14 @@ body .header{
     color: #00D3B0;
 }
 
+.login-input{
+    margin:0.9rem 0;
+}
 
-#pantalla-registro{
+.pantalla-registro{
     display: none;
 }
+
 
 .linea {
     margin:0px 20px;
@@ -42,4 +46,16 @@ body .header{
     width:400px;
     margin:auto;
    }
+=======
+.logo-two{
+    width: 20%;
+    
+    margin: 0.8rem 0;
+}
+
+.input-register{
+    margin:0.9rem 0;
+}
+
+
 
