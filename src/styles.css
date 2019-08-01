@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Box sizing*/
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+
+/*GLOBALES*/
+
+/*SELECTOR ETIQUETA*/
+
+/*REGISTER*/
+
+#img-register-page {
+    width: 50vw;
+    height: 100vh;
+    background-image: url(img/orange-register.png);
+}
+
+
+/*RESPONSIVE*/
