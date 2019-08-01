@@ -1,0 +1,70 @@
+/* INICIA RESPONSIVE*/
+
+*{
+  /* border box le dice a un elemento que todas las propiedades de un elemento, como su padding, va a estar dentro del porcentaje que le asignes, sin border box, toma el padding hacia afuera, por ejemplo. */
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+} 
+
+.container{
+  width: 100%;
+  margin: 0px auto;
+}
+
+.row:before, .row:after{ 
+  /* Para que no me deje bordes entre una linea y otra linea */
+   content:"";
+  display:table;
+} 
+.row:after{
+  clear:both;
+} 
+/* A todas las clases que contengan col- le vas a aplicar estos estilos */
+ [class*= "col-" ]{
+  float: left;
+  min-height: 10px;
+  padding: 12px;
+} 
+
+  
+  .col-1{width: 8.333333333333332%;}
+  .col-2{width: 16.666666666666664%;}
+  .col-3{width: 25%;}
+  .col-4{width: 33.33333333333333%;}
+  .col-5{width: 41.66666666666667%;}
+  .col-6{width: 50%;}
+  .col-7{width: 58.333333333333336%;}
+  .col-8{width: 66.66666666666666%;}
+  .col-9{width: 75%;}
+  .col-10{width: 83.33333333333334%;}
+  .col-11{width: 91.66666666666666%;}
+  .col-12{width: 100%;}
+
+   
+
+   .row{
+    margin: auto;
+    width: 100%;
+    height: auto;
+  } 
+
+   .row:before, .row:after{
+    content:"";
+    display:table;
+  }
+
+  .row:after{
+    clear:both;
+  } 
+
+   [class*= "col-" ]{
+    float: left;
+    min-height: 10px;
+    padding: 12px;
+  } 
+
+   
+
+  
+/* TERMINA RESPONSIVE */
