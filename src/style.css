@@ -64,7 +64,37 @@
     padding: 12px;
   } 
 
-   
-
-  
 /* TERMINA RESPONSIVE */
+
+
+/* ------------------------------------------------- */
+/* RESPONSIVE PARA TABLETAS Y CELULARES */
+
+@media (max-width: 768px){
+  .black{
+    background-color: black;
+    width: 20%;
+    height: 110vh;
+  }
+  
+  #election_page1_mobile{
+    background-color: antiquewhite;
+    width: 80%;
+    height: 110vh;
+    text-align: center;
+  }
+
+  #img_novios{
+    width: 15rem;
+    height: 10rem;
+  }
+
+ 
+
+  .btn_initials{
+    background-color: black;
+    color: white;
+    width: 25vh;
+    height: 5vh;
+  }
+}
