@@ -18,9 +18,22 @@ body .header{
     color: #00D3B0;
 }
 
+.login-input{
+    margin:0.9rem 0;
+}
 
-#pantalla-registro{
+.pantalla-registro{
     display: none;
+}
+
+.logo-two{
+    width: 20%;
+    
+    margin: 0.8rem 0;
+}
+
+.input-register{
+    margin:0.9rem 0;
 }
 
 
