@@ -21,8 +21,11 @@ https://docs.google.com/forms/d/1WCvGcCqC3GCX-mgp440iqrOhd97kUV_NbpbToAvUOWg/edi
 Historias de usuario
 
 -Yo como usuario quiero crear una cuenta de usuario y logearme con correo y contraseña o con mis cuentas de google y facebook.
+
 -Yo como usuario quiero completar un perfil, donde sea opcional especificar, si soy dueño o rescatista y si quiero adoptar, y puedo elegir añadir una descripción.
+
 -Yo como usuario, quiero poder acceder a una galería dividida en 4 secciones: Perdidos, Encontrados, Adoptables, Presumibles.
+
 -Yo como usuario quiero subir comentarios y reviews y poder likear.
 
 
