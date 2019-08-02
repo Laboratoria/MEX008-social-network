@@ -5,7 +5,11 @@
   box-sizing: border-box; 
   margin: 0;
   padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 } 
+p{
+  font-size: 110%;
+}
 
 .container{
   width: 100%;
@@ -71,16 +75,25 @@
 /* RESPONSIVE PARA TABLETAS Y CELULARES */
 
 @media (max-width: 768px){
+
+ 
+
+  .logo-together{
+    width: 2rem;
+    height: 2rem;
+  }
+
   .black{
     background-color: black;
     width: 20%;
     height: 110vh;
+    text-align: center;
   }
   
   .election_page1_mobile{
     background-color: antiquewhite;
-    width: 80%;
-    height: 110vh;
+    width: 100vh;
+    height: 110;
     text-align: center;
   }
 
@@ -96,12 +109,20 @@
     color: white;
     width: 25vh;
     height: 5vh;
+    cursor: pointer;
   }
 }
 
 
 @media (max-width: 1560px){
 
+  
+
+  .logo-together{
+    width: 10rem;
+    height: 10rem;
+  }
+
   .black{
     background-color: black;
     width: 20%;
@@ -127,6 +148,7 @@
     color: white;
     width: 25vh;
     height: 5vh;
+    cursor: pointer;
   }
 
 }
