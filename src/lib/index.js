@@ -8,7 +8,9 @@ document.getElementById('iniciar-sesion').addEventListener('click', () => {
   Swal.fire({
     title: '<img src="/MEX008-hackathon-Interna-SF/src/img/login.png">',
     html:
-      '<input type="email" placeholder="Email"> ' +
+      '<button class = btn-google>Ingresa con google </button>' + '<br>' +
+      '<button class= btn-facebook>Ingresa con facebook</button>'+ '<br>' +
+      '<input type="email" placeholder="Email">' +
       '<input type="password" placeholder="Password">' + '<br>'+ '¿No tienes una cuenta?' + '<br>' + '<button class="btn-warning">Registrate</button>',
     showCloseButton: true,
     showCancelButton: true,
