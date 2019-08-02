@@ -84,11 +84,11 @@ Esto muestra que el mercado de las bodas tiene un gran potencial económico para
 
     *Criterios de aceptación*
 
-    - [ ] Página de inicio debe mostrar la opción de registrar nuevo usuario.
+    - [x] Página de inicio debe mostrar la opción de registrar nuevo usuario.
   
-    - [ ] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
+    - [x] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
 
-    - [ ] Debe ser visible si hay algún mensaje de error.
+    - [x] Debe ser visible si hay algún mensaje de error.
 
     - [ ] Debo poder ver esta página de creación en móviles y desktop (responsive).
 
