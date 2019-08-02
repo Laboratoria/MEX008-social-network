@@ -3,6 +3,25 @@ section {
     justify-content: center;
 }
 
+.btn-primary {
+    border-radius: 15px;
+ background-color: #E9B000;
+ border-color: #E24E42;
+}
+
 .card-body {
     text-align: center;
+}
+
+.btn-social {
+    border-radius: 20px;
+    font-size: 15px;
+    width: 200px;
+    height: 40px;
+    background-color: #3b5998;
+}
+
+.img-social {
+    width: 25px;
+    height: 25px;
 }

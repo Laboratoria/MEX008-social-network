@@ -6,11 +6,11 @@ export const myFunction = () => {
 
 document.getElementById('iniciar-sesion').addEventListener('click', () => {
   Swal.fire({
-    title: '<img src="/MEX008-hackathon-Interna-SF/src/img/login.png">',
+    title: '<i class="fas fa-user-alt"></i>',
     html:
-      '<button class = btn-google>Ingresa con google </button>' + '<br>' +
-      '<button class= btn-facebook>Ingresa con facebook</button>'+ '<br>' +
-      '<input type="email" placeholder="Email">' +
+      '<button class = btn-social face><img  class= img-social src= "img/googleicon.png"> Ingresa con Google</button>' + '<br>' +
+      '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' +
+      '<input type="email" placeholder="Email">' + '<br>' +
       '<input type="password" placeholder="Password">' + '<br>'+ '¿No tienes una cuenta?' + '<br>' + '<button class="btn-warning">Registrate</button>',
     showCloseButton: true,
     showCancelButton: true,
@@ -18,9 +18,9 @@ document.getElementById('iniciar-sesion').addEventListener('click', () => {
     confirmButtonText:
       '<i class="fa fa-thumbs-up"></i> Acceder!',
     confirmButtonAriaLabel: 'Registrate!',
-    cancelButtonText:
-      '<i class="fa fa-thumbs-down"></i>',
-    cancelButtonAriaLabel: 'Cancelar',
+    // cancelButtonText:
+    //   '<i class="fa fa-thumbs-down"></i>',
+    // cancelButtonAriaLabel: 'Cancelar',
   })
 });
 
