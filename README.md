@@ -50,9 +50,9 @@ De acuerdo con información del INEGI en 2017 se realizaron 528 678 matrimonios,
 - Profesionalización de la industria (antes principalmente la novia y familiares organizaban la boda, hoy al contar con menos tiempo se acude a profesionales como wedding planners).
 - Eventos personalizados, ahora es un conjunto de experiencias.
 
-Según la CONDUSEF, en 2017, una boda sencilla para 100 invitados podía costar aproximadamente $ 110 000. La aplicación de citas formales SweetRing, realizó una encuesta entre sus usuarios mexicanos, y encontró que el 42% piensa que $ 300 000 sería un presupuesto realista para su boda. La revista FORBES México, señala que actualmente en la CDMX se gasta desde $ 1 200 por invitado. Estos costos pueden reducirse o aumentar dependiendo de la magnitud del evento y los servicios que la pareja escoja.
+Según la CONDUSEF, en 2017 una boda sencilla para 100 invitados podía costar aproximadamente $ 110 000. Por su parte, la aplicación de citas formales SweetRing realizó una encuesta entre sus usuarios mexicanos, en la cual el 42% de los encuestados piensan que $ 300 000 sería un presupuesto realista para su boda. Mientras que la revista FORBES México señala que actualmente en la CDMX se gasta desde $ 1 200 por invitado. Estos costos pueden reducirse o aumentar dependiendo de la magnitud del evento y los servicios que la pareja escoja.
 
-El mercado de las bodas tiene un gran potencial económico para los prestadores de servicios:
+Esto muestra que el mercado de las bodas tiene un gran potencial económico para los prestadores de servicios:
 
 - Es un evento que la mayoría de las personas utilizará una vez en su vida, por lo que están dispuestas a invertir una cantidad de dinero considerable.
 - La mayoría al no tener experiencia en dicho evento busca asesoría para acceder a las mejores opciones del mercado, de acuerdo con su presupuesto.
@@ -84,9 +84,11 @@ El mercado de las bodas tiene un gran potencial económico para los prestadores 
 
     *Criterios de aceptación*
 
-    - [ ] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
+    - [x] Página de inicio debe mostrar la opción de registrar nuevo usuario.
+  
+    - [x] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
 
-    - [ ] Debe ser visible si hay algún mensaje de error.
+    - [x] Debe ser visible si hay algún mensaje de error.
 
     - [ ] Debo poder ver esta página de creación en móviles y desktop (responsive).
 
