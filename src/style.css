@@ -2,3 +2,7 @@ section {
     display: flex;
     justify-content: center;
 }
+
+.card-body {
+    text-align: center;
+}
