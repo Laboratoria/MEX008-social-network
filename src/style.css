@@ -1,0 +1,9 @@
+.padre-botones {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.btn-secondary {
+       background-color: aqua;
+    
+}
