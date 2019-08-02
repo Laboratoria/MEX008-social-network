@@ -154,6 +154,20 @@ p{
 }
 
 /* Modal Style (modal popup box)*/
+.centrar {
+  display: inline-table;
+}
+
+form label, form input {
+  display: block;
+  text-align: left;
+}
+form input {
+  margin-bottom: 1rem;
+  padding: .5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .modal {
     position: fixed;
 	left: 0;
@@ -172,7 +186,7 @@ p{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: white;
+	background-color: antiquewhite;
 	padding: 1rem 1.5rem;
 	width: 24rem;
 	border-radius: 0.5rem;
