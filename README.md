@@ -1,3 +1,30 @@
+##PetHub 
+
+Preámbulo
+Actualmente la población de animales en situación de calle aumenta en cifras considerables cada día, en parte porque al perder a una mascota no contamos con un medio centralizado donde buscarla.
+Pethub será una red social, dónde puedas crear un perfil y compartir tu vida con tus mejores amigos, pero también ser una herramienta que permita subir publicaciones de mascotas perdidas y encontradas o en adopción, donde podrás filtrar por zona e incluso recomendar los servicios, como el vete o el spa que utilizas y dejar comentarios buenos o malos sobre el servicio que le ofrecieron a tus mejores amigos. Pedimos tu ayuda respondiendo esta breve encuesta, para crear una solución que satisfaga todas estas necesidades.
+
+El proyecto: 
+
+Research
+¿Qué son las redes sociales? 
+Son medios de comunicación digitales orientados a conectar a las personas a través de plataformas definidas dentro de parámetros de afinidad e interés. 
+
+
+¿Quiénes son los usuarios de las redes sociales?
+Como lo señala WeAreSocial, en enero de 2019 Facebook contó con cerca de 2.271 millones de usuarios activos al mes, Instagram más de 1.000 millones y Twitter 326 millones de usuarios activos.
+¿Quienes son los principales usuarios de Pethub?
+¿Cómo descubrimos las necesidades de los usuarios?
+Formulario
+https://forms.gle/wk8WJEy16Fr4Ts2c9
+
+Historias de usuario
+
+
+Prototipado de baja fidelidad (sketches)
+https://marvelapp.com/6480505
+
+
 # Creando una Red Social
 
 ## Índice
