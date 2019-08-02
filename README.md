@@ -78,6 +78,36 @@ El mercado de las bodas tiene un gran potencial económico para los prestadores 
 - Debo poder ver esta página de creación en Móviles y desktop (responsive).
 - No debe necesitar recargar la página para crear una cuenta (SPA).
 
+### Sprint 1
+
+1. Como nuevo usuario debo poder crear una cuenta nueva con email y password
+
+    *Criterios de aceptación*
+
+    - [ ] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
+
+    - [ ] Debe ser visible si hay algún mensaje de error.
+
+    - [ ] Debo poder ver esta página de creación en móviles y desktop (responsive).
+
+    - [ ] No debe necesitar recargar la página para crear una cuenta (SPA).
+
+    *Definición de terminado*
+
+    - [ ]  La funcionalidad cumple satisface los criterios de aceptación.
+
+    - [ ] La funcionalidad tiene test unitarios.
+
+    - [ ] El diseño visual corresponde al prototipo de alta fidelidad.
+
+    - [ ]  El código de esta funcionalidad recibió code review.
+
+    - [ ]  La funcionalidad esta desplegada y pública para ser probada.
+
+    - [ ]  La funcionalidad fue probada manualmente.
+
+    - [ ]  Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
+
 ## Diseño de la Interfaz de Usuario
 
 ### Prototipo de alta fidelidad
