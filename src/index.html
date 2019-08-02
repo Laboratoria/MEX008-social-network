@@ -30,6 +30,19 @@
           </header>
            <main class="main-section">
                <button></button>
+               <a href="#modal" class="modal-link">Iniciar sesión</a> <!--Enlace que abre el modal, la pseudoclase target activa el link con el id="modal"-->
+               <div class="modal-wrapper" id="modal"> <!--Modal inicio de sesión-->
+                  <div class="modal-contenedor">
+                     <h2>Inicia sesión en Pethub</h2>
+                     <form action="ejemplo.php" method="get">
+                       <p>Email: <input type="text number" name="nombre" size="40" id="username"></p>
+                       <p>Contraseña: <input type="text number" name="nombre" size="40" id="password"></p>
+                       <p id="forget-password">¿Olvidaste tu contraseña?</p>
+                       <input type="submit" value="¡Vamos!" id="login-button">
+                     </form>
+                     <a class="modal-cerrar" href="#">X</a> <!--Enlace que cierra el modal-->
+                  </div>
+               </div>
                <button></button>
                <figure>
                    <iframe></iframe>
