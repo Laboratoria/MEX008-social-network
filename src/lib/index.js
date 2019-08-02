@@ -9,7 +9,7 @@ document.getElementById('iniciar-sesion').addEventListener('click', () => {
     title: '<i class="fas fa-user-alt"></i>',
     html:
       '<button class = btn-social face><img  class= img-social src= "img/googleicon.png"> Ingresa con Google</button>' + '<br>' +
-      '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' +
+      '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' + '<br>' +
       '<input type="email" placeholder="Email">' + '<br>' +
       '<input type="password" placeholder="Password">' + '<br>'+ '¿Olvidaste tu contraseña?' + '<br>' + '<button class="btn-warning">Registrate</button>',
     showCloseButton: true,
