@@ -16,13 +16,20 @@ Como lo señala WeAreSocial, en enero de 2019 Facebook contó con cerca de 2.271
 ¿Quienes son los principales usuarios de Pethub?
 ¿Cómo descubrimos las necesidades de los usuarios?
 Formulario
-https://forms.gle/wk8WJEy16Fr4Ts2c9
+https://docs.google.com/forms/d/1WCvGcCqC3GCX-mgp440iqrOhd97kUV_NbpbToAvUOWg/edit#responses
 
 Historias de usuario
 
+-Yo como usuario quiero crear una cuenta de usuario y logearme con correo y contraseña o con mis cuentas de google y facebook.
+-Yo como usuario quiero completar un perfil, donde sea opcional especificar, si soy dueño o rescatista y si quiero adoptar, y puedo elegir añadir una descripción.
+-Yo como usuario, quiero poder acceder a una galería dividida en 4 secciones: Perdidos, Encontrados, Adoptables, Presumibles.
+-Yo como usuario quiero subir comentarios y reviews y poder likear.
+
+
+
 
 Prototipado de baja fidelidad (sketches)
-https://marvelapp.com/6480505
+https://marvelapp.com/id4gfij
 
 
 # Creando una Red Social
