@@ -1,5 +1,5 @@
 # Creando una Red Social
-##DECISIÓN DE PROYECTO
+## DECISIÓN DE PROYECTO
   Para tomar una decisión sobre el proyecto de Red Social, decidimos seleccionar varios temas y realizar una encuesta para tener claro el tema y lo que el usuario busca en una Red Social . Este es el análisis de la encuesta. 
   La mayoría de nuestros usuarios tiene una edad de entre 19 y 25 años .
   Entre los temas que sugerimos fueron:
@@ -19,7 +19,7 @@ Cuando preguntamos ¿Qué realizas más en una red social?, más del 60% escogi�
 También preguntamos sobre las razones por las que dejan de frecuentar alguna red social y un 44% escogió que contienen demasiada información innecesaria o ajena a su interés seguido con un 38% que es aburrido.
 ![](src/../imagenes/readme/abandono.png)
 
-##INVESTIGACIÓN 
+## INVESTIGACIÓN 
 Realizamos una investigación primero sobre los temas que nos interesaban para realizar nuestra encuesta. Una vez que tomamos la decisión sobre el tema de nuestra Red Social decidimos investigar sobre cómo queríamos que se llamara nuestra Red Social y encontramos esta información: 
 La etimología de wanderlust nos lleva hasta la lengua germana. Wandern significa “vagar”, mientras que lust lo traducimos como “pasión”. En término anglosajón wanderlust es lo mismo: pasión por viajar.
 
@@ -39,14 +39,14 @@ Realizamos una investigación primero sobre los temas que nos interesaban para r
     *Trover:nació a partir de la dificultad que encontraron sus creadores —viajeros también— para capturar y compartir las historias y aventuras que se encontraban en sus viajes. Así que decidieron crear una red a manera de galería de fotos y/o guía turística que permitiera compartir sus experiencias y conectar con otras personas con los mismos intereses. Trover es como un Pinterest de los viajes. En él podrás encontrar inspiración e inspirar a otras personas para descubrir nuevos lugares.
 Nuestra competencia trata de cubrir una necesidad que todo viajero busca. Pero no todas han cumplido con estas preferencias por eso , con base a nuestra investigación pretendemos tomar los puntos más importantes de los usuarios y los algunas ideas de nuestra competencia para formar una Red Social fuerte que apoye a los viajeros pero, lo más importante  que logre unirlos a pesar de las distancias.
 
-##ANÁLISIS DE NUESTRA COMPETENCIA
+## ANÁLISIS DE NUESTRA COMPETENCIA
 ![](src/../imagenes/readme/analisis.png)
 
-##OBJETIVO DEL PROYECTO
+## OBJETIVO DEL PROYECTO
 Construir una Red Social para viajeros. Nuestra Red Social tendrá que permitir a cualquier usuario crear una cuenta de acceso y loguearse con ella; crear, editar, borrar y "likear" publicaciones. El objetivo principal de aprendizaje de este proyecto es construir una Single-page Application (SPA), responsive (con más de una vista / página) en la que podamos leer y escribir datos.
-##USER PERSONA
+## USER PERSONA
 
-##HISTORIA DE USUARIO
+## HISTORIA DE USUARIO
       *Usuario nuevo se loguea con: correo, nombre contraseña y verifica su contraseña.
       *Nuestro usuario nuevo se loguea con gmail.
       *Nuestro usuario nuevo después de loguearse llena los datos básicos de su perfil.
@@ -57,9 +57,9 @@ Construir una Red Social para viajeros. Nuestra Red Social tendrá que permitir 
       usuarios expertos
       *Nuestro usuario registrado decide cambiar su estado a (compartir casa) y llena los campos de registro con sus documentos. 
 
-##STORYLINE 
+## STORYLINE 
 
-##PROTOTIPO
+## PROTOTIPO
     Prototipo de baja fidelidad
 ![](src/../imagenes/readme/registro.jpg)
 ![](src/../imagenes/readme/perfil.jpg)
