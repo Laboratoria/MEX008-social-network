@@ -1,9 +1,8 @@
-.padre-botones {
+section {
     display: flex;
-    justify-content: space-between; 
+    justify-content: center;
 }
 
-.btn-secondary {
-       background-color: aqua;
-    
+.card-body {
+    text-align: center;
 }
