@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>TOGETHER-CLICK</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,18 +13,50 @@
      <div class="black col-1"></div>
      <div class="election_page1_mobile col-11">
        
-       <button class="btn_initials">INICIAR SESIÓN</button> <br> <br>
+       <button class="btn_initials" disabled>INICIAR SESIÓN</button> <br> <br>
        <pre>___________ O bien ___________ </pre> <br>
-       <button class="btn_initials">REGÍSTRATE</button><br><br>
+       <button class="btn_initials trigger">REGÍSTRATE</button><br><br>
+       <!-- MODAL REGISTRO NUEVO USUARIO -->
+      <div class = "modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <form id = "form-register" name = "formRegister" action="">
+            <p> Regístrate. Crea tu cuenta</p>
+            <label for="name">nombre usuario: </label>
+            <input 
+                type ="text" 
+                name = "name" 
+                required
+            />
+            <label for="email">correo electrónico: </label>
+            <input 
+                type = "email" 
+                name = "email" 
+                id = "email" 
+                required
+            />
+            <label> contraseña</label> 
+            <input 
+                type ="password" 
+                name ="password" 
+                required
+            />
+            <input 
+                type = "submit" 
+                value = "Registrarme"
+            />
+          </form>
+        </div> 
+      </div> <!-- termina MODAL REGISTRO NUEVO USUARIO -->
        <p>Somos la red social que une a la comunidad de bodas (proveedores, novias, novios, padrinos e invitados).</p> <br>
        <img src="imgs/novios.jpg" alt="" id="img_novios">
 
      </div>
   </section>
   
-
-
-
-  <script type="module" src="main.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>   
+  <script type="module" src="app.js"></script>
+  <!-- <script type="module" src="main.js"></script> -->
 </body>
 </html>
