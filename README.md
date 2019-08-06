@@ -45,6 +45,17 @@ Nuestra competencia trata de cubrir una necesidad que todo viajero busca. Pero n
 ## OBJETIVO DEL PROYECTO
 Construir una Red Social para viajeros. Nuestra Red Social tendrá que permitir a cualquier usuario crear una cuenta de acceso y loguearse con ella; crear, editar, borrar y "likear" publicaciones. El objetivo principal de aprendizaje de este proyecto es construir una Single-page Application (SPA), responsive (con más de una vista / página) en la que podamos leer y escribir datos.
 ## USER PERSONA
+Nombre: Daniela
+Edad 25 años
+Ocupación: Estudiante
+
+Daniela es una estudiante que quiere comenzar a viajar, tiene un bajo presupuesto y quiere conocer gente con el mismo interés que ella  para que compartan información sobre los que  han realizado, que  compartan experiencias y  encontrar referencias para sus próximos viajes.
+
+¿Cuáles son sus aspiraciones?
+Tener un espacio en el que pueda compartir y encontrar información sobre viajes, que se mantenga actualizada y donde otros usuarios igual que ella compartan sus experiencias y recomendaciones, quiere publicar fotos de sus viajes y hacer comentarios.
+
+¿Que le preocupa? ¿Qué piensa?
+Encontrar información verifica y buenas recomendaciones principalmente de viajeros donde la página se mantenga actualizada.
 
 ## HISTORIA DE USUARIO
       *Usuario nuevo se loguea con: correo, nombre contraseña y verifica su contraseña.
@@ -60,15 +71,17 @@ Construir una Red Social para viajeros. Nuestra Red Social tendrá que permitir 
 ## STORYLINE 
 
 ## PROTOTIPO
-    Prototipo de baja fidelidad
+  ### Prototipo de baja fidelidad
 ![](src/../imagenes/readme/registro.jpg)
 ![](src/../imagenes/readme/perfil.jpg)
 ![](src/../imagenes/readme/muro.jpg)
 
-[Prototipo Marvel](https://marvelapp.com/c8gc340)
+[Prototipo Baja fidelidad](https://marvelapp.com/c8gc340)
 
-  Prototipo de alta fidelidad  
-
+  ### Prototipo de alta fidelidad  
+![](src/../imagenes/readme/prototipo1.png)
+![](src/../imagenes/readme/prototipo.png)
+[Prototipo Alta fidelidad](https://www.figma.com/file/0w34KPPhZnCUlISQqh5YLL/Untitled?node-id=0%3A1)
 
 
 
