@@ -23,6 +23,10 @@ margin: 0 auto;
 padding: 0.5rem 0;
 }
 
+figure {
+  margin-bottom: 0;
+}
+
 /*REGISTER*/
 #register-page{
 display: flex;
@@ -42,4 +46,34 @@ display: flex;
   background-size: cover;
 }
 
+#form-register-page {
+background: #b6d0f2; /* Old browsers */
+background: -moz-linear-gradient(top,  #b6d0f2 0%, #ffffff 68%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6d0f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+background-attachment: fixed;
+}
+
+#all-forms {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#login {
+  background-color: #A9BF04;
+  padding: 2rem 1rem;
+}
+
+#register {
+  width: 80%;
+  margin: 3vh auto;
+  height: auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+-moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+}
 /*RESPONSIVE*/
