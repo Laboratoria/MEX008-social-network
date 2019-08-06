@@ -17,6 +17,10 @@ html {
 
 /*SELECTOR ETIQUETA*/
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 nav{
 width: 90vw;
 margin: 0 auto;
@@ -27,24 +31,30 @@ figure {
   margin-bottom: 0;
 }
 
+button {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  background: #fd9e25; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fd9e25 1%, #ff7600 53%, #ff7600 53%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9e25', endColorstr='#ff7600',GradientType=0 ); /* IE6-9 */
+
+}
+
+
 /*REGISTER*/
 #register-page{
 display: flex;
 
 }
 
-#img-register-page, #form-register-page {
-  display: flex;
-  justify-content: flex-start;
-  width: 50vw;
-  height: 100vh;
-}
-
-
 #img-register-page {
-  background-image: url(img/orange-register.jpg) ;
-  background-size: cover;
+  display: none;
 }
+
 
 #form-register-page {
 background: #b6d0f2; /* Old browsers */
@@ -58,17 +68,20 @@ background-attachment: fixed;
 #all-forms {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 
 #login {
   background-color: #A9BF04;
+  background-attachment: fixed;
   padding: 2rem 1rem;
+  width: 100%;
 }
 
 #register {
-  width: 80%;
-  margin: 3vh auto;
+  width: 70%;
+  margin: 1rem auto;
   height: auto;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.75);
@@ -76,4 +89,26 @@ background-attachment: fixed;
 -moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
+
 /*RESPONSIVE*/
+
+@media only screen and (min-width: 576px) {
+
+  #img-register-page, #form-register-page {
+    display: flex;
+    justify-content: flex-start;
+    width: 50vw;
+    height: 100vh;
+  }
+  
+  
+  #img-register-page {
+    display: flex;
+    background-image: url(img/orange-register.jpg) ;
+    background-size: cover;
+  }
+  
+.col-sm-2 {
+ max-width: 300px; 
+}
+}
