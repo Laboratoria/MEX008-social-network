@@ -95,6 +95,11 @@ document.getElementById('iniciar-sesion').addEventListener('click', () => {
       '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' +
       '<input id="email2" type="email" placeholder="Email">' + '<br>' +
       '<input type="password2" placeholder="Password">' + '<br>'+ '¿No tienes una cuenta?' + '<br>' + '<button onclick="ingreso()" class="btn-warning">Registrate</button>',
+
+      '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' + '<br>' +
+      '<input type="email" placeholder="Email">' + '<br>' +
+      '<input type="password" placeholder="Password">' + '<br>'+ '¿No tienes una cuenta?' + '<br>' + '<button class="btn-warning">Registrate</button>',
+
     showCloseButton: true,
     showCancelButton: true,
     focusConfirm: false,
