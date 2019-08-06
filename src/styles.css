@@ -1,15 +1,15 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*Box sizing*/
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 
 
@@ -17,12 +17,24 @@ html {
 
 /*SELECTOR ETIQUETA*/
 
+nav{
+width: 90vw;
+margin: 0 auto;
+padding: 0.5rem 0;
+}
+
 /*REGISTER*/
+#register-page{
+display: flex;
+
+}
 
 #img-register-page {
-    width: 50vw;
-    height: 100vh;
-    background-image: url(img/orange-register.png);
+  display: flex;
+  justify-content: flex-start;
+  width: 50vw;
+  height: 100vh;
+  background-image: url(img/orange-register.png);
 }
 
 
