@@ -21,8 +21,15 @@ document.getElementById("pasar-registro").addEventListener("click",pasarRegistro
 const registrar = () => {
     let mail = document.getElementById("email-registro").value;
     let password = document.getElementById("password-registro").value;
+    let name = document.getElementById("register-name").value;
+
+    if(name != "" & mail != "" & password != ""){
 
     firebase.auth().createUserWithEmailAndPassword(mail, password)
+    .then(()=>{
+        alert("Usuario creado");
+        verificar()
+    })
     /*.then(verificar())*/
     .catch((error) => {
         // Handle Errors here.
@@ -32,6 +39,11 @@ const registrar = () => {
         console.log(errorMessage);
         // ...
       });
+    }
+
+    else{
+        alert("Debes completar los campos");
+    }
 }
 document.getElementById("btn-registro").addEventListener("click",registrar);
 
@@ -59,6 +71,8 @@ const observadorDeSesion = () =>{
           // User is signed in.
           var displayName = user.displayName;
           var email = user.email;
+          //Este nos dice sei email esta verificado
+          //console.log(user.emailVerified)
           var emailVerified = user.emailVerified;
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
@@ -101,17 +115,18 @@ const muro = () =>{
 }
 buttonCerrarSesionDos.addEventListener("click",cerrarSesion);
 
-/*const verificar = () =>{
+const verificar = () =>{
     var user = firebase.auth().currentUser;
     user.sendEmailVerification()
     .then(function() {
     // Email sent.
+    alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
     console.log("enviando correo ...");
     }).catch(function(error) {
     // An error happened.
     console.log(error);
     });
-}*/
+}
 
 
 
