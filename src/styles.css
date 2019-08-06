@@ -51,18 +51,10 @@ display: flex;
 
 }
 
-#img-register-page, #form-register-page {
-  display: flex;
-  justify-content: flex-start;
-  width: 50vw;
-  height: 100vh;
-}
-
-
 #img-register-page {
-  background-image: url(img/orange-register.jpg) ;
-  background-size: cover;
+  display: none;
 }
+
 
 #form-register-page {
 background: #b6d0f2; /* Old browsers */
@@ -76,18 +68,20 @@ background-attachment: fixed;
 #all-forms {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 
 #login {
   background-color: #A9BF04;
+  background-attachment: fixed;
   padding: 2rem 1rem;
   width: 100%;
 }
 
 #register {
-  width: 80%;
-  margin: 3vh auto;
+  width: 70%;
+  margin: 1rem auto;
   height: auto;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.75);
@@ -98,7 +92,22 @@ box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 
 /*RESPONSIVE*/
 
-@media (min-width: 576px) {
+@media only screen and (min-width: 576px) {
+
+  #img-register-page, #form-register-page {
+    display: flex;
+    justify-content: flex-start;
+    width: 50vw;
+    height: 100vh;
+  }
+  
+  
+  #img-register-page {
+    display: flex;
+    background-image: url(img/orange-register.jpg) ;
+    background-size: cover;
+  }
+  
 .col-sm-2 {
  max-width: 300px; 
 }
