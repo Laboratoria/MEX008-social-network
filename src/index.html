@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
+
 <body>
+  <main>
+    <section class="loading">
+      <figure>
+        <img src="img/logo-blanco.png" alt="">
+      </figure>
+    </section>
+    <section class="">
+      <header>
+
+      </header>
+      <div>
+        <h2>Sacbé</h2>
+        <figure>
+          <a href=""></a>
+        </figure>
+        <p>La mejor ruta para llegar a tu destino</p>
+        <a href="#"></a>
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="#">Iniciar Sesión</a>
+      </div>
+    </section>
+
+    <section id="iniciar-sesion">
+      <div>
+        <h2> Sacbé </h2>
+        <h3>Inicia sesión</h3>
+      </div>
+      <div id="form-inicio-sesion">
+        <div id="login">
+          <form>
+            <label><input name="email" type="email" placeholder="E-mail" required></label><br>
+            <label><input name="password" type="password" placeholder="Contraseña" required></label><br>
+            <button type="submit">Iniciar sesión</button>
+          </form>
+          <hr>
+          <div>
+            <p>O</p>
+            <button> <span><img src="images/googlelogo.svg"></span>Entrar con Google</button>
+          </div>
+        </div>
+    </section>
+    <!--Sección de Registro-->
+    <section id="registro">
+      <div id="register">
+        <h2>Sacbé</h2>
+        <h3>Regístrate</h3>
+        <form>
+          <label>Nombre <input name="user" type="text"></label><br>
+          <label>Correo <input name="email" type="email"></label><br>
+          <label>Contraseña <input name="password" type="password"></label><br>
+          <label>Confirmar contraseña <input type="password"></label><br>
+          <button type="submit">Crear cuenta</button>
+        </form>
+        <hr>
+        <div>
+          <p>O</p>
+          <button> <span><img src="images/googlelogo.svg"></span>Entrar con Google</button>
+        </div>
+      </div>
+    </section>
+    <!--MODALES-->
+    <section class="create publication">
+      <figure>
+        <img src="" alt="">
+      </figure>
+      <input type="text" placeholder="¿Quieres publicar algo?">
+    </section>
+    <section class="confirmation delete">
+      <div class="delete">
+        <p>Eliminar</p>
+        <p>¿Estas seguro que quieres eliminar esta publicación?</p>
+        <a href="#">Si</a>
+        <a href="#">No</a>
+      </div>
+    </section>
+    <section class="directory">
+
+    </section>
+  </main>
   <script type="module" src="main.js"></script>
 </body>
+
 </html>
