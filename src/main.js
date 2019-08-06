@@ -27,7 +27,6 @@ function handleSignUp() {
       alert('La contraseña debe de tener minimo 6 caracteres');
       return;
     } 
-/*-----------Funcion para crear un nuevo usuario-------*/
     // Sign in with email and pass.
     // [START createwithemail]
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -47,6 +46,8 @@ function handleSignUp() {
       // [END_EXCLUDE]
      }); 
     // [END createwithemail] 
+    show("aside");
+    hide("content");
   }
 
 /*----------Iniciar sesion con email y constraseña------------*/
@@ -145,6 +146,14 @@ function toggleSignIn() {
       // [END_EXCLUDE]
    // }
     // [END buttoncallback] */
+
+
+
+/*---------*Funcion ocultar-------*/
+const hide = id => document.getElementById(id).classList.add("hide");
+
+/*-----------Funcion mostrar------*/
+const show = id => document.getElementById(id).classList.remove("hide");
 
 
 /**********************Declaracion de eventos************************/   

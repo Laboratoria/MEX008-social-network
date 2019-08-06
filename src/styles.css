@@ -103,6 +103,11 @@ background-attachment: fixed;
 box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
 
+
+/*ASIDE*/
+.hide{
+  display: none;
+}
 .button{
   display: flex;
   justify-content: center;
