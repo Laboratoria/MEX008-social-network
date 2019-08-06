@@ -50,13 +50,15 @@ function handleSignUp() {
   }
 
 /*----------Iniciar sesion con email y constraseña------------*/
-  function toggleSignIn() {
+function toggleSignIn() {
+  alert('fghjkl');
     //if (firebase.auth().currentUser) {
       // [START signout]
       //firebase.auth().signOut();
       // [END signout]
     //} else {
       var email = document.getElementById('email-login').value;
+      
       var password = document.getElementById('password-login').value;
      /*  if (email.length < 4) {
         alert('Please enter an email address.');
@@ -70,10 +72,8 @@ function handleSignUp() {
       // [START authwithemail]
       firebase.auth().signInWithEmailAndPassword(email, password)
 
-      .then(
-        console.log("Tu correo es: "+ email));  
-
-      .catch(function(error) {
+      .then(console.log("Tu correo es: "+ email))
+      .catch( function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
