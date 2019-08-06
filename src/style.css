@@ -27,13 +27,60 @@
 }
 .section-welcome {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 80vh;
   background-image: url(./img/pets.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: inherit;
-  
+}
+
+.welc-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+}
+
+.welc-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+}
+
+.box-btn-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+
+}
+.btn-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-row span {
+  margin-right: 2%;
+}
+
+.btn-row a {
+  text-decoration: none;
+  color: black;
 }
 
 /* Register Modal
