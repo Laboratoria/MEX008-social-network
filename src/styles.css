@@ -80,8 +80,17 @@ background-attachment: fixed;
   background-color: #A9BF04;
   background-attachment: fixed;
   padding: 2rem 1rem;
-  width: 100%;
+  width: 100%;  
 }
+
+#login form input {
+  width: 30%;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  border: none;
+}
+
+
 
 #register {
   width: 70%;
@@ -121,6 +130,18 @@ box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 /*RESPONSIVE*/
 
 @media only screen and (min-width: 576px) {
+
+  #login form {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  #login form input {
+
+
+    margin-right: 1rem;
+  }
 
   .col-sm-10 {
     max-width: 100%;
