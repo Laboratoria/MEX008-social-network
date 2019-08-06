@@ -5,46 +5,68 @@
     font-family: 'Comfortaa', cursive;
 }
 
+
+.nav-color {
+background-color: #63615B;
+height: 18vh;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100vw !important;
+  height: 100vh;
+  margin: 0; 
+ max-width: 1800px;
+=======
 .container {
     width: 100vw !important;
     height: 100vh;
     margin: 0;
     max-width: 1800px;
 }
+    
 
-.header-body {
-    width: 100vw;
-    height: 10vh;
-    background-color: red;
-}
+
+
+/* .header-body {
+  width: 100vw;
+  height: 10vh;
+  background-color: red;
+} */
 
 .footer-body {
-    width: 100vw;
-    height: 10vh;
-    background-color: red;
-    height: 10vh;
+  width: 100vw;
+  height: 10vh;
+  background-color: #63615B;
+  height: 10vh;
+
 }
 
 .section-welcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 80vh;
-    background-image: url(./img/pets.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: inherit;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  background-image: url(./img/bground.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
 
-.welc-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 30%;
+.welc-text {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 30vh;
+  background-color: #26A69A;
+  opacity: 0.9;
+  color: white;
+  font-size: 2rem;
 }
 
 .welc-main {
@@ -55,6 +77,25 @@
     width: 100%;
     height: 70%;
 }
+.modal {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.modal-header {
+  background-color: #00a79d;
+  width: 100%;
+  height: 10vh;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 0%;
+}
+#mod-footer-color{
+  background-color:#D0E6CD;
+}
+
 
 .box-btn-login {
     display: flex;
@@ -84,222 +125,12 @@
 }
 
 
-/* Register Modal
-
-.modal-register {
-    background-color: #7bb2ae85;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 1s;
-}
-
-.m-register-content {
-    background-color: #e3ded1;
-    width: 300px;
-    padding: 10px 20px;
-    margin: 20% auto;
-    position: relative;
-}
-
-#modal-register:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.close-modal-register {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-    height: 10%;
-}
-
-.close-modal-register a {
-    text-decoration: none;
-    color: #7bb2ae;
-    font-family: 'Comfortaa', cursive;
-    font-size: small;
-}
-
-.box-inputs-register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-inputs-register input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    border-radius: 0;
-    outline: none;
-    height: 2rem;
-    width: 100%;
-    font-size: small;
-    margin: 0 0 8px 0;
-    padding: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-transition: border .3s, -webkit-box-shadow .3s;
-    transition: border .3s, -webkit-box-shadow .3s;
-    transition: box-shadow .3s, border .3s;
-    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
-    overflow: visible;
-}
-
-.box-inputs-register input::placeholder {
-    font-family: 'Comfortaa', cursive;
-    font-size: small;
-    color: #1b1b19;
-}
-
-.btn-sub-reg {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 2rem;
-    background-color: #82e0c7;
-}
-
 #register-submit {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: #82e0c7;
-    border: 1px solid #82e0c7;
-    font-family: 'Comfortaa', cursive;
-    font-size: small;
-    font-weight: 600;
-    color: #1b1b19;
-    width: 50%;
-    height: 2rem;
-}
-
-.box-sm-register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-sm-register p {
-    padding: 2%;
-}
-
-.btn-box {
-    background-color: #82e0c7;
-}
-
-#btn-goo-reg,
-#btn-fb-reg {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: #82e0c7;
-    border: 1px solid #82e0c7;
-
-  }
-
-
-a {
-  text-decoration: none;
-  font-size: 1.3rem;
-  display: inline-block;
-  padding: 0.5rem;
-  width: 30vw;
-  border: 1px solid white;
-  border-radius: 0.6rem;
-  color: white;
-}
-
-a:hover  {
-  background-color: black;
-  border:1px solid black;
-  color: white;
-  text-decoration: none;
-}
-
-/*Modal inicio de sesión: se aplica opacidad 0 y margin top negativo para crear el wrapper o envoltura del modal*/
-
-
-/*#modal {
-  visibility: hidden;
-  opacity: 0;
-  margin-top: -100%;
-}
-
-/*Estilo del selector: opacidad, posicionamiento, z-index para sobreponerlo y transición para animar la aparición*/
-
-
-/*#modal:target { 
-  visibility: visible;
-  opacity: 1;
-  background-color: rgba(0,0,0,0.8);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  z-index: 999;
-  transition:all 1s;
-}
-/*color de fondo, anchura, bordes, padding del modal*/
-
-
-/*.modal-contenedor { 
-  position: relative;
-  margin: 7% auto;
-  padding: 2rem 3.1rem;
-  background-color: #63615B;
-  color: white;
-  border-radius: 3px;
-  width:50%;
-}
-/*Posicionamiento del botón que cierra el modal*/
-
-
-/*a.modal-cerrar {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  background-color: #333;
-  padding: 7px 10px;
-  font-size: 20px;
-  text-decoration: none;
-  line-height: 1;
-  color: white;
-}
-
-#username {
-  background-color: black;
-  border-color: black;
-  margin-left: 1%;
-  height: 1.5rem;
-  color: white;
-}
-
-#password {
-  background-color: black;
-  border-color: black;
-  margin-left: 1%;
-  height: 1.5rem;
-  color: white;
-}
-
-#login-button {
-  background-color: black;
-  color: white;
-  border-color: black;
-  width: 5rem;
+  background-color: #00a79d;
+  border-color: #00a79d;
+  border-radius: 0.5rem;
   height: 2rem;
+  font-size: 1.5rem;
+  color: 00a79d
+}
 
-} */
