@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="/src/style.css">
+   <title>Document</title>
+   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+   <!-- Add Firebase products that you want to use -->
+   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+</head>
+
+<body>
+
+   <header class="cabecera">
+      <h1>Crear cuenta</h1>
+   </header>
+   <div class="registrar-box">
+      <h6>Puedes registrarte con alguna de las siguientes redes sociales:</h6>
+      <button type="button" class="btn btn-secondary"><img src="img/googleicon.png" width="10%"
+            height="auto"><strong>Entrar con Google</strong></button>
+      <button type="button" class="btn btn-secondary"><img src="img/facebookicon.png" width="10%"
+            height="auto"><strong>Entrar con Facebook</strong> </button>
+   </div>
+   <hr>
+   <img class="hopaki-pk" src="img/hopaki-pk.png" width="10%" height="auto">
+   <div>
+      <label for="email">Ingresa tu correo</label>
+      <input id="email" type="email" placeholder="@">
+      <label for="password">Ingresa tu password</label>
+      <input id="password" type="password" placeholder="6 digitos">
+      <button id="registrar-btn">Enviar</button>
+   </div>
+
+   
+   <h4>INGRESO DE USUARIOS</h4>
+   <input id="email2" type="email" placeholder="ingresa tu mail">
+   <input id="password2" type="password" placeholder="ingresa tu password">
+   <button onclick="ingreso()">Enviar</button>
+   <div id="contenido"> </div>
+
+   <script>
+      const firebaseConfig = {
+         apiKey: "AIzaSyAfAooPNMQOUS3UMPcAUDQHBXM64dAuBK0",
+         authDomain: "hopaki-prueba.firebaseapp.com",
+         databaseURL: "https://hopaki-prueba.firebaseio.com",
+         projectId: "hopaki-prueba",
+         storageBucket: "",
+         messagingSenderId: "967562359456",
+         appId: "1:967562359456:web:8517811f94b84354"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+   </script>
+
+   <!--<script src="app.js"></script>-->
+   <script src="vistados.js"></script>
+</body>
+
+</html>
