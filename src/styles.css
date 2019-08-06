@@ -46,6 +46,10 @@ button {
 
 
 /*REGISTER*/
+.form-group {
+  margin: 0;
+}
+
 #register-page{
 display: flex;
 
@@ -90,9 +94,16 @@ background-attachment: fixed;
 box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
 
+
+
 /*RESPONSIVE*/
 
 @media only screen and (min-width: 576px) {
+
+  #register {
+    width: 50%;
+
+  }
 
   #img-register-page, #form-register-page {
     display: flex;
