@@ -1,0 +1,23 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+main section{
+    display: flex;
+    background-color: antiquewhite;
+    width: 100vw;
+    height: 100vh;
+}
+.loading{
+    background-image: url("img/fondo-desktop.png");
+    background-size: cover;
+}
+.loading figure{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    align-self: center;
+}
+.loading img{
+    width: 50%;
+}
