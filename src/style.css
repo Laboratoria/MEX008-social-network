@@ -5,46 +5,60 @@
     font-family: 'Comfortaa', cursive;
 
 }
-.container {
-  width: 100vw !important;
-  height: 100vh;
-  margin: 0;
-  max-width: 1800px; 
 
+.nav-color {
+background-color: #63615B;
+height: 18vh;
 }
 
-.header-body {
+.container {
+  margin: 0 auto;
+  width: 100vw !important;
+  height: 100vh;
+  margin: 0; 
+ max-width: 1800px;
+}
+    
+
+
+
+/* .header-body {
   width: 100vw;
   height: 10vh;
   background-color: red;
-}
+} */
 
 .footer-body {
   width: 100vw;
   height: 10vh;
-  background-color: red;
+  background-color: #63615B;
   height: 10vh;
 }
 .section-welcome {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 80vh;
-  background-image: url(./img/pets.png);
-  background-size: contain;
+  align-items: center; */
+  background-image: url(./img/bground.jpg);
+  background-position: center bottom;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: inherit;
+  width: 100vw;
+  height: 100vh;
 }
 
-.welc-header {
+.welc-text {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 30%;
+  width: 70vw;
+  height: 30vh;
+  background-color: #26A69A;
+  opacity: 0.9;
+  color: white;
+  font-size: 2rem;
 }
 
 .welc-main {
@@ -55,6 +69,25 @@
   width: 100%;
   height: 70%;
 }
+.modal {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.modal-header {
+  background-color: #00a79d;
+  width: 100%;
+  height: 10vh;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 0%;
+}
+#mod-footer-color{
+  background-color:#D0E6CD;
+}
+
 
 .box-btn-login {
   display: flex;
@@ -81,6 +114,15 @@
 .btn-row a {
   text-decoration: none;
   color: black;
+}
+
+#register-submit {
+  background-color: #00a79d;
+  border-color: #00a79d;
+  border-radius: 0.5rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  color: 00a79d
 }
 
 /* Register Modal
