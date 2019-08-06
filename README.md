@@ -25,11 +25,11 @@ Las encuestadas informaron que les gustaría que la red social tuviera un muro d
 
 ## 3. UserPersona
 
-<img src="src/IMG/UserPersona.png">
+<img src="./imagenes/UserPersona.png">
 
 ## 4. WomenBook
 
-<div style="text-align:center"><img src="src/IMG/logo.png"></div>
+<div style="text-align:center"><img src="./imagenes/logo.png"></div>
 
 WomenBook es una red social que está dirigida únicamente a mujeres que están interesadas en ofrecer y/o buscar algún servicio, orientación, consultoría, anuncio de negocio, grupos con intereses en común, etc., ya que en la actualidad no encontramos alguna red social que cumpla con tales características. 
 Esta red social tiene como objetivo brindar a todas las mujeres una posibilidad de apoyarse tanto en el ámbito económico, al consumir sus servicios y/o productos, como en el ámbito emocional y jurídico.
