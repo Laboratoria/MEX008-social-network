@@ -2,22 +2,43 @@
     padding: 0%;
     margin: 0%;
 }
+
+header{
+    height: 5vh;
+    background-color: #73ECEF;
+}
+
 main section{
-    display: flex;
     background-color: antiquewhite;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
 }
-.loading{
+
+#loading{
+    height: 100vh;
     background-image: url("img/fondo-desktop.png");
     background-size: cover;
-}
-.loading figure{
-    display: flex;
+    display:flex; 
     justify-content: center;
-    height: fit-content;
-    align-self: center;
+    align-items: center;
 }
-.loading img{
-    width: 50%;
+
+
+#logo-intro {
+    width: 8rem;
 }
+#form-login{
+    display: flex;
+    flex-direction: column;
+}
+#form-login button{
+    display: flex;
+}
+
+.btn{
+    text-align: center
+}
+
+span + a{
+}
+
