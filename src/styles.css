@@ -29,13 +29,17 @@ display: flex;
 
 }
 
-#img-register-page {
+#img-register-page, #form-register-page {
   display: flex;
   justify-content: flex-start;
   width: 50vw;
   height: 100vh;
-  background-image: url(img/orange-register.png);
 }
 
+
+#img-register-page {
+  background-image: url(img/orange-register.jpg) ;
+  background-size: cover;
+}
 
 /*RESPONSIVE*/
