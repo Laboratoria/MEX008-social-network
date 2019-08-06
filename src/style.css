@@ -5,9 +5,38 @@
     font-family: 'Comfortaa', cursive;
 
 }
+.container {
+  width: 100vw !important;
+  height: 100vh;
+  margin: 0;
+  max-width: 1800px; 
 
+}
 
-/* Register Modal */
+.header-body {
+  width: 100vw;
+  height: 10vh;
+  background-color: red;
+}
+
+.footer-body {
+  width: 100vw;
+  height: 10vh;
+  background-color: red;
+  height: 10vh;
+}
+.section-welcome {
+  display: flex;
+  width: 100vw;
+  height: 80vh;
+  background-image: url(./img/pets.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  
+}
+
+/* Register Modal
 
 .modal-register {
     background-color: #7bb2ae85;
@@ -150,15 +179,15 @@ a:hover  {
   text-decoration: none;
 }
 
-/*Modal inicio de sesión: se aplica opacidad 0 y margin top negativo para crear el wrapper o envoltura del modal*/
-#modal {
+/*Modal inicio de sesión: se aplica opacidad 0 y margin top negativo para crear el wrapper o envoltura del modal*/ 
+/*#modal {
   visibility: hidden;
   opacity: 0;
   margin-top: -100%;
 }
 
 /*Estilo del selector: opacidad, posicionamiento, z-index para sobreponerlo y transición para animar la aparición*/
-#modal:target { 
+/*#modal:target { 
   visibility: visible;
   opacity: 1;
   background-color: rgba(0,0,0,0.8);
@@ -172,7 +201,7 @@ a:hover  {
   transition:all 1s;
 }
 /*color de fondo, anchura, bordes, padding del modal*/
-.modal-contenedor { 
+/*.modal-contenedor { 
   position: relative;
   margin: 7% auto;
   padding: 2rem 3.1rem;
@@ -182,7 +211,7 @@ a:hover  {
   width:50%;
 }
 /*Posicionamiento del botón que cierra el modal*/
-a.modal-cerrar {
+/*a.modal-cerrar {
   position: absolute;
   top: 3px;
   right: 3px;
@@ -217,4 +246,4 @@ a.modal-cerrar {
   width: 5rem;
   height: 2rem;
 
-}
+} */
