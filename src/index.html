@@ -45,15 +45,18 @@
                             <p>Inicia sesión en PetFriendly</p>
                         </box>
                     </header>
-                    <box>
-                  <!--Caja que contiene los inputs-->
-                    </box>
-                    <input class="placeholder" id="mail-login-m" type="text" placeholder="Correo Electrónico">
-                    <input class="placeholder" id="pwd-login-m" type="text" placeholder="Contraseña">
-                    <box class="btn-sub-log">
+                    <form id="auth-login">
+                        <!--Caja que contiene los inputs-->
+                        <box> 
+                        <input class="placeholder" id="mail-login-m" type="text" placeholder="Correo Electrónico">
+                        <input class="placeholder" id="pwd-login-m" type="text" placeholder="Contraseña">
+                        </box>
+
                         <!--Caja del botón de inicio-->
+                        <box class="btn-sub-log">
                         <span class="icon-paw"></span><button id="login-submit">¡Comencemos!</button><span class="icon-paw"></span>
-                    </box>
+                        </box><!--Caja del botón de inicio-->
+                 </form>
                 </div>
                 <div class="modal-footer" id="mod-footer-color">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -103,10 +106,10 @@
         <p>soy el footer</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
    https://firebase.google.com/docs/web/setup#reserved-urls -->

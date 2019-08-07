@@ -3,38 +3,35 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    let elems = document.querySelectorAll('.modal');
-    let instances = M.Modal.init(elems);
-});
-
-
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
     databaseURL: "https://superb-ethos-249021.firebaseio.com",
     projectId: "superb-ethos-249021",
-    storageBucket: "",
+    storageBucket: "superb-ethos-249021.appspot.com",
     messagingSenderId: "900630117910",
     appId: "1:900630117910:web:897141f2088152a4"
-};
-// Initialize Firebase
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-firebase.initializeApp(firebaseConfig);
+//Activa modal
+  document.addEventListener('DOMContentLoaded', () => {
+    let elems = document.querySelectorAll('.modal');
+    let instances = M.Modal.init(elems);
+});
 
-db.collection("user").add({
-        usuario: "Viviana",
-        mail: "vivianaberron@gmail.com",
-        password: "perrito"
-    })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+// db.collection("user").add({
+//         usuario: "Viviana",
+//         mail: "vivianaberron@gmail.com",
+//         password: "perrito"
+//     })
+//     .then(function(docRef) {
+//         console.log("Document written with ID: ", docRef.id);
+//     })
+//     .catch(function(error) {
+//         console.error("Error adding document: ", error);
+//     });
 
 
 // let provider = new firebase.auth.GoogleAuthProvider();
