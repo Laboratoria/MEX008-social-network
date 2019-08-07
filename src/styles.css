@@ -81,6 +81,7 @@ background-attachment: fixed;
   background-attachment: fixed;
   padding: 2rem 1rem;
   width: 100%;  
+
 }
 
 #login form input {
@@ -103,19 +104,11 @@ background-attachment: fixed;
 box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 1bf074d201ac56c34d0446315556cc00522df643
 /*ASIDE*/
 .hide{
   display: none;
 }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1bf074d201ac56c34d0446315556cc00522df643
+
 .button{
   display: flex;
   justify-content: center;
@@ -139,10 +132,6 @@ box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 
 
 
-<<<<<<< HEAD
->>>>>>> f49536cc7b1da0b686aa2b49376903a5a9f68f7e
-=======
->>>>>>> 1bf074d201ac56c34d0446315556cc00522df643
 
 /*RESPONSIVE*/
 
