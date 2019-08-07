@@ -1,6 +1,17 @@
-@font-face {
-    font-family: 'Gidole';
-    src: url(fonts/Gidole-Regular.ttf);
+.cabecera {
+background-color: #E9B000;
+width: 100%;
+height: 60px;
+text-align: center;
+color: white;
+}
+
+.registrar-box {
+    display: flex;
+    flex-direction: column;
+}
+.btn {
+    color: black;
 }
 
 section {
