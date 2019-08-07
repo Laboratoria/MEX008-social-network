@@ -15,6 +15,7 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+  <script src="https://apis.google.com/js/platform.js"async defer></script>
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -34,14 +35,13 @@
   
   <div class="container">
     <!--PANTALLA DE LOGIN-->
-    <section class="text-center" class="pantalla-login" id="pantalla-login">
+    <div class="text-center" class="pantalla-login" id="pantalla-login">
       <div class="header">
       </div>
     
       <div class="row-fluid">
           <div class="span12">
             <img src="./imgenes/logo-women.png" class="logo-one">
-
           </div>
       </div>
       <div class="row-fluid">
@@ -49,11 +49,10 @@
             <form action="">
               <h3>Inicia sesión</h3>
 
-              <input type="email" placeholder="Ingresa tu correo" class="login-input" id="email-login" required>
+              <input type="email" placeholder="Ingresa tu correo" class="login-input" id="email-login">
       
-              <input type="password" placeholder="Ingresa tu contraseña" class="login-input" id="password-login" 
-                required>
-              <p>Ingresa el correo y contraseña con los que te registraste</p>
+              <input type="password" placeholder="Ingresa tu contraseña" class="login-input" id="password-login">
+              <p id="prueba">Ingresa el correo y contraseña con los que te registraste</p>
               <br>
 
 
@@ -70,7 +69,7 @@
                     <div class="span12">
                       <div class="input-prepend">
                         <img src="./imgenes/google-icon.png" class="add-on">
-                        <input type="submit" value="Inicia con Google" class="btn">
+                        <input type="submit" value="Inicia con Google" class="btn" id="btnGoogle">
                       </div>
                     </div>
                   </div>
@@ -95,66 +94,104 @@
       </div>
             
           
-    </section>
+    </div>
 
-    <!--PANTALLA REGISTRO-->
-    <section class="pantalla-registro text-center" id="pantalla-registro">
-
+    <!--CONTENEDOR QUE MANTIENE EL HEADER-->
+    
+    <div class="contenedor-header text-center">
         <div class="header">
           <img src="./imgenes/logo2.png" class="logo-two">
         </div>
-        <h3>Registro</h3>
 
-        <form action="" class="form-inline">
-          <label for="register-name" class="input-register">Nombre</label>
-          <input type="text" id="register-name" required><br>
+      <!--PANTALLA REGISTRO-->
+      <div class="pantalla-registro text-center" id="pantalla-registro">
+          <h3>Registro</h3>
 
-          <label class="input-register">Correo</label>
-          <input type="email" id="email-registro" required><br>
-          <p>Por favor ingresar un correo electrónico válido</p>
+          <form action="" class="form-inline">
+            <label for="register-name" class="input-register">Nombre</label>
+            <input type="text" id="register-name" required><br>
 
-          <label class="input-register">Contraseña</label>
-          <input type="password" id="password-registro" pattern="[A-Za-z0-9@#$%]{6,8}" required>
-          <p>La longitud debe ser entre 6 y 8 caracteres, incluye Mayúsculas, Minúsculas y símbolos</p>
+            <label class="input-register">Correo</label>
+            <input type="email" id="email-registro" required><br>
+            <p>Por favor ingresar un correo electrónico válido</p>
 
-          <input type="submit" value="ENVIAR" class="btn input-register" id="btn-registro">
-        </form>
+            <label class="input-register">Contraseña</label>
+            <input type="password" id="password-registro" pattern="[A-Za-z0-9@#$%]{6,8}" required>
+            <p>La longitud debe ser entre 6 y 8 caracteres, incluye Mayúsculas, Minúsculas y símbolos</p>
 
-        <div class="divider">
-            <div class="linea">&nbsp;</div>
-            <div class="leyenda">o bien</div>
-            <div class="linea">&nbsp;</div>
-        </div>
+            <input type="submit" value="ENVIAR" class="btn input-register" id="btn-registro">
+          </form>
 
-      <div class="row-fluid input-register">
-          <div class="span12">
-            <div class="input-prepend">
-              <img src="./imgenes/google-icon.png" class="add-on">
-              <input type="submit" value="Registrate con Google" class="btn">
-            </div>
+          <div class="divider">
+              <div class="linea">&nbsp;</div>
+              <div class="leyenda">o bien</div>
+              <div class="linea">&nbsp;</div>
           </div>
-        </div>
-  
+
         <div class="row-fluid input-register">
             <div class="span12">
               <div class="input-prepend">
-                <img src="./imgenes/icon-facebook.png" class="add-on">
-                <input type="submit" value="Registrate con Facebook" class="btn">
+                <img src="./imgenes/google-icon.png" class="add-on">
+                <input type="submit" value="Registrate con Google" class="btn">
               </div>
             </div>
+          </div>
+    
+          <div class="row-fluid input-register">
+              <div class="span12">
+                <div class="input-prepend">
+                  <img src="./imgenes/icon-facebook.png" class="add-on">
+                  <input type="submit" value="Registrate con Facebook" class="btn">
+                </div>
+              </div>
+          </div>
         </div>
-    </section>
 
-    <section id="pantalla-intereses" class="pantalla-intereses">
-        <input type="submit" value="CERRAR SESION" class="btn" id="cerrar-sesion">
-    </section>
+      <!--PANTALLA INTERESES-->
+      <div id="pantalla-intereses" class="pantalla-intereses text-center">
+        <div class="row-fluid">
+          <div class="span12 perfil-avatar">
+            <img src="./imgenes/perfil-avatar.jpg" alt="" class="img-circle">
+            <p>Estás interesada en ofrecer:</p>
+          </div>          
+        </div> 
+        <div class="container-ofrecer">
+            <ul class="ks-cboxtags">
+              <li><input type="checkbox" id="checkboxOne" value="orientaciónPsicologica"><label for="checkboxOne" class="label-intereses">Orientación Psicológica</label></li>
+              <li><input type="checkbox" id="checkboxTwo" value="orientaciónLegal" checked><label for="checkboxTwo" class="label-intereses">Orientación Legal</label></li>
+              <li><input type="checkbox" id="checkboxThree" value="limpiezaDomestica" checked><label for="checkboxThree" class="label-intereses">Limpieza Doméstica</label></li>
+              <li><input type="checkbox" id="checkboxFour" value="cuidadoNinos"><label for="checkboxFour" class="label-intereses">Cuidado de niños</label></li>
+              <li><input type="checkbox" id="checkboxFive" value="servicioBelleza"><label for="checkboxFive" class="label-intereses">Servicio de belleza</label></li>
+              <li><input type="checkbox" id="checkboxSix" value="RopaAccesorios" checked><label for="checkboxSix" class="label-intereses">Ropa y accesorios</label></li>
+            </ul>
+           </div> 
+           <input type="submit" value="Siguiente" class="btn">
+      <div class="pantalla-intereses-dos">
+        <p>Te interesa:</p>
+        <div class="container-ofrecer">
+              <ul class="ks-cboxtags">
+                <li><input type="checkbox" id="checkboxOne" value="orientaciónPsicologica"><label for="checkboxOne">Orientación Psicológica</label></li>
+                <li><input type="checkbox" id="checkboxTwo" value="orientaciónLegal" checked><label for="checkboxTwo">Orientación Legal</label></li>
+                <li><input type="checkbox" id="checkboxThree" value="limpiezaDomestica" checked><label for="checkboxThree">Limpieza Doméstica</label></li>
+                <li><input type="checkbox" id="checkboxFour" value="cuidadoNinos"><label for="checkboxFour">Cuidado de niños</label></li>
+                <li><input type="checkbox" id="checkboxFive" value="servicioBelleza"><label for="checkboxFive">Servicio de belleza</label></li>
+                <li><input type="checkbox" id="checkboxSix" value="RopaAccesorios" checked><label for="checkboxSix">Ropa y accesorios</label></li>
+              </ul>
+        </div> 
+        <p>Escribe tu Código Postal</p>
+        <input type="number" class="btn">
+      </div>
+        
+          <input type="submit" value="CERRAR SESION" class="btn" id="cerrar-sesion">
+      </div>
 
 
-    <section id="pantalla-muro" class="pantalla-muro">
-        <input type="submit" value="CERRAR SESION" class="btn" id="cerrar-sesion-dos">
-    </section>
-    
-    
+      <section id="pantalla-muro" class="pantalla-muro">
+          <input type="submit" value="CERRAR SESION" class="btn" id="cerrar-sesion-dos">
+      </section>
+      
+      
+    </div>
   </div>
   <script type="module" src="main.js"></script>
   

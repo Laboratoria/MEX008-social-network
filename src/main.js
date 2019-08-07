@@ -128,7 +128,18 @@ const verificar = () =>{
     });
 }
 
-
+const btnGoogle = document.getElementById('btnGoogle');
+const loginGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(user){
+      alert("Google SignIn");
+      console.log(user);
+  }).catch(function(error){
+      alert("error");
+      console.log(error);
+  })
+}
+btnGoogle.addEventListener("click", loginGoogle);
 
 
 
