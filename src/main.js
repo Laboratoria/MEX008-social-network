@@ -15,7 +15,7 @@ let facebook=document.getElementById('facebook');
 /***********************Declaracion de funciones****************************/
 
 /*---------Funcion  para registrarse con contraseña y correo---------*/ 
-function handleSignUp() {
+function register() {
   console.log("diste un clic")
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
@@ -53,8 +53,7 @@ function handleSignUp() {
   }
 
 /*----------Iniciar sesion con email y constraseña------------*/
-function toggleSignIn() {
-  alert('fghjkl');
+function login() {
     //if (firebase.auth().currentUser) {
       // [START signout]
       //firebase.auth().signOut();
@@ -99,55 +98,54 @@ function toggleSignIn() {
 
 /*---------Funcion para registrarse con google--------*/ 
 
-/*     /* Function called when clicking the Login/Logout button.*/
-    // [START buttoncallback]
-    //function toggleSignIn() {
-      //if (!firebase.auth().currentUser) {
+   /* Function called when clicking the Login/Logout button.*/
+    
+    function googleSignIn() {
+      if (!firebase.auth().currentUser) {
         // [START createprovider]
-        //var provider = new firebase.auth.GoogleAuthProvider();
+      var provider = new firebase.auth.GoogleAuthProvider();
         // [END createprovider]
         // [START addscopes]
-       // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
         // [END addscopes]
         // [START signin]
-        //firebase.auth().signInWithPopup(provider)
-        //.then(function(result) {
+        firebase.auth().signInWithPopup(provider)
+        .then(function(result) {
           // This gives you a Google Access Token. You can use it to access the Google API.
-          //var token = result.credential.accessToken;
+          var token = result.credential.accessToken;
           // The signed-in user info.
-          //var user = result.user;
+          var user = result.user;
           // [START_EXCLUDE]
-          //document.getElementById('quickstart-oauthtoken').textContent = token;
+          document.getElementById('quickstart-oauthtoken').textContent = token;
           // [END_EXCLUDE]
-        //}).catch(function(error) {
+        }).catch(function(error) {
           // Handle Errors here.
-          //var errorCode = error.code;
-          //var errorMessage = error.message;
+          var errorCode = error.code;
+          var errorMessage = error.message;
           // The email of the user's account used.
-          //var email = error.email;
+          var email = error.email;
           // The firebase.auth.AuthCredential type that was used.
-          //var credential = error.credential;
+          var credential = error.credential;
           // [START_EXCLUDE]
-          //if (errorCode === 'auth/account-exists-with-different-credential') {
-           // alert('You have already signed up with a different auth provider for that email.');
+          if (errorCode === 'auth/account-exists-with-different-credential') {
+            alert('You have already signed up with a different auth provider for that email.');
             // If you are using multiple auth providers on your app you should handle linking
             // the user's accounts here.
-         // } else {
-            ///console.error(error);
-         // }
-          // [END_EXCLUDE]
-        ///});
-        // [END signin]
-     /// } else {
-        // [START signout]
-        //firebase.auth().signOut();
-        // [END signout]
-     // }
-      // [START_EXCLUDE]
-      //document.getElementById('quickstart-sign-in').disabled = true;
-      // [END_EXCLUDE]
-   // }
-    // [END buttoncallback] */
+          } else {
+            console.error(error);
+         }
+      
+        });
+      } else {
+        
+        firebase.auth().signOut();
+       
+      }
+   
+/*       document.getElementById('quickstart-sign-in').disabled = true; */
+   
+   }
+ 
 
 
 
@@ -183,8 +181,8 @@ const facebookSignIn=()=>{
 
 /**********************Declaracion de eventos************************/   
 
-buttonSignIn.addEventListener('click',handleSignUp);
-google.addEventListener('click',toggleSignIn);
-
+buttonRegister.addEventListener('click',register);
+buttonLogin.addEventListener('click',login);
+google.addEventListener('click',googleSignIn);
 facebook.addEventListener('click',facebookSignIn);
 
