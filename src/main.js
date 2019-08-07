@@ -8,6 +8,9 @@ myFunction(); */
 let buttonSignIn = document.getElementById('button-sign-in');
 let google = document.getElementById('google');
 
+let facebook=document.getElementById('facebook');
+
+
 /***********************Declaracion de funciones****************************/
 
 /*---------Funcion  para registrarse con contraseña y correo---------*/ 
@@ -99,8 +102,32 @@ function handleSignUp() {
     }
     // [END buttoncallback]
 
+// PARA INGRESAR POR FACEBOOK
+
+
+const facebookSignIn=()=>{
+  console.log('funciona boton')
+  var provider = new firebase.auth.FacebookAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
 
 /**********************Declaracion de eventos************************/   
 buttonSignIn.addEventListener('click',handleSignUp);
 google.addEventListener('click',toggleSignIn);
-  
+
+facebook.addEventListener('click',facebookSignIn);
