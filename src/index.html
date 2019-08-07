@@ -93,8 +93,9 @@
                 </div>
               </div>
               <div class="button">
-                <button id="button-sign-in" type="button">Registrarse</button>
+                <button id="button-register" type="button">Registrarse</button>
               </div>
+
             </form>
             <div class="social-media">
               <p>O bien, ingresa con:</p>
@@ -133,6 +134,9 @@
          https://firebase.google.com/docs/web/setup#config-web-app -->
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
 
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
     <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
@@ -146,12 +150,9 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-
-
-    </script>  
-
-
-
+    </script> 
+    
+    
   <script src="main.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
