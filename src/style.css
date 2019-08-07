@@ -1,3 +1,9 @@
+/*Pantalla de bienvenida*/
+#start-button {
+    background-color: #008F95;
+    border-color: #008F95;
+}
+
 .cabecera {
 background-color: #E9B000;
 width: 100%;
@@ -13,6 +19,7 @@ color: white;
 .btn {
     color: black;
 }
+
 
 section {
     display: flex;
