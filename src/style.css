@@ -1,59 +1,136 @@
 /*Indicaciones generales para margen, padding y fuentes*/
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Source Sans Pro', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Red Hat Display', sans-serif;
-}
-
-/* General-header
-header {
-    height: 15vh;
-    background-color: #63615B;
-} */
-
-/*General - Nav*/
-.nav-color {
-    background-color: #63615B;
-    height: 13vh;
-}
-
-figure {
-    flex-wrap: wrap;
+    box-sizing: border-box;
     margin: 0;
-    margin-top: 0%;
     padding: 0;
-}
-
-/*Background image e indicaciones de estilo para sección 1*/
-.background-image{
-background-image: url(img/bground.jpg);
-background-position: center bottom;
-height: 100vh;
-width: 100vw;
-background-size: cover;
+    font-family: 'Comfortaa', cursive;
 }
 
 
-/*Caja donde se encuentra el nombre*/
-.name-box {
+.nav-color {
+background-color: #63615B;
+height: 18vh;
+}
+
+.container {
 display: flex;
 margin: 0 auto;
-padding: 0%;
-justify-content: center;
-font-size: 3rem;
-text-align: center;
+width: 100vw !important;
+height: 100vh;
+margin: 0; 
+max-width: 1800px;
+}
+
+.icon-paw {
+  display: inline;
+  margin-left: 1;
 }
 
 
-/* Logo
-#logo {
+.header-body {
+  width: 100vw;
+  height: 10vh;
+  background-color: red;
+}
+
+.footer-body {
+  width: 100vw;
+  height: 10vh;
+  background-color: #63615B;
+  height: 10vh;
+
+}
+
+.section-welcome {
+  background-image: url(./img/bground.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.welc-text {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 30%;
+  background-color: #26A69A;
+  opacity: 0.9;
+  color: white;
+  font-size: 2rem;
+}
+
+.welc-main {
     display: flex;
-    margin: 0 auto;
-    padding: 0;
-    margin-top: 0%;
-    width: 8%;
-    height: 8%;
-} */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+}
+.modal {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.modal-header {
+  margin: 0 auto;
+  background-color: #00a79d;
+  width: 100%;
+  height: 10vh;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 0%;
+}
+#mod-footer-color{
+  background-color:#D0E6CD;
+}
+
+
+.box---login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-row span {
+    margin-right: 2%;
+}
+
+.btn-row a {
+    text-decoration: none;
+    color: black;
+}
+.btn-sub-log {
+  width: 80%;
+}
+#login-submit {
+  background-color: #00a79d;
+  border-color: #00a79d;
+  border-radius: 0.5rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  color: 00a79d
+}
+
+#name-register::placeholder {
+  color: red;
+}

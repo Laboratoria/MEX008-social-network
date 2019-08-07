@@ -1,44 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Petfriendly</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Red+Hat+Display|Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PetFriendly</title>
+      <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link rel="stylesheet" href="./fonts/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-     <header class="body-header"> <!--Header principal-->
-         <nav class="nav-color">
-             <box class="name-box"> <!--Caja donde se encuentra el nombre, dentro de header-->
-                 <p>PetFriendly</p>
-             </box>
-             <!-- <figure> Caja que contiene el logo
-                <img src="img/logo-pet.png" alt="Logo Pethub" id="logo">
-              </figure> -->
-          </nav>
-     </header> <!--Acaba header principal-->
-        <main class="body-main"> <!--Comienzan las secciones-->
-            <section class="background-image"> <!--Sección 1-->
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-                <!-- Estructura del modal -->
-                <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Inicia sesión en PetFriendly</h4>
-      <p>A bunch of text<</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-                
+ <body>
+    <header class="header-body"> <!--Comienza header-->
+      <nav class="nav-color"></nav>
+      <!-- Aquí va el logo <figure>
+          <img src="./img/logo-pet.png" alt="logo pet" width="200" height="50px">
+      </figure>  -->
+    </header> 
+     <main class="container"> <!--Contenido principal-->
+       <section class="section-welcome"> <!--Sección 1-->
+        <box class="welc-text"> <!--Caja que contiene el texto de bienvenida-->
+         <p>¡Únete a la comunidad más completa de animal lovers!</p>
+         <p>Localiza más rápido a tu amigo perdido</p>
+        </box> 
+        <box>
+         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Inicia sesión</a> <!--Caja que contiene el botón de "Inicia sesión"-->
+        </box>
+        <!--Inicia la estructura del modal de inicio de sesión-->
+      <div id="modal1" class="modal">
+         <div class="modal-content" id="style-modal">
+          <header class="modal-header"> <!--Header del modal-->
+            <box>
+             <p>Inicia sesión en PetFriendly</p>
+            </box>
+          </header>
+          <box> <!--Caja que contiene los inputs--></box>
+            <input id="name-register-m" type="text" placeholder="Nombre">
+            <input id="mail-register-m" type="text" placeholder="Correo Electrónico">
+            <input id="pwd-register-m" type="text" placeholder="Contraseña">
+            <p>¿Olvidaste tu contraseña?</p>
+           <input id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
+          <box class="btn-sub-reg">  <!--Caja del botón de inicio-->
+           <span class="icon-paw"></span> <button id="register-submit">¡Comencemos!</button> <span class="icon-paw"></span>
+          </box>
+        </div>
+      <div class="modal-footer" id="mod-footer-color">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"> Close </a>
+      </div>
+       </div>
+      </div>
+      <box>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Inicia sesión</a> <!--Caja que contiene el botón de "Inicia sesión"-->
+       </box>
+       <!--Inicia la estructura del modal de registro-->
+     <div id="modal1" class="modal">
+        <div class="modal-content" id="style-modal">
+         <header class="modal-header"> <!--Header del modal registro-->
+           <box>
+            <p>Registroy</p>
+           </box>
+         </header>
+         <box class="box-inputs-register"> <!--Caja que contiene los inputs--></box>
+           <input id="name-register-m" type="text" placeholder="Nombre">
+           <input id="mail-register-m" type="text" placeholder="Correo Electrónico">
+           <input id="pwd-register-m" type="text" placeholder="Contraseña">
+          <input id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
+         <box class="btn-sub-reg">  <!--Caja del botón de inicio-->
+          <span class="icon-paw"></span> <button id="register-submit">¡Comencemos!</button> <span class="icon-paw"></span>
+         </box>
+       </div>
+     <div class="modal-footer" id="mod-footer-color">
+         <a href="#!" class="modal-close waves-effect waves-green btn-flat"> Close </a>
+     </div>
+      </div>
+     </div>
+      <!-- Aquí habría una segunda sección para publicidad 
+        <section class="welc-main"></section> -->
+    </main>
+  </section>
 
-<script src="app.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
-</html>
+
+
+
+    <footer class="footer-body">
+      <p>soy el footer</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.3.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#reserved-urls -->
+
+
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

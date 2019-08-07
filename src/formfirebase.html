@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PetFriendly</title>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="./fonts/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header-body">
+            <nav>
+
+            </nav>
+            <figure>
+                <img src="./img/logo-pet.png" alt="logo pet" width="200" height="50px">
+            </figure>
+        </header>
+        <section class="section-welcome">
+            <main>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <a class="waves-effect waves-light btn">button</a>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Item Name</th>
+                                <th>Item Price</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="load-task"></tbody>
+                    </table>
+                </div>
+
+            </main>
+
+        </section>
+
+
+
+
+        <footer class="footer-body">
+            <p>soy el footer</p>
+        </footer>
+
+    </main>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.3.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#reserved-urls -->
+
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
