@@ -12,6 +12,7 @@
   
 </head>
 <body>
+
   <!-- INICIO DE SESION POR FACEBOOK -->
     <script>
         window.fbAsyncInit = function() {
@@ -35,7 +36,10 @@
          }(document, 'script', 'facebook-jssdk'));
       </script>
       
-  <header>
+  
+
+  <header class="position-static">
+
     <nav>
       <figure>
         <img src="img/logo.svg" alt="logo">
@@ -50,10 +54,10 @@
         <div id="login">
           <form action="">
             <label for="email-login"></label>
-            <input name="email-login" type="email" placeholder="E-mail" required>
+            <input id="email-login" name="email-login" type="email" placeholder="E-mail" required>
             <label for="password"></label>
-            <input  name="password" type="password" placeholder="Contraseña" required>
-            <button type="submit" >Inicia sesión</button>
+            <input  id="password-login" name="password" type="password" placeholder="Contraseña" required>
+            <button id="button-login" type="button" >Inicia sesión</button>
           </form>
         </div>
         <div>
@@ -110,7 +114,8 @@
     <section id="aboutus-page"></section>
     <section id="store-page"></section>-->
   </main>
-  <aside>
+ 
+  <aside id="aside" class="hide">
     <ul>
       <li><a href=""><img src="../src/img/home.svg" alt="Inicio">Inicio</a></li>
       <li><a href=""><img src="../src/img/events.svg" alt="Eventos">Eventos</a></li>
