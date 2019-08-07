@@ -1,7 +1,11 @@
 let Register = {
     render : async () => {
         let view = /*html*/ `
-            <h1>REGISTRO</h1>
+
+        <div class="container-register">
+        <div class= "form-backg">
+        <div class="register">
+            <h2>REGISTRO</h2>
             <form action="">
                 <input 
                     type="email"
@@ -21,6 +25,10 @@ let Register = {
                     type="submit" value="Crear cuenta"
                 />
              </form>
+             </div>
+             </div>
+
+             </div>
         `
         return view
     },
