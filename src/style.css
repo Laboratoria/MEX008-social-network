@@ -17,22 +17,6 @@ html {
     width: 91%;
 }
 
-/*
-.row{
-    margin: auto;
-    width: 100%;
-    height: auto;
-  }
-
-  .row:before, .row:after{
-    content:"";
-    display:table;
-  }
-
-  .row:after{
-    clear:both;
-  }*/
-
 /* GLOBALES */
 body {
     width: 100vw;
@@ -40,30 +24,50 @@ body {
     background-color: #FFF;
 }
 
-header {
-    height: 5vh;
-    background-color: #73ECEF;
-    position: sticky;
+#sidebar {
+    height: 4rem;
     /*    top: 0;*/
     padding-bottom: 3vh;
     margin: 0 auto;
 }
+.sidenav{
+    width: 75vw;
+}
+.name, .email{
+    font-family: 'Montserrat', sans-serif;
+}
+.sidenav .user-view .name {
+    font-size: 1.5em;
+    font-weight: 600;
+}
 
+.sidenav .user-view .email {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.background{
+    background-color: #73ECEF;
+}
 h1 {
     color: #73ECEF;
-    margin-top: 4.2rem;
+    margin: 1.8rem 0 1.68rem 0;
 }
 
 h5 {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: auto 7%;
 }
+/* .hidden{
+    display: none;
+} */
 
 /* SECCIONES */
 
 main section {
-    height: 95vh;
+    height: 90vh;
+    border: 1px solid black;
 }
 
 #intro {
@@ -73,16 +77,19 @@ main section {
 }
 
 #login {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 #firebaseui-auth-container {
-    margin-top: 2.8rem;
+    margin-top: 1.8rem;
 }
 
 /* BOTONES */
 .firebaseui-idp-button {
     border-radius: 1rem;
+}
+nav{
+    background-color: #73eeaf;
 }
 
 /* IMÁGENES */
