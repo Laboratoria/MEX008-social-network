@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
@@ -15,22 +15,22 @@
 </head>
 
 <body>
-  <section id="intro">
+  <section id="intro" >
     <div class="center-align">
       <figure class="logo-intro">
         <img src="img/logo-blanco.png" alt="logo">
       </figure>
     </div>
   </section>
-  <header></header>
 
   <main class="container">
+
     <!--Sección de Registro/Inicio de sesión-->
     <section id="welcome">
       <div class="center-align">
         <h1>Sacbé</h1>
         <figure class="logo">
-          <img src="img/logo.png" alt="logo">
+          <img src="img/Logo.png" alt="logo">
         </figure>
         <div id="login">
           <h5>La mejor ruta para llegar a tu destino</h5>
@@ -44,6 +44,30 @@
 
     <!--MODALES-->
     <section id="timeline">
+        <div id="sidebar">
+            <nav> <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </nav>
+            <!-- <a href="#" class="sidenav-trigger" data-target="menu-side"></a> -->
+            <ul id="slide-out" class="sidenav">
+                <li>
+                  <div class="user-view">
+                    <div class="background">
+                      <img src="img/fondo-desktop.png">
+                    </div>
+                    <a href="#user"><img class="circle" src="img/readme/userPersona.png"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                  </div>
+                </li>
+                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li>
+                  <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+              </ul>
+          </div>
     </section>
 
     <section id="create-edit">
@@ -63,14 +87,31 @@
 
     </section>
   </main>
+  <script>
+    /*INICIALIZACION SIDEBAR*/
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+
+  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+  // var collapsibleElem = document.querySelector('.collapsible');
+  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+//   // Or with jQuery
+
+  // $(document).ready(function(){
+  //   $('.sidenav').sidenav();
+  // });
+  </script>
+
+
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
   <script src="credentials.js"></script>
-
   <script type="module" src="main.js"></script>
 </body>
 
