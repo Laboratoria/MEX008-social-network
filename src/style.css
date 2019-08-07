@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Indicaciones generales para margen, padding y fuentes*/
 * {
     box-sizing: border-box;
@@ -134,3 +135,170 @@ max-width: 1800px;
 #name-register::placeholder {
   color: red;
 }
+=======
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comfortaa', cursive;
+        }
+        
+        .nav-color {
+            background-color: #63615B;
+            height: 10vh;
+        }
+        
+        .container {
+            margin: 0 auto;
+            width: 100vw !important;
+            height: 80vh;
+            margin: 0;
+            max-width: 1800px;
+        }
+        
+        .header-body {
+            width: 100vw;
+            height: 10vh;
+        }
+        
+        .footer-body {
+            width: 100vw;
+            height: 10vh;
+            background-color: #63615B;
+        }
+        
+        .section-welcome {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            background-image: url(./img/bground.jpg);
+            background-position: center bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 80vh;
+        }
+        
+        .welc-text {
+            display: flex;
+            margin: 0 auto;
+            padding: 1%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 50%;
+            background-color: #26A69A;
+            opacity: 0.9;
+            color: white;
+            font-size: large;
+            text-align: justify;
+        }
+        
+        .welc-text p {
+            margin: 1%;
+            font-weight: 700;
+        }
+        
+        #btn-login,
+        #btn-register {
+            font-family: 'Comfortaa', cursive;
+            text-transform: inherit;
+            font-size: medium;
+            font-weight: 600;
+        }
+        
+        .welc-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70%;
+        }
+        
+        .modal {
+            background-color: whitesmoke;
+            color: black;
+        }
+        
+        .modal-header {
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #A9F5BC;
+            width: 100%;
+            height: 11vh;
+            color: #63615B;
+            margin: 0 auto;
+            text-align: center;
+            font-size: large;
+            margin-top: 0%;
+        }
+        
+        #style-modal {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .btn-sub-log,
+        .btn-sub-reg {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+        
+        #login-submit,
+        #register-submit {
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color: #A9F5BC;
+            border-color: #A9F5BC;
+            border-radius: 0.5rem;
+            height: 6vh;
+            font-size: large;
+            color: #63615B;
+        }
+        
+        #mod-footer-color {
+            background-color: #D0E6CD;
+        }
+        
+        .placeholder::placeholder {
+            color: #63615B;
+        }
+        
+        .box-btn-login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80%;
+        }
+        
+        .btn-row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 30%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn-row span {
+            margin-right: 2%;
+        }
+        
+        .btn-row a {
+            text-decoration: none;
+            color: black;
+        }
+>>>>>>> 929e78891306ffe7cc0c92abe692b94b10f93b73

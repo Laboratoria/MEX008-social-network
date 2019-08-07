@@ -5,10 +5,10 @@
 // myFunction();
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     let elems = document.querySelectorAll('.modal');
     let instances = M.Modal.init(elems);
-  });
+});
 
 
 const firebaseConfig = {
@@ -24,3 +24,31 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+db.collection("user").add({
+        usuario: "Viviana",
+        mail: "vivianaberron@gmail.com",
+        password: "perrito"
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+
+
+// let provider = new firebase.auth.GoogleAuthProvider();
+// let provider = new firebase.auth.FacebookAuthProvider();
+// auth.currentUser.linkWithRedirect(provider);
+// firebase.auth().getRedirectResult().then(function(result) {
+//     if (result.credential) {
+//         // Accounts successfully linked.
+//         let credential = result.credential;
+//         let user = result.user;
+
+//         // ...
+//     }
+// }).catch(function(error) {
+//     // Handle Errors here.
+//     // ...
+// });
