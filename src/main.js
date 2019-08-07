@@ -3,14 +3,6 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    let elems = document.querySelectorAll('.modal');
-    let instances = M.Modal.init(elems);
-});
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
@@ -23,6 +15,15 @@ const firebaseConfig = {
 // Initialize Firebase
 
 firebase.initializeApp(firebaseConfig);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let elems = document.querySelectorAll('.modal');
+    let instances = M.Modal.init(elems);
+});
+
+
+
 
 db.collection("user").add({
         usuario: "Viviana",
