@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,64 +8,70 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Sacbé</title>
   <link rel="icon" type="image/img" href="img/logo.png">
 </head>
 
 <body>
-  <main>
-
-    <section id="intro">
-      <figure class="logo">
+  <section id="intro">
+    <div class="center-align">
+      <figure class="logo-intro">
         <img src="img/logo-blanco.png" alt="logo">
       </figure>
-    </section>
-    <header></header>
-        <!--Sección de Registro/Inicio de sesión-->
+    </div>
+  </section>
+  <header></header>
+
+  <main class="container">
+    <!--Sección de Registro/Inicio de sesión-->
     <section id="welcome">
-      <div>
-        <h2>Sacbé</h2>
+      <div class="center-align">
+        <h1>Sacbé</h1>
         <figure class="logo">
           <img src="img/logo.png" alt="logo">
         </figure>
-        <h1>La mejor ruta para llegar a tu destino</h1>
-        <!-- Firebase UI--> 
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
+        <div id="login">
+          <h5>La mejor ruta para llegar a tu destino</h5>
+
+          <!-- Firebase UI-->
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
+        </div>
       </div>
     </section>
 
     <!--MODALES-->
     <section id="timeline">
-      </section>
-    
-        <section id="create-edit">
+    </section>
+
+    <section id="create-edit">
       <figure>
         <img src="" alt="">
       </figure>
       <input type="text" placeholder="¿Quieres publicar algo?">
     </section>
-    
+
     <section id="confirmation-delete">
       <div class="delete">
 
       </div>
     </section>
-    
+
     <section id="directory">
 
     </section>
   </main>
-<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script src="credentials.js"></script>
+  <script src="credentials.js"></script>
 
   <script type="module" src="main.js"></script>
 </body>
+
 </html>

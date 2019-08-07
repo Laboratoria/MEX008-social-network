@@ -1,23 +1,112 @@
-header{
-    height: 5vh;
-    background-color: #73ECEF;
+/* BOX-SIZING */
+/*valign-wrapper*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
 }
 
-main section{
-    background-color: antiquewhite;
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #343a40;
+}
+
+.container {
+    width: 91%;
+}
+
+/*
+.row{
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .row:before, .row:after{
+    content:"";
+    display:table;
+  }
+
+  .row:after{
+    clear:both;
+  }*/
+
+/* GLOBALES */
+body {
     width: 100vw;
+    /* overflow-x:hidden;*/
+    background-color: #FFF;
+}
+
+header {
+    height: 5vh;
+    background-color: #73ECEF;
+    position: sticky;
+    /*    top: 0;*/
+    padding-bottom: 3vh;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #73ECEF;
+    margin-top: 4.2rem;
+}
+
+h5 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin: auto 7%;
+}
+
+/* SECCIONES */
+
+main section {
     height: 95vh;
 }
 
-#intro{
+#intro {
     height: 100vh;
-    background-image: url("img/fondo-desktop.png");
+    background-image: url("img/fondo-mobile.png");
     background-size: cover;
-    display:flex; 
 }
 
-.logo img{
+#login {
+    margin-top: 5rem;
+}
+
+#firebaseui-auth-container {
+    margin-top: 2.8rem;
+}
+
+/* BOTONES */
+.firebaseui-idp-button {
+    border-radius: 1rem;
+}
+
+/* IMÁGENES */
+
+figure {
+    margin: 0;
+}
+
+.logo-intro img {
+    margin-top: 37vh;
+    width: 9.8rem;
+}
+
+.logo img {
     width: 8rem;
 }
 
 
+
+
+
+
+@media only screen and (min-width: 760px) {
+    #intro {
+        background-image: url("img/fondo-desktop.png");
+    }
+}
