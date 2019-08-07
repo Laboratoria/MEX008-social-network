@@ -12,7 +12,34 @@
   
 </head>
 <body>
+
+  <!-- INICIO DE SESION POR FACEBOOK -->
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '841700652892753', //ID proporcionado por facebook developers
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v4.0'
+          });
+            
+          FB.AppEvents.logPageView();   
+            
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+      
+  
+
   <header class="position-static">
+
     <nav>
       <figure>
         <img src="img/logo.svg" alt="logo">
@@ -73,8 +100,8 @@
             <div class="social-media">
               <p>O bien, ingresa con:</p>
               <div class="google-facebook">
-                <figure><img id="google" src="img/facebook.svg" alt="facebook"></figure>
-                <figure><img id="facebook" src="img/gmail2.svg" alt="gmail"></figure> 
+                <figure><img id="facebook" src="img/facebook.svg" alt="facebook"></figure>
+                <figure><img id="google" src="img/gmail2.svg" alt="gmail"></figure> 
               </div>
             </div>
           </div>
