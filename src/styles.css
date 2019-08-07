@@ -94,14 +94,45 @@ background-attachment: fixed;
 box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
 
+<<<<<<< HEAD
 /*ASIDE*/
 .hide{
   display: none;
 }
+=======
+.button{
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.google-facebook {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+
+>>>>>>> f49536cc7b1da0b686aa2b49376903a5a9f68f7e
 
 /*RESPONSIVE*/
 
 @media only screen and (min-width: 576px) {
+
+  .col-sm-10 {
+    max-width: 100%;
+    margin-right: none;
+  }
 
   #register {
     width: 50%;
