@@ -1,8 +1,23 @@
 /*Small devices-smartphone*/
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    .hide-desktop-section {
+        display: none;
+    }
+    .hide-mobile-section {
+        display: block;
+        
+    }
+}
 /*Medium devices-tablet*/
 @media (min-width: 768px) {}
 /*Large devices-desktop*/
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .hide-desktop-section {
+        display: block;
+    }
+    .hide-mobile-section {
+        display: none;
+    }
+}
 /*Extra large -proyector o desktop más grande*/
 @media (min-width: 1200px){} 
