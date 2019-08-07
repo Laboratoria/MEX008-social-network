@@ -55,6 +55,7 @@
             opacity: 0.9;
             color: white;
             font-size: large;
+            text-align: justify;
         }
         
         .welc-text p {
@@ -62,7 +63,8 @@
             font-weight: 700;
         }
         
-        #btn-login {
+        #btn-login,
+        #btn-register {
             font-family: 'Comfortaa', cursive;
             text-transform: inherit;
             font-size: medium;
@@ -106,8 +108,33 @@
             padding: 20px;
         }
         
+        .btn-sub-log,
+        .btn-sub-reg {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+        
+        #login-submit,
+        #register-submit {
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color: #A9F5BC;
+            border-color: #A9F5BC;
+            border-radius: 0.5rem;
+            height: 6vh;
+            font-size: large;
+            color: #63615B;
+        }
+        
         #mod-footer-color {
             background-color: #D0E6CD;
+        }
+        
+        .placeholder::placeholder {
+            color: #63615B;
         }
         
         .box-btn-login {
@@ -135,19 +162,4 @@
         .btn-row a {
             text-decoration: none;
             color: black;
-        }
-        
-        .btn-sub-reg {
-            width: 80%;
-        }
-        
-        #register-submit {
-            margin-left: 5%;
-            margin-right: 5%;
-            background-color: #A9F5BC;
-            border-color: #A9F5BC;
-            border-radius: 0.5rem;
-            height: 6vh;
-            font-size: large;
-            color: #63615B;
         }

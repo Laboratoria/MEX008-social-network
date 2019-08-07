@@ -5,7 +5,7 @@
 // myFunction();
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     let elems = document.querySelectorAll('.modal');
     let instances = M.Modal.init(elems);
 });

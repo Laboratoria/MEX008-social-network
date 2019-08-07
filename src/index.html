@@ -46,16 +46,45 @@
                             <p>Inicia sesión en PetFriendly</p>
                         </box>
                     </header>
-                    <box class="box-inputs-register">
+                    <box>
                         <!--Caja que contiene los inputs-->
                     </box>
-                    <input id="name-register-m" type="text" placeholder="Nombre">
-                    <input id="mail-register-m" type="text" placeholder="Correo Electrónico">
-                    <input id="pwd-register-m" type="text" placeholder="Contraseña">
-                    <input id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
+                    <input class="placeholder" id="mail-login-m" type="text" placeholder="Correo Electrónico">
+                    <input class="placeholder" id="pwd-login-m" type="text" placeholder="Contraseña">
+                    <box class="btn-sub-log">
+                        <!--Caja del botón de inicio-->
+                        <span class="icon-paw"></span><button id="login-submit">¡Comencemos!</button><span class="icon-paw"></span>
+                    </box>
+                </div>
+                <div class="modal-footer" id="mod-footer-color">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+            </div>
+            </div>
+
+            <!--Caja que contiene el botón de "Registro"-->
+            <box>
+                <a id="btn-register" class="waves-effect waves-light btn modal-trigger" href="#modal2">Crea una cuenta</a>
+            </box>
+            <!--Inicia la estructura del modal de registro-->
+            <div id="modal2" class="modal">
+                <div id="style-modal" class="modal-content">
+                    <header class="modal-header">
+                        <!--Header del modal-registro-->
+                        <box>
+                            <p>Regístrate en PetFriendly</p>
+                        </box>
+                    </header>
+                    <box>
+                        <!--Caja que contiene los inputs-registro-->
+                    </box>
+                    <input class="placeholder" id="name-register-m" type="text" placeholder="Nombre">
+                    <input class="placeholder" id="mail-register-m" type="text" placeholder="Correo Electrónico">
+                    <input class="placeholder" id="pwd-register-m" type="text" placeholder="Contraseña">
+                    <input class="placeholder" id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
                     <box class="btn-sub-reg">
                         <!--Caja del botón de inicio-->
-                        <span class="icon-paw"></span><button id="register-submit">¡Comencemos!</button><span class="icon-paw"></span>
+                        <span class="icon-paw"></span><button id="register-submit">¡Hecho!</button><span class="icon-paw"></span>
                     </box>
                 </div>
                 <div class="modal-footer" id="mod-footer-color">
