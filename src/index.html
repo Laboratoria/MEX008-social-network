@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="grid.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./grid.css">
   <title>Document</title>
 </head>
 
@@ -30,7 +32,10 @@
           <a href=""></a>
         </figure>
         <h1>La mejor ruta para llegar a tu destino</h1>
+        <!-- Your app may use that space for branding, controls and other customizations.--> 
+        <h1>Welcome to My Awesome App</h1>
         <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
       </div>
     </section>
 
@@ -41,7 +46,14 @@
       <div id="form-login" class="row col-12">
           <h2> Sacbé </h2>
           <h3>Inicia sesión</h3>
-        <form>
+          
+          <form>
+
+            <div class="center">
+                <a class="waves-effect waves-light btn"><i class="material-icons left">edit</i>button</a>
+
+            </div>
+            
           <label><input name="email" type="email" placeholder="E-mail" required></label>
           <label><input name="password" type="password" placeholder="Contraseña" required>
           </label>
@@ -72,7 +84,7 @@
       </div>
     </section>
     <!--MODALES-->
-    <section class="create publication">
+    <section id="muro" class="create publication">
       <figure>
         <img src="" alt="">
       </figure>
@@ -90,10 +102,11 @@
 
     </section>
   </main>
-
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script src="credenciales.js"></script>
 
