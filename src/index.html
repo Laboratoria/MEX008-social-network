@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--Añadiendo Bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!--Enlace a hojas de CSS-->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
   <title>HOPAKI</title>
 </head>
+
 <body>
   <!--Pantalla de Bienvenida-->
   <!--Vista mobile-->
-  <section class="hide-mobile-section">
-    <div class="card" style="width: 20rem; ">
-      <img src="img/hopaki-triada.png" class="card-img-top img-fluid" alt="logo-hopaki-responsive" width="10%" height="auto">
-      <div class="card-body">
-        <h5 class="title1">Academia HOPAKI</h5>
-        <h5>(Home, Parents, Kids)</h5>
-        <p class="card-text">Es una red social dedicada a aquellos padres que por diversos motivos han decidido educar a sus hijos en casa, enfocada a compartir material y  también a la comunicación.</p>
-        <button class="btn btn-secondary" id="start-button">Comenzar</button>
-      </div>
+  <div class="container">
+      <section class="hide-mobile-section">
+        <div class="card" style="width: 20rem;">
+          <img src="img/hopaki-triada.png" class="card-img-top" alt="logo-hopaki-responsive">
+          <div class="card-body">
+            <h5 class="card-title">Academia HOPAKI</h5>
+            <h5>(Home, Parents, Kids)</h5>
+            <p class="card-text">Es una red social dedicada a aquellos padres que por diversos motivos han decidido
+              educar
+              a sus hijos en casa, enfocada a compartir material y también a la comunicación.</p>
+            <a href="/src/vistados.html" class="btn btn-secondary" id="start-button">Comenzar</a>
+          </div>
+      </section>
     </div>
-  </section>
+  </div>
 
   <!--Vista desktop-->
-  <section class="hide-desktop-section">
+  <!-- <section class="hide-desktop-section">
     <div class="card" style="width: 30rem; ">
       <img src="img/hopaki-triada.png" class="card-img-top" alt="logo-hopaki-responsive">
       <div class="card-body">
         <h5 class="card-title">¡Bienvenidxs!</h5>
-        <h5 class="title1">Academia HOPAKI</h5>
+        <h5 class="title1">Academia HOPAKI</h5> -->
         <!--<h5>(Home, Parents, Kids)</h5>-->
-        <p class="card-text">Hopaki es una red social para padres que por diversos motivos decidieron educar a sus hijos en casa, enfocada a compartir materiales y también a la comunicación.</p> <br>
+        <!-- <p class="card-text">Hopaki es una red social para padres que por diversos motivos decidieron educar a sus
+          hijos en casa, enfocada a compartir materiales y también a la comunicación.</p> <br>
         <button class="btn-primary" id="iniciar-sesion">Iniciar Sesión</button>
         <a href="#" class="btn btn-light">Aviso de Privacidad</a>
         <button class="btn-primary" id="registrate">Regístrate</button>
       </div>
     </div>
   </section>
+  </div> -->
 
   <script type="module" src="main.js"></script>
 
   <!--Añadiendo enlaces a Bootstrap-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
   <!-- Añadiendo enlaces a sweetalert  -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>
-</html>
 
+</html>
