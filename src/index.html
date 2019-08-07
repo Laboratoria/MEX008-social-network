@@ -46,15 +46,10 @@
                             <p>Inicia sesión en PetFriendly</p>
                         </box>
                     </header>
-                    <box>
-                        <!--Caja que contiene los inputs-->
-                    </box>
-                    <input class="placeholder" id="mail-login-m" type="text" placeholder="Correo Electrónico">
-                    <input class="placeholder" id="pwd-login-m" type="text" placeholder="Contraseña">
-                    <box class="btn-sub-log">
-                        <!--Caja del botón de inicio-->
-                        <span class="icon-paw"></span><button id="login-submit">¡Comencemos!</button><span class="icon-paw"></span>
-                    </box>
+                    <h1>Welcome to My Awesome App</h1>
+                    <div class="login-container" id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
+
                 </div>
                 <div class="modal-footer" id="mod-footer-color">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -64,7 +59,8 @@
 
             <!--Caja que contiene el botón de "Registro"-->
             <box>
-                <a id="btn-register" class="waves-effect waves-light btn modal-trigger" href="#modal2">Crea una cuenta</a>
+                <a id="btn-register" class="waves-effect waves-light btn modal-trigger" href="#modal2">Crea una
+                    cuenta</a>
             </box>
             <!--Inicia la estructura del modal de registro-->
             <div id="modal2" class="modal">
@@ -84,7 +80,8 @@
                     <input class="placeholder" id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
                     <box class="btn-sub-reg">
                         <!--Caja del botón de inicio-->
-                        <span class="icon-paw"></span><button id="register-submit">¡Hecho!</button><span class="icon-paw"></span>
+                        <span class="icon-paw"></span><button id="register-submit">¡Hecho!</button><span
+                            class="icon-paw"></span>
                     </box>
                 </div>
                 <div class="modal-footer" id="mod-footer-color">
@@ -104,10 +101,10 @@
         <p>soy el footer</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
    https://firebase.google.com/docs/web/setup#reserved-urls -->
