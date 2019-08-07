@@ -34,7 +34,8 @@ section {
     font-size: 15px;
     width: 200px;
     height: 40px;
-    background-color: #3b5998;
+    border-color: #E24E42;
+    background-color: white;
 }
 
 .img-social {
@@ -42,3 +43,7 @@ section {
     height: 25px;
 }
 
+h5 {
+font-family: 'Gidole';
+font-size: 30px;
+}

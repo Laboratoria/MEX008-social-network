@@ -11,17 +11,19 @@ document.getElementById('iniciar-sesion').addEventListener('click', () => {
     html:
       '<button class = btn-social face><img  class= img-social src= "img/googleicon.png"> Ingresa con Google</button>' + '<br>' +
       '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' +
-      '<input id="email2" type="email" placeholder="Email">' + '<br>' +
+      '<input id="email2" type="email" placeholder="Email">'+'<br>' +
       '<input type="password2" placeholder="Password">' + '<br>'+ '¿No tienes una cuenta?' + '<br>' + '<button onclick="ingreso()" class="btn-warning">Registrate</button>',
+
+      '<button class= btn-social googl><img class= img-social src= "img/facebookicon.png"> Ingresa con Facebook</button>'+ '<br>' + '<br>' +
+      '<input type="email" placeholder="Email">' + '<br>' +
+      '<input type="password" placeholder="Password">' + '<br>'+ '¿No tienes una cuenta?' + '<br>' + '<button class="btn-warning">Registrate</button>',
+      '<input type="password" placeholder="Password">'+'<br>'+ '¿Olvidaste tu contraseña?' + '<br>' + '<button class="btn-warning">Registrate</button>',
     showCloseButton: true,
-    showCancelButton: true,
     focusConfirm: false,
     confirmButtonText:
       '<i class="fa fa-thumbs-up"></i> Acceder!',
     confirmButtonAriaLabel: 'Registrate!',
-    // cancelButtonText:
-    //   '<i class="fa fa-thumbs-down"></i>',
-    // cancelButtonAriaLabel: 'Cancelar',
+    
   })
 });
 
