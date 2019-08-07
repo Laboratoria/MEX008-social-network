@@ -80,8 +80,17 @@ background-attachment: fixed;
   background-color: #A9BF04;
   background-attachment: fixed;
   padding: 2rem 1rem;
-  width: 100%;
+  width: 100%;  
 }
+
+#login form input {
+  width: 30%;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  border: none;
+}
+
+
 
 #register {
   width: 70%;
@@ -95,11 +104,18 @@ box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1bf074d201ac56c34d0446315556cc00522df643
 /*ASIDE*/
 .hide{
   display: none;
 }
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1bf074d201ac56c34d0446315556cc00522df643
 .button{
   display: flex;
   justify-content: center;
@@ -123,11 +139,26 @@ box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 
 
 
+<<<<<<< HEAD
 >>>>>>> f49536cc7b1da0b686aa2b49376903a5a9f68f7e
+=======
+>>>>>>> 1bf074d201ac56c34d0446315556cc00522df643
 
 /*RESPONSIVE*/
 
 @media only screen and (min-width: 576px) {
+
+  #login form {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  #login form input {
+
+
+    margin-right: 1rem;
+  }
 
   .col-sm-10 {
     max-width: 100%;
