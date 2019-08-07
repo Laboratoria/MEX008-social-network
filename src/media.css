@@ -1,0 +1,8 @@
+/*Small devices-smartphone*/
+@media (min-width: 576px) {}
+/*Medium devices-tablet*/
+@media (min-width: 768px) {}
+/*Large devices-desktop*/
+@media (min-width: 992px) {}
+/*Extra large -proyector o desktop más grande*/
+@media (min-width: 1200px){} 
