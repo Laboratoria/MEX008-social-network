@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,18 +46,10 @@
                             <p>Inicia sesión en PetFriendly</p>
                         </box>
                     </header>
-                    <form id="auth-login">
-                        <!--Caja que contiene los inputs-->
-                        <box> 
-                        <input class="placeholder" id="mail-login-m" type="text" placeholder="Correo Electrónico">
-                        <input class="placeholder" id="pwd-login-m" type="text" placeholder="Contraseña">
-                        </box>
+                    <h1>Welcome to My Awesome App</h1>
+                    <div class="login-container" id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
 
-                        <!--Caja del botón de inicio-->
-                        <box class="btn-sub-log">
-                        <span class="icon-paw"></span><button id="login-submit">¡Comencemos!</button><span class="icon-paw"></span>
-                        </box><!--Caja del botón de inicio-->
-                 </form>
                 </div>
                 <div class="modal-footer" id="mod-footer-color">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -66,7 +59,8 @@
 
             <!--Caja que contiene el botón de "Registro"-->
             <box>
-                <a id="btn-register" class="waves-effect waves-light btn modal-trigger" href="#modal2">Crea una cuenta</a>
+                <a id="btn-register" class="waves-effect waves-light btn modal-trigger" href="#modal2">Crea una
+                    cuenta</a>
             </box>
             <!--Inicia la estructura del modal de registro-->
             <div id="modal2" class="modal">
@@ -86,7 +80,8 @@
                     <input class="placeholder" id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
                     <box class="btn-sub-reg">
                         <!--Caja del botón de inicio-->
-                        <span class="icon-paw"></span><button id="register-submit">¡Hecho!</button><span class="icon-paw"></span>
+                        <span class="icon-paw"></span><button id="register-submit">¡Hecho!</button><span
+                            class="icon-paw"></span>
                     </box>
                 </div>
                 <div class="modal-footer" id="mod-footer-color">
@@ -117,4 +112,5 @@
 
     <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
