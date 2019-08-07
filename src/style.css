@@ -26,13 +26,30 @@ body {
 
 #sidebar {
     height: 4rem;
-    background-color: #73ECEF;
-    /* position: sticky; */
     /*    top: 0;*/
     padding-bottom: 3vh;
     margin: 0 auto;
 }
+.sidenav{
+    width: 75vw;
+}
+.name, .email{
+    font-family: 'Montserrat', sans-serif;
+}
 
+.sidenav .user-view .name {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.sidenav .user-view .email {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.background{
+    background-color: #73ECEF;
+}
 h1 {
     color: #73ECEF;
     margin: 1.8rem 0 1.68rem 0;
@@ -72,9 +89,9 @@ main section {
 .firebaseui-idp-button {
     border-radius: 1rem;
 }
-/* nav{
+nav{
     background-color: #73eeaf;
-} */
+}
 
 /* IMÁGENES */
 

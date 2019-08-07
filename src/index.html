@@ -15,16 +15,45 @@
 </head>
 
 <body>
-  <section id="intro" >
+  <section id="intro">
     <div class="center-align">
       <figure class="logo-intro">
         <img src="img/logo-blanco.png" alt="logo">
       </figure>
     </div>
   </section>
+  <div id="sidebar">
+    <nav> <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </nav>
+    <!-- <a href="#" class="sidenav-trigger" data-target="menu-side"></a> -->
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <!-- <img src="img/fondo-desktop.png"> -->
+          </div>
+          <a href="#user"><img class="circle" src="img/readme/userPersona.png"></a>
+          <a href="#name"><span class="white-text name">Ramona</span></a>
+          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div>
+      </li>
+      <li><a href="#!"><i class="material-icons">account_circle</i>Editar Perfil</a></li>
+      <li><a href="#!"><i class="material-icons">settings</i>Configuración</a></li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li><a class="subheader">Directorio</a></li>
+      <li><a class="waves-effect" href="#!"><i class="material-icons">build</i>Talleres</a></li>
+      <li><a class="waves-effect" href="#!"><i class="material-icons">store</i>Tiendas</a></li>
+      <li><a href="#!"><i class="material-icons">report_problem</i>S.O.S.</a></li>
+      <li>
+          <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="#!">Cerrar Sesión</a></li>
 
+    </ul>
+  </div>
   <main class="container">
-
     <!--Sección de Registro/Inicio de sesión-->
     <section id="welcome">
       <div class="center-align">
@@ -44,30 +73,7 @@
 
     <!--MODALES-->
     <section id="timeline">
-        <div id="sidebar">
-            <nav> <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            </nav>
-            <!-- <a href="#" class="sidenav-trigger" data-target="menu-side"></a> -->
-            <ul id="slide-out" class="sidenav">
-                <li>
-                  <div class="user-view">
-                    <div class="background">
-                      <img src="img/fondo-desktop.png">
-                    </div>
-                    <a href="#user"><img class="circle" src="img/readme/userPersona.png"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                  </div>
-                </li>
-                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                <li><a href="#!">Second Link</a></li>
-                <li>
-                  <div class="divider"></div>
-                </li>
-                <li><a class="subheader">Subheader</a></li>
-                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-              </ul>
-          </div>
+
     </section>
 
     <section id="create-edit">
@@ -89,10 +95,10 @@
   </main>
   <script>
     /*INICIALIZACION SIDEBAR*/
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-  });
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
 
   // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
   // var collapsibleElem = document.querySelector('.collapsible');
