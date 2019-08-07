@@ -81,6 +81,7 @@ background-attachment: fixed;
   background-attachment: fixed;
   padding: 2rem 1rem;
   width: 100%;  
+
 }
 
 #login form input {
@@ -101,6 +102,11 @@ background-attachment: fixed;
   -webkit-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 -moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+}
+
+/*ASIDE*/
+.hide{
+  display: none;
 }
 
 .button{
