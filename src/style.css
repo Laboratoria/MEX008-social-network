@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+} 
+#navbar {
+    height: 12vh;
+    width: 100vw;
+    background: #f2d0e0;
+    font-size: 1.5em;
+    padding: 1vh 2.5%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#navbar #logo {
+    width: 10vh;
+}
+
+.btn-start {
+    border: 1px solid white;
+    text-decoration: none;
+    /* padding: .25rem .5rem; */
+    padding: 0.5%;
+    
+}
+#main-hero{
+    height: 88vh;
+    width: 100vw;
+    background: url(imgs/wedding.png);
+    background-size: cover;
+}

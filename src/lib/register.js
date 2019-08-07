@@ -2,7 +2,7 @@ let Register = {
     render : async () => {
         let view = /*html*/ `
             <h1>REGISTRO</h1>
-            <form action="">
+            <form id = "form-register" name = "formRegister" action="">
                 <input 
                     type="email"
                     id = "email"
@@ -18,9 +18,10 @@ let Register = {
                     required
                 />
                 <input 
-                    type="submit" value="Crear cuenta"
+                    type="submit" 
+                    value="Crear cuenta"
                 />
-             </form>
+            </form>
         `
         return view
     },
