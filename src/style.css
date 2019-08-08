@@ -28,8 +28,7 @@ h3,
 }
 
 
-.pantalla-registro,
-.pantalla-muro{
+.pantalla-registro{
     display: none;
 }
 
@@ -55,7 +54,7 @@ h3,
     margin-left: 2rem;
    }
 
-#prueba{
+.prueba{
     font-size: 11px;
 }
 
@@ -139,5 +138,87 @@ h3,
   border: 2px solid #e9a1ff;
  }
 
+ .pantalla-muro .search, .filter{
+     width: 25%;
+ }
 
+ .pantalla-muro .stars {
+    width: 30%;
+    margin: 0 auto;
+    height: 5%;
+    
+   }
+   .pantalla-muro .stars p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   .pantalla-muro .stars label {
+    font-size: 0.8rem;
+    width: 2%;
+    margin: 5px;
+    display: inline-block;
+   }
+   input[type="radio"] {
+    display: none;
+   }
+   label {
+    color: grey;
+   }
+   .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+   }
+   label:hover,
+   label:hover ~ label {
+    color: orange;
+   }
+   input[type="radio"]:checked ~ label {
+    color: orange;
+   }
+
+   #publication{
+       height: 3rem;
+       background-color: rgba(139, 139, 139, .3);
+   }
+
+   #publication::-webkit-input-placeholder{
+        font-size: 0.7rem;
+        color: black;
+   }
+
+   
+/* FOOTER */
+
+#footer .navegacion li a{
+    background-color: #00D3B0;
+    color: black;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: block;
+    font-size: 3.2rem;
+    position: relative;
+    font-weight: bolder;
+   }
+   #footer .navegacion{
+       margin: 0;
+       width: 100%;
+   }
+    /* Agregar la propiedad de flotar a las secciones */
+   #footer .navegacion li {
+    float: left;
+    width: 25%;
+    list-style: none;
+
+   }
+    /* Agregar selector al menú de secciones */
+   #footer .navegacion li a:hover {
+    background-color: white;
+   }
+   
+   #footer{
+    position: relative;
+    display: flex;
+    margin: 0;
+   }
 

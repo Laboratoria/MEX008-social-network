@@ -1,3 +1,60 @@
+"use strict";
+
+import login from './views/login.js'
+import register from './views/register.js'
+import Intereses from './views/intereses.js'
+import Muro from './views/muro.js'
+import error404 from './views/error.js'
+import navbar from './views/navbar.js'
+import header from './views/header.js'
+
+import utils from './views/utils.js'
+
+
+
+
+const routes = {
+    '/muro' : Muro,
+    '/': login,
+    '/login':login,
+    '/register' : register,
+    '/intereses': Intereses,
+};
+
+const router = async () => { // function always returns a promise
+
+    // load view element
+    //const header  = document.getElementById('header-container'); 
+    const content = null || document.getElementById('container'); // If the first value is false, it checks the second value 
+    
+    // Render the header of the page
+    //header.innerHTML = await Navbar.render(); // wait till the promise resolves
+    //await Navbar.after_render();
+    
+    // Get the page from the hash of supported routes.
+    let request = utils.parseRequestURL();
+    // Parse the URL and if it has an id part, change it with the string ":id"
+    // condition ? exprIfTrue : exprIfFalse 
+    let parsedURL = (request.resource ? '/' + request.resource : '/') 
+        + (request.id ? '/:id' : '') 
+        + (request.verb ? '/' + request.verb : '');
+        //console.log(parsedURL);
+    // Get the page from our hash of supported routes.
+    // If the parsed URL is not in our list of supported routes, select the 404 page instead
+    let page = routes[parsedURL] ? routes[parsedURL] : error404; 
+    content.innerHTML = await page.render();
+    await page.after_render();    
+}
+
+// Listen on hash change:
+window.addEventListener('hashchange', router); // The event occurs when there has been changes to the anchor part of a URL
+// Listen on page load:
+window.addEventListener('load', router); // The event occurs when an object has loaded
+
+
+
+
+
 // Este es el punto de entrada de tu aplicacion
 
 //import { myFunction } from './lib/index.js';
@@ -16,7 +73,7 @@ let pasarRegistro = () => {
     pantallaInicioSesion.style.display = "none";
 }
 
-document.getElementById("pasar-registro").addEventListener("click",pasarRegistro);
+//document.getElementById("pasar-registro").addEventListener("click",pasarRegistro);
 
 const registrar = () => {
     let mail = document.getElementById("email-registro").value;
@@ -45,7 +102,7 @@ const registrar = () => {
         alert("Debes completar los campos");
     }
 }
-document.getElementById("btn-registro").addEventListener("click",registrar);
+//document.getElementById("btn-registro").addEventListener("click",registrar);
 
 const ingresar = () =>{
     let mail2 = document.getElementById("email-login").value;
@@ -62,7 +119,7 @@ const ingresar = () =>{
         // ...
       });
 }
-document.getElementById("btn-login").addEventListener("click",ingresar);
+//document.getElementById("btn-login").addEventListener("click",ingresar);
 
 const observadorDeSesion = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -105,7 +162,7 @@ const cerrarSesion = () =>{
         console.log(errorMessage);
     })
 }
-buttonCerrarSesion.addEventListener("click",cerrarSesion);
+//buttonCerrarSesion.addEventListener("click",cerrarSesion);
 
 const muro = () =>{
     pantallaInicioSesion.style.display = "none";
@@ -140,6 +197,8 @@ const loginGoogle = () => {
   })
 }
 btnGoogle.addEventListener("click", loginGoogle);
+
+
 
 
 
