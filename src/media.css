@@ -1,5 +1,5 @@
 /*Small devices-smartphone*/
-@media (min-width: 576px) {
+@media (min-width: 320px) {
     .hide-desktop-section {
         display: none;
     }
