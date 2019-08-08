@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
   <title>HuertApp</title>
-  
-  
 </head>
 <body>
 
@@ -20,7 +18,7 @@
             appId      : '841700652892753', //ID proporcionado por facebook developers
             cookie     : true,
             xfbml      : true,
-            version    : 'v4.0'
+            version    : 'v4.0' //VERSION EN FACEBOOK DEVELOPERS
           });
             
           FB.AppEvents.logPageView();   
@@ -36,16 +34,15 @@
          }(document, 'script', 'facebook-jssdk'));
       </script>
       
-  
-
+  <!--  HEADER -->
   <header class="position-static">
-
     <nav>
       <figure>
         <img src="img/logo.svg" alt="logo">
       </figure>
     </nav>
   </header>
+  <!--  MAIN -->
   <main id="content" class="content">
     <section id="register-page">
       <div id="img-register-page"></div>
@@ -115,7 +112,7 @@
     <section id="aboutus-page"></section>
     <section id="store-page"></section>-->
   </main>
- 
+  <!--   ASIDE -->
   <aside id="aside" class="hide">
     <ul>
       <li><a href=""><img src="../src/img/home.svg" alt="Inicio">Inicio</a></li>
@@ -127,16 +124,16 @@
 
   </aside>
 
-
+     <!-- SCRIPTS DE FIREBASE -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#config-web-app -->
+    https://firebase.google.com/docs/web/setup#config-web-app -->
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
-
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
-
+    
+    <!-- FIREBASE CONFIGURATION -->
     <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
