@@ -1,22 +1,63 @@
-// Este es el punto de entrada de tu aplicacion
+"use strict";
 
-//import { myFunction } from './lib/index.js';
+import login from './views/login.js'
+import register from './views/register.js'
+import Intereses from './views/intereses.js'
+import Muro from './views/muro.js'
+import error404 from './views/error.js'
+import navbar from './views/navbar.js'
+import header from './views/header.js'
 
-//myFunction();
+import utils from './views/utils.js'
 
-let pantallaInicioSesion = document.getElementById("pantalla-login");
-let pantallaRegistro = document.getElementById("pantalla-registro");
-let pantallaMuro = document.getElementById("pantalla-muro");
-let pantallaIntereses = document.getElementById("pantalla-intereses");
-const buttonCerrarSesion = document.getElementById("cerrar-sesion");
-const buttonCerrarSesionDos = document.getElementById("cerrar-sesion-dos");
 
-let pasarRegistro = () => {
-    pantallaRegistro.style.display = "block";
-    pantallaInicioSesion.style.display = "none";
+
+
+const routes = {
+    '/muro' : Muro,
+    '/': login,
+    '/login':login,
+    '/register' : register,
+    '/intereses': Intereses,
+};
+
+const router = async () => { // function always returns a promise
+
+    // load view element
+    const encabezado  = document.getElementById('header'); 
+    const content = null || document.getElementById('container'); // If the first value is false, it checks the second value 
+    
+    // Render the header of the page
+    encabezado.innerHTML = await header.render(); // wait till the promise resolves
+    //await Navbar.after_render();
+    
+    // Get the page from the hash of supported routes.
+    let request = utils.parseRequestURL();
+    // Parse the URL and if it has an id part, change it with the string ":id"
+    // condition ? exprIfTrue : exprIfFalse 
+    let parsedURL = (request.resource ? '/' + request.resource : '/') 
+        + (request.id ? '/:id' : '') 
+        + (request.verb ? '/' + request.verb : '');
+        //console.log(parsedURL);
+    // Get the page from our hash of supported routes.
+    // If the parsed URL is not in our list of supported routes, select the 404 page instead
+    let page = routes[parsedURL] ? routes[parsedURL] : error404; 
+    content.innerHTML = await page.render();
+    await page.after_render();    
 }
 
-document.getElementById("pasar-registro").addEventListener("click",pasarRegistro);
+// Listen on hash change:
+window.addEventListener('hashchange', router); // The event occurs when there has been changes to the anchor part of a URL
+// Listen on page load:
+window.addEventListener('load', router); // The event occurs when an object has loaded
+
+
+
+
+
+// Este es el punto de entrada de tu aplicacion
+
+
 
 const registrar = () => {
     let mail = document.getElementById("email-registro").value;
@@ -105,7 +146,7 @@ const cerrarSesion = () =>{
         console.log(errorMessage);
     })
 }
-buttonCerrarSesion.addEventListener("click",cerrarSesion);
+//buttonCerrarSesion.addEventListener("click",cerrarSesion);
 
 const muro = () =>{
     pantallaInicioSesion.style.display = "none";
@@ -127,6 +168,19 @@ const verificar = () =>{
     console.log(error);
     });
 }
+
+const btnGoogle = document.getElementById('btnGoogle');
+const loginGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(user){
+      alert("Google SignIn");
+      console.log(user);
+  }).catch(function(error){
+      alert("error");
+      console.log(error);
+  })
+}
+btnGoogle.addEventListener("click", loginGoogle);
 
 
 
