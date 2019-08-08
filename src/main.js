@@ -15,7 +15,7 @@ let facebook=document.getElementById('facebook');
 /***********************Declaracion de funciones****************************/
 
 /*---------Funcion  para registrarse con contraseña y correo---------*/ 
-function handleSignUp() {
+function register() {
   console.log("diste un clic")
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
@@ -53,8 +53,8 @@ function handleSignUp() {
   }
 
 /*----------Iniciar sesion con email y constraseña------------*/
-function toggleSignIn() {
-  alert('fghjkl');
+function login() {
+
     //if (firebase.auth().currentUser) {
       // [START signout]
       //firebase.auth().signOut();
@@ -99,19 +99,20 @@ function toggleSignIn() {
 
 /*---------Funcion para registrarse con google--------*/ 
 
-/*     /* Function called when clicking the Login/Logout button.*/
-    // [START buttoncallback]
-    //function toggleSignIn() {
-      //if (!firebase.auth().currentUser) {
+/* Function called when clicking the Login/Logout button.*/
+    
+    function googleSignIn() {
+      if (!firebase.auth().currentUser) {
         // [START createprovider]
-        //var provider = new firebase.auth.GoogleAuthProvider();
+      var provider = new firebase.auth.GoogleAuthProvider();
+
         // [END createprovider]
         // [START addscopes]
        // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
         // [END addscopes]
         // [START signin]
-        //firebase.auth().signInWithPopup(provider)
-        //.then(function(result) {
+        firebase.auth().signInWithPopup(provider)
+        .then(function(result) {
           // This gives you a Google Access Token. You can use it to access the Google API.
           //var token = result.credential.accessToken;
           // The signed-in user info.
@@ -132,30 +133,32 @@ function toggleSignIn() {
            // alert('You have already signed up with a different auth provider for that email.');
             // If you are using multiple auth providers on your app you should handle linking
             // the user's accounts here.
-         // } else {
-            ///console.error(error);
-         // }
-          // [END_EXCLUDE]
-        ///});
-        // [END signin]
-     /// } else {
-        // [START signout]
-        //firebase.auth().signOut();
-        // [END signout]
-     // }
-      // [START_EXCLUDE]
-      //document.getElementById('quickstart-sign-in').disabled = true;
-      // [END_EXCLUDE]
-   // }
-    // [END buttoncallback] */
+
+          } else {
+            console.error(error);
+         }
+      
+        });
+      } else {
+        
+        firebase.auth().signOut();
+       
+      }
+   
+/*       document.getElementById('quickstart-sign-in').disabled = true; */
+   
+   }
+
 
 
 
 /*---------*Funcion ocultar-------*/
 const hide = id => document.getElementById(id).classList.add("hide");
 
+
 /*-----------Funcion mostrar------*/
 const show = id => document.getElementById(id).classList.remove("hide");
+
 
 // PARA INGRESAR POR FACEBOOK
 
@@ -183,8 +186,8 @@ const facebookSignIn=()=>{
 
 /**********************Declaracion de eventos************************/   
 
-buttonSignIn.addEventListener('click',handleSignUp);
-google.addEventListener('click',toggleSignIn);
-
+buttonRegister.addEventListener('click',register);
+buttonLogin.addEventListener('click',login);
+google.addEventListener('click',googleSignIn);
 facebook.addEventListener('click',facebookSignIn);
 
