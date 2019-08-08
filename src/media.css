@@ -13,6 +13,16 @@
         margin-top: 1em;
         background-color: aliceblue;
     }
+    /* .hidePresentation {
+        display: none;
+    }
+
+    #showPresentation {
+        display: block !important; 
+    } */
+    /* .show {
+        display: block;
+    } */
 }
 /*Medium devices-tablet*/
 @media (min-width: 768px) {}
