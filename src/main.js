@@ -54,6 +54,7 @@ function register() {
 
 /*----------Iniciar sesion con email y constraseña------------*/
 function login() {
+
     //if (firebase.auth().currentUser) {
       // [START signout]
       //firebase.auth().signOut();
@@ -98,39 +99,41 @@ function login() {
 
 /*---------Funcion para registrarse con google--------*/ 
 
-   /* Function called when clicking the Login/Logout button.*/
+/* Function called when clicking the Login/Logout button.*/
     
     function googleSignIn() {
       if (!firebase.auth().currentUser) {
         // [START createprovider]
       var provider = new firebase.auth.GoogleAuthProvider();
+
         // [END createprovider]
         // [START addscopes]
-        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+       // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
         // [END addscopes]
         // [START signin]
         firebase.auth().signInWithPopup(provider)
         .then(function(result) {
           // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
+          //var token = result.credential.accessToken;
           // The signed-in user info.
-          var user = result.user;
+          //var user = result.user;
           // [START_EXCLUDE]
-          document.getElementById('quickstart-oauthtoken').textContent = token;
+          //document.getElementById('quickstart-oauthtoken').textContent = token;
           // [END_EXCLUDE]
-        }).catch(function(error) {
+        //}).catch(function(error) {
           // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
+          //var errorCode = error.code;
+          //var errorMessage = error.message;
           // The email of the user's account used.
-          var email = error.email;
+          //var email = error.email;
           // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
+          //var credential = error.credential;
           // [START_EXCLUDE]
-          if (errorCode === 'auth/account-exists-with-different-credential') {
-            alert('You have already signed up with a different auth provider for that email.');
+          //if (errorCode === 'auth/account-exists-with-different-credential') {
+           // alert('You have already signed up with a different auth provider for that email.');
             // If you are using multiple auth providers on your app you should handle linking
             // the user's accounts here.
+
           } else {
             console.error(error);
          }
@@ -145,15 +148,17 @@ function login() {
 /*       document.getElementById('quickstart-sign-in').disabled = true; */
    
    }
- 
+
 
 
 
 /*---------*Funcion ocultar-------*/
 const hide = id => document.getElementById(id).classList.add("hide");
 
+
 /*-----------Funcion mostrar------*/
 const show = id => document.getElementById(id).classList.remove("hide");
+
 
 // PARA INGRESAR POR FACEBOOK
 
