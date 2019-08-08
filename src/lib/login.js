@@ -1,21 +1,13 @@
-let Register = {
+let Login = {
     render : async () => {
         let view = /*html*/ `
 
-        <div class="container-register">
-        <div class= "form-register"> 
-        <h2>REGISTRO</h2>
+        <div class="container-login">
+        <div class= "form-login"> 
+        <h2>INICIA SESIÓN</h2>
         <div class="register">
            
             <form class="center" action="">
-                <label for="name">Nombre</label>
-                <input 
-                    type="name"
-                    id = "name"
-                    name = "name"
-                    placeholder="Ingresa tu nombre"
-                    required
-                />
                 <label for="email">Email</label>
                 <input 
                     type="email"
@@ -33,7 +25,7 @@ let Register = {
                     required
                 />
                 <button class="new-account"
-                    type="submit" value="Crear cuenta">Crear cuenta
+                    type="submit" value="Inicia sesión">Iniciar sesión
                 </button>
              </form>
              </div>
@@ -45,4 +37,4 @@ let Register = {
     },
     after_render : async () => {}
 }
-export default Register;
+export default Login;

@@ -1,16 +1,22 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 h1, h2, h3, p{
     font-family: sans-serif;
 }
-
+#logo{
+    width: 30vw;
+    margin-left: 2rem;
+}
 
 #header-container{
     background-color:#804c87;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100vw;
     height: 20vh;
 }
@@ -31,8 +37,8 @@ grid-template-rows: 2fr 2fr 2fr;
     
 }
 .home-1{
-    background-color:#bfa6ff;
-    opacity: 0.5;
+    background-color:rgba(191, 166, 255, 0.5);
+
     grid-column-start: 2;
     grid-row-start: 2;
     
@@ -48,22 +54,60 @@ h1{
 h2{
     text-align: center;
     color: white;
-    margin: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
 }
 
-.container-register{
+.container-register, .container-login{
     background-color: #E2D6FF;
     display: grid;
   
 }
 
-.form-backg{
+.form-register{
+
     background-image: url(imgs/anillos.jpg);
     background-size: cover;
     height: 100vh;
     margin: 15% 20%;
+    border-radius: 10px;
+    text-align: center;
+}
+.form-login{
+
+    background-image: url(imgs/cake.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin: 15% 20%;
+    border-radius: 10px;
+    text-align: center;
 }
 .register{
-    text-align: center;
-    display: inline-flex;
+    font-family: sans-serif;
+   
+    color: white;
+     display: inline-table;
+}
+
+
+form input {
+    margin-bottom: 1rem;
+    padding: .5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;  
+    }
+
+form input, label{
+    display: block;
+    text-align: left;
+    width: 40vw;
+}
+.new-account{
+    background-color:  #804c87;
+    color: white;
+    width: 40vw;
+    height: 5vh;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
 }

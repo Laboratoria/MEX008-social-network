@@ -4,6 +4,7 @@ import Navbar from './lib/navbar.js'
 
 import Home     from './lib/home.js'
 import Register from './lib/register.js'
+import Login from './lib/login.js'
 import Error404 from './lib/error.js'
 
 import Utils from './lib/utils.js'
@@ -13,6 +14,7 @@ import Utils from './lib/utils.js'
 const routes = {
     '/'          : Home
     ,'/register' : Register
+    ,'/login'    : Login
 };
 
 // Router takes a URL, checks against the list of supported routes and then renders the corresponding content page
