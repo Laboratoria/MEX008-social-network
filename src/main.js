@@ -36,7 +36,6 @@ const nodoOfPresentationMobile = () => {
     //Paso 4: Ligar padre con hijo
     nuevoElemento.appendChild(textoDelElemento);
     nuevoElemento.setAttribute('id','showPresentation');
-    console.log(nuevoElemento);
 };
 
 //Eventos que escuchan un click
