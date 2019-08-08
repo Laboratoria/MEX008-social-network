@@ -1,11 +1,11 @@
-let Home = {
+let Error404 = {
     render : async () => {
         let view = `
-        <p>Hola home </p>`
+        <p>Hola error404 </p>`
         return view
     }
 , after_render: async () => {}
 
 }
 
-export default Home;
+export default Error404;
