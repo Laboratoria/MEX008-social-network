@@ -5,10 +5,10 @@ let navbar = {
         <div class="span12">
           <div class="footer" id="footer">
                 <ul class="navegacion">
-                  <li><a href=""><i class="fas fa-home"></i></a></li>
-                  <li><a href=""><i class="fas fa-map-marked"></i></a></li>
-                  <li><a href=""><i class="far fa-comments"></i></a></li>
-                  <li><a href=""><i class="far fa-user-circle"></i></a></li>
+                  <li><a href="./#/muro"><i class="fas fa-home"></i></a></li>
+                  <li><a href="./#/favoritos"><i class="fas fa-map-marked"></i></a></li>
+                  <li><a href="./#/chat"><i class="far fa-comments"></i></a></li>
+                  <li><a href="./#/perfil"><i class="far fa-user-circle"></i></a></li>
                 </ul>
           </div>
         </div>

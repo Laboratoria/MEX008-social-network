@@ -24,11 +24,11 @@ const routes = {
 const router = async () => { // function always returns a promise
 
     // load view element
-    //const header  = document.getElementById('header-container'); 
+    const encabezado  = document.getElementById('header'); 
     const content = null || document.getElementById('container'); // If the first value is false, it checks the second value 
     
     // Render the header of the page
-    //header.innerHTML = await Navbar.render(); // wait till the promise resolves
+    encabezado.innerHTML = await header.render(); // wait till the promise resolves
     //await Navbar.after_render();
     
     // Get the page from the hash of supported routes.
@@ -57,23 +57,7 @@ window.addEventListener('load', router); // The event occurs when an object has 
 
 // Este es el punto de entrada de tu aplicacion
 
-//import { myFunction } from './lib/index.js';
 
-//myFunction();
-
-let pantallaInicioSesion = document.getElementById("pantalla-login");
-let pantallaRegistro = document.getElementById("pantalla-registro");
-let pantallaMuro = document.getElementById("pantalla-muro");
-let pantallaIntereses = document.getElementById("pantalla-intereses");
-const buttonCerrarSesion = document.getElementById("cerrar-sesion");
-const buttonCerrarSesionDos = document.getElementById("cerrar-sesion-dos");
-
-let pasarRegistro = () => {
-    pantallaRegistro.style.display = "block";
-    pantallaInicioSesion.style.display = "none";
-}
-
-//document.getElementById("pasar-registro").addEventListener("click",pasarRegistro);
 
 const registrar = () => {
     let mail = document.getElementById("email-registro").value;
@@ -102,7 +86,7 @@ const registrar = () => {
         alert("Debes completar los campos");
     }
 }
-//document.getElementById("btn-registro").addEventListener("click",registrar);
+document.getElementById("btn-registro").addEventListener("click",registrar);
 
 const ingresar = () =>{
     let mail2 = document.getElementById("email-login").value;
@@ -119,7 +103,7 @@ const ingresar = () =>{
         // ...
       });
 }
-//document.getElementById("btn-login").addEventListener("click",ingresar);
+document.getElementById("btn-login").addEventListener("click",ingresar);
 
 const observadorDeSesion = () =>{
     firebase.auth().onAuthStateChanged(function(user) {

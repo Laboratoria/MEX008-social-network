@@ -3,8 +3,8 @@ let header = {
     render : async () => {
         let view =  /*html*/`
         <div class="header">
-        <img src="./imgenes/logo2.png" class="logo-two">
-      </div>
+          <img src="./imgenes/logo2.png" class="logo-two">
+        </div>
         `
         return view
     }
