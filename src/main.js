@@ -189,3 +189,4 @@ buttonRegister.addEventListener('click',register);
 buttonLogin.addEventListener('click',login);
 google.addEventListener('click',googleSignIn);
 facebook.addEventListener('click',facebookSignIn);
+
