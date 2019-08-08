@@ -7,15 +7,7 @@ let Register = {
         <h2>REGISTRO</h2>
         <div class="register">
            
-            <form class="center" action="">
-                <label for="name">Nombre</label>
-                <input 
-                    type="name"
-                    id = "name"
-                    name = "name"
-                    placeholder="Ingresa tu nombre"
-                    required
-                />
+            <form id = "form-register" name = "formRegister" class="center" action="">
                 <label for="email">Email</label>
                 <input 
                     type="email"
@@ -32,17 +24,39 @@ let Register = {
                     placeholder = "Contraseña (mayor o igual a 6 caracteres)"
                     required
                 />
-                <button class="new-account"
-                    type="submit" value="Crear cuenta">Crear cuenta
-                </button>
+
+                <input 
+                    type="submit" 
+                    value="Crear cuenta"
+                />
              </form>
              </div>
              </div>
 
              </div>
+
         `
         return view
     },
-    after_render : async () => {}
+    after_render : async () => {
+        /* form: Regístrate (Sign up new users)*/
+        let formRegister = document.forms.formRegister;
+        formRegister.addEventListener("submit", event => {
+            event.preventDefault();
+            firebase.auth()
+                .createUserWithEmailAndPassword( //instrucción para crear una cuenta con correo y password
+                    // .signInWithEmailAndPassword es para logearte
+                    formRegister["email"].value, formRegister["password"].value)
+                .then(
+                    () => console.log("todo bien"))
+                .catch(error => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    console.log(errorCode,"/",errorMessage);
+                });
+        });
+    }
 }
+
 export default Register;

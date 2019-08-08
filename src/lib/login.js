@@ -1,40 +1,49 @@
 let Login = {
+  
     render : async () => {
-        let view = /*html*/ `
-
-        <div class="container-login">
-        <div class= "form-login"> 
-        <h2>INICIA SESIÓN</h2>
-        <div class="register">
-           
-            <form class="center" action="">
-                <label for="email">Email</label>
-                <input 
-                    type="email"
-                    id = "email"
-                    name = "email"
-                    placeholder="Ingresa tu correo electrónico"
-                    required
-                />
-                 <label for="password">Contraseña</label>
-                <input 
-                    type = "password"
-                    id = "password" 
-                    name = "password" 
-                    placeholder = "Contraseña (mayor o igual a 6 caracteres)"
-                    required
-                />
-                <button class="new-account"
-                    type="submit" value="Inicia sesión">Iniciar sesión
-                </button>
-             </form>
-             </div>
-             </div>
-
-             </div>
+        let view =  /*html*/`
+            <div id="firebaseui-auth-container"></div>
+            <!--<div id="loader">Loading...</div>-->
         `
         return view
-    },
-    after_render : async () => {}
+    }
+    , after_render: async () => {
+        
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // Specify the FirebaseUI configuration
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                // User successfully signed in.
+                // Return type determines whether we continue the redirect automatically
+                // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: '<url-to-redirect-to-on-success>',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            ],
+            // Terms of service url.
+            //tosUrl: '<your-tos-url>',
+            // Privacy policy url.
+            //privacyPolicyUrl: '<your-privacy-policy-url>'
+        };
+        // The start method will wait until the DOM is loaded.
+        ui.start(document.getElementById("firebaseui-auth-container"), uiConfig);
+    }
 }
+
 export default Login;
