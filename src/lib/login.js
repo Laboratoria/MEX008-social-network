@@ -1,5 +1,5 @@
 let Login = {
-
+  
     render : async () => {
         let view =  /*html*/`
             <div id="firebaseui-auth-container"></div>

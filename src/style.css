@@ -1,9 +1,11 @@
+/* mobile-first*/
 *{
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
 } 
-#navbar {
+
+.navbar {
     height: 12vh;
     width: 100vw;
     background: #f2d0e0;
@@ -11,23 +13,64 @@
     padding: 1vh 2.5%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    /* justify-content: space-between; */
 }
 
-#navbar #logo {
-    width: 10vh;
+#navbar-dsk {
+    display: none;
 }
 
-.btn-start {
+#navbar-mbl{
+    justify-content: center;
+}
+
+#logo {
+    width: 60vh;
+}
+
+.linksToJoin {
     border: 1px solid white;
     text-decoration: none;
     /* padding: .25rem .5rem; */
     padding: 0.5%;
-    
 }
-#main-hero{
-    height: 88vh;
-    width: 100vw;
-    background: url(imgs/wedding.png);
+
+.form-register{
+
+    background-image: url(imgs/roses.jpg);
     background-size: cover;
+    height: 100vh;
+    margin: 15% 20%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.register{
+    font-family: sans-serif;
+   
+    color: white;
+     display: inline-table;
+}
+
+form input {
+    margin-bottom: 1rem;
+    padding: .5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;  
+}
+
+form input, label{
+    display: block;
+    text-align: left;
+    width: 40vw;
+}
+
+@media (min-width: 600px){
+    #navbar-dsk {
+        display: flex;
+    }
+
+    #navbar-mbl{
+        display: none;
+    }
 }

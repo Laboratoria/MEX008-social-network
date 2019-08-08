@@ -1,8 +1,14 @@
 let Register = {
     render : async () => {
         let view = /*html*/ `
-            <h1>REGISTRO</h1>
-            <form id = "form-register" name = "formRegister" action="">
+
+        <div class="container-register">
+        <div class= "form-register"> 
+        <h2>REGISTRO</h2>
+        <div class="register">
+           
+            <form id = "form-register" name = "formRegister" class="center" action="">
+                <label for="email">Email</label>
                 <input 
                     type="email"
                     id = "email"
@@ -10,18 +16,25 @@ let Register = {
                     placeholder="Ingresa tu correo electrónico"
                     required
                 />
+                 <label for="password">Contraseña</label>
                 <input 
                     type = "password"
                     id = "password" 
                     name = "password" 
-                    placeholder = "contraseña (mayor o igual a 6 caracteres)"
+                    placeholder = "Contraseña (mayor o igual a 6 caracteres)"
                     required
                 />
+
                 <input 
                     type="submit" 
                     value="Crear cuenta"
                 />
-            </form>
+             </form>
+             </div>
+             </div>
+
+             </div>
+
         `
         return view
     },
