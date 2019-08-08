@@ -44,9 +44,9 @@ function register() {
       console.log(error); 
       // [END_EXCLUDE]
      }); 
-    // [END createwithemail] 
-    show("aside");
-    hide("content");
+    // // [END createwithemail] 
+    // show("aside");
+    // hide("content");
   }
 
 // FUNCION PARA INICIAR SESION CON EMAIL Y CONTRASEÑA
@@ -123,11 +123,11 @@ function login() {
 /*       document.getElementById('quickstart-sign-in').disabled = true; */
    }
    
-//FUNCION OCULTAR
-const hide = id => document.getElementById(id).classList.add("hide");
+// //FUNCION OCULTAR
+// const hide = id => document.getElementById(id).classList.add("hide");
 
-//FUNCION MOSTRAR
-const show = id => document.getElementById(id).classList.remove("hide");
+// //FUNCION MOSTRAR
+// const show = id => document.getElementById(id).classList.remove("hide");
 
 // FUNCION PARA INGRESAR POR FACEBOOK
 const facebookSignIn=()=>{
