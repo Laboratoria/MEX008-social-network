@@ -27,5 +27,8 @@
     "jest": "^24.8.0",
     "regenerator-runtime": "^0.13.1",
     "serve": "^11.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
