@@ -3,10 +3,35 @@
     .hide-desktop-section {
         display: none;
     }
-    .hide-mobile-section {
-        display: block;
-        
+    /*Pantalla de bienvenida mobile*/
+    #start-button {
+    background-color: #008F95;
+    border-color: #008F95;
+    font-size: 20px;
     }
+    .card {
+        margin-top: 1em;
+        background-color: aliceblue;
+    }
+
+    .btn-secondaryR {
+        background-color: #E9B000;
+        border-color: #E9B000;
+        font-size: 20px;
+        margin-bottom: .6em;
+        margin-top: 1em;
+    }
+
+    /* .hidePresentation {
+        display: none;
+    }
+
+    #showPresentation {
+        display: block !important; 
+    } */
+    /* .show {
+        display: block;
+    } */
 }
 /*Medium devices-tablet*/
 @media (min-width: 768px) {}
