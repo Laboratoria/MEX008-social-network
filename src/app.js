@@ -27,7 +27,6 @@ const routes = {
     '/'          : Home
     ,'/login'    : Login
     ,'/register' : Register
-    ,'/login'    : Login
 };
 
 // Router takes a URL, checks against the list of supported routes and then renders the corresponding content page
