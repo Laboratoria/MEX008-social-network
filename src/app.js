@@ -17,7 +17,6 @@ import Navbar from './lib/navbar.js'
 import Home     from './lib/home.js'
 import Login    from './lib/login.js'
 import Register from './lib/register.js'
-import Login from './lib/login.js'
 import Error404 from './lib/error.js'
 
 import Utils from './lib/utils.js'
