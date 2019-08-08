@@ -25,6 +25,25 @@ let Register = {
         `
         return view
     },
-    after_render : async () => {}
+    after_render : async () => {
+        /* form: Regístrate (Sign up new users)*/
+        let formRegister = document.forms.formRegister;
+        formRegister.addEventListener("submit", event => {
+            event.preventDefault();
+            firebase.auth()
+                .createUserWithEmailAndPassword( //instrucción para crear una cuenta con correo y password
+                    // .signInWithEmailAndPassword es para logearte
+                    formRegister["email"].value, formRegister["password"].value)
+                .then(
+                    () => console.log("todo bien"))
+                .catch(error => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    console.log(errorCode,"/",errorMessage);
+                });
+        });
+    }
 }
+
 export default Register;
