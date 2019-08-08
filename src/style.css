@@ -1,16 +1,17 @@
-/*Pantalla de bienvenida*/
-#start-button {
-    background-color: #008F95;
-    border-color: #008F95;
-}
-
 /*Pantalla de bienvenida desktop*/
+
 .hide-desktop-section {
  position: absolute;
  bottom: 1em;
  right: 3em;
  top: 3em;
 }
+
+/* .hidePresentation {
+    display: none;
+} */
+
+#show
 
 .img-fondo-desktop {
     width: 100%;
