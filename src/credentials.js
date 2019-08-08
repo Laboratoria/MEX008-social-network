@@ -1,3 +1,5 @@
+const signOutBtn= document.getElementById("sign-out"); 
+ 
  // Your web app's Firebase configuration
  var firebaseConfig = {
    apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
@@ -27,7 +29,7 @@
      uiShown: function () {
        // The widget is rendered.
        // Hide the loader.
-       document.getElementById('loader').style.display = 'none';
+       document.getElementById('loader').classList.add("hide");
      }
    },
    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -86,6 +88,21 @@
      console.log('no hay usuario')
    }
  });
+
+
+
+
+const signOut = async() => {
+    try{
+        firebase.auth().signOut().then;
+    }
+    catch(err){
+        console.error("Error!!")
+    }
+    console.log("Saliste!!")
+}
+
+signOutBtn.addEventListener("click", () => signOut() );
 
 
  //   db.collection("users").add({
