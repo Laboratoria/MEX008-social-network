@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <section id="intro">
+  <section id="intro" class="hide">
     <div class="center-align">
       <figure class="logo-intro">
         <img src="img/logo-blanco.png" alt="logo">
@@ -23,18 +23,19 @@
     </div>
   </section>
   <div id="sidebar">
-    <nav> <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <nav> <a id="side-trigger" href="#" data-target="slide-out" class="sidenav-trigger"><img class="circle"
+          src="img/readme/ramona.png"></a>
     </nav>
-    <!-- <a href="#" class="sidenav-trigger" data-target="menu-side"></a> -->
+    <!-- <a href="#" class="sidenav-trigger" data-target="menu-side"><i class="material-icons">menu</i></a> -->
     <ul id="slide-out" class="sidenav">
       <li>
         <div class="user-view">
           <div class="background">
-            <!-- <img src="img/fondo-desktop.png"> -->
+            <!-- <img src="img/bike-day.jpg">-->
           </div>
-          <a href="#user"><img class="circle" src="img/readme/userPersona.png"></a>
+          <a href="#user"><img class="circle" src="img/readme/ramona.png"></a>
           <a href="#name"><span class="white-text name">Ramona</span></a>
-          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          <a href="#email"><span class="white-text email">ramona@gmail.com</span></a>
         </div>
       </li>
       <li><a href="#!"><i class="material-icons">account_circle</i>Editar Perfil</a></li>
@@ -43,19 +44,19 @@
         <div class="divider"></div>
       </li>
       <li><a class="subheader">Directorio</a></li>
-      <li><a class="waves-effect" href="#!"><i class="material-icons">build</i>Talleres</a></li>
-      <li><a class="waves-effect" href="#!"><i class="material-icons">store</i>Tiendas</a></li>
-      <li><a href="#!"><i class="material-icons">report_problem</i>S.O.S.</a></li>
+      <li><a class="waves-effect" href="#workshops"><i class="material-icons">build</i>Talleres</a></li>
+      <li><a class="waves-effect" href="#shops"><i class="material-icons">store</i>Tiendas</a></li>
+      <li><a id="sos" class="waves-effect right-align" href="#!"><i class="material-icons">report_problem</i>S.O.S.</a>
+      </li>
       <li>
         <div class="divider"></div>
       </li>
-      <li><a class="waves-effect" href="#!">Cerrar Sesión</a></li>
-
+      <li><a id="sign-out" class="waves-effect right-align" href="#!">Cerrar Sesión</a></li>
     </ul>
   </div>
   <main class="container">
     <!--Sección de Registro/Inicio de sesión-->
-    <section id="welcome">
+    <section id="welcome" class="hide">
       <div class="center-align">
         <h1>Sacbé</h1>
         <figure class="logo">
@@ -74,41 +75,112 @@
     <!--MODALES-->
     <section id="timeline">
 
+
+      <div id="more-modal">
+        <!-- Modal Trigger-->
+        <div id="more-btn" class="right-align">
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i
+              class="material-icons">more_horiz</i></a>
+        </div>
+        <!-- Modal Structure-->
+        <div id="modal1" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h3 class="header">Opciones</h3>
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <i class="material-icons circle green">edit</i>
+                <span class="title">Editar</span>
+                <p>Editar</p>
+                <a href="#!" class="secondary-content">
+                  <i class="material-icons">edit</i>
+                </a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="material-icons circle red">delete</i>
+                <span class="title">Eliminar</span>
+                <p>Eliminar</p>
+                <a href="#!" class="secondary-content">
+                  <i class="material-icons">delete</i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section id="create-edit">
-      <figure>
-        <img src="" alt="">
-      </figure>
       <input type="text" placeholder="¿Quieres publicar algo?">
     </section>
 
-    <section id="confirmation-delete">
-      <div class="delete">
-
+    <section id="workshops">
+      <h3>Talleres</h3>
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Zona sur</h5>
+        <h6>Enbiciados Bike</h6>
+        <p><i class="material-icons tiny">location_on</i> Av. Coyoacán 745 A, Col del Valle Centro, 03100 Ciudad de
+          México, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 5335 1127</p>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Zona norte</h5>
+        <h6>Taller Comunitario Enchulame La Bici</h6>
+        <p><i class="material-icons tiny">location_on</i> Calle Eligio Ancona 79, Sta María la Ribera, 06400 Ciudad de
+          México, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 7038 9057</p>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Zona centro</h5>
+        <h6>La Bici Urbana</h6>
+        <p><i class="material-icons tiny">location_on</i> Av. Morelos 70, Juárez, 06600 Ciudad de México, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 5578 0547</p>
       </div>
     </section>
 
-    <section id="directory">
-
+    <section id="shops">
+      <h3>Tiendas</h3>
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Zona sur</h5>
+        <h6>Enbiciados Bike</h6>
+        <p><i class="material-icons tiny">location_on</i> Av. Coyoacán 745 A, Col del Valle Centro, 03100 Ciudad de
+          México, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 5335 1127</p>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Zona norte</h5>
+        <h6>Taller Comunitario Enchulame La Bici</h6>
+        <p><i class="material-icons tiny">location_on</i> Calle Eligio Ancona 79, Sta María la Ribera, 06400 Ciudad de
+          México, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 7038 9057</p>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <h5>Zona centro</h5>
+        <h6>La Bici Urbana</h6>
+        <p><i class="material-icons tiny">location_on</i> Av. Morelos 70, Juárez, 06600 Ciudad de México, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 5578 0547</p>
+      </div>
     </section>
+    <div id="add-btn" class="right-align">
+      <a class="btn-floating btn-large waves-effect waves-light teal"><i class="material-icons">add</i></a>
+    </div>
+
   </main>
   <script>
     /*INICIALIZACION SIDEBAR*/
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems);
+
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
     });
-
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-//   // Or with jQuery
-
-  // $(document).ready(function(){
-  //   $('.sidenav').sidenav();
-  // });
   </script>
 
 
