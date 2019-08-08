@@ -5,6 +5,7 @@
 }
 h1, h2, h3, p{
     font-family: sans-serif;
+    color: #502F54;
 }
 #logo{
     width: 30vw;
@@ -44,9 +45,6 @@ grid-template-rows: 2fr 2fr 2fr;
     
 }
 
-
-
-
 h1{
     padding: 2rem;
 }
@@ -66,7 +64,7 @@ h2{
 
 .form-register{
 
-    background-image: url(imgs/anillos.jpg);
+    background-image: url(imgs/roses.jpg);
     background-size: cover;
     height: 100vh;
     margin: 15% 20%;
@@ -75,7 +73,7 @@ h2{
 }
 .form-login{
 
-    background-image: url(imgs/cake.jpg);
+    background-image: url(imgs/bouquet-rose.jpg);
     background-size: cover;
     height: 100vh;
     margin: 15% 20%;
