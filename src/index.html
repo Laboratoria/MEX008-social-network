@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 ​
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,15 @@
   <!--Añadiendo Bootstrap-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Enlace a font-awesome -->
+  <script src="https://kit.fontawesome.com/305f8c7f10.js"></script>
   <!--Enlace a hojas de CSS-->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
   <title>HOPAKI</title>
 </head>
 ​
+
 <body>
   <!--Pantalla de Bienvenida-->
   <!--Vista mobile-->
@@ -53,7 +57,8 @@
     </div>
     <!--Vista desktop-->
     <section class="hide-desktop-section">
-      <img src="https://github.com/VianeyLaraRangel/MEX008-social-network/blob/master/src/img/fondodesktop.jpg" alt="fondo-lapices" class="img-fondo-desktop">
+      <img src="https://github.com/VianeyLaraRangel/MEX008-social-network/blob/master/src/img/fondodesktop.jpg"
+        alt="fondo-lapices" class="img-fondo-desktop">
       <div class="card card-desktop" style="width: 45rem;">
         <div class="card-body">
           <h1 class="title1">Academia HOPAKI</h1>
@@ -76,26 +81,56 @@
 
 
 
-  
-<!-- pantalla donde se va a ejecutar todo  -->
+
+  <!-- pantalla donde se va a ejecutar todo  -->
   <!-- version mobile -->
-  <section class="content-page">
-    <div class="up-page">
-      <img src="/src/img/login.png">
-      <h2>Aquí está la sección </h2>
-      <p>Holaaaa</p>
-    </div>
-    <div class="mobile-content">
-      
-    </div>
-  </section>
-  
-​
-    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="img/login.png"></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <p id="greeting">Hola usuario!</p><span class="sr-only"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="far fa-envelope"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fab fa-slack-hash"></i></a>
+      </li>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Opciones
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Mis publicaciones</a>
+              <a class="dropdown-item" href="#">Elementos guardados</a>
+              <a class="dropdown-item" href="#">Conexiones</a>
+              <a class="dropdown-item" href="#">Cursos Online</a>
+              <a class="dropdown-item" href="#">Vídeos</a>
+              <a class="dropdown-item" href="#">#Temas de interés</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"><button type="button" class="btn btn-primary">Cerrar Sesión</button></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  ​
+
   <script type="module" src="main.js"></script>
-​
+  ​
   <!-- Añadiendo enlaces a Bootstrap-->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -103,8 +138,9 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script> -->
+    crossorigin="anonymous"></script>
 
 </body>
 ​
+
 </html>
