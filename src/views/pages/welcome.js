@@ -9,7 +9,7 @@ const welcome = {
         </figure>
         <div id="login">
           <h5>La mejor ruta para llegar a tu destino</h5>
-
+          <!--Sección de Registro/Inicio de sesión-->
           <!-- Firebase UI-->
           <div id="firebaseui-auth-container"></div>
           <div id="loader">Loading...</div>

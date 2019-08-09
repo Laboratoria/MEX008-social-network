@@ -1,4 +1,4 @@
-const ElementLI = {
+const elementLI = {
   render: publication => {
       return `<li>
                 <div>
@@ -10,4 +10,4 @@ const ElementLI = {
     }
   };
 
-export default ElementLI;
+export default elementLI;

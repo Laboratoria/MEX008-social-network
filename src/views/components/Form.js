@@ -1,4 +1,4 @@
-const Form = {
+const formEntry = {
   render: () => {
     return `
     <article class="container">
@@ -20,4 +20,4 @@ const Form = {
   },
   after_render: () => {}
 };
-export default Form;
+export default formEntry;

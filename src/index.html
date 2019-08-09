@@ -15,77 +15,18 @@
 </head>
 
 <body>
-  <section id="intro" class="">
+  <div id="intro-container" class=""> </div>
 
-  </section>
+  <div id="sidebar-container" class="">  </div>
 
-  <div id="sidebar">
-    
-  </div>
-
-  <main id="main-container" class="container">
-    <!--Sección de Registro/Inicio de sesión-->
-
-
-    <!--MODALES-->
-    <section id="timeline">
-
-
-      <div id="publication-list"></div>
-
-<div id="modal-more-container"></div>
-
-<div id="btn-add" class="right-align">
-    <a class="btn-floating btn-large waves-effect waves-light teal"><i class="material-icons">add</i></a>
-  </div>
-
-
-    </section>
-
-    <section id="create-edit">
-      <input type="text" placeholder="¿Quieres publicar algo?">
-    </section>
-
+  <main id="section-container" class="container hide"> 
+      <div><p>Cargando...</p></div>  
   </main>
 
-
-  <div id="more-modal">
-    <!-- Modal Trigger-->
-    <div id="more-btn" class="right-align">
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i
-          class="material-icons">more_horiz</i></a>
-    </div>
-    <!-- Modal Structure-->
-    <div id="modal1" class="modal bottom-sheet">
-      <div class="modal-content">
-        <h3 class="header">Opciones</h3>
-        <ul class="collection">
-          <li class="collection-item avatar">
-            <i class="material-icons circle green">edit</i>
-            <span class="title">Editar</span>
-            <p>Editar</p>
-            <a href="#!" class="secondary-content">
-              <i class="material-icons">edit</i>
-            </a>
-          </li>
-          <li class="collection-item avatar">
-            <i class="material-icons circle red">delete</i>
-            <span class="title">Eliminar</span>
-            <p>Eliminar</p>
-            <a href="#!" class="secondary-content">
-              <i class="material-icons">delete</i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div id="footer-nav">
-
-  </div>
-  <script>
-    /*INICIALIZACION SIDEBAR*/
+  <footer id="footer-nav">  </footer>
+  <p id="e" class="hide"></p>
+ <!-- <script>
+    INICIALIZACION SIDEBAR
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems);
@@ -93,16 +34,16 @@
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
     });
-  </script>
+  </script>-->
 
 
- <!-- <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-  <script src="credentials.js"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+  <script src="registro.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 

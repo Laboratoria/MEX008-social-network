@@ -1,4 +1,4 @@
-const Footer = {
+const footerNav = {
   render: async () => {
     let view = `
             <div class="content has-text-centered">
@@ -12,4 +12,4 @@ const Footer = {
   after_render: async () => {}
 };
 
-export default Footer;
+export default footerNav;

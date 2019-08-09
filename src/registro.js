@@ -1,5 +1,3 @@
-const signOutBtn= document.getElementById("sign-out"); 
- 
  // Your web app's Firebase configuration
  var firebaseConfig = {
    apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
@@ -30,11 +28,14 @@ const signOutBtn= document.getElementById("sign-out");
        // The widget is rendered.
        // Hide the loader.
        document.getElementById('loader').classList.add("hide");
+      // document.getElementById('firebaseui-auth-container').classList.add("hide");
+      document.getElementById('welcome').classList.add("hide");
+      document.getElementById('side-trigger').classList.remove("hide");
      }
    },
-   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+   // Will use popup for IDP Providers sign-in flow instead of the default, redirect. ./#timeline
    signInFlow: 'popup',
-   signInSuccessUrl: './#timeline',
+   signInSuccessUrl: './#/shops',
    signInOptions: [
      // Leave the lines as is for the providers you want to offer your users.
      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -88,21 +89,6 @@ const signOutBtn= document.getElementById("sign-out");
      console.log('no hay usuario')
    }
  });
-
-
-
-
-const signOut = async() => {
-    try{
-        firebase.auth().signOut().then;
-    }
-    catch(err){
-        console.error("Error!!")
-    }
-    console.log("Saliste!!")
-}
-
-signOutBtn.addEventListener("click", () => signOut() );
 
 
  //   db.collection("users").add({
