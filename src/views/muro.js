@@ -48,7 +48,17 @@ let Muro = {
         `
         return view
     },
-    after_render : async () => {}
+    after_render : async () => {
+      const muro = () =>{
+        pantallaInicioSesion.style.display = "none";
+        pantallaIntereses.style.display = "none";
+        console.log("mostar muro");
+        pantallaMuro.style.display = "block";
+    }
+    //buttonCerrarSesionDos.addEventListener("click",cerrarSesion);
+    
+  
+    }
 }
 
 export default Muro;
