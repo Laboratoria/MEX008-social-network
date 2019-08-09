@@ -10,7 +10,7 @@ let Wall = {
          </box>
         <!--Caja que contiene el botón de "Cerrar sesión"-->
         <box>
-        <a id="btn-logout" class="waves-effect waves-light btn modal-trigger" href="#/welcome">cerrar sesion</a>
+        <a id="btn-logout" class="waves-effect waves-light btn modal-trigger" href="#/welcome">Cerrar sesion</a>
         </box>
         </section>
         `
