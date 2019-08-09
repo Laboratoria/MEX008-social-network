@@ -1,0 +1,142 @@
+/* mobile-first*/
+*{
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+} 
+
+.navbar {
+    height: auto;
+    width: 100vw;
+    background: #734058;
+    font-size: 1.5em;
+    padding: 1vh 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+#navbar-dsk {
+    display: none;
+}
+
+#navbar-mbl{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    width: 60vh;
+}
+.linksToJoin-mbl {
+    border: 1px solid white;
+    text-decoration: none;
+    background: #99CCCC;
+    text-align: center;
+    padding: 0.5%;
+    margin-bottom: 1em;
+    color: #734058;
+}
+
+.container-register, .container-login{
+    background-color: #BFA4B1;
+    display: grid;
+  
+}
+
+.fondo-login{
+
+    background-image: url(imgs/roses.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin:30% 15% 50%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns-login{
+    text-align: center;
+}
+
+.form-register{
+
+    background-image: url(imgs/bouquet-rose.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin: 30% 15% 50%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register{
+   text-align: center;
+}
+
+.new-account{
+    background-color: #734058;
+    color: white;
+    width: 40vw;
+    height: 5vh;
+    font-size: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+form input {
+    margin-bottom: 1rem;
+    padding: .5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;  
+    display: block;
+    text-align: left;
+    width: 40vw;
+}
+
+.container-home-background{
+    background-image: url(imgs/fondo-boda.jpg);
+    background-size: cover;
+    background-position: right;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  
+}
+.home-transparente-mbl{
+    background-color:rgba(191, 166, 255, 0.5);
+    margin: 6em;
+    height: fit-content;
+    border-radius: 10px;
+    
+}
+.txt-home{
+    font-family: sans-serif;
+    padding: 1em;
+    color: #734058;
+    text-align: center;
+}
+
+
+.linksToJoin {
+    border: 1px solid white;
+    text-decoration: none;
+    background: #99CCCC;
+    /* padding: .25rem .5rem; */
+    padding: 0.5%;
+    color: #734058;
+}
+/*Desktop*/
+
+@media (min-width: 600px){
+    #navbar-dsk {
+        display: flex;
+    }
+
+    #navbar-mbl{
+        display: none;
+    }
+}
