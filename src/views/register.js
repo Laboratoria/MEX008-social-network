@@ -4,7 +4,7 @@ let register = {
         <div class="pantalla-registro text-center" id="pantalla-registro">
           <h3>Registro</h3>
 
-          <form action="" class="form-inline">
+          <form class="form-inline">
             <label for="register-name" class="input-register">Nombre</label>
             <input type="text" id="register-name" required><br>
 
@@ -46,7 +46,55 @@ let register = {
         `
         return view
     },
-    after_render : async () => {}
+    after_render : async () => {
+
+      const verificar = (e) =>{
+        e.preventDefault();
+        var user = firebase.auth().currentUser;
+        user.sendEmailVerification()
+        .then(function() {
+        // Email sent.
+        alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
+        console.log("enviando correo ...");
+        location.hash= '/'
+        }).catch(function(error) {
+        // An error happened.
+        console.log(error);
+        });
+    }
+
+      const registrar = (e) => {
+        e.preventDefault();
+        alert("entra a la funcion registrar");
+        let mail = document.getElementById("email-registro").value;
+        let password = document.getElementById("password-registro").value;
+        let name = document.getElementById("register-name").value;
+    
+        if(name != "" & mail != "" & password != ""){
+    
+        firebase.auth().createUserWithEmailAndPassword(mail, password)
+        .then(()=>{
+            alert("Usuario creado");
+            verificar()   
+        })
+        /*.then(verificar())*/
+        .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+            // ...
+          });
+        }
+    
+        else{
+            alert("Debes completar los campos");
+        }
+    }
+    document.getElementById("btn-registro").addEventListener("click",registrar);
+    
+    }
 }
 
 export default register;

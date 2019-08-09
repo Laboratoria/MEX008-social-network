@@ -14,7 +14,7 @@ let login = {
       </div>
       <div class="row-fluid">
         <div class="span12">
-            <form action="">
+            <form>
               <h3>Inicia sesión</h3>
 
               <input type="email" placeholder="Ingresa tu correo" class="login-input" id="email-login">
@@ -57,7 +57,7 @@ let login = {
 
       <div class="row-fluid login-input">
         <div class="span12">
-          <a href="#" id="pasar-registro">¿Eres nueva? Da click aquí</a>
+          <a href="./#/register" id="pasar-registro">¿Eres nueva? Da click aquí</a>
         </div>
       </div>
             
@@ -68,6 +68,44 @@ let login = {
     }
     , after_render: async () => {
       
+      const ingresar = (e) =>{
+        e.preventDefault();
+        let mail2 = document.getElementById("email-login").value;
+        let password2 = document.getElementById("password-login").value;
+    
+        firebase.auth().signInWithEmailAndPassword(mail2, password2)
+        .then((user)=>{
+          console.log("¿El usuario esta verificado?",user.user.emailVerified);
+          
+          if(user.user.emailVerified){
+            location.hash = "/muro";
+          }
+        }
+      )
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+            // ...
+          });
+    }
+
+    document.getElementById("btn-login").addEventListener("click",ingresar);
+
+    const btnGoogle = document.getElementById('btnGoogle');
+    const loginGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(user){
+      alert("Google SignIn");
+      console.log(user);
+      }).catch(function(error){
+      alert("error");
+      console.log(error);
+      })
+    }
+      btnGoogle.addEventListener("click", loginGoogle);
     }
 }
 export default login;
