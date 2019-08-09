@@ -22,9 +22,6 @@
        // User successfully signed in.
        // Return type determines whether we continue the redirect automatically
        // or whether we leave that to developer to handle.
-       document.getElementById('welcome').classList.add("hide");
-       document.getElementById('welcome-test').classList.add("hide");
-       document.getElementById('pic-trigger').classList.remove("hide");
        return true;
      },
      uiShown: function () {
@@ -70,9 +67,21 @@
    // Other config options...
  });
 
+   //funcion para cerrar sesion
+   const signOut = async() => {
+    try{
+        firebase.auth().signOut().then;
+    }
+    catch(err){
+        console.error("¡Error!")
+    }
+    console.log("Se cerró sesión")
+}
 
+//funcion para comprobar estado de usuario
  firebase.auth().onAuthStateChanged(function (user) {
    if (user) {
+    document.getElementById('pic-trigger').classList.remove("hide");
      console.log(user)
      // User is signed in.
      var displayName = user.displayName;
@@ -83,14 +92,23 @@
      var uid = user.uid;
      var providerData = user.providerData;
      // ...
+     //document.getElementById('loader').classList.add("hide");
+     document.getElementById('signup-signin').classList.add("hide");
+     
+     document.getElementById('section-container').classList.remove("hide");
+     document.getElementById("sign-out").addEventListener("click", () => signOut())
    } else {
      // User is signed out.
      // ...
      // location.assign = '/src/'
+     document.getElementById('signup-signin').classList.remove("hide");
+     document.getElementById('pic-trigger').classList.add("hide");
      document.getElementById('section-container').classList.add("hide");
-     console.log('no hay usuario')
+     console.log('No hay usuario')
    }
  });
+
+
 
 
  //   db.collection("users").add({

@@ -1,7 +1,7 @@
 
 //Importando pantallas
 import intro from "./views/pages/intro.js";
-//import welcome from "./views/pages/welcome.js";
+import welcome from "./views/pages/welcome.js";
 //import timeline from "./views/pages/timeline.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
@@ -24,21 +24,24 @@ import Utils from "./services/Utils.js";
   
   const routes = {
     "/intro": intro,
-   // "/welcome": welcome,
+    "/": welcome,
    // "/": timeline,
     "/shops": shops,
     "/workshops": workshops,
     "/entry": entry,
   };
 
+//inicializando todo
   const routerApp = async () => {
     const introContainer = null || document.getElementById("intro-container");
     const sidebarContainer = null || document.getElementById("sidebar-container");
+    const welcomeContainer = null || document.getElementById("welcome-container");
     const sectionContainer = null || document.getElementById("section-container");
   //  const footerNav = null || document.getElementById("footer-nav");
 
   introContainer.innerHTML = await intro.render();
   sidebarContainer.innerHTML = await sidebar.render();
+  welcomeContainer.innerHTML = await welcome.render();
   sectionContainer.innerHTML = await shops.render();
 // footerNav.innerHTML = await footer.render();
 
@@ -110,16 +113,7 @@ import Utils from "./services/Utils.js";
         routerApp();
       };*/
 
-//Firebase
-      const signOut = async() => {
-        try{
-            firebase.auth().signOut().then;
-        }
-        catch(err){
-            console.error("¡Error!")
-        }
-        console.log("Se cerró sesión")
-    }
+
     
       window.addEventListener("hashchange", routerApp);
       window.addEventListener("load", routerApp);

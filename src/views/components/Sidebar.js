@@ -33,8 +33,6 @@ const sidebar = {
     </ul>
     `;
   },
-  after_render: () => {
-    const signOutBtn= document.getElementById("sign-out"); 
-  }
+  after_render: () => {  }
 };
 export default sidebar;

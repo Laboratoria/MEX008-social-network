@@ -65,7 +65,7 @@ h5 {
 
 /* SECCIONES */
 
-#welcome-test, main section {
+#signup-signin, main section {
     padding-top: 3vh;
     height: 90vh;
     border: 1px solid black;
@@ -97,9 +97,6 @@ h5 {
 #side-trigger img {
     width: 3.1rem;
 }
-
-
-element.style {}
 
 #side-trigger {
     margin-top: 1vh;
