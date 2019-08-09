@@ -80,6 +80,10 @@
             height: 70%;
         }
         
+        .login-container {
+            background-color: #26A69A;
+        }
+        
         .modal {
             background-color: whitesmoke;
             color: black;
