@@ -31,7 +31,7 @@ let Welcome = {
                  <div id="loader">Loading...</div>
              </div>
              <div id="modal-login" class="modal-footer" id="mod-footer-color">
-                 <a href="#/wall" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                 <a href="#/" class="modal-close waves-effect waves-green btn-flat">Close</a>
              </div>
          </div>
          </section>
@@ -42,13 +42,14 @@ let Welcome = {
         document.getElementById("btn-login").addEventListener("click", () => {
             var elems = document.querySelectorAll('.modal');
             var instances = M.Modal.init(elems);
+            //initialize ui config
+            ui.start('#firebaseui-auth-container', uiConfig);
         });
-        //initialize ui config
-        ui.start('#firebaseui-auth-container', uiConfig);
+        // //Mostrar Wall y contenido
+        // const content = null || document.getElementById('container');
+        // content.innerHTML = await window.Wall.render();
+        // await window.Wall.after_render();
 
-
-
-        // var instance = M.Modal.getInstance(elem);
     }
 }
 

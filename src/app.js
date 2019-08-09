@@ -1,14 +1,16 @@
 "use strict";
 // Importando Views
 import Welcome from './views/welcome.js';
+import Wall from './views/wall.js';
 import Error404 from './views/error.js';
 
 // Importando Components
 import NavBar from './components/header.js';
 import Footer from './components/footer.js';
 
+// Importando Services
 import Utils from './services/Utils.js'
-import Wall from './views/wall.js';
+
 
 //Lista de rutas soportadas. Cualquier otra arrojara un erroer 404
 

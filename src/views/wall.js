@@ -1,4 +1,4 @@
-let Wall = {
+window.Wall = {
     render: async() => {
         let view = /* html */ `
         <section class="section-welcome">
@@ -19,4 +19,4 @@ let Wall = {
     after_render: async() => {}
 }
 
-export default Wall;
+export default window.Wall;

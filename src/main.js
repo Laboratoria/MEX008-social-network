@@ -54,20 +54,12 @@ var uiConfig = {
         //   firebase.auth.GithubAuthProvider.PROVIDER_ID,
     ],
     // Terms of service url.
-    tosUrl: '<your-tos-url>',
+    tosUrl: 'https://ledahuerta.github.io/MEX008-social-network/',
     // Privacy policy url.
-    privacyPolicyUrl: '<your-privacy-policy-url>'
+    privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
-//initialize ui config
-ui.start('#firebaseui-auth-container', uiConfig);
-//Activa modal
-document.addEventListener('DOMContentLoaded', () => {
-    let elems = document.querySelectorAll('.modal');
-    let instances = M.Modal.init(elems);
-});
 
-
-
+// funcion que permite agregar contenido a la bd
 db.collection("user").add({
         usuario: "Viviana",
         mail: "vivianaberron@gmail.com",
@@ -80,6 +72,7 @@ db.collection("user").add({
         console.error("Error adding document: ", error);
     });
 
+// funcion que permite saber que usuario esta logeado
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         console.log(user)
