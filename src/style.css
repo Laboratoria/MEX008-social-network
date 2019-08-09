@@ -24,7 +24,7 @@ body {
     background-color: #FFF;
 }
 
-#sidebar {
+#sidebar-container {
     /*    top: 0;*/
     margin: 0 auto;
     box-sizing: border-box;
@@ -65,13 +65,13 @@ h5 {
 
 /* SECCIONES */
 
-main section {
+#signup-signin, main section {
     padding-top: 3vh;
     height: 90vh;
     border: 1px solid black;
 }
 
-#intro {
+#intro-container {
     height: 100vh;
     background-image: url("img/fondo-mobile.png");
     background-size: cover;
@@ -97,9 +97,6 @@ main section {
 #side-trigger img {
     width: 3.1rem;
 }
-
-
-element.style {}
 
 #side-trigger {
     margin-top: 1vh;
@@ -138,7 +135,7 @@ figure {
 
 
 @media only screen and (min-width: 760px) {
-    #intro {
+    #intro-container {
         background-image: url("img/fondo-desktop.png");
     }
 }
