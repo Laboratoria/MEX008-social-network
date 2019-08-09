@@ -48,15 +48,18 @@ let register = {
     },
     after_render : async () => {
 
-      const verificar = (e) =>{
-        e.preventDefault();
+      const verificar = () =>{
         var user = firebase.auth().currentUser;
         user.sendEmailVerification()
         .then(() => {
         // Email sent.
-        alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
         console.log("enviando correo ...");
-        location.hash= '/'
+        alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
+        console.log("aqui", user.emailVerified);
+        if(user.emailVerified){
+          location.hash= '/intereses';
+        }
+        
         })
         .catch((error) => {
         // An error happened.
@@ -64,18 +67,19 @@ let register = {
         });
     }
 
+
       const registrar = (e) => {
         e.preventDefault();
-        alert("entra a la funcion registrar");
+        console.log("entra a la funcion registrar");
         let mail = document.getElementById("email-registro").value;
         let password = document.getElementById("password-registro").value;
         let name = document.getElementById("register-name").value;
-    
+
         if(name != "" & mail != "" & password != ""){
-    
+        
         firebase.auth().createUserWithEmailAndPassword(mail, password)
         .then(()=>{
-            alert("Usuario creado");
+            console.log("Usuario creado");
             verificar();
         })
         .catch((error) => {
@@ -85,8 +89,8 @@ let register = {
             console.log("no se pudo crear usuario");
             
           });
+        
         }
-    
         else{
             alert("Debes completar los campos");
         }

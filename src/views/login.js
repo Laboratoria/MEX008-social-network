@@ -72,17 +72,20 @@ let login = {
         e.preventDefault();
         let mail2 = document.getElementById("email-login").value;
         let password2 = document.getElementById("password-login").value;
-    
+
           firebase.auth().signInWithEmailAndPassword(mail2, password2)
           .then((user)=>{
           console.log("¿El usuario esta verificado?",user.user.emailVerified);
+          location.hash = "/muro";
+
           
-          if(user.user.emailVerified){
-            location.hash = "/muro";
-          }
-          else{
-            alert("aun no has validado tu cuenta, accede a tu correo por favor");
-          }
+          
+          //if(user.user.emailVerified){
+            // location.hash = "/muro";
+          // }
+          // else{
+          //   alert("aun no has validado tu cuenta, accede a tu correo por favor");
+          // }
         })
         .catch((error) => {
             // Handle Errors here.

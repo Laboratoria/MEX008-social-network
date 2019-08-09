@@ -80,6 +80,7 @@ const observadorDeSesion = () =>{
           var displayName = user.displayName;
           var email = user.email;
           //Este nos dice sei email esta verificado
+          console.log(user);
           console.log(user.emailVerified)
           var emailVerified = user.emailVerified;
           var photoURL = user.photoURL;
