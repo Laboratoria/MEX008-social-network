@@ -1,7 +1,7 @@
 
 //Importando pantallas
 import intro from "./views/pages/intro.js";
-import welcome from "./views/pages/welcome.js";
+//import welcome from "./views/pages/welcome.js";
 //import timeline from "./views/pages/timeline.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
@@ -24,8 +24,8 @@ import Utils from "./services/Utils.js";
   
   const routes = {
     "/intro": intro,
-    "/": welcome,
-   // "/timeline": timeline,
+   // "/welcome": welcome,
+   // "/": timeline,
     "/shops": shops,
     "/workshops": workshops,
     "/entry": entry,
@@ -39,7 +39,7 @@ import Utils from "./services/Utils.js";
 
   introContainer.innerHTML = await intro.render();
   sidebarContainer.innerHTML = await sidebar.render();
-  sectionContainer.innerHTML = await welcome.render();
+  sectionContainer.innerHTML = await shops.render();
 // footerNav.innerHTML = await footer.render();
 
     const request = Utils.pageRequestURL();
@@ -126,5 +126,4 @@ import Utils from "./services/Utils.js";
 
       setTimeout(() => { 
         document.getElementById('intro-container').classList.add("hide");
-      document.getElementById('section-container').classList.remove("hide");
      }, 1000);

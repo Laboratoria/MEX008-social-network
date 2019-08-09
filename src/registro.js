@@ -22,15 +22,16 @@
        // User successfully signed in.
        // Return type determines whether we continue the redirect automatically
        // or whether we leave that to developer to handle.
+       document.getElementById('welcome').classList.add("hide");
+       document.getElementById('welcome-test').classList.add("hide");
+       document.getElementById('pic-trigger').classList.remove("hide");
        return true;
      },
      uiShown: function () {
        // The widget is rendered.
        // Hide the loader.
        document.getElementById('loader').classList.add("hide");
-      // document.getElementById('firebaseui-auth-container').classList.add("hide");
-      document.getElementById('welcome').classList.add("hide");
-      document.getElementById('side-trigger').classList.remove("hide");
+       //document.getElementById('firebaseui-auth-container').classList.add("hide");
      }
    },
    // Will use popup for IDP Providers sign-in flow instead of the default, redirect. ./#timeline
@@ -86,6 +87,7 @@
      // User is signed out.
      // ...
      // location.assign = '/src/'
+     document.getElementById('section-container').classList.add("hide");
      console.log('no hay usuario')
    }
  });
