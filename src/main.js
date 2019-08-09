@@ -42,12 +42,12 @@ const router = async () => { // function always returns a promise
     
     // Render the header of the page
     console.log(parsedURL);
-    if((parsedURL != '/login') && (parsedURL != '/')){
+    if((parsedURL != '/login') & (parsedURL != '/')){
      encabezado.innerHTML = await header.render(); // wait till the promise resolves
     //await Navbar.after_render();
     }
     else{
-    if((parsedURL != '/login') && (parsedURL != '/') && (parsedURL != '/register') && (parsedURL != '/intereses')){
+    if((parsedURL != '/login') & (parsedURL != '/') & (parsedURL != '/register') & (parsedURL != '/intereses')){
         footer.innerHTML = await navbar.render(); // wait till the promise resolves
        //await Navbar.after_render();
        }
@@ -105,17 +105,7 @@ observadorDeSesion();
 
 
 
-const cerrarSesion = () =>{
-    firebase.auth().signOut()
-    .then( () => {
-        console.log("sesion cerrada");
-    })
-    .catch( (error)=>{
-        var errorMessage = error.message;
-        console.log(errorMessage);
-    })
-}
-//buttonCerrarSesion.addEventListener("click",cerrarSesion);
+
 
 
 

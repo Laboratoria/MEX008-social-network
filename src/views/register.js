@@ -52,12 +52,13 @@ let register = {
         e.preventDefault();
         var user = firebase.auth().currentUser;
         user.sendEmailVerification()
-        .then(function() {
+        .then(() => {
         // Email sent.
         alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
         console.log("enviando correo ...");
         location.hash= '/'
-        }).catch(function(error) {
+        })
+        .catch((error) => {
         // An error happened.
         console.log(error);
         });
@@ -75,16 +76,14 @@ let register = {
         firebase.auth().createUserWithEmailAndPassword(mail, password)
         .then(()=>{
             alert("Usuario creado");
-            verificar()   
+            verificar();
         })
-        /*.then(verificar())*/
         .catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
-            // ...
+            console.log("no se pudo crear usuario");
+            
           });
         }
     

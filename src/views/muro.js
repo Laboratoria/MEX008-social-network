@@ -49,15 +49,19 @@ let Muro = {
         return view
     },
     after_render : async () => {
-      const muro = () =>{
-        pantallaInicioSesion.style.display = "none";
-        pantallaIntereses.style.display = "none";
-        console.log("mostar muro");
-        pantallaMuro.style.display = "block";
-    }
-    //buttonCerrarSesionDos.addEventListener("click",cerrarSesion);
     
-  
+    const cerrarSesion = () =>{
+      firebase.auth().signOut()
+      .then( () => {
+          console.log("sesion cerrada");
+          location.hash = "/login"
+      })
+      .catch( (error)=>{
+          var errorMessage = error.message;
+          console.log(errorMessage);
+      })
+    }
+    document.getElementById("cerrar-sesion-dos").addEventListener("click",cerrarSesion);
     }
 }
 
