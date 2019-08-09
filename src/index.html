@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PetFriendly</title>
+    <script type="module" src="app.js"></script>
     <!-- Initialize Firebase -->
     <!-- <script src="/__/firebase/init.js"></script> -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -14,103 +15,41 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <header class="header-body">
+    <header id="header" class="header-body">
         <!--Comienza header-->
-        <nav class="nav-color"></nav>
-        <!-- Aquí va el logo <figure>
-          <img src="./img/logo-pet.png" alt="logo pet" width="200" height="50px">
-      </figure>  -->
+
     </header>
-    <main class="container">
+
+    <main id="container" class="container">
         <!--Contenido principal-->
-        <section class="section-welcome">
-            <!--Sección 1-->
-            <box class="welc-text">
-                <!--Caja que contiene el texto de bienvenida-->
-                <p>¡Únete a la comunidad más completa de animal lovers!</p>
-                <p>Localiza más rápido a tu amigo perdido</p>
-            </box>
-            <!--Caja que contiene el botón de "Inicia sesión"-->
-            <box>
-                <a id="btn-login" class="waves-effect waves-light btn modal-trigger" href="#modal1">Inicia sesión</a>
-            </box>
-            <!--Inicia la estructura del modal de inicio de sesión-->
-            <div id="modal1" class="modal">
-                <div id="style-modal" class="modal-content">
-                    <header class="modal-header">
-                        <!--Header del modal-->
-                        <box>
-                            <p>Inicia sesión en PetFriendly</p>
-                        </box>
-                    </header>
-                    <h1>Welcome to My Awesome App</h1>
-                    <div class="login-container" id="firebaseui-auth-container"></div>
-                    <div id="loader">Loading...</div>
+        <div id="loader">Loading...</div>
 
-                </div>
-                <div class="modal-footer" id="mod-footer-color">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                </div>
-            </div>
-            </div>
-
-            <!--Caja que contiene el botón de "Registro"-->
-            <box>
-                <a id="btn-register" class="waves-effect waves-light btn modal-trigger" href="#modal2">Crea una
-                    cuenta</a>
-            </box>
-            <!--Inicia la estructura del modal de registro-->
-            <div id="modal2" class="modal">
-                <div id="style-modal" class="modal-content">
-                    <header class="modal-header">
-                        <!--Header del modal-registro-->
-                        <box>
-                            <p>Regístrate en PetFriendly</p>
-                        </box>
-                    </header>
-                    <box>
-                        <!--Caja que contiene los inputs-registro-->
-                    </box>
-                    <input class="placeholder" id="name-register-m" type="text" placeholder="Nombre">
-                    <input class="placeholder" id="mail-register-m" type="text" placeholder="Correo Electrónico">
-                    <input class="placeholder" id="pwd-register-m" type="text" placeholder="Contraseña">
-                    <input class="placeholder" id="vpwd-register-m" type="text" placeholder="Confirma tu contraseña">
-                    <box class="btn-sub-reg">
-                        <!--Caja del botón de inicio-->
-                        <span class="icon-paw"></span><button id="register-submit">¡Hecho!</button><span
-                            class="icon-paw"></span>
-                    </box>
-                </div>
-                <div class="modal-footer" id="mod-footer-color">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-                </div>
-            </div>
-            </div>
-            <!-- Aquí habría una segunda sección para publicidad 
-        <section class="welc-main"></section> -->
     </main>
-    </section>
 
+    <footer id="footer" class="footer-body">
 
-
-
-    <footer class="footer-body">
-        <p>soy el footer</p>
     </footer>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+   https://firebase.google.com/docs/web/setup#reserved-urls -->
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-   https://firebase.google.com/docs/web/setup#reserved-urls -->
 
 
+    <!-- <script type="module" src="../src/views/Welcome.js"></script> -->
     <script type="text/javascript" src="main.js"></script>
+
+
 </body>
 
 </html>
