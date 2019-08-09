@@ -18,18 +18,18 @@
             max-width: 1800px;
         }
         
-        .header-body {
+        /* #header-body {
             width: 100vw;
             height: 10vh;
-        }
+        } */
         
-        .footer-body {
+        #footer-body {
             width: 100vw;
             height: 10vh;
             background-color: #63615B;
         }
         
-        .section-welcome {
+        #section-welcome {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -80,7 +80,8 @@
             height: 70%;
         }
         .login-container {
-            background-color:#26A69A;
+            background-color:red;
+            border-radius: 2rem;
         }
         .modal {
             background-color: whitesmoke;

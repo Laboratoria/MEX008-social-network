@@ -60,14 +60,15 @@ ui.start('#firebaseui-auth-container', {
   };
   //initialize ui config
   ui.start('#firebaseui-auth-container', uiConfig);
-//Activa modal
+
+  //Activa modal
   document.addEventListener('DOMContentLoaded', () => {
     let elems = document.querySelectorAll('.modal');
     let instances = M.Modal.init(elems);
 });
 
 db.collection("user").add({
-        usuario: "Viviana",
+        usuario: "Juanita",
         mail: "vivianaberron@gmail.com",
         password: "perrito"
     })
