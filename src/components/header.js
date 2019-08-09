@@ -8,7 +8,7 @@ let NavBar = {
     `
         return view
     },
-    after_render() => {}
+    after_render: async() => {}
 }
 
 export default NavBar;

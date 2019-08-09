@@ -1,17 +1,22 @@
-// const Utils = {
-//         pageRequestURL: () => {
-//             const url = location.hash.slice(1).toLowerCase() || "/";
-//             const separador = url.split("/");
-//             const request = {
-//                 resource: null,
-//                 id: null,
-//                 verb: null
-//             };
-//             request.resource = separador[1];
-//             request.verb = separador[2];
-//             request.id = separador[3];
-//             return request;
-//         },
-//         export default Utils;
+const Utils = {
+    parseRequestURL: () => {
 
-// export default Utils;
+        let url = location.hash.slice(1).toLowerCase() || "/";
+        let slash = url.split("/");
+        let request = {
+            resource: null,
+            id: null,
+            verb: null
+        };
+        request.resource = slash[1];
+        request.id = slash[2];
+        request.verb = slash[3];
+
+        return request
+    },
+    // Implementación de sueño simple
+    sleep: (ms) => {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+}
+export default Utils;

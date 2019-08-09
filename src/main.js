@@ -90,18 +90,3 @@ firebase.auth().onAuthStateChanged(function(user) {
             // No user is signed in.
     }
 });
-// let provider = new firebase.auth.GoogleAuthProvider();
-// let provider = new firebase.auth.FacebookAuthProvider();
-// auth.currentUser.linkWithRedirect(provider);
-// firebase.auth().getRedirectResult().then(function(result) {
-//     if (result.credential) {
-//         // Accounts successfully linked.
-//         let credential = result.credential;
-//         let user = result.user;
-
-//         // ...
-//     }
-// }).catch(function(error) {
-//     // Handle Errors here.
-//     // ...
-// });

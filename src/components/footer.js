@@ -5,6 +5,6 @@ let Footer = {
     `
         return view
     },
-    after_render() => {};
+    after_render: async() => {}
 }
 export default Footer;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PetFriendly</title>
+    <script type="module" src="app.js"></script>
     <!-- Initialize Firebase -->
     <!-- <script src="/__/firebase/init.js"></script> -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -14,21 +15,22 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <header class="header-body">
+    <header id="header" class="header-body">
         <!--Comienza header-->
 
     </header>
 
     <main id="container" class="container">
         <!--Contenido principal-->
-
+        <div id="loader">Loading...</div>
 
     </main>
 
-    <footer class="footer-body">
+    <footer id="footer" class="footer-body">
 
     </footer>
 
@@ -43,8 +45,8 @@
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
 
 
-    <script type="module" src="app.js"></script>
-    <script type="module" src="../src/views/Welcome.js"></script>
+
+    <!-- <script type="module" src="../src/views/Welcome.js"></script> -->
     <script type="text/javascript" src="main.js"></script>
 
 
