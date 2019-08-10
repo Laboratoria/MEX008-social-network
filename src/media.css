@@ -3,6 +3,10 @@
     .hide-desktop-section {
         display: none;
     }
+
+    /* .hidePresentation {
+        display: none;
+    } */
     /*Pantalla de bienvenida mobile*/
     #start-button {
     background-color: #008F95;
