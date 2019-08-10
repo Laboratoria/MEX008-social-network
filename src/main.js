@@ -5,7 +5,7 @@
 // TEMPLATES //
 
 import Register     from './templates/register.js';
-import Home         from './templates/register.js';
+import Home         from './templates/home.js';
 import About        from './templates/about-us.js';
 import Store        from './templates/store.js';
 import Events       from './templates/events.js';
