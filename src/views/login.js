@@ -3,6 +3,9 @@ let login = {
         const view = 
         `<h1> Hola</h1>`
         return view
+    },
+    after-render : async () => {
+        
     }
 };
 
