@@ -22,7 +22,7 @@ let Register = {
                 <div class="form-group">
                   <label for="user" class="col-sm-2 col-form-label">Usuario</label>
                   <div class="col-sm-10">
-                      <input name="user" type="text" class="form-control"  placeholder="Username">
+                      <input id="name-user" name="user" type="text" class="form-control"  placeholder="Username">
                   </div>
                 </div>
   
@@ -43,7 +43,7 @@ let Register = {
                 <div class="form-group">
                   <label class="col-sm-2 col-form-label" for="confirm-password">Confirmar contraseña</label>
                   <div class="col-sm-10">
-                    <input name="confirm-password" class="form-control" type="password" placeholder="Confirm Password">
+                    <input id="confirm-password" name="confirm-password" class="form-control" type="password" placeholder="Confirm Password">
                   </div>
                 </div>
                 <div class="button">
@@ -67,7 +67,47 @@ let Register = {
             return view
 }, 
 
-after_render : async () => {}
+after_render : async () => {
+/********************* Declaracion de variables **************************/
+
+// Inicio de sesión por correo //
+
+const emailLogin = document.getElementById('email-login');
+const passwordLogin= document.getElementById('password-login');
+const buttonLogin = document.getElementById('button-login');
+
+// Inicio de sesión por formulario de registro //
+const nameRegister = document.getElementById('name-user');
+const emailRegister = document.getElementById('email');
+const passwordRegister = document.getElementById('password');
+const passwordConfirm = document.getElementById('confirm-password');
+const buttonRegister = document.getElementById('button-register');
+
+// Inicio de sesión por google //
+const google = document.getElementById('google');
+
+// Inicio de sesión por facebook //
+const facebook=document.getElementById('facebook');
+
+/**********************Declaracion de eventos************************/   
+// Inicio de sesión por correo //
+buttonLogin.addEventListener('click',() => 
+  window.emailPasswordLogIn(emailLogin,passwordLogin));
+
+
+// Inicio de sesión por formulario de registro //
+
+buttonRegister.addEventListener('click',() => 
+  window.register(nameRegister,emailRegister,passwordRegister,passwordConfirm));
+
+// Inicio de sesión por google //
+google.addEventListener('click',window.googleSignIn);
+
+
+// Inisio de sesión por facebook //
+facebook.addEventListener('click',window.facebookSignIn);
+
+}
 
 }
 

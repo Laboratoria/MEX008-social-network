@@ -7,12 +7,12 @@ import Aside        from './components/aside.js'
 
 //TEMPLATES
 
+import Register     from './templates/register.js'
 import Home         from './templates/home.js'
 import About        from './templates/about-us.js'
 import Store        from './templates/store.js'
 import Error404     from './templates/error.js'
 import Events       from './templates/events.js'
-import Register     from './templates/register.js'
 import Utils        from './templates/utils.js'
 
 
@@ -22,7 +22,7 @@ import Utils        from './templates/utils.js'
 const routes = {
     '/'             : Register
     , '/home'       : Home
-    , '/about'      : About
+    , '/about-us'   : About
     , '/store'      : Store
     , '/events'     : Events
 };
