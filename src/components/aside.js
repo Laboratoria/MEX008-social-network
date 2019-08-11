@@ -2,7 +2,7 @@ let Aside = {
     render : async () => {
         let view = `
         <ul>
-            <li><a href="./#/home"><img src="../src/img/home.svg" alt="Inicio">Inicio</a></li>
+            <li><a href="./#/home"><img src="src/img/home.svg" alt="Inicio">Inicio</a></li>
             <li><a href="./#/events"><img src="../src/img/events.svg" alt="Eventos">Eventos</a></li>
             <li><a href="./#/about-us"><img src="../src/img/aboutus.svg" alt="Sobre Nosotros">Sobre nosotros</a></li>
             <li><a href="./#/store"><img src="../src/img/store.svg" alt="Tienda">Tienda</a></li>
