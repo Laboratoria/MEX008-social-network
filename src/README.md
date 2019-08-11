@@ -9,12 +9,18 @@
 - [Checklist](#checklist)
 
 # Resumen del proyecto
-## ¿Que es ____?
-NOTA: DESARROLLAR LA TEMÁTICA Y POR QUÉ LA ELEGIMOS, BASADA EN LO ANTERIOR
+## ¿Que es HOPAKI?
+HOPAKI (Home Parents Kids), es una webb app desarrollada con el fin de conectar a los padres de familia que educan a sus hijos en casa (homeschooling).
 
 * Investigación
 
-    * [Cuestionario]()
+La educación en casa o "homeschooling", refiere a unificar la educación escolar y el contexto familiar, esto quiere decir que los padres son los encargados de proporcionarles la formación académica correspondiente.
+
+En el proceso de nuestra investigación, encotramos algunos sitios como "Edmodo", que esta dirigido a tres perfiles específicamente: profesor, estudiante y padre o madre de familia, haciendo mas eficiente la comunicación, sin embargo, esta conexión esta enfocada al sistema escolarizado.
+
+
+
+* [Cuestionario]()
 
    <!--![Cuestionario]()-->  
 
@@ -23,14 +29,16 @@ NOTA: DESARROLLAR LA TEMÁTICA Y POR QUÉ LA ELEGIMOS, BASADA EN LO ANTERIOR
 
 -   Prototipo de baja fidelidad
       - Prototipo 1.1    
-      <!--![AQUÍ IMAGEN]()-->
-      - [Demo](AQUÍ LINK) con Marvel
+      ![Bienvenida](/src/img/boceto-1.jpeg)
+      ![Inicio de sesión](/src/img/boceto-2.jpeg)
+      ![vista previa de perfil](/src/img/boceto-3.jpeg)
+      ![Elementos guardados](/src/img/boceto-4.jpeg)
       - Testeo de usabilidad
       - Feedback
 
     - Prototipo 1.2    
       <!--![AQUÍ IMAGEN]()-->
-      - [Demo](AQUÍ LINK) con Marvel
+      [Prototipo alta fidelidad](https://www.figma.com/proto/WhnDjChVmqWcP2N9n7HLYy/hopaki-2?node-id=2%3A75&scaling=min-zoom&redirected=1) con Figma
       - Testeo de usabilidad
       - Feedback
 
@@ -51,6 +59,7 @@ NOTA: DESARROLLAR LA TEMÁTICA Y POR QUÉ LA ELEGIMOS, BASADA EN LO ANTERIOR
 - Investigación con usuarios
 
     - ¿Quiénes son los principales usuarios de producto?
+    
 
 
     - ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
