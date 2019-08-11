@@ -1,6 +1,4 @@
 //INICIO DE SESION POR FACEBOOK 
-
-
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '841700652892753', //ID proporcionado por facebook developers
