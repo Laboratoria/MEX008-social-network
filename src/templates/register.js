@@ -71,12 +71,11 @@ after_render : async () => {
 /********************* Declaracion de variables **************************/
 
 // Inicio de sesión por correo //
-
 const emailLogin = document.getElementById('email-login');
 const passwordLogin= document.getElementById('password-login');
 const buttonLogin = document.getElementById('button-login');
 
-// Inicio de sesión por formulario de registro //
+// Registro por formulario //
 const nameRegister = document.getElementById('name-user');
 const emailRegister = document.getElementById('email');
 const passwordRegister = document.getElementById('password');
@@ -97,15 +96,20 @@ buttonLogin.addEventListener('click',() =>
 
 // Inicio de sesión por formulario de registro //
 
-buttonRegister.addEventListener('click',() => 
-  window.register(nameRegister,emailRegister,passwordRegister,passwordConfirm));
+buttonRegister.addEventListener('click',()=>
+window.register(nameRegister,emailRegister,passwordRegister,passwordConfirm));
 
 // Inicio de sesión por google //
-google.addEventListener('click',window.googleSignIn);
+google.addEventListener('click',googleSignIn);
 
 
-// Inisio de sesión por facebook //
-facebook.addEventListener('click',window.facebookSignIn);
+// Inicio de sesión por facebook //
+facebook.addEventListener('click',facebookSignIn);
+
+// Observador de sesion
+ window.addEventListener('load', initApp); 
+
+
 
 }
 

@@ -38,6 +38,9 @@ const router = async () => {    // function always returns a promise
     const content = document.getElementById('content');
     const aside = document.getElementById('aside');
 
+    header.innerHTML = await Navbar.render(); // wait till the promise resolves
+    await Navbar.after_render();
+
     let request = Utils.parseRequestURL();
     // Parse the URL and if it has an id part, change it with the string ":id"
     // condition ? exprIfTrue : exprIfFalse
@@ -46,26 +49,56 @@ const router = async () => {    // function always returns a promise
     + (request.id ? '/:id' : '')
     + (request.verb ? '/' + request.verb : '');
 
-    if (parsedURL !== '/'){ 
-
-        header.innerHTML = await Navbar.render(); // wait till the promise resolves
-        await Navbar.after_render();
+    console.log(parsedURL);
+     console.log(typeof(parsedURL));
+    if (parsedURL !== '/')
+    {
+        /* header.innerHTML = await Navbar.render(); // wait till the promise resolves
+        await Navbar.after_render(); */
     
         aside.innerHTML = await Aside.render();
         await Aside.after_render();
-
-    }
-
+    } 
     // Get the page from our hash of supported routes.
     // If the parsed URL is not in our list of supported routes, select the 404 page instead
 
     let page = routes[parsedURL] ? routes[parsedURL] : Error404;
     content.innerHTML = await page.render();
     await page.after_render();
-
 }
+
+//OBSERVADOR DE SESION
+// function initApp() {
+//     // Listening for auth state changes.
+//     // [START authstatelistener]
+//     firebase.auth().onAuthStateChanged(function(user) {
+//       if (user) {
+//         // User is signed in.
+//         console.log("Usuario Activo");
+//         // var displayName = user.displayName;
+//         // var email = user.email;
+//         // var emailVerified = user.emailVerified;
+//         // var photoURL = user.photoURL;
+//         // var isAnonymous = user.isAnonymous;
+//         // var uid = user.uid;
+//         // var providerData = user.providerData;
+//         // if (!emailVerified) {
+//         //   document.getElementById('quickstart-verify-email').disabled = false;
+//         // }    
+//       } 
+//       else{
+//         console.log("No existe este usuario");
+//       }
+//     });
+// }
 
 // Listen on hash change:
 window.addEventListener('hashchange', router); // The event occurs when there has been changes to the anchor part of a URL
 // Listen on page load:
 window.addEventListener('load', router); // The event occurs when an object has loaded
+
+
+
+
+
+ 
