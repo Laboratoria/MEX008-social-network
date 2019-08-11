@@ -104,37 +104,31 @@ const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
 // }
 
 // Ingreso por Google //
-function googleSignIn() {
-    if (!firebase.auth().currentUser) {
-    console.log('funciona google')
-    // [START createprovider]
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    firebase.auth().signInWithPopup(provider)
-    .then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const token = result.credential.accessToken;
-      const user = result.user;
-      })
-    .then (() => goHome())
-    .catch(function(error) {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      const credential = error.credential;
-      if (errorCode === 'auth/email-already-in-use') {
-        alert('Este email ya se encuentra registrado');
-      } else {
-        console.log(errorMessage);
-      }
-    });
-  }
-  else {
-    firebase.auth().signOut();
-}
+const googleSignIn=()=> {
+  console.log('funciona google')
+  // [START createprovider]
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+  .then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const token = result.credential.accessToken;
+    const user = result.user;
+    })
+  .then (() => goHome())
+  .catch(function(error) {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    //const email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    //const credential = error.credential;
+    if (errorCode === 'auth/email-already-in-use') {
+      alert('Este email ya se encuentra registrado');
+    } else {
+      console.log(errorMessage);
+    }
+  }); 
 }
 
 // Ingreso por facebook //
@@ -161,7 +155,8 @@ const facebookSignIn=()=>{
       alert('Ya te has registrado con este email');
       // If you are using multiple auth providers on your app you should handle linking
       // the user's accounts here.
-    } else {
+    } 
+    else {
       console.error(error);
     }
   });
