@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 import {login} from './views/login.js';
+//Prueba boton
 
 myFunction();
 
