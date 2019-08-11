@@ -1,12 +1,16 @@
 /*Small devices-smartphone*/
 @media (min-width: 320px) {
-  .hide-desktop-section {
-    display: none;
-  }
-  /*Pantalla de bienvenida mobile*/
-  #start-button {
-    background-color: #008f95;
-    border-color: #008f95;
+    .hide-desktop-section {
+        display: none;
+    }
+
+    /* .hidePresentation {
+        display: none;
+    } */
+    /*Pantalla de bienvenida mobile*/
+    #start-button {
+    background-color: #008F95;
+    border-color: #008F95;
     font-size: 20px;
   }
   .card {
