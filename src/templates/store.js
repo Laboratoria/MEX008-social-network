@@ -1,7 +1,8 @@
 let Store = {
     render : async () => {
         let view = `
-        <p>Hola store </p>`
+        <section class="all-sections">
+        </section>`
         return view
     }
 , after_render: async () => {}

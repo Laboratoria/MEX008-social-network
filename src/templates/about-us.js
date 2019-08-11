@@ -1,7 +1,8 @@
 let About = {
     render : async () => {
     let view = `
-    <p>Hola About-us </p>`
+    <section class="all-sections">
+        </section>`
     return view
 }
 , after_render: async () => {}
