@@ -44,6 +44,11 @@ myFunction();
 // startButton.addEventListener('click', nodoOfPresentationMobile);
 
 // Creando rutas y archivos JS
+
+import all from "./views/all.js"
+import login from "./views/login"
+import perfil from "./views/perfil"
+
 const routes = {
       '/'           : login
     , '/register'   : registro 
@@ -57,12 +62,11 @@ const routes = {
 const router = async () => {
     // 
     const content = null || document.getElementById('container_page');
-
+    const footer = null || document.getElementById('footer-container')
     // 
-    let request = Utils.parseRequestURL();
+    const request = Utils.parseRequestURL();
     //
-    let parsedUrl = (request.resource ? '/' + request.resource : '/'); //+ (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
-    console.log(parsedUrl);
+     let parsedUrl = (request.resource ? '/' + request.resource : '/'); + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
     //obtener la página desde el hash
     let page = routes [parsedUrl] ? routes[parsedUrl] : error404;
     content.innerHTML = await page.render();
