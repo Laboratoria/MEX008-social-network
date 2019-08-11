@@ -1,23 +1,32 @@
 // Este es el punto de entrada de tu aplicacion
 // import {login} from './views/login.js';
-
 // myFunction();
 
+"use strict";
+//Importar los archivos JS que imprimiran las pantallas
+import intro  from './views/intro.js';
+import login  from './views/login.js';
+import Utils from './views/parsedRequestURL.js';
+console.log(Utils.parsedRequestUrl);
+//import Utils from './views/parsedRequestURL.js';
+
+//Crear un objeto que contenga las rutas como llaves y su valor (List of supported routes)
+
 const routes = {
-    '/'           : login
-  , '/register'   : registro
-  , '/profile'    : perfil
-  , '/error'      : error404
+    '/': intro,
+    '/login': login
 };
-//
-//Aquí el controlador
+//Aquí el controlador de las rutas, esté comparará contra las rutas definidas y direccionará.
+
 const router = async () => {
   //
-  const content = null || document.getElementById('container_page');
+  const content = null || document.getElementById('content');
   //
-  let request = Utils.parseRequestURL();
+  let request = Utils.parsedRequestUrl();
+  
   //
-  let parsedUrl = (request.resource ? '/' + request.resource : '/'); //+ (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
+  let parsedUrl = (request.resource ? '/' + request.resource : '/')
+  + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
   console.log(parsedUrl);
   //obtener la página desde el hash
   let page = routes [parsedUrl] ? routes[parsedUrl] : error404;
@@ -27,12 +36,7 @@ const router = async () => {
 //llamando objeto y escuchando hash
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
-parseRequestUrl : () => {
-  let url = location.hash.slice(1) || '/';
-  let r = url.split('/');
-  let request = {
-  };
-};
 
-myFunction();
+
+// router();
 
