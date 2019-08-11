@@ -105,7 +105,6 @@ const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
 
 // Ingreso por Google //
 function googleSignIn() {
-    if (!firebase.auth().currentUser) {
     console.log('funciona google')
     // [START createprovider]
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -132,7 +131,7 @@ function googleSignIn() {
         console.log(errorMessage);
       }
     });
-  }
+  
 }
 
 // Ingreso por facebook //
