@@ -1,7 +1,8 @@
 let Events = {
     render : async () => {
         let view = `
-        <p>Hola events </p>`
+        <section class="all-sections">
+        </section>`
         return view
     }
 , after_render: async () => {}
