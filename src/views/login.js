@@ -4,8 +4,9 @@ let login = {
         `<h1> Hola</h1>`
         return view
     },
-    after-render : async () => {
-        
+    
+    after_render : async () => {
+
     }
 };
 
