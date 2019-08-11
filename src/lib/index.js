@@ -127,14 +127,12 @@ function googleSignIn() {
       const credential = error.credential;
       if (errorCode === 'auth/email-already-in-use') {
         alert('Este email ya se encuentra registrado');
-      } else {
+      } 
+      else {
         console.log(errorMessage);
       }
     });
   }
-  else {
-    firebase.auth().signOut();
-}
 }
 
 // Ingreso por facebook //
@@ -161,7 +159,8 @@ const facebookSignIn=()=>{
       alert('Ya te has registrado con este email');
       // If you are using multiple auth providers on your app you should handle linking
       // the user's accounts here.
-    } else {
+    } 
+    else {
       console.error(error);
     }
   });
