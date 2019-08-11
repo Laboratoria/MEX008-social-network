@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
-import {login} from './views/login.js';
+// import {login} from './views/login.js';
 
-myFunction();
+// myFunction();
 
 // //A
 // const startButton = document.getElementById('start-button');
