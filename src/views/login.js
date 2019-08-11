@@ -4,8 +4,10 @@ let login = {
         <h1>Hola! </h1>
         </div>`;
     },
-    after_render : () => {}
-        
-    };
+    
+    after_render : async () => {
+
+    }
+};
 
 export default login;
