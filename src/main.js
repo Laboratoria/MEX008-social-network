@@ -1,7 +1,4 @@
 // Este es el punto de entrada de tu aplicacion
-// import {login} from './views/login.js';
-// myFunction();
-
 "use strict";
 //Importar los archivos JS que imprimiran las pantallas
 import intro  from './views/intro.js';
