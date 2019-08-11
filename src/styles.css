@@ -44,6 +44,9 @@ button {
 
 }
 
+#main-aside-container {
+  display: flex;
+}
 
 /*REGISTER*/
 .form-group {
@@ -60,13 +63,18 @@ display: flex;
 }
 
 
-#form-register-page {
+#form-register-page, .all-sections {
 background: #b6d0f2; /* Old browsers */
 background: -moz-linear-gradient(top,  #b6d0f2 0%, #ffffff 68%, #ffffff 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6d0f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 background-attachment: fixed;
+}
+
+.all-sections {
+  width: 70vw;
+  height: 100vh;
 }
 
 #all-forms {
@@ -106,9 +114,38 @@ box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
 }
 
 /*ASIDE*/
-.hide{
-  display: none;
+
+aside {
+  background-color: #A9BF04;
+  width: 30vw;
+  display: flex;
+  height: 100vh;
+  text-align: left;
+  order: -1;
 }
+
+.lateral-menu {
+  width: 60%;
+  margin: 15% 15% 0 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.lateral-menu a {
+  color: white;
+}
+
+.lateral-menu ul li{
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.lateral-menu a img {
+  max-width: 45px;
+  padding-right: 1rem;
+}
+/**/
 
 .button{
   display: flex;
