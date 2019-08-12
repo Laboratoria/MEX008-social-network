@@ -8,6 +8,9 @@ let Error404 = {
         `
         return view
     }
-    , after_render: async () => {}
+    , after_render: async () => {
+        console.log("hola desde el ERROR");
+        
+    }
 }
 export default Error404;
