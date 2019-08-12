@@ -1,7 +1,7 @@
 const profile = {
     render: async () => {
       return `
-      <secttion id="profile">
+      <section id="profile">
       <h3>Perfil</h3>
       <hr>
       <img src="" alt="">
@@ -14,7 +14,7 @@ const profile = {
       <p><i class="material-icons tiny"></i> 24 años </p>
       <p><i class="material-icons tiny">phone_iphone</i> 01 55 6724 5350</p>
       <p><i class="material-icons tiny">location_on</i> Ciudad de México</p>
-    </secttion>
+    </section>
           `;
     },
     after_render: () => {}
