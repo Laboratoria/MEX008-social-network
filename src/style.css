@@ -29,13 +29,6 @@
     background-color: #63615B;
 }
 
-.section-wall {
-    background-color: red;
-}
-
-.wall-bground {
-    background-color: red;
-}
 .section-welcome {
     display: flex;
     flex-direction: column;
@@ -173,4 +166,38 @@
 .btn-row a {
     text-decoration: none;
     color: black;
+}
+
+/*Seccion wall*/
+#post-img {
+ width: 70%;
+ height: 90%;
+ margin: 0;
+    
+}
+.card-image {
+    max-width: 40%;
+}
+
+.header {
+ font-size:large;
+ text-align: center;
+ color: #63615B;
+}
+
+.box-title-post {
+    background-color: #A9F5BC;
+    border-radius: 1rem;
+
+}
+
+.post-form {
+    height: 90%;
+}
+
+#privacy-select {
+    -webkit-appearance: none ¡important;
+    width: 150px;
+    height: 30px;
+    background-color: red;
 }
