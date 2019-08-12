@@ -16,7 +16,7 @@ import Utils from './services/Utils.js'
 
 const routes = {
     '/': Welcome,
-    '/Wall': Wall
+    '/wall': Wall
 };
 
 // El código del enrutador. Toma una URL, verifica la lista de rutas admitidas y luego muestra la página de contenido correspondiente.
@@ -43,6 +43,7 @@ const router = async() => {
     let page = routes[parsedURL] ? routes[parsedURL] : Error404;
     content.innerHTML = await page.render();
     await page.after_render();
+    console.log(parsedURL);
 }
 
 // Evento que escucha el cambio de hash:
