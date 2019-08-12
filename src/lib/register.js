@@ -9,6 +9,7 @@ let Register = {
                             type="email"
                             id = "email"
                             name = "email"
+                            class = "form-inputs"
                             placeholder="Ingresa tu correo electrónico"
                             required
                         />
@@ -17,12 +18,15 @@ let Register = {
                             type = "password"
                             id = "password" 
                             name = "password" 
+                            class = "form-inputs"
                             placeholder = "contraseña (mayor o igual a 6 caracteres)"
                             required
                         />
                         <br>
                         <input 
-                            type="submit" value="Crear cuenta"
+                            type="submit" 
+                            class = "form-submit"
+                            value="Crear cuenta"
                         />
                     </form>
                 </section>
@@ -41,7 +45,7 @@ let Register = {
                     () => {
                         console.log("BIENVENIDO");
                         //toogleModal();
-                        alert("Bienvenido, ya estás registrado. Ahora inicia sesión con tu cuenta");
+                        alert("¡Bienvenido, gracias por registrarte!. \nAhora inicia sesión con tu cuenta");
                     }
                 )
                 .catch(

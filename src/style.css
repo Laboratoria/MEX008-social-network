@@ -101,6 +101,20 @@
     text-align: center;
 }
 
+.form-inputs {
+    width: 40vh;
+    height: 5vh;
+    font-family: 'Kalam', cursive;
+    font-size: .8rem;
+}
+
+.form-submit {
+    width: 40vh;
+    height: 5vh;
+    font-family: 'Kalam', cursive;
+    font-size: 1.2rem;
+}
+
 /* desktop version */
 @media (min-width: 600px){
     #navbar-dsk {
@@ -130,6 +144,11 @@
 
     #main-home-mbl {
         display: none;
+    }
+
+    .form-inputs {
+        width: 60vh;
+        font-size: 1.2rem;
     }
 
 }
