@@ -3,7 +3,8 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-import addPost from "./app.js";
+// import addPost from "./app.js";
+
 var firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
@@ -59,43 +60,84 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
-//initialize ui config
-ui.start('#firebaseui-auth-container', uiConfig);
-//Activa modal
-document.addEventListener('DOMContentLoaded', () => {
-    let elems = document.querySelectorAll('.modal');
-    let instances = M.Modal.init(elems);
-});
+// let postTxt = document.getElementById('textarea');
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-});
+let addPost = (e) => {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user.uid != '') {
+            e.preventDefault();
+            let postTxt = document.getElementById('post-txt').value;
+            console.log(user);
+            db.collection("post").add({
+                    usuario: user.uid,
+                    nombre: user.displayName,
+                    postContent: postTxt
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
 
-export const addPostSubmit = (ev) => {
-    ev.preventDefault();
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            let textArea = document.getElementById("textarea");
-            let inputTrim = textarea.trim();
-            if (textArea.value === '' || textArea.value === inputTrim || textArea.value = ' ') {
-                alert("Tienes que escribir algo");
-            } else {
-                firebase.firestore().collection('users').doc(user.uid).get()
-                    .then(doc => {
-                        if (user.displayName === null) {
-                            addPost(textArea.value, user.uid, doc.data().name);
-
-                        } else {
-                            addPost(textarea.value, user.uid, user.displayName);
-                        }
-
-                    });
-            }
-
+            // User is signed in.
         } else {
-            alert("Inicia sesion para publicar");
+            console.log("no hay usuario logeado")
+                // No user is signed in.
         }
-
     });
-};
+}
+
+
+
+// const btnSmt = document.getElementById('print-button');
+
+
+
+
+
+
+
+
+
+
+
+
+// //initialize ui config
+// ui.start('#firebaseui-auth-container', uiConfig);
+// //Activa modal
+// document.addEventListener('DOMContentLoaded', () => {
+//     let elems = document.querySelectorAll('.modal');
+//     let instances = M.Modal.init(elems);
+// });
+
+
+
+
+// export const addPostSubmit = (ev) => {
+//     ev.preventDefault();
+//     firebase.auth().onAuthStateChanged(user => {
+//         if (user) {
+//             let textArea = document.getElementById("textarea");
+//             let inputTrim = textarea.trim();
+//             if (textArea.value === '' || textArea.value === inputTrim || textArea.value = ' ') {
+//                 alert("Tienes que escribir algo");
+//             } else {
+//                 firebase.firestore().collection('users').doc(user.uid).get()
+//                     .then(doc => {
+//                         if (user.displayName === null) {
+//                             addPost(textArea.value, user.uid, doc.data().name);
+
+//                         } else {
+//                             addPost(textarea.value, user.uid, user.displayName);
+//                         }
+
+//                     });
+//             }
+
+//         } else {
+//             alert("Inicia sesion para publicar");
+//         }
+
+//     });
+// };
