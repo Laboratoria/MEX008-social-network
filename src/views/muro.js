@@ -71,11 +71,11 @@ let Muro = {
         }
      });
 
-      const insertPublication = (textPublication) =>{
+      const insertPublication = () =>{
           console.log(textPublication);   
       }
       
-      btnPublicar.addEventListener("click",insertPublication(textPublication));
+      btnPublicar.addEventListener("click",insertPublication);
       
 
       

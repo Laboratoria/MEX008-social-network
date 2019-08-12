@@ -35,7 +35,7 @@ const router = async () => { // function always returns a promise
     
         // Render the header of the page
         
-    if((location.hash != '/login') & (parsedURL != '/')){
+    if((parsedURL != '/login') & (parsedURL != '/')){
      encabezado.innerHTML = await header.render(); // wait till the promise resolves
      await header.after_render();
     }
