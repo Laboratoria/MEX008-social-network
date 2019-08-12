@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Initialization snippet for the firebase project -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase.js"></script>
+    <script>
+        // Initialize firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAsQpWY0Ahrlh7k7qlwX7guYJCZN3msj_U",
+            authDomain: "together-click-5a5dd.firebaseapp.com",
+            databaseURL: "https://together-click-5a5dd.firebaseio.com",
+            projectId: "together-click-5a5dd",
+            storageBucket: "together-click-5a5dd.appspot.com",
+            messagingSenderId: "134852128441",
+            appId: "1:134852128441:web:b5711605e6ce435f"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <body>
+        <script>
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    document.body.innerHTML = '<h1> Congrats ' + user.displayName +'! </h1>';
+                }
+                else {
+                    console.log("no user signed in");
+                }
+            });
+        </script>    
+    </body>
+</html>

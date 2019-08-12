@@ -5,15 +5,17 @@
     padding: 0;
 } 
 
+/* NAVBAR */
 .navbar {
     height: 12vh;
     width: 100vw;
-    background: #f2d0e0;
+    background: #bcbabf; 
     font-size: 1.5em;
     padding: 1vh 2.5%;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    /* font-family: 'Kalam', cursive; */
 }
 
 #navbar-dsk {
@@ -29,42 +31,77 @@
 }
 
 .linksToJoin {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     text-decoration: none;
     /* padding: .25rem .5rem; */
     padding: 0.5%;
+    font-family: 'Kalam', cursive;
+    font-size: 1.5em;
 }
 
-.form-register{
+.linksToJoin:hover {
+    text-decoration:underline;
+}
 
-    background-image: url(imgs/roses.jpg);
+#btn-login {
+    color: #991b1e;
+}
+
+#btn-register {
+    background: #991b1e;
+    color: #bcbabf;
+}
+.page-background{
+    height: 88vh;
+    width: 100vw;
+    background: url(img/eat.jpg);
     background-size: cover;
-    height: 100vh;
-    margin: 15% 20%;
-    border-radius: 10px;
+    background-position: center;
+}
+
+.main-home{
+    padding: 2rem;
+    background: rgba(188, 186, 191, 0.65);
+    color: #991b1e;
+}
+
+.main-home h1 {
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.main-home p {
+    font-family: 'Kalam', cursive;
+}
+#main-home-mbl {
+    width: 60vw;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+}
+
+#main-home-dsk {
+    display: none;
+}
+
+.form-background{
+    width: 60vw;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background: rgba(188, 186, 191, 0.65);
+    color: #991b1e;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2.1rem;
     text-align: center;
 }
 
-.register{
-    font-family: sans-serif;
-   
-    color: white;
-     display: inline-table;
-}
-
-form input {
-    margin-bottom: 1rem;
-    padding: .5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;  
-}
-
-form input, label{
-    display: block;
-    text-align: left;
-    width: 40vw;
-}
-
+/* desktop version */
 @media (min-width: 600px){
     #navbar-dsk {
         display: flex;
@@ -73,4 +110,26 @@ form input, label{
     #navbar-mbl{
         display: none;
     }
+    #main-home-dsk {
+        display: block;
+        width: 40vw;
+        height: 70vh;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-5%, -50%);
+    }
+
+    #main-home-dsk h1 {
+        font-size: 2.6rem;
+    }
+
+    #main-home-dsk p {
+        font-size:  1.3rem;
+    }
+
+    #main-home-mbl {
+        display: none;
+    }
+
 }
