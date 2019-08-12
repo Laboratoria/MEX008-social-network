@@ -5,15 +5,16 @@ import welcome from "./views/pages/welcome.js";
 //import timeline from "./views/pages/timeline.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
-import entry from "./views/pages/entry.js";
+//import profile from "./views/pages/profile.js";
+//import settings from "./views/pages/settings.js";
 import error404 from "./views/pages/error404.js ";
 
 
 //Importando componentes
 import sidebar from "./views/components/sidebar.js";
 /*import modal from "./views/components/modal.js";
-import addBtn from "./views/components/addBtn.js";
-import footer from "./views/components/footer.js";*/
+import addBtn from "./views/components/addBtn.js";*/
+import footer from "./views/components/footer.js";
 
 import Utils from "./services/Utils.js";
 
@@ -25,10 +26,11 @@ import Utils from "./services/Utils.js";
   const routes = {
     "/intro": intro,
     "/": welcome,
-   // "/": timeline,
+   // "/timeline": timeline,
     "/shops": shops,
     "/workshops": workshops,
-    "/entry": entry,
+   // "/profile": profile,
+   // "/settings": settings,
   };
 
 //inicializando todo
@@ -37,13 +39,13 @@ import Utils from "./services/Utils.js";
     const sidebarContainer = null || document.getElementById("sidebar-container");
     const welcomeContainer = null || document.getElementById("welcome-container");
     const sectionContainer = null || document.getElementById("section-container");
-  //  const footerNav = null || document.getElementById("footer-nav");
+    const footerNav = null || document.getElementById("footer-nav");
 
   introContainer.innerHTML = await intro.render();
   sidebarContainer.innerHTML = await sidebar.render();
   welcomeContainer.innerHTML = await welcome.render();
   sectionContainer.innerHTML = await shops.render();
-// footerNav.innerHTML = await footer.render();
+  footerNav.innerHTML = await footer.render();
 
     const request = Utils.pageRequestURL();
 
@@ -60,8 +62,21 @@ import Utils from "./services/Utils.js";
     const btnCollapse = document.querySelectorAll(".sidenav");
     M.Sidenav.init(btnCollapse);
   };
+
+
   
 /*falta inicializar modal y asignar addBtn
+
+   //funcion base para inicializar botones
+   const signOut = async() => {
+    try{
+        firebase.auth().signOut().then;
+    }
+    catch(err){
+        console.error("¡Error!")
+    }
+    console.log("Se cerró sesión")
+}
 -- para hacker-edition, puede servir un poco para la funcionalidad de 'like'(publication-list solo aparece en timeline)
     const arrayLi = Array.from(
         document.querySelectorAll("#publication-list ul>li")
