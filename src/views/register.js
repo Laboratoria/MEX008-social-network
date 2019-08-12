@@ -48,46 +48,52 @@ let register = {
     },
     after_render : async () => {
 
-      const verificar = (e) =>{
-        e.preventDefault();
+      const verificar = () =>{
         var user = firebase.auth().currentUser;
         user.sendEmailVerification()
-        .then(function() {
+        .then(() => {
         // Email sent.
-        alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
         console.log("enviando correo ...");
-        location.hash= '/'
-        }).catch(function(error) {
+        alert("Ya casi terminas. Accede a tu correo para verificar tu cuenta");
+        console.log("aqui", user.emailVerified);
+        if(user.emailVerified){
+          location.hash= '/intereses';
+        }
+        
+        })
+        .catch((error) => {
         // An error happened.
         console.log(error);
         });
     }
 
-      const registrar = (e) => {
-        e.preventDefault();
-        alert("entra a la funcion registrar");
+
+      const registrar = () => {
+        // e.preventDefault();
+        
+        console.log("entra a la funcion registrar");
         let mail = document.getElementById("email-registro").value;
         let password = document.getElementById("password-registro").value;
         let name = document.getElementById("register-name").value;
-    
+        
         if(name != "" & mail != "" & password != ""){
-    
+
         firebase.auth().createUserWithEmailAndPassword(mail, password)
         .then(()=>{
-            alert("Usuario creado");
-            verificar()   
+            console.log("Usuario creado");
+            verificar();
         })
-        /*.then(verificar())*/
         .catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
+            console.log("no se pudo crear usuario");
             console.log(errorCode);
             console.log(errorMessage);
-            // ...
+            
           });
+        
         }
-    
         else{
             alert("Debes completar los campos");
         }

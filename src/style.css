@@ -141,6 +141,7 @@ h3,
     width: 30%;
     margin: 0 auto;
     height: 5%;
+    text-align: right;
     
    }
    .pantalla-muro .stars p {
@@ -216,4 +217,17 @@ h3,
     display: flex;
     margin: 0;
    }
+
+   .in-line{
+       display: inline;
+   }
+   #pantalla-muro{
+       height: 490px;
+   }
+   #pantalla-muro #div-publicar{
+       text-align: right;
+       margin-right: 10%;
+   }
+   
+   
 

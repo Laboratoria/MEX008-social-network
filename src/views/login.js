@@ -63,6 +63,8 @@ let login = {
             
           
     </div>
+    <div class = "alert" id="alert-one"> 
+    </div>
     `
         return view
     }
@@ -72,18 +74,25 @@ let login = {
         e.preventDefault();
         let mail2 = document.getElementById("email-login").value;
         let password2 = document.getElementById("password-login").value;
-    
-        firebase.auth().signInWithEmailAndPassword(mail2, password2)
-        .then((user)=>{
+
+          firebase.auth().signInWithEmailAndPassword(mail2, password2)
+          .then((user)=>{
           console.log("¿El usuario esta verificado?",user.user.emailVerified);
-          
+                 
           if(user.user.emailVerified){
             location.hash = "/muro";
           }
-        }
-      )
-        .catch(function(error) {
+          else{
+            console.log("aun no has validado tu cuenta, accede a tu correo por favor");
+            const alertOne = document.getElementById("alert-one");
+            alertOne.innerHTML = `
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Atención!</strong> Aun no has validado tu cuenta, accede a tu correo por favor`
+          }
+        })
+        .catch((error) => {
             // Handle Errors here.
+            console.log("Usuario no registrado");
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode);
