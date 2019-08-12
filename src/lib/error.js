@@ -3,7 +3,7 @@ let Error404 = {
     render : async () => {
         let view =  /*html*/`
             <figure>
-                <img src="imgs/ponido1.jpg" alt="">
+                <img src="img/ponido1.jpg" alt="">
             </figure>
         `
         return view
