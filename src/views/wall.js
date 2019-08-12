@@ -1,22 +1,27 @@
 let Wall = {
     render: async() => {
-        let view = /* html */ `
-        <section class="section-welcome">
-        <!--Sección 1-->
-        <box class="welc-text">
-        <!--Caja que contiene el texto de bienvenida-->
-        <p>¡Bienvenido a la comunidad más completa de animal lovers!</p>
-        <p>Localiza más rápido a tu amigo perdido</p>
-         </box>
-        <!--Caja que contiene el botón de "Cerrar sesión"-->
-        <box>
-        <a id="btn-logout" class="waves-effect waves-light btn modal-trigger" href="#/welcome">Cerrar sesion</a>
-        </box>
-        </section>
-        `
+        let view = `
+    <main>
+      <div class="wall-bground">
+        <div id="post-container">
+        <form class="post-form">
+          <div class="post-box">
+            <textarea  class="textarea" name="post" id="post" cols="30" rows="3" placeholder="¡Cuéntanos algo sobre ti!"></textarea>
+          </div>
+          <div class="send-post">
+              <select class="buttons-post" id="privacy-select">
+                  <option value="publico">Publico</option>
+                  <option value="seguidores">Seguidores</option>
+              </select>
+              <button class="print-post-button" id="print-button">Publicar</button>
+          </div>
+        </form>
+      </div>
+      </div>
+    </main`
         return view
     },
     after_render: async() => {}
-}
 
+}
 export default Wall;

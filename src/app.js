@@ -40,7 +40,7 @@ const router = async() => {
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
         // Obtenemos la página de nuestro hash de rutas compatibles.
         // Si la URL analizada no está en nuestra lista de rutas compatibles, selecciona la página 404 en su lugar.
-    let page = routes[parsedURL] ? routes[parsedURL] : Error404;
+    let page = routes[parsedURL] ? routes[parsedURL] : Error404; // routes[""] 
     content.innerHTML = await page.render();
     await page.after_render();
     console.log(parsedURL);

@@ -61,7 +61,7 @@ var uiConfig = {
 
 // funcion que permite agregar contenido a la bd
 db.collection("user").add({
-        usuario: "Viviana",
+        usuario: "Juanita",
         mail: "vivianaberron@gmail.com",
         password: "perrito"
     })
