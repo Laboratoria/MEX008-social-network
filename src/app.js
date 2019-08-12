@@ -7,6 +7,7 @@ import Error404 from './views/error.js';
 import NavBar from './components/header.js';
 import Footer from './components/footer.js';
 
+
 import Utils from './services/Utils.js'
 import Wall from './views/wall.js';
 
@@ -14,7 +15,7 @@ import Wall from './views/wall.js';
 
 const routes = {
     '/': Welcome,
-    '/Wall': Wall
+    '/wall': Wall
 };
 
 // El código del enrutador. Toma una URL, verifica la lista de rutas admitidas y luego muestra la página de contenido correspondiente.
@@ -38,9 +39,10 @@ const router = async() => {
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
         // Obtenemos la página de nuestro hash de rutas compatibles.
         // Si la URL analizada no está en nuestra lista de rutas compatibles, selecciona la página 404 en su lugar.
-    let page = routes[parsedURL] ? routes[parsedURL] : Error404;
+    let page = routes[parsedURL] ? routes[parsedURL] : Error404; // routes[""] 
     content.innerHTML = await page.render();
     await page.after_render();
+    console.log(parsedURL);
 }
 
 // Evento que escucha el cambio de hash:
