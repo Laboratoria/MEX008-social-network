@@ -3,6 +3,7 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
+import addPost from "./app.js";
 var firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
@@ -58,28 +59,43 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
-
-// funcion que permite agregar contenido a la bd
-db.collection("user").add({
-        usuario: "Juanita",
-        mail: "vivianaberron@gmail.com",
-        password: "perrito"
-    })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
-
-// funcion que permite saber que usuario esta logeado
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        console.log(user)
-
-        // User is signed in.
-    } else {
-        console.log("no hay usuario logeado")
-            // No user is signed in.
-    }
+//initialize ui config
+ui.start('#firebaseui-auth-container', uiConfig);
+//Activa modal
+document.addEventListener('DOMContentLoaded', () => {
+    let elems = document.querySelectorAll('.modal');
+    let instances = M.Modal.init(elems);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+});
+
+export const addPostSubmit = (ev) => {
+    ev.preventDefault();
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            let textArea = document.getElementById("textarea");
+            let inputTrim = textarea.trim();
+            if (textArea.value === '' || textArea.value === inputTrim || textArea.value = ' ') {
+                alert("Tienes que escribir algo");
+            } else {
+                firebase.firestore().collection('users').doc(user.uid).get()
+                    .then(doc => {
+                        if (user.displayName === null) {
+                            addPost(textArea.value, user.uid, doc.data().name);
+
+                        } else {
+                            addPost(textarea.value, user.uid, user.displayName);
+                        }
+
+                    });
+            }
+
+        } else {
+            alert("Inicia sesion para publicar");
+        }
+
+    });
+};

@@ -1,27 +1,34 @@
 let Wall = {
     render: async() => {
         let view = `
-    <main>
-      <div class="wall-bground">
-        <div id="post-container">
+  <div class="col s12 m7 box-title-post">
+    <h2 class="header">Publica sobre tu amigo</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img id="post-img" src="./img/240.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
         <form class="post-form">
-          <div class="post-box">
-            <textarea  class="textarea" name="post" id="post" cols="30" rows="3" placeholder="¡Cuéntanos algo sobre ti!"></textarea>
-          </div>
-          <div class="send-post">
-              <select class="buttons-post" id="privacy-select">
-                  <option value="publico">Publico</option>
-                  <option value="seguidores">Seguidores</option>
-              </select>
-              <button class="print-post-button" id="print-button">Publicar</button>
-          </div>
-        </form>
+          <textarea  class="textarea post-form" name="post" id="post" cols="30" rows="3" placeholder="¡Cuéntanos algo sobre ti!"></textarea>
+          <button class="print-post-button" id="print-button">Publicar</button>
+        
+
+
+          </form>
+        </div>
       </div>
-      </div>
-    </main`
+    </div>
+  </div>
+
+ 
+            `
         return view
     },
-    after_render: async() => {}
+    after_render: async() => {
+        buttonSubmit.addEventListener("click", submitPost);
+
+    }
 
 }
 export default Wall;
