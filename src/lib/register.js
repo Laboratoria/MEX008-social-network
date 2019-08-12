@@ -4,7 +4,7 @@ let Register = {
             <figure class = "page-background">
                 <section class = "form-background">
                     <h1>Crea tu cuenta</h1>
-                    <form |action="">
+                    <form id = "form-register" name = "formRegister" action="">
                         <input 
                             type="email"
                             id = "email"
@@ -30,6 +30,38 @@ let Register = {
         `
         return view
     },
-    after_render : async () => {}
+    after_render : async () => {
+        const formRegister = document.forms.formRegister;
+        formRegister.addEventListener("submit", () => {
+            event.preventDefault();
+            firebase.auth()
+                .createUserWithEmailAndPassword(
+                    formRegister["email"].value, formRegister["password"].value)
+                .then(
+                    () => {
+                        console.log("BIENVENIDO");
+                        //toogleModal();
+                        alert("Bienvenido, ya estás registrado. Ahora inicia sesión con tu cuenta");
+                    }
+                )
+                .catch(
+                    error => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(errorCode,"|",errorMessage);
+                        if (errorCode == "auth/weak-password") {
+                            alert("La contraseña debe ser de al menos 6 caracteres");
+                        }
+                        else if (errorCode == "auth/email-already-in-use") {
+                            alert("La dirección de correo ya está registrada");
+                        }
+                        else{
+                            alert(errorMessage);
+                        }       
+                    }
+                );
+            }
+        );
+    }
 }
 export default Register;
