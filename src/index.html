@@ -5,30 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-  <title>Document</title>
-
-
+  <link rel="stylesheet" href="style.css">
+  <title>Wanderlust</title>
 </head>
-
-<section class="login">
-  <div class="containerlogin">
-  <form action="Login">
-      <input type="email" placeholder="Email" >
-      <input type="pasword" placeholder="Pasword">
-  </form>
-  </div>
- 
-</section>
-
-
-
 <body>
+<!--Bienvenida-->
+<section class="BienvenidaLogo">
 
-  <!--estructura de login -->
-<h1>Welcome to My Awesome App</h1>
-<div id="firebaseui-auth-container"></div>
-<div id="loader">Loading...</div>
-
+</section>
+<!--estructura de login -->
+<main id="content-container">
+  <section class="Login-box">
+   <div class="conteiner">
+        <form class="login">
+              <h1><img src="../icon/FAVORITO.png" alt="imagen-logo" id="logo"></h1>
+              <div id="loader">Login or sign up</div> <br>
+              <div id="firebaseui-auth-container"></div>
+        </form>
+    </div>
+  </section> 
+ </main>
+<!--Creación de perfil-->
+<section class="perfil-box">
+  <section class="Perfil">
+    <img class= "avatar" src="../icon/FAVORITO.png" alt="logoWander">
+      <h2>¿Tienes un espiritu Wanderlust?</h1>
+      <br>
+      <h2>¡Crea tu perfil!</h2>
+      <form class="usario-box">
+        <label for="NombreUsuario">Nombre</label>
+        <input type="text"name="Nombre" id="nombre-usuario">
+        <br>
+        <br>
+      <label for="UbicaciónUsiario">Tu Ubicación</label>
+      <input type="text" name="Ubicación" id="ubicación-usuario">
+    <section class="SeleccionarInsignias">
+       <h2>Agrega tus insignias</h2>
+         <input id="experto" type="image" src="../icon/icons8-maleta-480.png" name="viajeroexperto" >
+         <input id="noexperiencia" type="image" src="../icon/viajerosinexperiencia.png"  name="vijerosinexperiencia">
+         <input id="surfing" type="image" src="../icon/casaamor.png" name="couchsurfing">
+    </section>
+     </form>
+ </section>
+</section>
+<!--Perfil Creado-->
+<section>
+  Perfil Creado
+</section>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 
