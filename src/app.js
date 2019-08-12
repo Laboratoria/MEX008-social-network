@@ -1,15 +1,15 @@
 "use strict";
 
-import Navbar from './modules/navbar.js'
+import Navbar from './lib/navbar.js'
 
-import Home     from './modules/home.js'
-import Login    from './modules/login.js'
-import LoginR    from './modules/loginR.js'
-import Register from './modules/register.js'
-import RegisterR from './modules/registerR.js'
-import Error404 from './modules/error.js'
+import Home     from './lib/home.js'
+import Login    from './lib/login.js'
+import LoginR    from './lib/loginR.js'
+import Register from './lib/register.js'
+import RegisterR from './lib/registerR.js'
+import Error404 from './lib/error.js'
 
-import Utils from './modules/utils.js'
+import Utils from './lib/utils.js'
 
 // List of supported routes. 
 // Any url other than these routes will throw a 404 error
