@@ -1,7 +1,4 @@
 // Este es el punto de entrada de tu aplicacion
-// import {login} from './views/login.js';
-// myFunction();
-
 "use strict";
 //Importar los archivos JS que imprimiran las pantallas
 import intro  from './views/intro.js';
@@ -40,7 +37,3 @@ const router = async () => {
 //llamando objeto y escuchando hash
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
-
-
-
-//Prueba comentario, subir push
