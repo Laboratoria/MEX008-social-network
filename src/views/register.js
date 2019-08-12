@@ -68,15 +68,16 @@ let register = {
     }
 
 
-      const registrar = (e) => {
-        e.preventDefault();
+      const registrar = () => {
+        // e.preventDefault();
+        
         console.log("entra a la funcion registrar");
         let mail = document.getElementById("email-registro").value;
         let password = document.getElementById("password-registro").value;
         let name = document.getElementById("register-name").value;
-
-        if(name != "" & mail != "" & password != ""){
         
+        if(name != "" & mail != "" & password != ""){
+
         firebase.auth().createUserWithEmailAndPassword(mail, password)
         .then(()=>{
             console.log("Usuario creado");
@@ -87,6 +88,8 @@ let register = {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log("no se pudo crear usuario");
+            console.log(errorCode);
+            console.log(errorMessage);
             
           });
         

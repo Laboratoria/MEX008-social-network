@@ -63,6 +63,8 @@ let login = {
             
           
     </div>
+    <div class = "alert" id="alert-one"> 
+    </div>
     `
         return view
     }
@@ -76,20 +78,21 @@ let login = {
           firebase.auth().signInWithEmailAndPassword(mail2, password2)
           .then((user)=>{
           console.log("¿El usuario esta verificado?",user.user.emailVerified);
-          location.hash = "/muro";
-
-          
-          
-          //if(user.user.emailVerified){
-            // location.hash = "/muro";
-          // }
-          // else{
-          //   alert("aun no has validado tu cuenta, accede a tu correo por favor");
-          // }
+                 
+          if(user.user.emailVerified){
+            location.hash = "/muro";
+          }
+          else{
+            console.log("aun no has validado tu cuenta, accede a tu correo por favor");
+            const alertOne = document.getElementById("alert-one");
+            alertOne.innerHTML = `
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Atención!</strong> Aun no has validado tu cuenta, accede a tu correo por favor`
+          }
         })
         .catch((error) => {
             // Handle Errors here.
-            alert("Usuario no registrado");
+            console.log("Usuario no registrado");
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode);

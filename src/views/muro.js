@@ -4,11 +4,13 @@ let Muro = {
         <section id="pantalla-muro" class="pantalla-muro">
         <div class="row">
           <div class="span12">
-              <div class="input-prepend">
+              <div class="input-prepend text-center">
                   <img src="./imgenes/icon-search.png" class="add-on">
-                  <input type="search" class="btn search" id="">
+                  <input type="search" class="input-small search" id="">
+              </div>
+              <div class="input-prepend text-center in-line">
                   <img src="./imgenes/icono-filter.png" class="add-on">
-                  <select name="categorias" class="btn filter" id="">
+                  <select name="categorias" class="input-small filter" id="">
                     <option value=""></option>
                     <option value="1">Orientación Psicológica</option>
                     <option value="2">Orientación Legal</option>
@@ -18,10 +20,14 @@ let Muro = {
                     <option value="6">Ropa y accesorios</option>
                   </select>
               </div>
+          </div>
+        </div>
 
+        <div class="row-fluid">
+          <div class="span12">
               <div class="input-prepend text-center">
                 <img src="./imgenes/perfil-avatar.jpg" class="img-circle add-on" alt="">
-                <form class="stars text-center">
+                <form class="stars">
                     <p class="clasificacion">
                       <input id="radio1" type="radio" name="estrellas" value="5">
                         <label for="radio1">★</label>
@@ -34,15 +40,19 @@ let Muro = {
                       <input id="radio5" type="radio" name="estrellas" value="1">
                       <label for="radio5">★</label>
                     </p>
-                   </form>
+                </form>
               </div>
-              <input type="text" class="" placeholder="Publica aquí" id="publication">
-              
+              <input type="text" class="add-on" placeholder="Publica aquí" id="publication">
+          </div>
+        </div>
+        <div class="row" id="div-publicar">
+        <input type="submit" value="PUBLICAR" class="btn-small" id="btn-publicar" disabled>
+        </div>
+           
               <!--AQUI SE IMPRIMEN LAS PUBLICACIONES-->
 
 
-          </div>
-        </div>
+          
           <input type="submit" value="CERRAR SESION" class="btn" id="cerrar-sesion-dos">
       </section>
         `
@@ -50,11 +60,33 @@ let Muro = {
     },
     after_render : async () => {
     
+      const btnPublicar = document.getElementById("btn-publicar");
+      const publication = document.getElementById("publication");
+      let textPublication = publication.value;
+      
+      //pendiente
+      publication.addEventListener("input", () =>{
+        if(textPublication.lenght != 0){
+          btnPublicar.disabled = false;
+        }
+     });
+
+      const insertPublication = (textPublication) =>{
+          console.log(textPublication);   
+      }
+      
+      btnPublicar.addEventListener("click",insertPublication(textPublication));
+      
+
+      
+    
+
+    
     const cerrarSesion = () =>{
       firebase.auth().signOut()
       .then( () => {
           console.log("sesion cerrada");
-          location.hash = "/login"
+          location.hash = "#/login"
       })
       .catch( (error)=>{
           var errorMessage = error.message;

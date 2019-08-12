@@ -1,3 +1,4 @@
+// Este es el punto de entrada de tu aplicacion
 "use strict";
 
 import login from './views/login.js'
@@ -7,12 +8,7 @@ import Muro from './views/muro.js'
 import error404 from './views/error.js'
 import navbar from './views/navbar.js'
 import header from './views/header.js'
-
 import utils from './views/utils.js'
-// import { userInfo } from 'os';
-
-
-
 
 const routes = {
     '/muro' : Muro,
@@ -25,9 +21,9 @@ const routes = {
 const router = async () => { // function always returns a promise
 
     // load view element
-    const encabezado  = document.getElementById('header'); 
-    const footer = document.getElementById('footer');
-    const content = null || document.getElementById('container'); // If the first value is false, it checks the second value 
+    const encabezado  = null || document.getElementById('header');
+    const content = null || document.getElementById('container'); 
+    const footer = null || document.getElementById('div-footer');
     
     // Get the page from the hash of supported routes.
     let request = utils.parseRequestURL();
@@ -36,26 +32,19 @@ const router = async () => { // function always returns a promise
     let parsedURL = (request.resource ? '/' + request.resource : '/') 
         + (request.id ? '/:id' : '') 
         + (request.verb ? '/' + request.verb : '');
-        //console.log(parsedURL);
-    // Get the page from our hash of supported routes.
-
     
-    // Render the header of the page
-    console.log(parsedURL);
-    if((parsedURL != '/login') & (parsedURL != '/')){
+        // Render the header of the page
+        
+    if((location.hash != '/login') & (parsedURL != '/')){
      encabezado.innerHTML = await header.render(); // wait till the promise resolves
-    //await Navbar.after_render();
+     await header.after_render();
     }
-    else{
-    if((parsedURL != '/login') & (parsedURL != '/') & (parsedURL != '/register') & (parsedURL != '/intereses')){
-        footer.innerHTML = await navbar.render(); // wait till the promise resolves
-       //await Navbar.after_render();
-       }
+    
+    if((parsedURL != '/login') & (parsedURL != '/') & (parsedURL != '/register')){
+      footer.innerHTML = await navbar.render();
+      await navbar.after_render();
     }
-
-
-
-    // If the parsed URL is not in our list of supported routes, select the 404 page instead
+       // If the parsed URL is not in our list of supported routes, select the 404 page instead
     let page = routes[parsedURL] ? routes[parsedURL] : error404; 
     content.innerHTML = await page.render();
     await page.after_render();    
@@ -66,22 +55,14 @@ window.addEventListener('hashchange', router); // The event occurs when there ha
 // Listen on page load:
 window.addEventListener('load', router); // The event occurs when an object has loaded
 
-
-
-
-
-// Este es el punto de entrada de tu aplicacion
-
 const observadorDeSesion = () =>{
-    firebase.auth().onAuthStateChanged(function(user){
+    firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             console.log("existe usuario activo");
           // User is signed in.
           var displayName = user.displayName;
           var email = user.email;
           //Este nos dice sei email esta verificado
-          console.log(user);
-          console.log(user.emailVerified)
           var emailVerified = user.emailVerified;
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
@@ -91,9 +72,10 @@ const observadorDeSesion = () =>{
           console.log(location.hash)
           
           if (location.hash === "#/login" || location.hash === "" && user.emailVerified) {
-            location.hash = "/muro";
+            location.hash = "#/muro";
           } 
         //   // ...
+
         } else {
           // User is signed out.
           // ...
