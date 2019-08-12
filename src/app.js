@@ -1,16 +1,17 @@
 "use strict";
 // Importando Views
 import Welcome from './views/welcome.js';
+import Wall from './views/wall.js';
 import Error404 from './views/error.js';
 
 // Importando Components
 import NavBar from './components/header.js';
 import Footer from './components/footer.js';
 
+// importing services
 
+import Utils from './services/Utils.js';
 
-import Utils from './services/Utils.js'
-import Wall from './views/wall.js';
 
 //Lista de rutas soportadas. Cualquier otra arrojara un erroer 404
 
@@ -43,7 +44,7 @@ const router = async() => {
     let page = routes[parsedURL] ? routes[parsedURL] : Error404; // routes[""] 
     content.innerHTML = await page.render();
     await page.after_render();
-    console.log(parsedURL);
+    // console.log(parsedURL);
 }
 
 // Evento que escucha el cambio de hash:
@@ -52,15 +53,21 @@ window.addEventListener('hashchange', router);
 // Evento que escucha la carga de la página:
 window.addEventListener('load', router);
 
-export const addPost = (contentPost, userId, userName, privacyPost) => {
-    firebase.firestore().collection('posts').add({
-        content: contentPost,
-        UID: userId,
-        name: userName,
-        privacyPost: privacyPost,
-        date: firebase.firestore.FileValue.serverTimestamp()
-    })
-};
+
+
+
+
+
+
+// export const addPost = (contentPost, userId, userName, privacyPost) => {
+//     firebase.firestore().collection('posts').add({
+//         content: contentPost,
+//         UID: userId,
+//         name: userName,
+//         privacyPost: privacyPost,
+//         date: firebase.firestore.FileValue.serverTimestamp()
+//     })
+// };
 
 
 
