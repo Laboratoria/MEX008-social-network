@@ -39,4 +39,3 @@ let intro = {
 
 export default intro;
 
-// class="hide-desktop-section"
