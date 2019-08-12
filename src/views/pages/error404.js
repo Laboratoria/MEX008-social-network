@@ -1,4 +1,4 @@
-const error404 = {
+git const error404 = {
   render: async () => {
     return `
     <section id="error404">

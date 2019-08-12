@@ -6,6 +6,8 @@ import welcome from "./views/pages/welcome.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
 import entry from "./views/pages/entry.js";
+import profile from "./views/pages/profile.js";
+import configuration from "./views/pages/configuration.js";
 import error404 from "./views/pages/error404.js ";
 
 
@@ -29,6 +31,8 @@ import Utils from "./services/Utils.js";
     "/shops": shops,
     "/workshops": workshops,
     "/entry": entry,
+    "/profile": profile,
+    "/configuration": configuration,
   };
 
 //inicializando todo
