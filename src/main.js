@@ -43,7 +43,7 @@ var uiConfig = {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: '<url-to-redirect-to-on-success>',
+    signInSuccessUrl: '/#/wall',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
@@ -57,20 +57,11 @@ var uiConfig = {
     tosUrl: '<your-tos-url>',
     // Privacy policy url.
     privacyPolicyUrl: '<your-privacy-policy-url>'
-<<<<<<< HEAD
-  };
-  //initialize ui config
-  ui.start('#firebaseui-auth-container', uiConfig);
-
-  //Activa modal
-  document.addEventListener('DOMContentLoaded', () => {
-=======
 };
 //initialize ui config
 ui.start('#firebaseui-auth-container', uiConfig);
 //Activa modal
 document.addEventListener('DOMContentLoaded', () => {
->>>>>>> upstream/master
     let elems = document.querySelectorAll('.modal');
     let instances = M.Modal.init(elems);
 });
