@@ -2,11 +2,12 @@ const configuration = {
     render: async () => {
         return `
       <section id="configuration">
-      <h3>Configuración de la cuenta</h3>
+      <h4>Configuración de la cuenta</h4>
+      <hr>
       <p>Administra la información sobre tu cuenta</p>
       <p>información personal</p>
+      <p>Privacidad de las publicaciones</p>
       <p>Seguridad</p>
-      <h3>Configuración</h3>
     </section>
           `;
     },
