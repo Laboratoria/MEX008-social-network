@@ -55,33 +55,51 @@ var uiConfig = {
         //   firebase.auth.GithubAuthProvider.PROVIDER_ID,
     ],
     // Terms of service url.
-    tosUrl: '<your-tos-url>',
+    tosUrl: 'https://ledahuerta.github.io/MEX008-social-network/',
     // Privacy policy url.
-    privacyPolicyUrl: '<your-privacy-policy-url>'
+    privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
+// let postTxt = document.getElementById('textarea');
 
-db.collection("post").add({
-    usuario: "Juanita",
-   postContent:'';
+let addPost = (e) => {
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user.uid != '') {
+            e.preventDefault();
+            let postTxt = document.getElementById('post-txt').value;
+            console.log(user);
+            db.collection("post").add({
+                    usuario: user.uid,
+                    nombre: user.displayName,
+                    postContent: postTxt
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
 
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
-
-firebase.auth().onAuthStateChanged(function(user) {
-if (user) {
-    console.log(user)
-
-    // User is signed in.
-} else {
-    console.log("no hay usuario logeado")
-        // No user is signed in.
+            // User is signed in.
+        } else {
+            console.log("no hay usuario logeado")
+                // No user is signed in.
+        }
+    });
 }
-});
+
+
+
+// const btnSmt = document.getElementById('print-button');
+
+
+
+
+
+
+
+
+
+
 
 
 // //initialize ui config
@@ -92,10 +110,8 @@ if (user) {
 //     let instances = M.Modal.init(elems);
 // });
 
-//  document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('select');
-//     var instances = M.FormSelect.init(elems, options);
-//   });
+
+
 
 // export const addPostSubmit = (ev) => {
 //     ev.preventDefault();
@@ -103,20 +119,20 @@ if (user) {
 //         if (user) {
 //             let textArea = document.getElementById("textarea");
 //             let inputTrim = textarea.trim();
-//         if (textArea.value ===''|| textArea.value === inputTrim || textArea.value = ' '){
-//             alert("Tienes que escribir algo");
-//         } else {
-//             firebase.firestore().collection('users').doc(user.uid).get()
-//          .then(doc => {
-//              if (user.displayName === null) {
-//                  addPost(textArea.value, user.uid, doc.data().name);
-        
-//              } else {
-//                  addPost (textarea.value, user.uid, user.displayName);
-//              }
+//             if (textArea.value === '' || textArea.value === inputTrim || textArea.value = ' ') {
+//                 alert("Tienes que escribir algo");
+//             } else {
+//                 firebase.firestore().collection('users').doc(user.uid).get()
+//                     .then(doc => {
+//                         if (user.displayName === null) {
+//                             addPost(textArea.value, user.uid, doc.data().name);
 
-//          });
-//         } 
+//                         } else {
+//                             addPost(textarea.value, user.uid, user.displayName);
+//                         }
+
+//                     });
+//             }
 
 //         } else {
 //             alert("Inicia sesion para publicar");
@@ -124,9 +140,3 @@ if (user) {
 
 //     });
 // };
-
-
-
-
-
-
