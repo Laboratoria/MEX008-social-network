@@ -26,7 +26,7 @@ let Wall = {
     return view
   },
   after_render: async () => {
-    buttonSubmit.addEventListener("click", submitPost);
+    // buttonSubmit.addEventListener("click", submitPost);
 
   }
 
