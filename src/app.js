@@ -8,6 +8,7 @@ import NavBar from './components/header.js';
 import Footer from './components/footer.js';
 
 
+
 import Utils from './services/Utils.js'
 import Wall from './views/wall.js';
 
@@ -51,6 +52,15 @@ window.addEventListener('hashchange', router);
 // Evento que escucha la carga de la página:
 window.addEventListener('load', router);
 
+export const addPost = (contentPost, userId, userName, privacyPost) => {
+    firebase.firestore().collection('posts').add({
+        content: contentPost,
+        UID: userId,
+        name: userName,
+        privacyPost: privacyPost,
+        date: firebase.firestore.FileValue.serverTimestamp()
+    })
+};
 
 
 
