@@ -28,6 +28,9 @@ Historias de usuario
 
 -Yo como usuario quiero subir comentarios y reviews y poder likear.
 
+Consola de firebase y database
+<img src="img/firebase-database.jpg" width="300px">
+
 
 
 
