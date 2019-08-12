@@ -63,12 +63,23 @@ h5 {
     margin: auto 7%;
 }
 
+footer {
+    height: 7vh;
+    background-color: #73ECEF;
+
+}
+
 /* SECCIONES */
 
-#signup-signin, main section {
+#signup-signin {
     padding-top: 3vh;
     height: 90vh;
-    border: 1px solid black;
+}
+
+main section {
+    padding-top: 3vh;
+    height: 85vh;
+/*    border: 1px solid black;*/
 }
 
 #intro-container {
@@ -77,6 +88,7 @@ h5 {
     background-size: cover;
 }
 
+
 #login {
     margin-top: 3rem;
 }
@@ -84,7 +96,11 @@ h5 {
 #firebaseui-auth-container {
     margin-top: 1.8rem;
 }
-
+/*
+.sidenav-overlay{
+    display: none !important;
+}
+*/
 /* BOTONES */
 .firebaseui-idp-button {
     border-radius: 1rem;

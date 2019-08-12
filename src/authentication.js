@@ -1,3 +1,5 @@
+ 
+ 
  // Your web app's Firebase configuration
  var firebaseConfig = {
    apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
@@ -67,21 +69,38 @@
    // Other config options...
  });
 
-   //funcion para cerrar sesion
-   const signOut = async() => {
-    try{
-        firebase.auth().signOut().then;
+const signOut = async() => {
+     try{
+      firebase.auth().signOut().then;
+   }
+   catch(err){
+       console.error("¡Error al tratar de cerrar sesión!")
+   }
+   console.log("Se cerró sesión")
+};
+/* FUncion para agregar boton
+   const signOutBtn = async() => {
+     if(document.getElementById("sign-out")!=null) {
+      try{
+        document.getElementById("sign-out").addEventListener("click", () => signOut()).then;
     }
     catch(err){
-        console.error("¡Error!")
+        console.error("¡No se encuentra 'sign-out'!")
     }
-    console.log("Se cerró sesión")
-}
-
+    console.log("Se encontró 'sign-out'");
+  }
+};
+*/
 //funcion para comprobar estado de usuario
  firebase.auth().onAuthStateChanged(function (user) {
    if (user) {
+    document.getElementById('signup-signin').classList.add("hide");
+    document.getElementById('intro-container').classList.add("hide");
+    document.getElementById('section-container').classList.remove("hide");
     document.getElementById('pic-trigger').classList.remove("hide");
+    document.getElementById('slide-out').classList.remove("hide");
+    document.getElementById('footer-nav').classList.remove("hide");
+    document.getElementById("sign-out").addEventListener("click", () => signOut());
      console.log(user)
      // User is signed in.
      var displayName = user.displayName;
@@ -93,23 +112,21 @@
      var providerData = user.providerData;
      // ...
      //document.getElementById('loader').classList.add("hide");
-     document.getElementById('signup-signin').classList.add("hide");
-     
-     document.getElementById('section-container').classList.remove("hide");
-     document.getElementById("sign-out").addEventListener("click", () => signOut())
    } else {
      // User is signed out.
      // ...
      // location.assign = '/src/'
      document.getElementById('signup-signin').classList.remove("hide");
+     document.getElementById('slide-out').classList.add("hide");
      document.getElementById('pic-trigger').classList.add("hide");
+     document.getElementById('footer-nav').classList.add("hide");
      document.getElementById('section-container').classList.add("hide");
      console.log('No hay usuario')
    }
  });
 
 
-
+// export default signOut;
 
  //   db.collection("users").add({
  //     first: "Ada",
