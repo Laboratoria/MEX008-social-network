@@ -5,8 +5,8 @@ import welcome from "./views/pages/welcome.js";
 //import timeline from "./views/pages/timeline.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
-//import profile from "./views/pages/profile.js";
-//import settings from "./views/pages/settings.js";
+import profile from "./views/pages/profile.js";
+import configuration from "./views/pages/configuration.js";
 import error404 from "./views/pages/error404.js ";
 
 
@@ -29,8 +29,8 @@ import Utils from "./services/Utils.js";
    // "/timeline": timeline,
     "/shops": shops,
     "/workshops": workshops,
-   // "/profile": profile,
-   // "/settings": settings,
+    "/profile": profile,
+    "/configuration": configuration,
   };
 
 //inicializando todo
