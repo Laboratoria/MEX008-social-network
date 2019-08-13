@@ -48,6 +48,15 @@ let Muro = {
         <div class="row" id="div-publicar">
         <input type="submit" value="PUBLICAR" class="btn-small" id="btn-publicar" disabled>
         </div>
+        <select name="categorias" class="input-small filter" id="select-publication">
+                    <option value=""></option>
+                    <option value="1">Orientación Psicológica</option>
+                    <option value="2">Orientación Legal</option>
+                    <option value="3">Limpieza Doméstica</option>
+                    <option value="4">Cuidado de niños</option>
+                    <option value="5">Belleza</option>
+                    <option value="6">Ropa y accesorios</option>
+                  </select>
            
               <!--AQUI SE IMPRIMEN LAS PUBLICACIONES-->
 
@@ -62,17 +71,31 @@ let Muro = {
     
       const btnPublicar = document.getElementById("btn-publicar");
       const publication = document.getElementById("publication");
-      let textPublication = publication.value;
       
       //pendiente
       publication.addEventListener("input", () =>{
+        const textPublication = publication.value;
         if(textPublication.lenght != 0){
           btnPublicar.disabled = false;
         }
      });
 
+     const arrayJSON = (textPublication,selectPublication) =>{
+        const Data = {
+          textpublication: textPublication,
+          selectPublication: selectPublication
+        };
+        return Data;
+     }
+
       const insertPublication = () =>{
-          console.log(textPublication);   
+        const textPublication = publication.value;
+        const selectPublication = document.getElementById("select-publication").value;
+        const arrayData = arrayJSON(textPublication,selectPublication);
+        const publicacion = firebase.database().ref("publication/"+selectPublication);
+        publicacion.set(arrayData);
+        alert("Guardado exitosamente =)");
+           
       }
       
       btnPublicar.addEventListener("click",insertPublication);
