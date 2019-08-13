@@ -27,9 +27,10 @@
 }
 
 #logo {
-    width: 60vh;
+    width: 45vh;
 }
 
+/* Login & Register */
 .linksToJoin {
     /* border: 1px solid white; */
     text-decoration: none;
@@ -51,7 +52,9 @@
     background: #991b1e;
     color: #bcbabf;
 }
-.page-background{
+
+/* HOME */
+.page-background {
     height: 88vh;
     width: 100vw;
     background: url(img/eat.jpg);
@@ -59,7 +62,7 @@
     background-position: center;
 }
 
-.main-home{
+.main-home {
     padding: 2rem;
     background: rgba(188, 186, 191, 0.65);
     color: #991b1e;
@@ -105,7 +108,7 @@
     width: 40vh;
     height: 5vh;
     font-family: 'Kalam', cursive;
-    font-size: .8   rem;
+    font-size: .8rem;
 }
 
 .form-submit {
@@ -117,6 +120,7 @@
 
 /* desktop version */
 @media (min-width: 600px){
+    /* NAVBAR */
     #navbar-dsk {
         display: flex;
     }
@@ -124,14 +128,25 @@
     #navbar-mbl{
         display: none;
     }
+
+    /* HOME */
+
+    #home {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .page-background {
+        grid-column: 1/2;
+        height: 88vh;
+        width: 100%;
+    }
+    
     #main-home-dsk {
+        grid-column: 2/3;
+        /* width: 100%; */
+        height: 88vh; 
         display: block;
-        width: 40vw;
-        height: 70vh;
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        transform: translate(-5%, -50%);
     }
 
     #main-home-dsk h1 {
