@@ -57,9 +57,9 @@
 .page-background {
     height: 88vh;
     width: 100vw;
-    background: url(img/eat.jpg);
+    background: url(img/wedding-gay.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 .main-home {
