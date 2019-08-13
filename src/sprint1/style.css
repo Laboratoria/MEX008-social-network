@@ -1,0 +1,215 @@
+/* INICIA RESPONSIVE*/
+
+*{
+  /* border box le dice a un elemento que todas las propiedades de un elemento, como su padding, va a estar dentro del porcentaje que le asignes, sin border box, toma el padding hacia afuera, por ejemplo. */
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+} 
+p{
+  font-size: 110%;
+}
+
+.container{
+  width: 100%;
+  margin: 0px auto;
+}
+
+.row:before, .row:after{ 
+  /* Para que no me deje bordes entre una linea y otra linea */
+   content:"";
+  display:table;
+} 
+.row:after{
+  clear:both;
+} 
+/* A todas las clases que contengan col- le vas a aplicar estos estilos */
+ [class*= "col-" ]{
+  float: left;
+  min-height: 10px;
+  padding: 12px;
+} 
+
+  
+  .col-1{width: 8.333333333333332%;}
+  .col-2{width: 16.666666666666664%;}
+  .col-3{width: 25%;}
+  .col-4{width: 33.33333333333333%;}
+  .col-5{width: 41.66666666666667%;}
+  .col-6{width: 50%;}
+  .col-7{width: 58.333333333333336%;}
+  .col-8{width: 66.66666666666666%;}
+  .col-9{width: 75%;}
+  .col-10{width: 83.33333333333334%;}
+  .col-11{width: 91.66666666666666%;}
+  .col-12{width: 100%;}
+
+   
+
+   .row{
+    margin: auto;
+    width: 100%;
+    height: auto;
+  } 
+
+   .row:before, .row:after{
+    content:"";
+    display:table;
+  }
+
+  .row:after{
+    clear:both;
+  } 
+
+   [class*= "col-" ]{
+    float: left;
+    min-height: 10px;
+    padding: 12px;
+  } 
+
+/* TERMINA RESPONSIVE */
+
+
+/* ------------------------------------------------- */
+/* RESPONSIVE PARA TABLETAS Y CELULARES */
+
+@media (max-width: 768px){
+
+ 
+
+  .logo-together{
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .black{
+    background-color: black;
+    width: 20%;
+    height: 110vh;
+    text-align: center;
+  }
+  
+  .election_page1_mobile{
+    background-color: antiquewhite;
+    width: 100vh;
+    height: 110;
+    text-align: center;
+  }
+
+  #img_novios{
+    width: 15rem;
+    height: 10rem;
+  }
+
+ 
+
+  .btn_initials{
+    background-color: black;
+    color: white;
+    width: 25vh;
+    height: 5vh;
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width: 1560px){
+
+  
+
+  .logo-together{
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .black{
+    background-color: black;
+    width: 20%;
+    height: 110vh;
+  }
+  
+  .election_page1_mobile{
+    background-color: antiquewhite;
+    width: 80%;
+    height: 110vh;
+    text-align: center;
+  }
+
+  #img_novios{
+    width: 15rem;
+    height: 10rem;
+  }
+
+ 
+
+  .btn_initials{
+    background-color: black;
+    color: white;
+    width: 25vh;
+    height: 5vh;
+    cursor: pointer;
+  }
+
+}
+
+/* Modal Style (modal popup box)*/
+.centrar {
+  display: inline-table;
+}
+
+form label, form input {
+  display: block;
+  text-align: left;
+}
+form input {
+  margin-bottom: 1rem;
+  padding: .5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal {
+    position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    background:  rgba(0, 0, 0, 0.5);
+    opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: antiquewhite;
+	padding: 1rem 1.5rem;
+	width: 24rem;
+	border-radius: 0.5rem;
+}
+
+.close-button {
+	float: right;
+	width: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 0.25rem;
+	background-color: lightgray;
+}
+
+.close-button:hover {
+	background-color: darkgray;
+}
+
+.show-modal {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1.0);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+/* termina modal */
