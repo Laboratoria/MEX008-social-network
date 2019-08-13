@@ -1,7 +1,8 @@
 #conteiner {
 bra
 } 
-#login{
+
+.login{
    width: 30%;
    height: 40%;
    margin: auto;
@@ -11,13 +12,13 @@ bra
    margin-top: 20px;
    border-radius: 7px;
 }
-#logo{
+.logo{
     width: 40%;
     margin: auto;
     display: block;
 }
 
-#loader{
+.loader{
     text-align: center;
     font-size: small;
 }
