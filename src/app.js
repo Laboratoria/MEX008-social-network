@@ -14,9 +14,10 @@ import Utils from './modules/utils.js'
 
 const routes = {
     '/login'      : Login
-    ,'/muro'      : Muro
     ,'/crear-perfil' : CrearPerfil
     ,'/perfil' : Perfil
+    ,'/muro'      : Muro
+    
 };
 
 // El código del enrutador. Tome una URL, comprueba la lista de rutas surtidas y luego muestra  la página de contenido corespondiente
