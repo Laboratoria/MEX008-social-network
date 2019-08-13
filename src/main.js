@@ -68,29 +68,29 @@ const router = async () => {    // function always returns a promise
 }
 
 //OBSERVADOR DE SESION
-// function initApp() {
-//     // Listening for auth state changes.
-//     // [START authstatelistener]
-//     firebase.auth().onAuthStateChanged(function(user) {
-//       if (user) {
-//         // User is signed in.
-//         console.log("Usuario Activo");
-//         // var displayName = user.displayName;
-//         // var email = user.email;
-//         // var emailVerified = user.emailVerified;
-//         // var photoURL = user.photoURL;
-//         // var isAnonymous = user.isAnonymous;
-//         // var uid = user.uid;
-//         // var providerData = user.providerData;
-//         // if (!emailVerified) {
-//         //   document.getElementById('quickstart-verify-email').disabled = false;
-//         // }    
-//       } 
-//       else{
-//         console.log("No existe este usuario");
-//       }
-//     });
-// }
+function initApp() {
+    // Listening for auth state changes.
+    // [START authstatelistener]
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log("Usuario Activo");
+        // var displayName = user.displayName;
+        // var email = user.email;
+        // var emailVerified = user.emailVerified;
+        // var photoURL = user.photoURL;
+        // var isAnonymous = user.isAnonymous;
+        // var uid = user.uid;
+        // var providerData = user.providerData;
+        // if (!emailVerified) {
+        //   document.getElementById('quickstart-verify-email').disabled = false;
+        // }    
+      } 
+      else{
+        console.log("No existe este usuario");
+      }
+    });
+}
 
 // Listen on hash change:
 window.addEventListener('hashchange', router); // The event occurs when there has been changes to the anchor part of a URL

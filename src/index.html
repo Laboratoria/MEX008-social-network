@@ -33,7 +33,8 @@
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use-->
-  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
   <!-- Initialize Firebase 
   <script src="/__/firebase/init.js"></script>-->
 
@@ -52,6 +53,11 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   </script> 
+  <script>
+    
+  var db = firebase.firestore();
+
+  </script>
   
   <!-- SCRIPTS PARA BOOTSTRAP -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
