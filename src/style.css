@@ -228,5 +228,8 @@ h3,
        margin-right: 10%;
    }
    
-   
+   #print-post{
+       overflow:scroll;
+       height: 200px;
+   }
 
