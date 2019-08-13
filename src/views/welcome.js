@@ -1,13 +1,7 @@
 let Welcome = {
     render: async() => {
         let view = /* html */ `
-        <!-- <header class="header-body">
-        <!--Comienza header-->
-          <!-- Aquí va el logo <figure>
-          <img src="./img/logo-pet.png" alt="logo pet" width="200" height="50px">
-      </figure>
-    </header>-->
-        <section class="section-welcome">
+                <section class="section-welcome">
          <!--Sección 1-->
          <box class="welc-text">
              <!--Caja que contiene el texto de bienvenida-->

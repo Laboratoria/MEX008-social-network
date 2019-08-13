@@ -60,7 +60,7 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
-// let postTxt = document.getElementById('textarea');
+
 
 let addPost = (e) => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -75,17 +75,36 @@ let addPost = (e) => {
                 })
                 .then(function(docRef) {
                     console.log("Document written with ID: ", docRef.id);
+                    let idPost = docRef.id
+                    getPost(idPost);
                 })
                 .catch(function(error) {
                     console.error("Error adding document: ", error);
                 });
 
+
             // User is signed in.
         } else {
-            console.log("no hay usuario logeado")
+            console.log("no hay usuario logueado")
                 // No user is signed in.
         }
     });
+}
+
+let getPost = (idPost) => {
+    if (idPost != '') {
+        actualPost = db.collection("post").doc(idPost);
+        actualPost.get().thenfunction(doc) {
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
 }
 
 
