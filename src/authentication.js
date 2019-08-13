@@ -74,7 +74,9 @@
        console.log('click');
        firebase.auth().signOut();
      });
-     
+
+     console.log('ONSIGN', document.getElementById("sign-out"))
+
      console.log("Entró el usuario");
 
    } else {
