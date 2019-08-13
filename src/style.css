@@ -111,6 +111,10 @@
     font-size: .8rem;
 }
 
+#addon-wrapping { 
+    color: #4db6ac; /* #495057 */
+}
+
 .form-submit {
     width: 40vh;
     height: 5vh;

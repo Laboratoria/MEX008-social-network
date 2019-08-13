@@ -5,30 +5,62 @@ let Register = {
                 <section class = "form-background">
                     <h1>Crea tu cuenta</h1>
                     <form id = "form-register" name = "formRegister" action="">
-                        <input 
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                                <span class=" input-group-text material-icons" id = "addon-wrapping">email</span>
+                            </div>
+                            <input 
+                                type="email" 
+                                name = "email"
+                                id = "email"
+                                class="form-control" 
+                                placeholder="Ingresa tu correo electrónico" 
+                                aria-label="Username" 
+                                aria-describedby="addon-wrapping"
+                                required
+                            />
+                        </div>
+                        <!--<input 
                             type="email"
                             id = "email"
                             name = "email"
                             class = "form-inputs"
                             placeholder="Ingresa tu correo electrónico"
                             required
-                        />
+                        />-->
                         <br>
-                        <input 
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <!--<span class="input-group-text" id="addon-wrapping">@</span>-->
+                                <i class = "input-group-text material-icons" id = "addon-wrapping">vpn_key</i>
+                            </div>
+                            <input 
+                                type="password" 
+                                name = "password"
+                                id = "password"
+                                class="form-control" 
+                                placeholder = "Contraseña (mayor o igual a 6 caracteres)" 
+                                aria-label = "Username" 
+                                aria-describedby = "addon-wrapping"
+                                required
+                            />
+                        </div>
+                        <!--<input 
                             type = "password"
                             id = "password" 
                             name = "password" 
                             class = "form-inputs"
                             placeholder = "contraseña (mayor o igual a 6 caracteres)"
                             required
-                        />
+                        />-->
                         <br>
                         <input 
                             type="submit" 
-                            class = "form-submit"
+                            class = "btn btn-secondary btn-lg"
                             value="Crear cuenta"
                         />
-                    </form>
+                    </form> <!--class = "form-submit"-->
                 </section>
              </figure>
         `
