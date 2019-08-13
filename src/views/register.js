@@ -68,8 +68,8 @@ let register = {
     }
 
 
-      const registrar = () => {
-        // e.preventDefault();
+      const registrar = (e) => {
+        e.preventDefault();
         
         console.log("entra a la funcion registrar");
         let mail = document.getElementById("email-registro").value;
