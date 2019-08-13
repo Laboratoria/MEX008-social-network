@@ -1,5 +1,4 @@
 /* BOX-SIZING */
-/*valign-wrapper*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -20,7 +19,6 @@ html {
 /* GLOBALES */
 body {
     width: 100vw;
-    /* overflow-x:hidden;*/
     background-color: #FFF;
 }
 
@@ -78,8 +76,7 @@ footer {
 
 main section {
     padding-top: 3vh;
-    height: 85vh;
-/*    border: 1px solid black;*/
+    height: 84vh;
 }
 
 #intro-container {
@@ -145,6 +142,16 @@ figure {
 .sidenav .user-view .circle {
     height: 71px;
     width: 71px;
+}
+
+#footer-icon {
+    width: 3.5rem;
+    margin-top: .5rem;
+}
+
+#pic-profile{
+    width: 10rem;
+    padding-top: 1rem;
 }
 
 

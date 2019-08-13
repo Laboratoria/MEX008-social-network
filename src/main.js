@@ -1,4 +1,3 @@
-
 //Importando pantallas
 import intro from "./views/pages/intro.js";
 import welcome from "./views/pages/welcome.js";
@@ -8,7 +7,6 @@ import workshops from "./views/pages/workshops.js";
 import profile from "./views/pages/profile.js";
 import configuration from "./views/pages/configuration.js";
 import error404 from "./views/pages/error404.js ";
-
 
 //Importando componentes
 import sidebar from "./views/components/sidebar.js";
@@ -25,8 +23,8 @@ import Utils from "./services/Utils.js";
   
   const routes = {
     "/intro": intro,
-    "/": welcome,
-   // "/timeline": timeline,
+    "/welcome": welcome,
+   // "/": timeline,
     "/shops": shops,
     "/workshops": workshops,
     "/profile": profile,
@@ -65,19 +63,19 @@ import Utils from "./services/Utils.js";
 
 
   
-/*falta inicializar modal y asignar addBtn
+/*falta inicializar modal y asignar addBtn*/
+// const timelineModal = async() => {
+//      try{
+//       firebase.auth().signOut().then;
+//    }
+//    catch(err){
+//        console.error("¡Error al tratar de cerrar sesión!")
+//    }
+//    console.log("Se cerró sesión exitosamente")
+// };
 
-   //funcion base para inicializar botones
-   const signOut = async() => {
-    try{
-        firebase.auth().signOut().then;
-    }
-    catch(err){
-        console.error("¡Error!")
-    }
-    console.log("Se cerró sesión")
-}
--- para hacker-edition, puede servir un poco para la funcionalidad de 'like'(publication-list solo aparece en timeline)
+  
+/*-- para hacker-edition, puede servir un poco para la funcionalidad de 'like'(publication-list solo aparece en timeline)
     const arrayLi = Array.from(
         document.querySelectorAll("#publication-list ul>li")
       );
@@ -135,4 +133,4 @@ import Utils from "./services/Utils.js";
 
       setTimeout(() => { 
         document.getElementById('intro-container').classList.add("hide");
-     }, 1000);
+     }, 1700);
