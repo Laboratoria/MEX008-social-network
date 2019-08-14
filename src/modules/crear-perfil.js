@@ -1,7 +1,7 @@
 let CrearPerfil = {
     render : async () => {
         let view = /* html */ `
-            <<section class="perfil-box">
+            <section class="perfil-box">
             <section class="Perfil">
             <img class= "avatar" src="../icon/FAVORITO.png" alt="logoWander">
             <h2>¿Tienes un espiritu Wanderlust?</h1>
