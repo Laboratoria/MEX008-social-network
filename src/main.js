@@ -67,37 +67,37 @@ const router = async () => {    // function always returns a promise
     await page.after_render();
 }
 
-//OBSERVADOR DE SESION
-function initApp() {
-    // Listening for auth state changes.
-    // [START authstatelistener]
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        console.log("Usuario Activo");
-        // var displayName = user.displayName;
-        // var email = user.email;
-        // var emailVerified = user.emailVerified;
-        // var photoURL = user.photoURL;
-        // var isAnonymous = user.isAnonymous;
-        // var uid = user.uid;
-        // var providerData = user.providerData;
-        // if (!emailVerified) {
-        //   document.getElementById('quickstart-verify-email').disabled = false;
-        // }    
-      } 
-      else{
-        console.log("No existe este usuario");
-      }
-    });
-}
+// //OBSERVADOR DE SESION
+// function initApp() {
+//     // Listening for auth state changes.
+//     // [START authstatelistener]
+//     firebase.auth().onAuthStateChanged(function(user) {
+//       if (user) {
+//         // User is signed in.
+//         console.log("Usuario Activo");
+//         // var displayName = user.displayName;
+//         // var email = user.email;
+//         // var emailVerified = user.emailVerified;
+//         // var photoURL = user.photoURL;
+//         // var isAnonymous = user.isAnonymous;
+//         // var uid = user.uid;
+//         // var providerData = user.providerData;
+//         // if (!emailVerified) {
+//         //   document.getElementById('quickstart-verify-email').disabled = false;
+//         // }    
+//       } 
+//       else{
+//         console.log("No existe este usuario");
+//       }
+//     });
+// }
 
 // Listen on hash change:
 window.addEventListener('hashchange', router); // The event occurs when there has been changes to the anchor part of a URL
 // Listen on page load:
 window.addEventListener('load', router); // The event occurs when an object has loaded
 
-
+window.addEventListener('load', initApp);
 
 
 

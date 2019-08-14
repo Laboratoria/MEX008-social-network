@@ -106,8 +106,6 @@ google.addEventListener('click',googleSignIn);
 // Inicio de sesión por facebook //
 facebook.addEventListener('click',facebookSignIn);
 
-// Observador de sesion
- window.addEventListener('load', initApp); 
 
 
 
