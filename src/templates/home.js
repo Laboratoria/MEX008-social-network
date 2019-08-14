@@ -62,40 +62,55 @@ let Home = {
     //  Declaracion de variables  //
     const inputWritePost=document.getElementById("input-write-post");
     const savePostButton=document.getElementById("save-post");
-    //Crea 
+    //Crea las colecciones en Cloud Firestore//
     const profiles= db.collection("profile");
     const posts=db.collection("posts");
     const likes=db.collection("likes");
  
-    // Añade el perfil del usuario a cloud firestone //
-    profiles.add({
-        email: user.email,
-        name: user.displayName,
-        photo:user.photoURL,
-        uidUser: user.uid
-    })
+    // //Añade el perfil del usuario a cloud firestone //
+    // profiles.add({
+    //     email: user.email,
+    //     name: user.displayName,
+    //     photo:user.photoURL,
+    //     uidUser: user.uid
+    // })
 
-    .then(function(docRef) {
-        console.log("hola soy perfil mucho gusto: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });    
+    // .then(function(docRef) {
+    //     console.log("hola soy perfil mucho gusto: ", docRef.id);
+    // })
+    // .catch(function(error) {
+    //     console.error("Error adding document: ", error);
+    // });    
 
-    //Añade los likes de un usuario a Clud Firestore
-    likes.add({
-        email: user.email,
-        uidUser: user.uid
-        /* uidFriend: user .??? */
-    })
+    // //Añade los likes de un usuario a Clud Firestore //
+    // likes.add({
+    //     email: user.email,
+    //     uidUser: user.uid
+    //     /* uidFriend: user .??? */
+    // })
 
-    .then(function(docRef) {
-        console.log("hola soy like mucho gusto: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });  
+    // .then(function(docRef) {
+    //     console.log("hola soy like mucho gusto: ", docRef.id);
+    // })
+    // .catch(function(error) {
+    //     console.error("Error adding document: ", error);
+    // });  
     
+    //Muestra todos los posts de un usuario //
+    posts.where("uidUser", "==", user.uid)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            console.log("soy todos los posts de este usuario")
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.data().postText);
+           
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+    //Guarda un post en Cloud Firestone //  
     savePostButton.addEventListener("click", ()=>{
         const textPost= inputWritePost.value;
         console.log(textPost);
@@ -109,6 +124,7 @@ let Home = {
     
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
+            
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
