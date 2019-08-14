@@ -95,6 +95,11 @@ background-color: rgb(9, 133, 190);
 border-radius: 20%;
 }
 
+.active{
+ width: 10px;
+ height:20px;
+
+}
 .slider{
     width: 50%;
     height: 100%;
@@ -103,15 +108,24 @@ border-radius: 20%;
     overflow: hidden;
 }
 
+.slider-img{
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    background-color: rgba(0, 255, 255, 0.205);
+    overflow: hidden;
+}
+
 .slider ul{
     display: flex;
-    padding: 1% 1px 1px 1px;
+    padding: 5%;
     width: 600%;
+    height: 50%;
     animation: cambiar 20s infinite alternate;    
 }
 
 .slider li{
-    width: 50%;
+    width: 100%;
     list-style: none;
 
 }
