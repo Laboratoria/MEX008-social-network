@@ -1,3 +1,4 @@
+//SPA
 "use strict";
 
 import Navbar from './modules/navbar.js'
@@ -38,6 +39,20 @@ const router = async () => { //La función siempre devuelve una promesa
     let parsedURL = (request.resource ? '/' + request.resource : '/') 
         + (request.id ? '/:id' : '') 
         + (request.verb ? '/' + request.verb : '');
+    
+    //CHECAR ESTA FUNCION
+    //  // Render the header of the page
+     console.log(parsedURL);
+    //  if((parsedURL != '/login') && (parsedURL != '/')){
+    //   encabezado.innerHTML = await header.render(); // wait till the promise resolves
+    //  //await Navbar.after_render();
+    //  }
+    //  else{
+    //  if((parsedURL != '/login') && (parsedURL != '/') && (parsedURL != '/register') && (parsedURL != '/intereses')){
+    //      footer.innerHTML = await navbar.render(); // wait till the promise resolves
+    //     //await Navbar.after_render();
+    //     }
+    //  }
 
     // Obtenga la p+agina de nuestro hash de rutas compatibles
     // Si la URL analizada no está en nuestra lista de rutas admitidas, seleccione la página 404

@@ -1,9 +1,20 @@
 let Muro = {
     render : async () => {
         let view = /* html */ `
-        <div id="muro">
-
-            <h1>HOLA ESTE SERA EL MURO</h1>
+        <div class="slider">
+            <div class=slider-img>
+                <ul>
+                <li> <img src="../icon/slider1.jpg" /></li>
+                <li><img src="../icon/slide2.jpeg" /></li>
+                <li> <img src="../icon/slide3.jpeg" /></li>
+                <li><img src="../icon/slide4.jpeg" /></li
+                <li><img src="../icon/slide5.jpeg" /></li>
+                <li><img src="../icon/slider6.jpg" /></li>
+                </ul>
+            </div>
+            </div>
+            <div class="container-publicaciones">
+            <h1>Realiza tu publicación</h1>
         </div>    
         `
         return view
