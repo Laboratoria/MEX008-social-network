@@ -230,6 +230,12 @@ h3,
    
    #print-post{
        overflow:scroll;
-       height: 200px;
+       height: 250px;
+       
+   }
+
+   #print-post .posts{
+    background-color: aquamarine;
+    margin: 1rem;
    }
 

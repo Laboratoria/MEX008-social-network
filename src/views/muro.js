@@ -45,9 +45,6 @@ let Muro = {
               <input type="text" class="add-on" placeholder="Publica aquí" id="publication">
           </div>
         </div>
-        <div class="row" id="div-publicar">
-        <input type="submit" value="PUBLICAR" class="btn-small" id="btn-publicar" disabled>
-        </div>
         <select name="categorias" class="input-small filter" id="select-publication">
                     <option value=""></option>
                     <option value="Orientacion Psicologica">Orientación Psicológica</option>
@@ -57,6 +54,10 @@ let Muro = {
                     <option value="Belleza">Belleza</option>
                     <option value="Ropa y accesorios">Ropa y accesorios</option>
                   </select>
+        <div class="row" id="div-publicar">
+        <input type="submit" value="PUBLICAR" class="btn-small" id="btn-publicar" disabled>
+        </div>
+        
            
               <!--AQUI SE IMPRIMEN LAS PUBLICACIONES-->
               <p id="print-post"></p>
@@ -96,17 +97,86 @@ let Muro = {
       
       }
 
-      //Lectura de Posts
-      db.collection("posts").get().then((querySnapshot) => {
+      
+      //Lectura de Posts 
+      //onSnapshot actualiza en pantalla en tiempo real
+      
+
+      db.collection("posts").onSnapshot((querySnapshot) => {
         printPost.innerHTML = "";
         querySnapshot.forEach((doc) => {
             console.log(`${doc.data().category} => ${doc.data().post}`);
             printPost.innerHTML += `
-            <p>${doc.data().category}</p>
-            <p>${doc.data().post}</p>`
+            <div class="posts">
+            <p><strong>${doc.data().category}</strong></p>
+            <p class="text-center">${doc.data().post}</p>
+            <input type="submit" value="eliminar" class="btn btn-eliminar" id="${doc.id}">
+            <input type="submit" value="editar" class="btn btn-editar" id="${doc.id}">
+            </div>`
+            
         });
+        
     });
+
+      printPost.addEventListener("click", (e) =>{
+        if(e.target.tagName !== "INPUT" || !e.target.classList.contains("btn-eliminar")){
+          return;
+        }
+        console.log(!e.target.classList.contains("btn-eliminar"));
+        eliminar(e.target.id);
+      })
+
+      // const btnEliminar = document.getElementsByClassName("btn-eliminar")
+      
+      // for(let i=0; i<btnEliminar.length; i++){
+      //     btnEliminar[i].addEventListener("click", (e) =>{
+      //       if (!e) e= window.event;
+      //       eliminar(e.target.id);
+      //     })
+      // }
+      
+      
+      
+      
+
+      //Funcion eliminar post
+      const eliminar = (id) => {
+        db.collection("posts").doc(id).delete().then(function() {
+          console.log("Document successfully deleted!");
+          }).catch(function(error) {
+              console.error("Error removing document: ", error);
+          });
+        }
+      
+        
+        //Funcion editar post
+        const editar = (id,category,post) =>{
+          
+          document.getElementById("select-publication").value = category;
+          document.getElementById("publication").value = post;
+
+          const washingtonRef = db.collection("posts").doc(id);
+            // Set the "capital" field of the city 'DC'
+            return washingtonRef.update({
+              post: textPublication,
+              category: selectPublication,
+            })
+            .then(function() {
+                console.log("Document successfully updated!");
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });test.firestore.js
+        }   
     
+      printPost.addEventListener("click", (e) =>{
+        if(e.target.tagName !== "INPUT" || !e.target.classList.contains("btn-editar")){
+          return;
+        }
+        console.log(!e.target.classList.contains("btn-editar"));
+        editar(e.target.id,e.target.data().category,e.target.data().post);
+      })
       
       //pendiente
       publication.addEventListener("input", () =>{
@@ -118,7 +188,7 @@ let Muro = {
 
 
 
-     btnPublicar.addEventListener("click",guardar)
+     btnPublicar.addEventListener("click",guardar);
 
     
     const cerrarSesion = () =>{
