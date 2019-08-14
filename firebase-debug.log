@@ -1,0 +1,54 @@
+[debug] [2019-08-13T22:47:35.019Z] ----------------------------------------------------------------------
+[debug] [2019-08-13T22:47:35.022Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-08-13T22:47:35.022Z] CLI Version:   7.2.2
+[debug] [2019-08-13T22:47:35.022Z] Platform:      linux
+[debug] [2019-08-13T22:47:35.022Z] Node Version:  v10.16.2
+[debug] [2019-08-13T22:47:35.023Z] Time:          Tue Aug 13 2019 17:47:35 GMT-0500 (GMT-05:00)
+[debug] [2019-08-13T22:47:35.023Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-13T22:47:35.029Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-13T22:47:35.029Z] > authorizing via signed-in user
+[debug] [2019-08-13T22:47:35.029Z] [iam] checking project red-social-270ac for permissions ["firebase.projects.get"]
+[debug] [2019-08-13T22:47:35.031Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-13T22:47:35.031Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-13T22:47:35.355Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-13T22:47:35.361Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-270ac:testIamPermissions  
+
+[debug] [2019-08-13T22:47:35.879Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-13T22:47:35.883Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac  
+ 
+[debug] [2019-08-13T22:47:36.211Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/rebe_laboratoria/Rebeca_repositorios/MEX008-social-network'...
+[info] 
+[debug] [2019-08-13T22:47:36.219Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac/webApps/-/config  
+ 
+[debug] [2019-08-13T22:47:36.600Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-13T23:17:04.393Z] ----------------------------------------------------------------------
+[debug] [2019-08-13T23:17:04.395Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-08-13T23:17:04.395Z] CLI Version:   7.2.2
+[debug] [2019-08-13T23:17:04.395Z] Platform:      linux
+[debug] [2019-08-13T23:17:04.395Z] Node Version:  v10.16.2
+[debug] [2019-08-13T23:17:04.396Z] Time:          Tue Aug 13 2019 18:17:04 GMT-0500 (GMT-05:00)
+[debug] [2019-08-13T23:17:04.396Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-13T23:17:04.403Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-13T23:17:04.403Z] > authorizing via signed-in user
+[debug] [2019-08-13T23:17:04.403Z] [iam] checking project red-social-270ac for permissions ["firebase.projects.get"]
+[debug] [2019-08-13T23:17:04.405Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-270ac:testIamPermissions  
+
+[debug] [2019-08-13T23:17:05.366Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-13T23:17:05.368Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac  
+ 
+[debug] [2019-08-13T23:17:05.888Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/rebe_laboratoria/Rebeca_repositorios/MEX008-social-network'...
+[info] 
+[debug] [2019-08-13T23:17:05.895Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac/webApps/-/config  
+ 
+[debug] [2019-08-13T23:17:06.306Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000

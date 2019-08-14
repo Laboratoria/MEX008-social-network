@@ -185,6 +185,7 @@ function initApp() {
     // Listening for auth state changes.
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function(user) {
+      console.log(user+"hola");
       if (user) {
         // User is signed in.
         console.log("Usuario Activo");
@@ -207,6 +208,7 @@ function initApp() {
  
 window.emailPasswordLogIn = emailPasswordLogIn;
 window.register = register;
+window.initApp=initApp;
 //window. googleSignIn = googleSignIn;
 //window. facebookSignIn = facebookSignIn;
   
