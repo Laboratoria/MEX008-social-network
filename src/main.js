@@ -67,6 +67,7 @@ const observadorDeSesion = () =>{
           var photoURL = user.photoURL;
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
+          console.log(uid);
           var providerData = user.providerData;
 
           console.log(location.hash)
