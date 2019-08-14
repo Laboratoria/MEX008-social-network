@@ -14,7 +14,7 @@ let Home = {
             
             <!--Post publicados-->
             <div id="show-post" style="background-color:yellow" >
-            Show post
+            // Muestra un solo post
             <div id="property-post" style="background-color:green">
                 property post
                 <div id="user-post" style="background-color:blue">
@@ -106,30 +106,24 @@ let Home = {
     posts.where("uidUser", "==", user.uid)
     .get()
     .then(function(posts) {
-        // querySnapshot.forEach(function(doc) {
         //     console.log("soy todos los posts de este usuario")
-        //     // doc.data() is never undefined for query doc snapshots
         //     console.log(doc.data().postText);
-           
-            
             const mostrarData = () => {
                 let str =  '';
                 posts.forEach(doc => {
                     let post=doc.data().postText;
                     str += 
-                       `<div id="prueba">${post}</div>` ;                  
+                       `<div id="prueba">${post}</div>`;//Crea el post en el html                  
                 });
             comentarios.innerHTML = str;
             };
             mostrarData();
-            
-           
-           
         })
-    
+    // Manejo de errores
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
+
     //Guarda un post en Cloud Firestone //  
     savePostButton.addEventListener("click", ()=>{
         const textPost= inputWritePost.value;
@@ -144,9 +138,8 @@ let Home = {
     
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
-
-            
         })
+        // Manejo de errores
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
