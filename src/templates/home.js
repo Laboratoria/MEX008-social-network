@@ -27,6 +27,7 @@ let Home = {
                         </div>
                         <img src="" alt="" style="background-color:black">
                     </div>
+                    <p id="comentarios">Comentarios</p>
                     <div>
                         <img src="" alt="">
                         <button>Publicar</button>
@@ -48,8 +49,12 @@ let Home = {
                 </div>
             </div>
         </div>
-            
+       
+        </section>    
         `
+
+
+
         return view
     }
 , after_render: async () => {
@@ -66,6 +71,7 @@ let Home = {
     const profiles= db.collection("profile");
     const posts=db.collection("posts");
     const likes=db.collection("likes");
+    const comentarios=document.getElementById("comentarios");
  
     // //Añade el perfil del usuario a cloud firestone //
     // profiles.add({
@@ -99,14 +105,28 @@ let Home = {
     //Muestra todos los posts de un usuario //
     posts.where("uidUser", "==", user.uid)
     .get()
-    .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            console.log("soy todos los posts de este usuario")
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.data().postText);
+    .then(function(posts) {
+        // querySnapshot.forEach(function(doc) {
+        //     console.log("soy todos los posts de este usuario")
+        //     // doc.data() is never undefined for query doc snapshots
+        //     console.log(doc.data().postText);
            
-        });
-    })
+            
+            const mostrarData = () => {
+                let str =  '';
+                posts.forEach(doc => {
+                    let post=doc.data().postText;
+                    str += 
+                       `<div id="prueba">${post}</div>` ;                  
+                });
+            comentarios.innerHTML = str;
+            };
+            mostrarData();
+            
+           
+           
+        })
+    
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
@@ -124,6 +144,7 @@ let Home = {
     
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
+
             
         })
         .catch(function(error) {
