@@ -1,19 +1,17 @@
 let Login = {
     render: async () => {
         let view = /* html */ `
-         <div class="conteiner">
-        
-            <form class="login">
-            <!-- The surrounding HTML is left untouched by FirebaseUI.
-            Your app may use that space for branding, controls and other customizations.-->
-            <h1><img src="../icon/FAVORITO.png" alt="imagen-logo" id="logo"></h1>
-            <div id="loader">Login or sign up</div> <br>
-            <div id="firebaseui-auth-container"></div>
-            
-        
-         </form>
+        <main id="content-container">
+        <section class="Login-box">
+        <div class="conteiner">
+        <form class="login">
+        <h1><img src="../icon/FAVORITO.png" alt="imagen-logo" id="logo"></h1>
+        <div id="loader">Login or sign up</div> <br>
+        <div id="firebaseui-auth-container"></div>
+        </form>
         </div>
-        
+        </section> 
+        </main>
         `
         return view
     },
@@ -71,8 +69,6 @@ let Login = {
     }
 }
 export default Login;
-
-
 
 
 
