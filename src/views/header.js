@@ -1,7 +1,7 @@
 let header = {
 
     render : async () => {
-        let view =  /*html*/`
+        const view =  /*html*/`
         <div class="header">
           <img src="./imgenes/logo-two.png" class="logo-two">
         </div>

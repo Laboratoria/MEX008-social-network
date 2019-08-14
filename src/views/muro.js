@@ -50,15 +50,16 @@ let Muro = {
         </div>
         <select name="categorias" class="input-small filter" id="select-publication">
                     <option value=""></option>
-                    <option value="1">Orientación Psicológica</option>
-                    <option value="2">Orientación Legal</option>
-                    <option value="3">Limpieza Doméstica</option>
-                    <option value="4">Cuidado de niños</option>
-                    <option value="5">Belleza</option>
-                    <option value="6">Ropa y accesorios</option>
+                    <option value="Orientacion Psicologica">Orientación Psicológica</option>
+                    <option value="Orientación Legal">Orientación Legal</option>
+                    <option value="Limpieza Doméstica">Limpieza Doméstica</option>
+                    <option value="Cuidado de niños">Cuidado de niños</option>
+                    <option value="Belleza">Belleza</option>
+                    <option value="Ropa y accesorios">Ropa y accesorios</option>
                   </select>
            
               <!--AQUI SE IMPRIMEN LAS PUBLICACIONES-->
+              <p id="print-post"></p>
 
 
           
@@ -68,9 +69,44 @@ let Muro = {
         return view
     },
     after_render : async () => {
-    
+      // Initialize Cloud Firestore through Firebase
+      var db = firebase.firestore();
+
       const btnPublicar = document.getElementById("btn-publicar");
-      const publication = document.getElementById("publication");
+      let publication = document.getElementById("publication");
+      let select = document.getElementById("select-publication");
+      const printPost = document.getElementById("print-post");
+
+      //Guardar Posts
+      const guardar = () =>{
+        let textPublication = publication.value;
+        let selectPublication = select.value;
+        db.collection("posts").add({
+          post: textPublication,
+          category: selectPublication,
+      })
+      .then((docRef) => {
+          console.log("Document written with ID: ", docRef.id);
+          document.getElementById("publication").value = "";
+          document.getElementById("select-publication").value = "";
+      })
+      .catch((error) => {
+          console.error("Error adding document: ", error);
+      });
+      
+      }
+
+      //Lectura de Posts
+      db.collection("posts").get().then((querySnapshot) => {
+        printPost.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.data().category} => ${doc.data().post}`);
+            printPost.innerHTML += `
+            <p>${doc.data().category}</p>
+            <p>${doc.data().post}</p>`
+        });
+    });
+    
       
       //pendiente
       publication.addEventListener("input", () =>{
@@ -80,29 +116,9 @@ let Muro = {
         }
      });
 
-     const arrayJSON = (textPublication,selectPublication) =>{
-        const Data = {
-          textpublication: textPublication,
-          selectPublication: selectPublication
-        };
-        return Data;
-     }
 
-      const insertPublication = () =>{
-        const textPublication = publication.value;
-        const selectPublication = document.getElementById("select-publication").value;
-        const arrayData = arrayJSON(textPublication,selectPublication);
-        const publicacion = firebase.database().ref("publication/"+selectPublication);
-        publicacion.set(arrayData);
-        alert("Guardado exitosamente =)");
-           
-      }
-      
-      btnPublicar.addEventListener("click",insertPublication);
-      
 
-      
-    
+     btnPublicar.addEventListener("click",guardar)
 
     
     const cerrarSesion = () =>{
