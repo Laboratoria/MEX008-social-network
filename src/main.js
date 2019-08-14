@@ -62,21 +62,22 @@ var uiConfig = {
 };
 
 
-let addPost = (e) => {
+let addPost = () => {
     firebase.auth().onAuthStateChanged((user) => {
-        if (user.uid != '') {
-            e.preventDefault();
+        if (user.uid) {
+            localStorage.setItem('user', JSON.stringify(user));
+            // console.log(user);
             let postTxt = document.getElementById('post-txt').value;
-            console.log(user);
             db.collection("post").add({
                     usuario: user.uid,
                     nombre: user.displayName,
-                    postContent: postTxt
+                    postContent: postTxt,
+                    hora: new Date()
                 })
                 .then(function(docRef) {
                     console.log("Document written with ID: ", docRef.id);
                     let idPost = docRef.id
-                    getPost(idPost);
+                        // getPost(idPost);
                 })
                 .catch(function(error) {
                     console.error("Error adding document: ", error);
@@ -91,21 +92,27 @@ let addPost = (e) => {
     });
 }
 
-let getPost = (idPost) => {
-    if (idPost != '') {
-        actualPost = db.collection("post").doc(idPost);
-        actualPost.get().thenfunction(doc) {
-            if (doc.exists) {
-                console.log("Document data:", doc.data());
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch(function(error) {
-        console.log("Error getting document:", error);
+
+db.collection("post")
+    .onSnapshot(function(data) {
+        printPost(data);
     });
-}
-}
+
+// let getPost = (idPost) => {
+//     if (idPost != '') {
+//         actualPost = db.collection("post").doc(idPost);
+//         actualPost.get().then(function(doc) {
+//             if (doc.exists) {
+//                 console.log("Document data:", doc.data());
+//             } else {
+//                 // doc.data() will be undefined in this case
+//                 console.log("No such document!");
+//             }
+//         }).catch(function(error) {
+//             console.log("Error getting document:", error);
+//         });
+//     }
+// }
 
 
 

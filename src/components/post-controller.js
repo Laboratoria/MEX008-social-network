@@ -1,22 +1,25 @@
-// let printPost = ((user) => {
-//     let rootPost = document.getElementById('wall-posts');
-//     let card = `
-//     <div class="col s12 m7">
-//     <h2 class="header">post</h2>
-//     <div class="card horizontal">
-//       <div class="card-image">
-//         <img src="${user.photoURL}">
-//       </div>
-//       <div class="card-stacked">
-//         <div class="card-content">
-//         <p>${post.name}</p>
-//           <p>${post.postContent}</p>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-//     `
-//     rootPost.innerHTML = card
+let printPost = user => {
+        console.log('hiiii');
+    }
+    // let printPost = ((user) => {
+    //     let rootPost = document.getElementById('wall-posts');
+    //     let card = `
+    //     <div class="col s12 m7">
+    //     <h2 class="header">post</h2>
+    //     <div class="card horizontal">
+    //       <div class="card-image">
+    //         <img src="${user.photoURL}">
+    //       </div>
+    //       <div class="card-stacked">
+    //         <div class="card-content">
+    //         <p>${post.name}</p>
+    //           <p>${post.postContent}</p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    //     `
+    //     rootPost.innerHTML = card
 
 // }) 
 
