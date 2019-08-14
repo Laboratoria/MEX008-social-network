@@ -1,8 +1,12 @@
 let printPost = user => {
-        console.log('hiiii');
+        let userId = JSON.parse(localStorage.getItem('user'));
+        let rootPost = document.getElementById('wall-posts');
+        rootPost.innerHTML = '';
+        user.for
+
+
     }
     // let printPost = ((user) => {
-    //     let rootPost = document.getElementById('wall-posts');
     //     let card = `
     //     <div class="col s12 m7">
     //     <h2 class="header">post</h2>

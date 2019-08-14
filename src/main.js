@@ -61,37 +61,43 @@ var uiConfig = {
     privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
 
-
+// Funcion que crea el post y guarda al usuario logueado en una variable que podemos manipular despues
 let addPost = () => {
+    // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
     firebase.auth().onAuthStateChanged((user) => {
+        // User is signed in.
         if (user.uid) {
+            // Si el uid existe entonces guarda al user que esta logueado en localStorage y convierte el objeto en un string que pueda alojarse en localStorage
             localStorage.setItem('user', JSON.stringify(user));
             // console.log(user);
+            // Declaramos el textArea y obtenemos su valor
             let postTxt = document.getElementById('post-txt').value;
+            //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
             db.collection("post").add({
                     usuario: user.uid,
                     nombre: user.displayName,
                     postContent: postTxt,
                     hora: new Date()
                 })
+                // si es exitoso nos muestra en consola el id del post que utilizaremos mas tarde
                 .then(function(docRef) {
                     console.log("Document written with ID: ", docRef.id);
                     let idPost = docRef.id
                         // getPost(idPost);
                 })
+                //si no es exitoso nos muestra en consola el error
                 .catch(function(error) {
                     console.error("Error adding document: ", error);
                 });
-
-
-            // User is signed in.
         } else {
+            // No user is signed in.
             console.log("no hay usuario logueado")
-                // No user is signed in.
+
         }
     });
 }
 
+// creamos una funcion que obtenga actualizaciones en tiempo real
 
 db.collection("post")
     .onSnapshot(function(data) {
