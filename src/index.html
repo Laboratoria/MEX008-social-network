@@ -12,44 +12,64 @@
   
 </head>
 
-
-<!-- <div id="show-post" style="background-color:yellow" >
-  Show post
-  <div id="post-comment-user" style="background-color:green">
-      post y commtent post
+<section class="all-sections">
+  <!--Crea un nuevo post-->
+  <div id="new-post" class="card">
+      <h3>Crear publicación</h3>
+      <form action="" id="post">
+          <input type="textfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></input>
+          <button id="save-post">Publicar</button>
+          <button id="cancel-post">Cancelar</button>
+      </form>
+  </div>
+  
+  <!--Post publicados por el usuario-->
+  <div id="show-post" style="background-color:yellow" >
+  <!-- Contenedor del posto publicado y de los comentarios-->
+  <div id="property-post" style="background-color:green">  
+    Property post
+  <!-- Contenedor del post escrito por el usuario   -->    
       <div id="user-post" style="background-color:blue">
           user post
           <div style="background-color:red">
-              user image and name user 
+              <!-- Contenedor de user image and name user  -->
               <div style="background-color:pink">
-                  <img src="" alt="inagen de usuario">
-                  <h2>Nombre usuario</h2>
+                  <img src="" alt="">
+                  <h2></h2>
               </div>
-              <img src="" alt="imagen de editar" style="background-color:black">
+              <!-- Imagen/boton de editar -->
+              <img src="" alt="" style="background-color:black">
           </div>
-          <div>
-              <img src="" alt="imagen de like">
-              <button>Comentar</button>
+            <!-- Texto del comentario -->
+          <p id="comentarios">Comentarios</p>
+          <!-- Contenedor de likes y boton comentar -->
+          <div>  
+              <img src="" alt="">
+              <button>Publicar</button>
           </div>
       </div>
+      <!-- Contenedor de los comentarios del post   -->   
       <div id="comment-post">
+        Coment post
+           <!--Contenedor de comentarios agregados -->
           <div style="background-color:fuchsia">
               <ul>
                   Lista desordenada
               </ul>
           </div>
+       <!--     Agregar comentario -->
           <form action="" style="background-color:greenyellow">
               <div>
-                 <img src="" alt="imagen de usuario comentando">     
-                 <input type="text"> Comentario
+                 <img src="" alt="">     
+                 <input type="text"> 
                  <button>Agregar comentario</button>
               </div>
           </form>
       </div>
   </div>
-</div> -->
+</div>
 
-
+</section> 
 
 <body>
   <script scr="facebook.js"></script> 
