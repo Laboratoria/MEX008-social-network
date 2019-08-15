@@ -17,6 +17,8 @@ const  registro=() => {
 
 };
 
+//comentario 
+
 const ingreso= ()=>{
 let email2= document.getElementById('email2').value;
 let password2= document.getElementById('password2').value;
