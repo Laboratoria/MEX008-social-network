@@ -229,26 +229,76 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
   margin-left: 1rem;
 }
 
-#property-post {
+.container-post {
   display:flex;
   flex-direction: column;
 }
 
-#user-post {
+.user-post {
   background-color: #ffffff;
 }
 
 
 .post-header, .post-body, .post-footer {
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between; 
+  align-items: flex-start;
 }
 
-.like {
-  background-color: #ffffff !important;
+.post-footer{
+  align-items: center;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+10,ffffff+48,ffffff+48,a9bf04+49,a9bf04+49,a9bf04+90 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 10%, #ffffff 48%, #ffffff 48%, #a9bf04 49%, #a9bf04 49%, #a9bf04 90%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 10%,#ffffff 48%,#ffffff 48%,#a9bf04 49%,#a9bf04 49%,#a9bf04 90%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 10%,#ffffff 48%,#ffffff 48%,#a9bf04 49%,#a9bf04 49%,#a9bf04 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a9bf04',GradientType=0 ); /* IE6-9 */
+
 }
 
+.all-comments-post li {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+
+}
+
+.all-comments-post a {
+  background-color: none;
+}
+
+.post-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.post-body textarea {
+  height: auto;
+  max-height: 10rem;
+}
+
+.post-content {
+  width: 100%;
+}
+
+.post-footer button {
+  height: 80%;
+
+}
+
+.post-footer .btn-like {
+  background: none;  
+  
+}
+
+.post-footer .btn-like:active {
+  transform: scale(1.1);
+}
+
+.comment-post {
+  background-color: #A9BF04;
+  padding: 0 1rem 1rem 1rem;
+}
 
 /*RESPONSIVE*/
 
