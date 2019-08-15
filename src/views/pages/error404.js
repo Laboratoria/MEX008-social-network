@@ -1,9 +1,10 @@
 const error404 = {
   render: async () => {
     return `
-    <section id="error404">
+    <section id="error404" class="center-align valign-wrapper">
             <div>
-                <h2>No existe esta pagina "Error404"</h2>
+                <h4>No existe esta pagina</h4>
+                <h3>"Error404"</h3>
             </div>
             </section>
         `;

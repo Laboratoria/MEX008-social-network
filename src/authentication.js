@@ -1,4 +1,4 @@
- // Your web app's Firebase configuration
+// Your web app's Firebase configuration
  var firebaseConfig = {
    apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
    authDomain: "sacbe-rd.firebaseapp.com",
@@ -28,20 +28,15 @@
        // The widget is rendered.
        // Hide the loader.
        document.getElementById('loader').classList.add("hide");
-       //document.getElementById('firebaseui-auth-container').classList.add("hide");
      }
    },
    // Will use popup for IDP Providers sign-in flow instead of the default, redirect. ./#timeline
    signInFlow: 'popup',
-   signInSuccessUrl: './#/shops',
+   signInSuccessUrl: './#/timeline',
    signInOptions: [
-     // Leave the lines as is for the providers you want to offer your users.
      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-     //   firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-     //   firebase.auth.GithubAuthProvider.PROVIDER_ID,
      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-     //   firebase.auth.PhoneAuthProvider.PROVIDER_ID
    ],
    // Terms of service url.
    tosUrl: '<your-tos-url>',
@@ -49,7 +44,7 @@
    privacyPolicyUrl: '<your-privacy-policy-url>'
  };
 
-
+ //UI Firebase
  // The start method will wait until the DOM is loaded.
  ui.start('#firebaseui-auth-container', uiConfig);
 
@@ -58,68 +53,54 @@
      // List of OAuth providers supported.
      firebase.auth.EmailAuthProvider.PROVIDER_ID,
      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-     //   firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-     //   firebase.auth.GithubAuthProvider.PROVIDER_ID,
-     //   firebase.auth.PhoneAuthProvider.PROVIDER_ID
-
-   ],
-   // Other config options...
- });
-
-   //funcion para cerrar sesion
-   const signOut = async() => {
-    try{
-        firebase.auth().signOut().then;
-    }
-    catch(err){
-        console.error("¡Error!")
-    }
-    console.log("Se cerró sesión")
-}
-
-//funcion para comprobar estado de usuario
- firebase.auth().onAuthStateChanged(function (user) {
-   if (user) {
-    document.getElementById('pic-trigger').classList.remove("hide");
-     console.log(user)
-     // User is signed in.
+     firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    ],
+  });
+  
+  //funcion para comprobar estado de usuario
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+/*      // User is signed in.
      var displayName = user.displayName;
      var email = user.email;
      var emailVerified = user.emailVerified;
      var photoURL = user.photoURL;
-     var isAnonymous = user.isAnonymous;
      var uid = user.uid;
-     var providerData = user.providerData;
-     // ...
-     //document.getElementById('loader').classList.add("hide");
-     document.getElementById('signup-signin').classList.add("hide");
-     
-     document.getElementById('section-container').classList.remove("hide");
-     document.getElementById("sign-out").addEventListener("click", () => signOut())
-   } else {
-     // User is signed out.
-     // ...
-     // location.assign = '/src/'
-     document.getElementById('signup-signin').classList.remove("hide");
-     document.getElementById('pic-trigger').classList.add("hide");
-     document.getElementById('section-container').classList.add("hide");
-     console.log('No hay usuario')
-   }
- });
+ */
+
+        document.getElementById('signup-signin').classList.add("hide");
+        document.getElementById('intro-container').classList.add("hide");
+        document.getElementById('section-container').classList.remove("hide");
+        document.getElementById('menu').classList.remove("hide");
+        document.getElementById('slide-out').classList.remove("hide");
+        document.getElementById('footer-nav').classList.remove("hide");
+        console.log("El usuario ha entrado a sesión");
+        document.getElementById("sign-out").addEventListener("click", () => {
+          console.log('click');
+          firebase.auth().signOut();
+        });
+   
+      } else {
+        document.getElementById('signup-signin').classList.remove("hide");
+        document.getElementById('slide-out').classList.add("hide");
+        document.getElementById('menu').classList.add("hide");
+        document.getElementById('footer-nav').classList.add("hide");
+        document.getElementById('section-container').classList.add("hide");
+        console.log('El usuario está fuera de sesión')
+      }
+    });
 
 
-
-
- //   db.collection("users").add({
- //     first: "Ada",
- //     last: "Lovelace",
- //     born: 1815
- // })
- // .then(function(docRef) {
- //     console.log("Document written with ID: ", docRef.id);
- // })
- // .catch(function(error) {
- //     console.error("Error adding document: ", error);
- // });
- 
+/*   db.collection("posts").add({
+    uid: 'PcJkrcAcJ3dUxIJ6CHDP6Ak1Dwy1',
+    textPost: 'Vengan conmigo a rodar',
+    date: `${new Date().getTime()}`,
+    likes: '0',
+    status: 'no-like',
+})
+.then(function(postRef) {
+    console.log("Post written with ID: ", postRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding post: ", error);
+}); */

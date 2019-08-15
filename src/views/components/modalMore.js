@@ -1,13 +1,13 @@
-const modal = {
+const modalMore = {
   render: async () => {
     return `
     <!-- Modal Trigger-->
     <div id="more-btn" class="right-align">
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i
           class="material-icons">more_vert</i></a>
     </div>
     <!-- Modal Structure-->
-    <div id="modal1" class="modal bottom-sheet">
+    <div id="modal2" class="modal bottom-sheet">
       <div class="modal-content">
         <h3 class="header">Opciones</h3>
         <ul class="collection">
@@ -32,6 +32,10 @@ const modal = {
     </div>
     `;
   },
-  after_render: () => {}
+  after_render: () => {
+    let more = document.querySelectorAll('.modal');
+    M.Modal.init(more);
+    console.log("se inicializó more");
+  }
 };
-export default modal;
+export default modalMore;

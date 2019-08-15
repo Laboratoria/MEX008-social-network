@@ -15,19 +15,19 @@
 </head>
 
 <body>
-  <div id="intro-container" class=""> </div>
+  <div id="intro-container"> </div>
 
-  <div id="sidebar-container" class="">  </div>
+  <div id="sidebar-container">  </div>
 
-  <section id="signup-signin" class="">
+  <div id="signup-signin">
   <div id="welcome-container">  </div>
             <!--Sección de Registro/Inicio de sesión-->
           <!-- Firebase UI-->
           <div id="firebaseui-auth-container"></div>
-          <div id="loader">Loading...</div>
+          <div id="loader">Cargando...</div>
         </div>
       </div>
-    </section>
+    </div>
 
   <main id="section-container" class="container hide"> 
       <div><p>Cargando...</p></div>  
@@ -35,26 +35,12 @@
 
   <footer id="footer-nav">  </footer>
 
-  
-
- <!-- <script>
-    INICIALIZACION SIDEBAR
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems);
-
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
-  </script>-->
-
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
   <script src="authentication.js"></script>
   <script type="module" src="main.js"></script>
 </body>
