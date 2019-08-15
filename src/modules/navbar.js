@@ -35,11 +35,14 @@ let Navbar = {
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a></li>
-              </ul>
-            </div>
-          </div>
-         </nav>
+             <li><button onclick="cerrar()"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</button></li>
+        </ul>
+        </ul>
+        </div>
+        </div>
+        </nav>
+                
+            
         `
         return view
     }
