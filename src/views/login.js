@@ -77,21 +77,24 @@ let login = {
 
           firebase.auth().signInWithEmailAndPassword(mail2, password2)
           .then((user)=>{
-          console.log("¿El usuario esta verificado?",user.user.emailVerified);
+            sessionStorage.setItem('key', 'true');
+          // console.log("¿El usuario esta verificado?",user.user.emailVerified);
                  
-          if(user.user.emailVerified){
-            location.hash = "/muro";
-          }
-          else{
-            console.log("aun no has validado tu cuenta, accede a tu correo por favor");
-            const alertOne = document.getElementById("alert-one");
-            alertOne.innerHTML = `
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Atención!</strong> Aun no has validado tu cuenta, accede a tu correo por favor`
-          }
+          // if(user.user.emailVerified){
+            location.hash = "#/muro";
+          // }
+          // else{
+          //   console.log("aun no has validado tu cuenta, accede a tu correo por favor");
+          //   const alertOne = document.getElementById("alert-one");
+          //   alertOne.innerHTML = `
+          //   <button type="button" class="close" data-dismiss="alert">&times;</button>
+          //   <strong>Atención!</strong> Aun no has validado tu cuenta, accede a tu correo por favor`
+          // }
         })
         .catch((error) => {
+          // location.hash = "/login";
             // Handle Errors here.
+            
             console.log("Usuario no registrado");
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -106,10 +109,11 @@ let login = {
     const btnGoogle = document.getElementById('btnGoogle');
     const loginGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(user){
+    firebase.auth().signInWithPopup(provider).then((user) =>{
+      sessionStorage.setItem('key', 'true');
       alert("Google SignIn");
       console.log(user);
-      }).catch(function(error){
+      }).catch((error)=>{
       alert("error");
       console.log(error);
       })
