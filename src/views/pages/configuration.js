@@ -4,10 +4,10 @@ const configuration = {
       <section id="configuration">
       <h4>Configuración de la cuenta</h4>
       <hr>
-      <p>Administra la información sobre tu cuenta</p>
-      <p>información personal</p>
-      <p>Privacidad de las publicaciones</p>
-      <p>Seguridad</p>
+      <h6>Administra la información sobre tu cuenta</h6>
+      <h6>Información personal</h6>
+      <h6>Privacidad de las publicaciones</h6>
+      <h6>Seguridad</h6>
     </section>
           `;
     },
