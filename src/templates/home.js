@@ -2,6 +2,7 @@ let Home = {
     render : async () => {
         let view = `
         <section class="all-sections">
+
         <!--Crea un nuevo post-->
         <div id="new-post" class="card">
             <h3>Crear publicación</h3>
@@ -17,9 +18,9 @@ let Home = {
         <!--Post publicados por el usuario-->
         <div id="show-post">
         <!-- Contenedor del posto publicado y de los comentarios-->
-        <div id="property-post">  
+        <div class="container-post">  
         <!-- Contenedor del post escrito por el usuario   -->    
-            <div id="user-post">
+            <div class="user-post">
             <!-- Contenedor de user image and name user  -->
                 <div class="post-header">
                     <div class="user-name">
@@ -33,25 +34,28 @@ let Home = {
                 </div>
                 <!-- Texto del comentario -->
                 <div class="post-body">
-                    <p id="comentarios">Comentarios</p>
+                    <textarea readonly class="post-content">Aquí se guarda la publicación  </textarea>
                 </div>
                 <!-- Contenedor de likes y boton comentar -->
                 <div class="post-footer">
-                    <button class="like"><img src="img/sun.svg" alt=""></button>
+                    <button class="btn-like"><img src="img/sun.svg" alt=""></button>
                     <button>Comentarios</button>
                 </div>
             </div >
+
             <!-- Contenedor de los comentarios del post   -->   
-            <div id="comment-post">
-              Coment post
+            <div class="comment-post">
                  <!--Contenedor de comentarios agregados -->
-                <div style="background-color:fuchsia">
-                    <ul>
-                        Lista desordenada
+                <div>
+                    <ul class="all-comments-post>
+                        <li>
+                        <img src="img/default-photo.svg" alt="">
+                        <input>
+                        </li>
                     </ul>
                 </div>
              <!--     Agregar comentario -->
-                <form action="" style="background-color:greenyellow">
+                <form action="">
                     <div>
                        <img src="" alt="">     
                        <input type="text"> 
