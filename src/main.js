@@ -10,13 +10,16 @@ import navbar from './views/navbar.js'
 import header from './views/header.js'
 import utils from './views/utils.js'
 
-const routes = {
+const privatesRoutes = {
     '/muro' : Muro,
-    '/': login,
-    '/login':login,
-    '/register' : register,
-    '/intereses': Intereses,
+    '/intereses': Intereses
 };
+
+const publicRoutes = {
+  '/': login,
+  '/login':login,
+  '/register' : register,
+}
 
 const router = async () => { // function always returns a promise
 
@@ -35,19 +38,30 @@ const router = async () => { // function always returns a promise
     
         // Render the header of the page
         
-    if((parsedURL != '/login') & (parsedURL != '/')){
+    if((parsedURL != '/login') && (parsedURL != '/')){
      encabezado.innerHTML = await header.render(); // wait till the promise resolves
      await header.after_render();
     }
-    
-    if((parsedURL != '/login') & (parsedURL != '/') & (parsedURL != '/register')){
+
+
+    const isLoged = sessionStorage.getItem('key');
+
+    if(isLoged === 'true'){
+      const page = privatesRoutes[parsedURL] ? privatesRoutes[parsedURL] : error404; 
+      content.innerHTML = await page.render();
+      await page.after_render();
       footer.innerHTML = await navbar.render();
-      await navbar.after_render();
+      await navbar.after_render();  
+      encabezado.innerHTML = await header.render(); // wait till the promise resolves
+      await header.after_render();
     }
-       // If the parsed URL is not in our list of supported routes, select the 404 page instead
-    let page = routes[parsedURL] ? routes[parsedURL] : error404; 
-    content.innerHTML = await page.render();
-    await page.after_render();    
+    else{
+          // If the parsed URL is not in our list of supported routes, select the 404 page instead
+      const page = publicRoutes[parsedURL] ? publicRoutes[parsedURL] : error404; 
+      content.innerHTML = await page.render();
+      await page.after_render(); 
+    }  
+  
 }
 
 // Listen on hash change:
@@ -78,6 +92,7 @@ const observadorDeSesion = () =>{
         //   // ...
 
         } else {
+          location.hash = "#/login";
           // User is signed out.
           // ...
           console.log("no exite usuario activo");

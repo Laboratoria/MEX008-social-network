@@ -104,41 +104,33 @@ let Muro = {
 
       db.collection("posts").onSnapshot((querySnapshot) => {
         printPost.innerHTML = "";
+
         querySnapshot.forEach((doc) => {
             console.log(`${doc.data().category} => ${doc.data().post}`);
             printPost.innerHTML += `
             <div class="posts">
             <p><strong>${doc.data().category}</strong></p>
             <p class="text-center">${doc.data().post}</p>
-            <input type="submit" value="eliminar" class="btn btn-eliminar" id="${doc.id}">
-            <input type="submit" value="editar" class="btn btn-editar" id="${doc.id}">
-            </div>`
+            <input type="submit" value="eliminar" class="btn btn-eliminar" data-id="${doc.id}">
+            <input type="submit" value="editar" class="btn btn-editar" data-id="${doc.id}">
+            </div>
+            `
             
         });
         
     });
 
       printPost.addEventListener("click", (e) =>{
+        console.log(e.target);
         if(e.target.tagName !== "INPUT" || !e.target.classList.contains("btn-eliminar")){
+          
           return;
         }
-        console.log(!e.target.classList.contains("btn-eliminar"));
-        eliminar(e.target.id);
+        console.log(e.target);
+         eliminar(e.target.dataset.id);
       })
 
-      // const btnEliminar = document.getElementsByClassName("btn-eliminar")
-      
-      // for(let i=0; i<btnEliminar.length; i++){
-      //     btnEliminar[i].addEventListener("click", (e) =>{
-      //       if (!e) e= window.event;
-      //       eliminar(e.target.id);
-      //     })
-      // }
-      
-      
-      
-      
-
+          
       //Funcion eliminar post
       const eliminar = (id) => {
         db.collection("posts").doc(id).delete().then(function() {
@@ -150,8 +142,8 @@ let Muro = {
       
         
         //Funcion editar post
-        const editar = (id,category,post) =>{
-          
+        const editar = (id) =>{
+
           document.getElementById("select-publication").value = category;
           document.getElementById("publication").value = post;
 
@@ -167,7 +159,7 @@ let Muro = {
             .catch(function(error) {
                 // The document probably doesn't exist.
                 console.error("Error updating document: ", error);
-            });test.firestore.js
+            });
         }   
     
       printPost.addEventListener("click", (e) =>{
@@ -175,9 +167,10 @@ let Muro = {
           return;
         }
         console.log(!e.target.classList.contains("btn-editar"));
-        editar(e.target.id,e.target.data().category,e.target.data().post);
+        editar(e.target.id);
       })
       
+
       //pendiente
       publication.addEventListener("input", () =>{
         const textPublication = publication.value;
@@ -191,18 +184,19 @@ let Muro = {
      btnPublicar.addEventListener("click",guardar);
 
     
-    const cerrarSesion = () =>{
-      firebase.auth().signOut()
-      .then( () => {
-          console.log("sesion cerrada");
-          location.hash = "#/login"
-      })
-      .catch( (error)=>{
-          var errorMessage = error.message;
-          console.log(errorMessage);
-      })
-    }
-    document.getElementById("cerrar-sesion-dos").addEventListener("click",cerrarSesion);
+      const cerrarSesion = () =>{
+        firebase.auth().signOut()
+        .then( () => {
+            console.log("sesion cerrada");
+            sessionStorage.clear();
+            location.hash = "#/login"
+        })
+        .catch( (error)=>{
+            var errorMessage = error.message;
+            console.log(errorMessage);
+        })
+      }
+      document.getElementById("cerrar-sesion-dos").addEventListener("click",cerrarSesion);
     }
 }
 
