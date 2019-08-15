@@ -39,7 +39,7 @@ let Home = {
                 <!-- Contenedor de likes y boton comentar -->
                 <div class="post-footer">
                     <button class="btn-like"><img src="img/sun.svg" alt=""></button>
-                    <button>Comentarios</button>
+                    <button><i class="fas fa-comment"></i>     Comentarios</button>
                 </div>
             </div >
 
@@ -47,21 +47,20 @@ let Home = {
             <div class="comment-post">
                  <!--Contenedor de comentarios agregados -->
                 <div>
-                    <ul class="all-comments-post>
+                    <ul class="all-comments-post">
                         <li>
                         <img src="img/default-photo.svg" alt="">
-                        <input>
+                        <p></p>
                         </li>
                     </ul>
                 </div>
              <!--     Agregar comentario -->
+             <div class="new-comment">
                 <form action="">
-                    <div>
-                       <img src="" alt="">     
-                       <input type="text"> 
-                       <button>Agregar comentario</button>
-                    </div>
+                       <textarea></textarea> 
+                       <button>Comentar</button>
                 </form>
+            </div>
             </div>
         </div>
       </div>
