@@ -1,7 +1,7 @@
 //Importando pantallas
 import intro from "./views/pages/intro.js";
 import welcome from "./views/pages/welcome.js";
-//import timeline from "./views/pages/timeline.js";
+import timeline from "./views/pages/timeline.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
 import profile from "./views/pages/profile.js";
@@ -10,10 +10,9 @@ import error404 from "./views/pages/error404.js ";
 
 //Importando componentes
 import sidebar from "./views/components/sidebar.js";
-/*import modal from "./views/components/modal.js";
-import addBtn from "./views/components/addBtn.js";*/
 import footer from "./views/components/footer.js";
 
+//Importando servicios
 import Utils from "./services/Utils.js";
 
 // Initial Storage
@@ -23,15 +22,15 @@ import Utils from "./services/Utils.js";
   
   const routes = {
     "/intro": intro,
-    "/welcome": welcome,
-   // "/": timeline,
+    "/": welcome,
+    "/timeline": timeline,
     "/shops": shops,
     "/workshops": workshops,
     "/profile": profile,
     "/configuration": configuration,
   };
 
-//inicializando todo
+//Función para inicializar todo
   const routerApp = async () => {
     const introContainer = null || document.getElementById("intro-container");
     const sidebarContainer = null || document.getElementById("sidebar-container");
@@ -42,7 +41,7 @@ import Utils from "./services/Utils.js";
   introContainer.innerHTML = await intro.render();
   sidebarContainer.innerHTML = await sidebar.render();
   welcomeContainer.innerHTML = await welcome.render();
-  sectionContainer.innerHTML = await shops.render();
+  sectionContainer.innerHTML = await timeline.render();
   footerNav.innerHTML = await footer.render();
 
     const request = Utils.pageRequestURL();
@@ -54,27 +53,16 @@ import Utils from "./services/Utils.js";
   
     let page = routes[parsedURL] ? routes[parsedURL] : error404;
     sectionContainer.innerHTML = await page.render();
-
-
-//Inicializando sidebar
+    
+    //Inicializando sidebar y modales
     const btnCollapse = document.querySelectorAll(".sidenav");
     M.Sidenav.init(btnCollapse);
+    
+    const modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
   };
 
 
-  
-/*falta inicializar modal y asignar addBtn*/
-// const timelineModal = async() => {
-//      try{
-//       firebase.auth().signOut().then;
-//    }
-//    catch(err){
-//        console.error("¡Error al tratar de cerrar sesión!")
-//    }
-//    console.log("Se cerró sesión exitosamente")
-// };
-
-  
 /*-- para hacker-edition, puede servir un poco para la funcionalidad de 'like'(publication-list solo aparece en timeline)
     const arrayLi = Array.from(
         document.querySelectorAll("#publication-list ul>li")
@@ -126,8 +114,6 @@ import Utils from "./services/Utils.js";
         routerApp();
       };*/
 
-
-    
       window.addEventListener("hashchange", routerApp);
       window.addEventListener("load", routerApp);
 
