@@ -72,12 +72,17 @@ import Utils from "./services/Utils.js";
    let page = routes[parsedURL] ? routes[parsedURL] : error404;
   sectionContainer.innerHTML = await page.render();
 
-    //Inicializando sidebar y modales
+    //Inicializando sidebar
     const btnCollapse = document.querySelectorAll(".sidenav");
     M.Sidenav.init(btnCollapse);
     
+    //Inicializando modales   
     const modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
+
+/*     Inicializando post-textarea
+   $('#textarea-post').val('New Text');
+   M.textareaAutoResize($('#textarea-post')); */
 
     document.getElementById("sign-out").addEventListener("click", () => {
       console.log('click');
