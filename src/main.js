@@ -4,6 +4,7 @@
 
 // myFunction();
 // import addPost from "./app.js";
+
 var firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
@@ -61,6 +62,11 @@ var uiConfig = {
 };
 // let postTxt = document.getElementById('textarea');
 
+
+
+
+
+
 let addPost = (e) => {
     firebase.auth().onAuthStateChanged((user) => {
         if (user.uid != '') {
@@ -86,6 +92,7 @@ let addPost = (e) => {
         }
     });
 }
+
 
 
 
