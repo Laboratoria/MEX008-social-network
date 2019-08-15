@@ -14,7 +14,7 @@
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "npm run htmlhint && npm run eslint",
     "test": "jest --coverage",
-    "start": "serve src/"
+    "start": "serve ./src"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
