@@ -28,8 +28,9 @@ body {
     box-sizing: border-box;
 }
 
-nav {
-    background-color: #73eeaf;
+header, nav {
+    background-color: #73ECEF;
+    height: 9vh;
 }
 
 .sidenav {
