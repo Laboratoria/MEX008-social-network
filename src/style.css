@@ -2,7 +2,8 @@
 .conteiner {
     width: 100%;
     height: 100vh;
-    background-image: url(../icon/fondo2.jpg);
+    /* background-image: url(../icon/fondo2.jpg); */
+    background-image: url(https://github.com/JessicaZetina/MEX008-social-network/blob/master/icon/fondo2.jpg?raw=true);
     background-size: cover;
     border:7px solid rgba(0, 0, 0, 0.212);
 }
@@ -33,7 +34,7 @@
     width: 100%;
     height: 100vh;
     margin: auto;
-    background-image: url(../icon/fondo3.jpg);
+    background-image: url(../icon/https://github.com/JessicaZetina/MEX008-social-network/blob/master/icon/fondo3.jpg?raw=true.jpg);
     background-size: cover;
     border:7px solid rgba(233, 134, 20, 0.5);
 }

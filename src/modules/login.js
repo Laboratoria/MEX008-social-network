@@ -5,7 +5,7 @@ let login = {
         
             <form class="login">
         
-                <p><img src="../icon/FAVORITO.png" alt="imagen-logo" id="logo"></p>
+                <p><img src="https://github.com/JessicaZetina/MEX008-social-network/blob/master/icon/FAVORITO.png?raw=true" alt="imagen-logo" id="logo"></p>
                     <h2>Registro de usuarios </h2> <br>
                     <p>Correo </p>
                     <input id="email" type="email"  placeholder="wanderlust@gmail.com">
