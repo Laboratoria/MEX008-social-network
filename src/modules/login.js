@@ -28,7 +28,8 @@ let login = {
             <div id="contenido"></div>
 
         </div>
-        
+        </section> 
+        </main>
         `
         return view
     },
@@ -36,8 +37,6 @@ let login = {
         }
 };
 export default login;
-
-
 
 
 
