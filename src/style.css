@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* LOGIN */
 .conteiner {
     width: 100%;
@@ -6,7 +5,9 @@
     background-image: url(../icon/fondo2.jpg);
     background-size: cover;
     border:7px solid rgba(0, 0, 0, 0.212);
-    }.login{
+    }
+
+    .login{
     width: 320px;
     height: 420px;
     margin: auto;
@@ -16,11 +17,13 @@
     margin-top: 20px;
     border-radius: 7px;
     }
+
     #logo{
     width: 40%;
     margin: auto;
     display: block;
     }
+    
     #loader{
     text-align: center;
     font-size: small;
@@ -34,6 +37,7 @@
     background-size: cover;
     border:7px solid rgba(233, 134, 20, 0.5);
 }
+
 .Perfil{
     width: 320px;
     height: 420px;
@@ -104,178 +108,32 @@
     overflow: hidden;
  }
  .slider-img{
-=======
-.conteiner {
-width: 100%;
-height: 100vh;
-background-image: url(../icon/fondo2.jpg);
-background-size: cover;
-border:7px solid rgba(0, 0, 0, 0.212);
-}
-
-.login{
-width: 320px;
-height: 420px;
-margin: auto;
-background-color: rgba(0, 0, 0, 0.3);
-padding: 10px 20px;
-box-sizing: border-box;
-margin-top: 20px;
-border-radius: 7px;
-}
-#logo{
-width: 40%;
-margin: auto;
-display: block;
-}
-#loader{
-text-align: center;
-font-size: small;
-}
-
-.BienvenidaLogo{
-}
-.perfil-box{
-width: 100%;
-height: 100vh;
-margin: auto;
-background-image: url(../icon/fondo3.jpg);
-background-size: cover;
-border:7px solid rgba(233, 134, 20, 0.5);
-}
-
-.Perfil{
-width: 320px;
-height: 420px;
-background-size: cover;
-background: rgba(38, 202, 194, 0.616);
-opacity: 0.8;
-color:#000;
-top: 10%;
-left: 40%;
-position: relative;
-transform:translate(-50, -50);
-box-sizing: border-box;
-padding: 70px 30px;
-border-radius: 5%;
-
-}
-
-.Perfil .avatar{
-background-color: rgba(255, 140, 9, 0.876);
-width: 100px;
-height: 100px;
-border-radius: 50%;
-position: absolute;
-top: -40px;
-left: 35%;
-
-}
-
-.Perfil h2{
-margin: 0;
-padding: 0 0 20px;
-text-align: center;
-font-size: 20px;
-}
-
-.Perfil input{
-width: 80%;
-margin-bottom: 20px;
-}
-
-#experto{
-width: 20%;
-background-color: rgb(9, 133, 190);
-border-radius: 20%;
-}
-
-#noexperiencia{
-width: 20%;
-background-color:rgb(9, 133, 190);
-border-radius: 20%;
-}
-
-#surfing{
-width: 20%;
-background-color: rgb(9, 133, 190);
-border-radius: 20%;
-}
-
-.active{
- width: 10px;
- height:20px;
-
-}
-.slider{
-    width: 50%;
-    height: 100%;
-    margin: auto;
-    background-color: aqua;
-    overflow: hidden;
-}
-
-.slider-img{
->>>>>>> upstream/master
     width: 60%;
     height: 50%;
     margin: auto;
     background-color: rgba(0, 255, 255, 0.205);
     overflow: hidden;
-<<<<<<< HEAD
- }
- .slider ul{
-=======
-}
-
-.slider ul{
->>>>>>> upstream/master
+    }
+    
+    .slider ul{
     display: flex;
     padding: 5%;
     width: 600%;
     height: 50%;
-<<<<<<< HEAD
-    animation: cambiar 20s infinite alternate;
- }
- .slider li{
-    width: 100%;
-    list-style: none;}
-.slider img{
-    width: 60%;
-=======
-    animation: cambiar 20s infinite alternate;    
-}
-
-.slider li{
+    animation: cambiar 20s infinite alternate; 
+    }
+    
+    .slider li{
     width: 100%;
     list-style: none;
-
-}
-
-.slider img{
-    width: 60%;
-
+    }
     
->>>>>>> upstream/master
-}
-
-@keyframes cambiar{
+    .slider img{
+    width: 60%;
+    }
+    
+    @keyframes cambiar{
     0% { margin-left: 0;}
-<<<<<<< HEAD
-    20% { margin-left: 0;} 
-
-    25% { margin-left: -100% ;}
-    45% { margin-left: -100% ;} 
-
-    50% { margin-left: -200% ;}
-    70% { margin-left: -200% ;}
-
-    75% { margin-left: -300% ;}
-    100% { margin-left: -300%;}
- }
-
-
-=======
     20% { margin-left: 0;}
 
     25% { margin-left: -100% ;}
@@ -286,5 +144,5 @@ border-radius: 20%;
     
     75% { margin-left: -300% ;}
     100% { margin-left: -300%;}
-}
->>>>>>> upstream/master
+    }
+

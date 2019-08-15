@@ -11,25 +11,25 @@
 </head>
 <body>
 
-    <header id="header-container"> </header>
-    <main id="content-container">
+<header id="header-container"> </header>
+<main id="content-container">
           <p>Loading...</p>
 
         
-    </main>
-    <footer>
+ </main>
+ <footer>
 
-    </footer>
+ </footer>
 
     <!-- The core Firebase JS SDK is always required and must be listed first 
     liga inicio de sesión -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
     <script>
       // Initialize firebase
       const firebaseConfig = {
-   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
-   <script
+
         apiKey: "AIzaSyAsQpWY0Ahrlh7k7qlwX7guYJCZN3msj_U",
         authDomain: "together-click-5a5dd.firebaseapp.com",
         databaseURL: "https://together-click-5a5dd.firebaseio.com",
@@ -38,14 +38,17 @@
         messagingSenderId: "134852128441",
         appId: "1:134852128441:web:b5711605e6ce435f"
       };
+
       firebase.initializeApp(firebaseConfig);
-      </script>
+   </script>
+  
+      <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+      <script src="https://apis.google.com/js/platform.js"async defer></script>
+      <script type="module" src="app.js"></script>
+      <script src="main.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-      <script src="main.js"></script>
-      <script type="module" src="app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-      <script src="https://apis.google.com/js/platform.js"async defer></script>
+  
     <!-- <script type="module" src="./firebase-js/keysfirebase.js"></script> -->
 </body>
 </html>

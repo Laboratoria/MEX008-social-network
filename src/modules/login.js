@@ -7,13 +7,11 @@ let login = {
         
                 <p><img src="../icon/FAVORITO.png" alt="imagen-logo" id="logo"></p>
                     <h2>Registro de usuarios </h2> <br>
-                // <div id="firebaseui-auth-container"></div>
-
                     <p>Correo </p>
                     <input id="email" type="email"  placeholder="wanderlust@gmail.com">
                     <p>Contraseña</p>
                     <input id="password" type="password"  pattern=".{6,}" placeholder="contraseña"> <br><br>
-                    <button onclick="registro()">Registrarse</button> <br>
+                    <button id="btn-registro">Registrarse</button> <br>
                     <p>
                     <input type="submit" value="Google">
                         
@@ -34,6 +32,11 @@ let login = {
         return view
     },
         after_render: async () => {
+            const btnRegistro = document.getElementById('btn-registro');
+            console.log(btnRegistro);
+            btnRegistro.addEventListener('click', registro)
+            
+
         }
 };
 export default login;
