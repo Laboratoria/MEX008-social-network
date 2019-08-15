@@ -257,11 +257,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
-.all-comments-post li {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.75);
+.all-comments-post {
+  display: flex;
 
 }
+
+.all-comments-post li {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  list-style: none;
+  padding: 0.2rem;
+  border-radius: 1rem;
+}
+
+.all-comments-post li p {
+  padding: 0.3rem 1rem;
+
+}
+
+
 
 .all-comments-post a {
   background-color: none;
@@ -298,6 +314,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .comment-post {
   background-color: #A9BF04;
   padding: 0 1rem 1rem 1rem;
+}
+
+.new-comment form{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.new-comment form textarea {
+  width: 80% ;
+  border-radius: 0.2rem;
 }
 
 /*RESPONSIVE*/
