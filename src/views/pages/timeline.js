@@ -3,15 +3,16 @@
 
 const timeline = {
   render: async () => {
-/*     db.collection("posts").onSnapshot.((querySnapshot) => {
-      querySnapshot.forEach((post) => {
-          console.log(`${post.id} => ${post.textPost()}`);
-      });
-  }); */
+    /*     db.collection("posts").onSnapshot.((querySnapshot) => {
+          querySnapshot.forEach((post) => {
+              console.log(`${post.id} => ${post.textPost()}`);
+          });
+      }); */
 
     return `
 <section>
 
+<!-- Post target -->
 <div class="col s12 m7">
             <h5>Publicaciones</h5>
             <div class="card horizontal" style="overflow: visible;">
@@ -21,13 +22,15 @@ const timeline = {
               </div>
 
               <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Texto de la publicación<i class="material-icons right">more_vert</i></span>
-              </div>
-<div class="divider"></div>
-              <div class="card-action">
-              <i class="material-icons right">home</i>
-              </div>
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+             <p>Texto de publicación</p>
+                <div class="card-action section">
+                <i class="material-icons right">home</i>
+                </div>
+                </div>
 
+
+      
               <div class="card-reveal" style="display: none; transform: translateY(0%);">
               
               <li class=" card-title">
@@ -52,8 +55,8 @@ const timeline = {
 
 
 </div>
-
-          </div>
+</div>
+          
 
 
 
@@ -122,8 +125,8 @@ const timeline = {
 
 
         `;
-                   },
+  },
   after_render: () => {},
-                  };
+};
 
 export default timeline;
