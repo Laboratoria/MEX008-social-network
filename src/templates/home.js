@@ -18,6 +18,8 @@ let Home = {
         <!--Post publicados por el usuario-->
         <div id="show-post">
         <!-- Contenedor del posto publicado y de los comentarios-->
+
+
         <div class="container-post">  
         <!-- Contenedor del post escrito por el usuario   -->    
             <div class="user-post">
@@ -63,6 +65,8 @@ let Home = {
             </div>
             </div>
         </div>
+       
+       
       </div>
         </section>    
         `
@@ -86,6 +90,55 @@ let Home = {
     const posts=db.collection("posts");
     const likes=db.collection("likes");
     const comentarios=document.getElementById("comentarios");
+
+
+    // function renderPost(doc){
+    //     // const postBody=document.getElementById("post-body");
+
+    //     const divContainerPost = document.createElement('div');
+    //     divContainerPost.setAttribute("class","container-post")
+
+
+
+    //     const userPost = document.createElement('div');
+    //     userPost.setAttribute("class","user-post")
+
+    //     const postHeader = document.createElement('div');
+    //     postHeader.setAttribute("class","post-header")
+
+    //     const userName = document.createElement('div');
+    //     userName.setAttribute("class","user-name")
+
+
+    //     const edit = document.createElement('div');
+    //     edit.setAttribute("class","edit");
+
+
+    //     const postBody = document.createElement('div');
+    //     postBody.setAttribute("class","post-body");    
+
+     
+    //     const textTarea = document.createElement('textarea');
+    //     textTarea.setAttribute("class","post-content");
+        
+
+    //     let text=document.createTextNode(doc.data().postText);
+    //     // li.setAttribute('data-id', doc.id);
+       
+    //     textTarea.appendChild(text);
+    //     postBody.appendChild(textTarea);
+
+
+
+
+
+        
+
+
+      
+
+    // }
+    
  
     // //Añade el perfil del usuario a cloud firestone //
     // profiles.add({
@@ -117,25 +170,36 @@ let Home = {
     // });  
     
     //Muestra todos los posts de un usuario //
-    posts.where("uidUser", "==", user.uid)
-    .get()
-    .then(function(posts) {
-        //     console.log("soy todos los posts de este usuario")
-        //     console.log(doc.data().postText);
-            const mostrarData = () => {
-                let str =  '';
-                posts.forEach(doc => {
-                    let post=doc.data().postText;
-                    str += 
-                       `<div id="prueba">${post}</div>`;//Crea el post en el html                  
-                });
-            comentarios.innerHTML = str;
-            };
-            mostrarData();
-        })
-    // Manejo de errores
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
+    // posts.where("uidUser", "==", user.uid)
+    // .get()
+    // .then(function(posts) {
+    //     //     console.log("soy todos los posts de este usuario")
+    //     //     console.log(doc.data().postText);
+    //         const mostrarData = () => {
+    //             let str =  '';
+    //             posts.forEach(doc => {
+    //                 let post=doc.data().postText;
+    //                 str += 
+    //                    `<div id="prueba">${post}</div>`;//Crea el post en el html                  
+    //             });
+    //         comentarios.innerHTML = str;
+    //         };
+    //         mostrarData();
+    //     })
+    // // Manejo de errores
+    // .catch(function(error) {
+    //     console.log("Error getting documents: ", error);
+    // });
+
+
+    posts.onSnapshot(snapshot => {
+        let changes = snapshot.docChanges();
+        changes.forEach(change => {
+            console.log(change.doc.data());
+            if(change.type == 'added'){
+                renderPost(change.doc);
+            } 
+        });
     });
 
     //Guarda un post en Cloud Firestone //  
