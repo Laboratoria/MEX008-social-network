@@ -6,37 +6,41 @@ let Home = {
         <div id="new-post" class="card">
             <h3>Crear publicación</h3>
             <form action="" id="post">
-                <input type="textfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></input>
+                <textarea type="textfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></textarea>
+                <div>
                 <button id="save-post">Publicar</button>
                 <button id="cancel-post">Cancelar</button>
+                </div>
             </form>
         </div>
         
         <!--Post publicados por el usuario-->
-        <div id="show-post" style="background-color:yellow" >
+        <div id="show-post">
         <!-- Contenedor del posto publicado y de los comentarios-->
-        <div id="property-post" style="background-color:green">  
-          Property post
+        <div id="property-post">  
         <!-- Contenedor del post escrito por el usuario   -->    
-            <div id="user-post" style="background-color:blue">
-                user post
-                <div style="background-color:red">
-                    <!-- Contenedor de user image and name user  -->
-                    <div style="background-color:pink">
-                        <img src="" alt="">
+            <div id="user-post">
+            <!-- Contenedor de user image and name user  -->
+                <div class="post-header">
+                    <div class="user-name">
+                        <img src="img/default-photo.svg" alt="">
                         <h2></h2>
                     </div>
                     <!-- Imagen/boton de editar -->
-                    <img src="" alt="" style="background-color:black">
+                    <div class="edit">
+                        <a><i class="fas fa-pen"></i></a>
+                    </div>
                 </div>
-                  <!-- Texto del comentario -->
-                <p id="comentarios">Comentarios</p>
+                <!-- Texto del comentario -->
+                <div class="post-body">
+                    <p id="comentarios">Comentarios</p>
+                </div>
                 <!-- Contenedor de likes y boton comentar -->
-                <div>  
-                    <img src="" alt="">
-                    <button>Publicar</button>
+                <div class="post-footer">
+                    <button class="like"><img src="img/sun.svg" alt=""></button>
+                    <button>Comentarios</button>
                 </div>
-            </div>
+            </div >
             <!-- Contenedor de los comentarios del post   -->   
             <div id="comment-post">
               Coment post

@@ -44,6 +44,19 @@ button {
 
 }
 
+.edit i {
+  color: rgba(253, 155, 35, 0.8);
+}
+
+.edit i:hover {
+  cursor: pointer;
+  color: #fd9e25; /* Old browsers */
+  color: -moz-linear-gradient(top,  #fd9e25 1%, #ff7600 53%, #ff7600 53%); /* FF3.6-15 */
+  color: -webkit-linear-gradient(top,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* Chrome10-25,Safari5.1-6 */
+  color: linear-gradient(to bottom,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9e25', endColorstr='#ff7600',GradientType=0 ); /* IE6-9 */
+}
+
 #main-aside-container {
   display: flex;
 }
@@ -75,6 +88,7 @@ background-attachment: fixed;
 .all-sections {
   width: 70vw;
   height: 100vh;
+  padding: 0.5rem 0 ;
 }
 
 #all-forms {
@@ -168,6 +182,72 @@ aside {
   justify-content: space-around;
 }
 
+.google-facebook *:hover {
+  cursor: pointer;
+}
+
+#show-post {
+ background-color: rgba(145, 190,248, 0.5); 
+}
+
+#new-post{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#new-post, #show-post {
+  height: auto;
+  width: 90%;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+}
+
+#new-post h3 {
+  font-size: 1rem;
+  padding-bottom: 0.7rem;
+}
+
+#input-write-post {
+  margin-bottom: 1rem;
+  min-height: 4rem;
+  padding: 0 0.5rem;
+}
+
+#post {
+  display: flex;
+  flex-direction: column;
+}
+
+#post div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#post div * {
+  margin-left: 1rem;
+}
+
+#property-post {
+  display:flex;
+  flex-direction: column;
+}
+
+#user-post {
+  background-color: #ffffff;
+}
+
+
+.post-header, .post-body, .post-footer {
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.like {
+  background-color: #ffffff !important;
+}
 
 
 /*RESPONSIVE*/
@@ -204,6 +284,10 @@ aside {
   }
   
   
+#new-post, #show-post {
+  width: 50%;
+}
+
   #img-register-page {
     display: flex;
     background-image: url(img/orange-register.jpg) ;
@@ -214,3 +298,4 @@ aside {
  max-width: 300px; 
 }
 }
+
