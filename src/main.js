@@ -1,10 +1,13 @@
-const  registro=() => {
+const registro = (e) => {
+    e.preventDefault();    
     let email= document.getElementById('email').value;
     let password= document.getElementById('password').value;
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then (function(){
         console.log("registrado");
-        enviarCrearPerfil()
+        // location.hash = '/crear-perfil'
+        // enviarCrearPerfil()
+        location.hash = '/muro'
     })
     .catch(function(error) {
         // Handle Errors here.

@@ -14,11 +14,11 @@ import Utils from './modules/utils.js'
 // Lista de rutas admitidas. Cualquier URL que no sea estas rutas arrojara un error 404
 
 const routes = {
-    '/login'      : Login
-    ,'/crear-perfil' : CrearPerfil
-    ,'/perfil' : Perfil
-    ,'/muro'      : Muro
-    
+    '/': Login,
+    '/login': Login,
+    '/crear-perfil' : CrearPerfil,
+    '/perfil' : Perfil,
+    '/muro': Muro
 };
 
 // El código del enrutador. Tome una URL, comprueba la lista de rutas surtidas y luego muestra  la página de contenido corespondiente
@@ -42,7 +42,9 @@ const router = async () => { //La función siempre devuelve una promesa
     
     // Obtenga la p+agina de nuestro hash de rutas compatibles
     // Si la URL analizada no está en nuestra lista de rutas admitidas, seleccione la página 404
-    let page = routes[parsedURL] ? routes[parsedURL] : Error404; 
+    let page = routes[parsedURL] ? routes[parsedURL] : Error404;
+    console.log(page);
+    
     content.innerHTML = await page.render();
     await page.after_render();    
 }
