@@ -5,7 +5,7 @@ import timeline from "./views/pages/timeline.js";
 import shops from "./views/pages/shops.js";
 import workshops from "./views/pages/workshops.js";
 import profile from "./views/pages/profile.js";
-import configuration from "./views/pages/configuration.js";
+import settings from "./views/pages/settings.js";
 import error404 from "./views/pages/error404.js ";
 
 //Importando componentes
@@ -27,7 +27,7 @@ import Utils from "./services/Utils.js";
     "/shops": shops,
     "/workshops": workshops,
     "/profile": profile,
-    "/configuration": configuration,
+    "/settings": settings,
   };
 
 //Función para inicializar todo

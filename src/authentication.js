@@ -1,4 +1,4 @@
- // Your web app's Firebase configuration
+// Your web app's Firebase configuration
  var firebaseConfig = {
    apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
    authDomain: "sacbe-rd.firebaseapp.com",
@@ -54,42 +54,42 @@
      firebase.auth.EmailAuthProvider.PROVIDER_ID,
      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
      firebase.auth.FacebookAuthProvider.PROVIDER_ID
-   ],
- });
- 
- //funcion para comprobar estado de usuario
- firebase.auth().onAuthStateChanged(function (user) {
-   if (user) {
-     document.getElementById('signup-signin').classList.add("hide");
-     document.getElementById('intro-container').classList.add("hide");
-     document.getElementById('section-container').classList.remove("hide");
-     document.getElementById('pic-trigger').classList.remove("hide");
-     document.getElementById('slide-out').classList.remove("hide");
-     document.getElementById('footer-nav').classList.remove("hide");
-     console.log("El usuario ha entrado a sesión");
-     document.getElementById("sign-out").addEventListener("click", () => {
-       console.log('click');
-       firebase.auth().signOut();
-     });
+    ],
+  });
+  
+  //funcion para comprobar estado de usuario
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+/*      // User is signed in.
+     var displayName = user.displayName;
+     var email = user.email;
+     var emailVerified = user.emailVerified;
+     var photoURL = user.photoURL;
+     var uid = user.uid;
+ */
 
-         // User is signed in.
-/*     var displayName = user.displayName;
-    var email = user.email;
-    var emailVerified = user.emailVerified;
-    var photoURL = user.photoURL;
-    var isAnonymous = user.isAnonymous;
-    var uid = user.uid;
-    var providerData = user.providerData; */
+        document.getElementById('signup-signin').classList.add("hide");
+        document.getElementById('intro-container').classList.add("hide");
+        document.getElementById('section-container').classList.remove("hide");
+        document.getElementById('menu').classList.remove("hide");
+        document.getElementById('slide-out').classList.remove("hide");
+        document.getElementById('footer-nav').classList.remove("hide");
+        console.log("El usuario ha entrado a sesión");
+        document.getElementById("sign-out").addEventListener("click", () => {
+          console.log('click');
+          firebase.auth().signOut();
+        });
+   
+      } else {
+        document.getElementById('signup-signin').classList.remove("hide");
+        document.getElementById('slide-out').classList.add("hide");
+        document.getElementById('menu').classList.add("hide");
+        document.getElementById('footer-nav').classList.add("hide");
+        document.getElementById('section-container').classList.add("hide");
+        console.log('El usuario está fuera de sesión')
+      }
+    });
 
-   } else {
-     document.getElementById('signup-signin').classList.remove("hide");
-     document.getElementById('slide-out').classList.add("hide");
-     document.getElementById('pic-trigger').classList.add("hide");
-     document.getElementById('footer-nav').classList.add("hide");
-     document.getElementById('section-container').classList.add("hide");
-     console.log('El usuario está fuera de sesión')
-   }
- });
 
 /*   db.collection("posts").add({
     uid: 'PcJkrcAcJ3dUxIJ6CHDP6Ak1Dwy1',
