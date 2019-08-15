@@ -32,17 +32,13 @@ import Utils from "./services/Utils.js";
 
 //Función para inicializar todo
   const routerApp = async () => {
-    const introContainer = null || document.getElementById("intro-container");
-    const sidebarContainer = null || document.getElementById("sidebar-container");
-    const welcomeContainer = null || document.getElementById("welcome-container");
     const sectionContainer = null || document.getElementById("section-container");
-    const footerNav = null || document.getElementById("footer-nav");
+
+    const introContainer = null || document.getElementById("intro-container");
+    const welcomeContainer = null || document.getElementById("welcome-container");
 
   introContainer.innerHTML = await intro.render();
-  sidebarContainer.innerHTML = await sidebar.render();
   welcomeContainer.innerHTML = await welcome.render();
-  sectionContainer.innerHTML = await timeline.render();
-  footerNav.innerHTML = await footer.render();
 
     const request = Utils.pageRequestURL();
 
@@ -53,14 +49,68 @@ import Utils from "./services/Utils.js";
   
     let page = routes[parsedURL] ? routes[parsedURL] : error404;
     sectionContainer.innerHTML = await page.render();
-    
-    //Inicializando sidebar y modales
+  };
+
+
+  //Función para inicializar contenido
+  const stateChange = async () => {
+    const sidebarContainer = null || document.getElementById("sidebar-container");
+    const sectionContainer = null || document.getElementById("section-container");
+    const footerNav = null || document.getElementById("footer-nav");
+
+  sidebarContainer.innerHTML = await sidebar.render();
+  sectionContainer.innerHTML = await timeline.render();
+  footerNav.innerHTML = await footer.render();
+
+  const request = Utils.pageRequestURL();
+
+  let parsedURL =
+    (request.resource ? `/${request.resource}` : "/") +
+    (request.verb ? "/" + request.verb : "") +
+    (request.id ? "/:id" : ""); 
+
+   let page = routes[parsedURL] ? routes[parsedURL] : error404;
+  sectionContainer.innerHTML = await page.render();
+
+    //Inicializando sidebar
     const btnCollapse = document.querySelectorAll(".sidenav");
     M.Sidenav.init(btnCollapse);
     
+    //Inicializando modales   
     const modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
+
+/*     Inicializando post-textarea
+   $('#textarea-post').val('New Text');
+   M.textareaAutoResize($('#textarea-post')); */
+
+    document.getElementById("sign-out").addEventListener("click", () => {
+      console.log('click');
+      firebase.auth().signOut();
+    });
   };
+
+  //funcion para comprobar estado de usuario
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      document.getElementById('signup-signin').classList.add("hide");
+      document.getElementById('intro-container').classList.add("hide");
+      console.log("El usuario ha entrado a sesión");
+      stateChange();
+    } else {
+      document.getElementById('signup-signin').classList.remove("hide");
+/*       document.getElementById('slide-out').classList.add("hide");
+      document.getElementById('menu').classList.add("hide");
+      document.getElementById('footer-nav').classList.add("hide");
+      document.getElementById('section-container').classList.add("hide"); */
+      console.log('El usuario está fuera de sesión')
+    }
+  });
+
+
+
+    
+
 
 
 /*-- para hacker-edition, puede servir un poco para la funcionalidad de 'like'(publication-list solo aparece en timeline)

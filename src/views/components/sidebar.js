@@ -1,5 +1,17 @@
 const sidebar = {
   render: async () => {
+    let user = firebase.auth().currentUser;
+    let name, email;
+    
+    if (user != null) {
+      name = user.displayName;
+      email = user.email;
+/*       photoUrl = user.photoURL;
+      emailVerified = user.emailVerified;
+      uid = user.uid;  */ 
+    }
+
+
     return `
     <nav> 
     <a id="side-trigger" href="#" data-target="slide-out" class="sidenav-trigger">
@@ -12,8 +24,8 @@ const sidebar = {
             <!-- <img src="img/bike-day.jpg">-->
           </div>
           <a><img class="circle" src="img/readme/ramona.png"></a>
-          <a><span class="white-text name">Ramona</span></a>
-          <a><span class="white-text email">ramona@gmail.com</span></a>
+          <a><span class="white-text name">${name}</span></a>
+          <a><span class="white-text email">${email}</span></a>
         </div>
       </li>
       <li><a href="#/profile"><i class="material-icons">account_circle</i>Perfil</a></li>
