@@ -6,7 +6,8 @@
     background-image: url(../icon/fondo2.jpg);
     background-size: cover;
     border:7px solid rgba(0, 0, 0, 0.212);
-    }.login{
+}
+.login{
     width: 320px;
     height: 420px;
     margin: auto;
@@ -15,18 +16,20 @@
     box-sizing: border-box;
     margin-top: 20px;
     border-radius: 7px;
-    }
-    #logo{
+}
+#logo{
     width: 40%;
     margin: auto;
     display: block;
-    }
-    #loader{
+}
+    
+#loader{
     text-align: center;
     font-size: small;
-    }
+}
+ 
  /* CREAR PERFIL */
- .perfil-box{
+.perfil-box{
     width: 100%;
     height: 100vh;
     margin: auto;
@@ -34,6 +37,7 @@
     background-size: cover;
     border:7px solid rgba(233, 134, 20, 0.5);
 }
+
 .Perfil{
     width: 320px;
     height: 420px;
@@ -77,6 +81,7 @@
     background-color: rgb(9, 133, 190);
     border-radius: 20%;
 }
+
 #noexperiencia{
     width: 20%;
     background-color:rgb(9, 133, 190);
