@@ -1,7 +1,7 @@
-const configuration = {
+const settings = {
     render: async () => {
         return `
-      <section id="configuration">
+      <section id="settings">
       <h4>Configuración de la cuenta</h4>
       <hr>
       <h6>Administra la información sobre tu cuenta</h6>
@@ -13,4 +13,4 @@ const configuration = {
     },
     after_render: () => { }
 };
-export default configuration;
+export default settings;
