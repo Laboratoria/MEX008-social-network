@@ -28,10 +28,6 @@ const router = async () => { //La función siempre devuelve una promesa
     const header  = document.getElementById('header-container'); 
     const content = null || document.getElementById('content-container'); // Si el primer valor es falso, verifica el segundo valor
     
-    // Renderizar el encabezado de la página
-    header.innerHTML = await Navbar.render(); // Espera hasta que la promesa se resuelva
-    await Navbar.after_render();
-    
     // Obten la URL analizada de la barra de dirrección
     let request = Utils.parseRequestURL();
 
@@ -43,7 +39,16 @@ const router = async () => { //La función siempre devuelve una promesa
     // Obtenga la p+agina de nuestro hash de rutas compatibles
     // Si la URL analizada no está en nuestra lista de rutas admitidas, seleccione la página 404
     let page = routes[parsedURL] ? routes[parsedURL] : Error404;
-    console.log(page);
+    console.log(parsedURL !== '/' ||  parsedURL !== '/login');
+    
+    // Renderizar el encabezado de la página
+    if (parsedURL !== '/' && parsedURL !== '/login' ) {
+        console.log("hola");
+        
+        header.innerHTML = await Navbar.render(); // Espera hasta que la promesa se resuelva
+        await Navbar.after_render();
+    }
+    
     
     content.innerHTML = await page.render();
     await page.after_render();    
