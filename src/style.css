@@ -5,9 +5,8 @@
     background-image: url(../icon/fondo2.jpg);
     background-size: cover;
     border:7px solid rgba(0, 0, 0, 0.212);
-    }
-
-    .login{
+}
+.login{
     width: 320px;
     height: 420px;
     margin: auto;
@@ -16,20 +15,21 @@
     box-sizing: border-box;
     margin-top: 20px;
     border-radius: 7px;
-    }
+  }
 
-    #logo{
+#logo{
     width: 40%;
     margin: auto;
     display: block;
-    }
+}
     
-    #loader{
+#loader{
     text-align: center;
     font-size: small;
-    }
+}
+ 
  /* CREAR PERFIL */
- .perfil-box{
+.perfil-box{
     width: 100%;
     height: 100vh;
     margin: auto;
@@ -81,6 +81,7 @@
     background-color: rgb(9, 133, 190);
     border-radius: 20%;
 }
+
 #noexperiencia{
     width: 20%;
     background-color:rgb(9, 133, 190);
@@ -106,33 +107,34 @@
     margin: auto;
     background-color: aqua;
     overflow: hidden;
- }
- .slider-img{
+}
+
+.slider-img{
     width: 60%;
     height: 50%;
     margin: auto;
     background-color: rgba(0, 255, 255, 0.205);
     overflow: hidden;
-    }
+}
     
-    .slider ul{
+.slider ul{
     display: flex;
     padding: 5%;
     width: 600%;
     height: 50%;
     animation: cambiar 20s infinite alternate; 
-    }
+}
     
-    .slider li{
+.slider li{
     width: 100%;
     list-style: none;
-    }
+}
     
-    .slider img{
+.slider img{
     width: 60%;
-    }
+}
     
-    @keyframes cambiar{
+@keyframes cambiar{
     0% { margin-left: 0;}
     20% { margin-left: 0;}
 
@@ -144,5 +146,5 @@
     
     75% { margin-left: -300% ;}
     100% { margin-left: -300%;}
-    }
+}
 
