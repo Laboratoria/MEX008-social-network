@@ -605,3 +605,35 @@
 [debug] [2019-08-16T05:31:56.738Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-16T20:12:51.310Z] ----------------------------------------------------------------------
+[debug] [2019-08-16T20:12:51.312Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-08-16T20:12:51.313Z] CLI Version:   7.2.2
+[debug] [2019-08-16T20:12:51.313Z] Platform:      linux
+[debug] [2019-08-16T20:12:51.313Z] Node Version:  v10.16.2
+[debug] [2019-08-16T20:12:51.313Z] Time:          Fri Aug 16 2019 15:12:51 GMT-0500 (GMT-05:00)
+[debug] [2019-08-16T20:12:51.313Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-16T20:12:51.319Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-16T20:12:51.320Z] > authorizing via signed-in user
+[debug] [2019-08-16T20:12:51.320Z] [iam] checking project red-social-270ac for permissions ["firebase.projects.get"]
+[debug] [2019-08-16T20:12:51.321Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-16T20:12:51.322Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-16T20:12:51.494Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-16T20:12:51.499Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-270ac:testIamPermissions  
+
+[debug] [2019-08-16T20:12:51.841Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-16T20:12:51.847Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac  
+ 
+[debug] [2019-08-16T20:12:52.096Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/rebe_laboratoria/Rebeca_repositorios/MEX008-social-network'...
+[info] 
+[debug] [2019-08-16T20:12:52.103Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac/webApps/-/config  
+ 
+[debug] [2019-08-16T20:12:52.385Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-16T20:12:56.015Z] Error: EBADF: bad file descriptor, read
+[error] 
+[error] Error: An unexpected error has occurred.

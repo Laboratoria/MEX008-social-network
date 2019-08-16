@@ -40,137 +40,175 @@ let Home = {
     //Crea las colecciones en Cloud Firestore//
     // const profiles= db.collection("profile");
     const posts=db.collection("posts");
-
-    const likes=db.collection("likes");
-    const comentarios=document.getElementById("comentarios");
-
+    // const likes=db.collection("likes");
+    // const comentarios=document.getElementById("comentarios");
 
     function renderPost(doc){
         // const postBody=document.getElementById("post-body");
 
         //Show-post container 
         const showPost = document.getElementById('show-post');
-        showPost.appendChild(divContainerPost); //Adjunta el hijo (divContainerPost) al padre (showPost)
 
         //container-post
         const divContainerPost = document.createElement('div');
         divContainerPost.setAttribute("class","container-post");
-        divContainerPost.appendChild(userPost, commentPost); //2 hijos?
+        showPost.appendChild(divContainerPost); 
 
         //user-post
         const userPost = document.createElement('div');
         userPost.setAttribute("class","user-post");
-        userPost.appendChild(postHeader, postBody, postFooter);
+        divContainerPost.appendChild(userPost);
+
 
         //post-header
         const postHeader = document.createElement('div');
         postHeader.setAttribute("class","post-header");
-        postHeader.appendChild(userName, edit);
+        userPost.appendChild(postHeader);
+
+        //post-body
+        const postBody = document.createElement('div');
+        postBody.setAttribute("class","post-body");
+        userPost.appendChild(postBody);
 
         //user-name
         const userName = document.createElement('div');
         userName.setAttribute("class","user-name");
-        userName.appendChild(userPhoto, userNamePost);
+        postHeader.appendChild(userName);
 
         //user-photo
         const userPhoto = document.createElement('img');
-        userPhoto.setAttribute('src','img/default-photo.svg');//Reemplazar con función
+        userPhoto.setAttribute('class',"user-image");
+        userPhoto.setAttribute('src',doc.data().photoURL);//Reemplazar con función
+        userName.appendChild(userPhoto);
         
         //user-name-post
-        const userNamePost = document.createElement('h2');
+        const userNamePost = document.createElement('h3');
+        const textNamePost = document.createTextNode(doc.data().name);
+        userNamePost.appendChild(textNamePost);
         userNamePost.setAttribute('class','user-name-post');
+        userName.appendChild(userNamePost);
 
         //edit
         const edit = document.createElement('div');
         edit.setAttribute("class","edit");
-        edit.appendChild(editButton);
+        postHeader.appendChild(edit);
 
         //edit-button
         const editButton = document.createElement('a');
-        editButton.setAttribute('href');
-        editButton.appendChild(editIcon);
-
+        // editButton.setAttribute('href');
+        edit.appendChild(editButton);
+        
         //edit-icon
         const editIcon = document.createElement('i');
         editIcon.setAttribute('class','fas fa-comment');
+        // deleteIcon.setAttribute("src",);
+        editButton.appendChild(editIcon);
 
-        //post-body
 
-        const postBody = document.createElement('div');
-        postBody.setAttribute("class","post-body");
-        postBody.appendChild(textTarea); 
-
-     //textarea
-        const textTarea = document.createElement('textarea');
-        const textPostNode = document.createTextNode(doc.data().postText); //Post hecho
-        textTarea.setAttribute("class","post-content");
-        textTarea.appendChild(textPostNode);
+        //delete
+        const deleteB = document.createElement('div');
+        deleteB.setAttribute("class","delete");
+        postHeader.appendChild(deleteB);
+  
+        //delete-button
+        const deleteButton = document.createElement('a');
+        // deleteButton.setAttribute('href');
+        deleteB.appendChild(deleteButton);
+          
+        //delete-icon
+        const deleteIcon = document.createElement('i');
+        deleteIcon.setAttribute('class','fas fa-comment');
+        // deleteIcon.setAttribute("src",);
+        deleteButton.appendChild(deleteIcon);
         
 
+     
+        //textarea
+        const textTarea = document.createElement('textarea');
+        // const textPostNode = document.createTextNode(doc.data().postText); //Post hecho
+        const textPostNode = document.createTextNode(doc.data().postText); // doc.data().postText;
+        textTarea.setAttribute("class","post-content");
+        textTarea.setAttribute("disabled","true")
+        textTarea.appendChild(textPostNode);
+        postBody.appendChild(textTarea);
+        // textTarea.appendChild(textPostNode);??
+        
+        
         //post-footer
         const postFooter = document.createElement('div');
         postFooter.setAttribute('class','post-footer');
-        postFooter.appendChild(likeButton, commentsButton);
+        userPost.appendChild(postFooter);
 
         //btn-like
         const likeButton = document.createElement('button');
+        const likeTitle = document.createTextNode('like');
         likeButton.setAttribute('class','btn-like');
+        likeButton.appendChild(likeTitle);
+        postFooter.appendChild(likeButton);
 
-
+           
         //comments-button
         const commentsButton = document.createElement('button');
         const commentsBTitle = document.createTextNode('Comentarios');
         commentsButton.appendChild(commentsBTitle);
-
+        postFooter.appendChild(commentsButton);
+      
 
         //comment-post
         const commentPost = document.createElement('div');
         commentPost.setAttribute('class','comment-post');
-        commentPost.appendChild(desorderListBox, newCommentBox);
+        divContainerPost.appendChild(commentPost);
 
+      
         //desorderListBox
         const desorderListBox = document.createElement('div');
-        desorderListBox.appendChild(allCommentPost);
-
+        commentPost.appendChild(desorderListBox);
+        
         
         //all-comment-post
 
-
         const allCommentPost = document.createElement('ul');
         allCommentPost.setAttribute('class','all-comment-post');
-        allCommentPost.appendChild(commentBox);
+        desorderListBox.appendChild(allCommentPost);
+        
 
         //commentbox
         const commentBox = document.createElement('li');
-        commentBox.appendChild(photoComments, comment);
+        allCommentPost.appendChild(commentBox);
 
         //photo comments
         const photoComments = document.createElement('img');
         photoComments.setAttribute('src','img/default-photo.svg');
+        commentBox.appendChild(photoComments);
 
         //comment
         const comment = document.createElement('p');
-        const commentText = document.createTextNode();//Comentarios hechos
+        const commentText = document.createTextNode("Un comentario");//Comentarios hechos
         comment.appendChild(commentText);
+        commentBox.appendChild(comment);
+        
 
         //new-comment
         const newCommentBox = document.createElement('div');
         newCommentBox.setAttribute('class', 'new-comment');
-        newCommentBox.appendChild(formComment);
+        commentPost.appendChild(newCommentBox);
+      
 
         const formComment = document.createElement('form');
-        formComment.appendChild(textAreaComment, newCommentButton);
+        newCommentBox.appendChild(formComment);
 
         const textAreaComment = document.createElement('textarea');
+        formComment.appendChild(textAreaComment);
 
         const newCommentButton = document.createElement('button');
+        const newCommentBTitle = document.createTextNode("Comentar");//Comentarios hechos
         newCommentButton.appendChild(newCommentBTitle);
+        formComment.appendChild(newCommentButton);
 
-        const newCommentBTitle = document.createTextNode('Comentar');
-        
-     
     }
+
     
+ 
  
     // //Añade el perfil del usuario a cloud firestone //
     // profiles.add({
@@ -250,7 +288,8 @@ let Home = {
             postText:textPost,
             email: user.email,
             name: user.displayName,
-            uidUser: user.uid
+            uidUser: user.uid,
+            photoURL: user.photoURL
         })
     
         .then(function(doc) {
