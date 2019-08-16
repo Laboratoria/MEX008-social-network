@@ -100,7 +100,7 @@ let Home = {
         
         //edit-icon
         const editIcon = document.createElement('i');
-        editIcon.setAttribute('class','fas fa-comment');
+        editIcon.setAttribute('class','fas fa-pen');
         // deleteIcon.setAttribute("src",);
         editButton.appendChild(editIcon);
 
@@ -117,7 +117,7 @@ let Home = {
           
         //delete-icon
         const deleteIcon = document.createElement('i');
-        deleteIcon.setAttribute('class','fas fa-comment');
+        deleteIcon.setAttribute('class','fas fa-trash');
         // deleteIcon.setAttribute("src",);
         deleteButton.appendChild(deleteIcon);
         
