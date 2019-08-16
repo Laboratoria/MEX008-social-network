@@ -26,6 +26,10 @@ const sidebar = {
           <a><span class="white-text email">${email}</span></a>
         </div>
       </li>
+      <li><a href="#/timeline"><i class="material-icons">home</i>Timeline</a></li>
+      <li>
+      <div class="divider"></div>
+    </li>
       <li><a href="#/profile"><i class="material-icons">account_circle</i>Perfil</a></li>
       <li><a href="#/settings"><i class="material-icons">settings</i>Configuración</a></li>
       <li>

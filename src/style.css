@@ -77,7 +77,7 @@ footer {
 
 main section {
     padding-top: 3vh;
-    height: 84vh;
+    min-height: 84vh;
 }
 
 #intro-container {
@@ -150,6 +150,14 @@ nav .sidenav-trigger {
     overflow-y: hidden !important;
 }
 
+ .fix {
+    position: fixed;
+    z-index: 1000;
+}
+
+#add-btn{
+    margin-left: 80vw;
+}
 
 /* IMÁGENES */
 

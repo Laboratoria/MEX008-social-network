@@ -19,45 +19,43 @@ import Utils from "./services/Utils.js";
 /*localStorage.setItem(publicationList",
     localStorage.getItem("publicationList") || JSON.stringify([])
   );*/
-  
-  const routes = {
-    "/intro": intro,
-    "/": welcome,
-    "/timeline": timeline,
-    "/shops": shops,
-    "/workshops": workshops,
-    "/profile": profile,
-    "/settings": settings,
-  };
+
+const routes = {
+  "/intro": intro,
+  "/": welcome,
+  "/timeline": timeline,
+  "/shops": shops,
+  "/workshops": workshops,
+  "/profile": profile,
+  "/settings": settings,
+};
 
 //Función para inicializar todo
-  const routerApp = async () => {
-    const sectionContainer = null || document.getElementById("section-container");
-
-    const introContainer = null || document.getElementById("intro-container");
-    const welcomeContainer = null || document.getElementById("welcome-container");
+const routerApp = async () => {
+  const introContainer = null || document.getElementById("intro-container");
+  const welcomeContainer = null || document.getElementById("welcome-container");
 
   introContainer.innerHTML = await intro.render();
   welcomeContainer.innerHTML = await welcome.render();
 
-    const request = Utils.pageRequestURL();
+  // const request = Utils.pageRequestURL();
 
-    let parsedURL =
-      (request.resource ? `/${request.resource}` : "/") +
-      (request.verb ? "/" + request.verb : "") +
-      (request.id ? "/:id" : "");
-  
-    let page = routes[parsedURL] ? routes[parsedURL] : error404;
-    sectionContainer.innerHTML = await page.render();
-  await page.after_render();
-  };
+  // let parsedURL =
+  //   (request.resource ? `/${request.resource}` : "/") +
+  //   (request.verb ? "/" + request.verb : "") +
+  //   (request.id ? "/:id" : "");
+
+  // let page = routes[parsedURL] ? routes[parsedURL] : error404;
+  // sectionContainer.innerHTML = await page.render();
+  // await page.after_render();
+};
 
 
-  //Función para inicializar contenido
-  const stateChange = async () => {
-    const sidebarContainer = null || document.getElementById("sidebar-container");
-    const sectionContainer = null || document.getElementById("section-container");
-    const footerNav = null || document.getElementById("footer-nav");
+//Función para inicializar contenido
+const stateChange = async () => {
+  const sidebarContainer = null || document.getElementById("sidebar-container");
+  const sectionContainer = null || document.getElementById("section-container");
+  const footerNav = null || document.getElementById("footer-nav");
 
   sidebarContainer.innerHTML = await sidebar.render();
   sectionContainer.innerHTML = await timeline.render();
@@ -68,36 +66,35 @@ import Utils from "./services/Utils.js";
   let parsedURL =
     (request.resource ? `/${request.resource}` : "/") +
     (request.verb ? "/" + request.verb : "") +
-    (request.id ? "/:id" : ""); 
+    (request.id ? "/:id" : "");
 
-   let page = routes[parsedURL] ? routes[parsedURL] : error404;
+  let page = routes[parsedURL] ? routes[parsedURL] : error404;
   sectionContainer.innerHTML = await page.render();
 
   await sidebar.after_render();
   await page.after_render();
   await footer.after_render();
-  };
+};
 
-  //funcion para comprobar estado de usuario
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      document.getElementById('signup-signin').classList.add("hide");
-      document.getElementById('intro-container').classList.add("hide");
-      console.log("El usuario ha entrado a sesión");
-      stateChange();
-    } else {
-      document.getElementById('signup-signin').classList.remove("hide");
-/*       document.getElementById('slide-out').classList.add("hide");
-      document.getElementById('menu').classList.add("hide");
-      document.getElementById('footer-nav').classList.add("hide");
-      document.getElementById('section-container').classList.add("hide"); */
-      console.log('El usuario está fuera de sesión')
-    }
-  });
-
+//funcion para comprobar estado de usuario
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    document.getElementById('signup-signin').classList.add("hide");
+    document.getElementById('intro-container').classList.add("hide");
+    console.log("El usuario ha entrado a sesión");
+    stateChange();
+  } else {
+    document.getElementById('signup-signin').classList.remove("hide");
+    document.getElementById('section-container').innerHTML = "";
+    document.getElementById("sidebar-container").innerHTML = "";
+    document.getElementById('footer-nav').innerHTML = "";
+    console.log('El usuario está fuera de sesión')
+  }
+});
 
 
-    
+
+
 
 
 
@@ -110,8 +107,8 @@ import Utils from "./services/Utils.js";
       arrayLi.forEach(item => {
         item.addEventListener("click", liked);
       });*/
-    
-   /*posible funcion para agregar publicacion
+
+/*posible funcion para agregar publicacion
    const addPublication = e => {
       e.preventDefault();
       const inputText = document.getElementById("input-text");
@@ -152,9 +149,9 @@ import Utils from "./services/Utils.js";
         routerApp();
       };*/
 
-      window.addEventListener("hashchange", routerApp);
-      window.addEventListener("load", routerApp);
+window.addEventListener("hashchange", routerApp);
+window.addEventListener("load", routerApp);
 
-      setTimeout(() => { 
-        document.getElementById('intro-container').classList.add("hide");
-     }, 1700);
+setTimeout(() => {
+  document.getElementById('intro-container').classList.add("hide");
+}, 1700);
