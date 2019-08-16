@@ -1,22 +1,24 @@
 const formEntry = {
   render: () => {
     return `
-    <article class="container">
-      <h5>Agrega una tarea a tu lista</h5>
-      <form>
-        <div class="row">
-          <div class="input-field col s12 m9">
-            <input id="input-text" type="text" required>
-            <label for="input-text">Tarea</label>
-          </div>
-          <div class="col s2 m3">
-            <button id="boton-agregar" class="btn waves-effect red" type="submit" name="action">Agregar
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-        </div>
-      </form>
-    </article> `;
+    <!-- Modal add Trigger -->
+    <a id="add-btn" class="btn-floating btn-large waves-effect waves-light btn modal-trigger teal right" href="#modal-add"><i class="material-icons">add</i></a>
+  
+    <!-- Modal add Structure -->
+    <div id="modal-add" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Publicación</h4>
+        <div class="divider"></div>
+            <div class="input-field">
+              <textarea id="textarea-post" class="materialize-textarea"></textarea>
+              <label for="textarea-post">¿Que está pasando?</label>
+            </div>
+            </div>
+      <div class="modal-footer">
+        <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+        <a id="send-btn" href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Publicar</a>
+      </div>
+    </div> `;
   },
   after_render: () => {}
 };

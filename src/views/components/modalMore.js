@@ -6,7 +6,7 @@ const modalMore = {
       <a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i
           class="material-icons">more_vert</i></a>
     </div>
-    <!-- Modal Structure-->
+    <!-- Modal more Structure-->
     <div id="modal2" class="modal bottom-sheet">
       <div class="modal-content">
         <h3 class="header">Opciones</h3>
@@ -30,6 +30,9 @@ const modalMore = {
         </ul>
       </div>
     </div>
+
+
+
     `;
   },
   after_render: () => {
