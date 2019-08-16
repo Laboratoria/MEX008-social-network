@@ -7,7 +7,7 @@ let Home = {
         <div id="new-post" class="card">
             <h3>Crear publicación</h3>
             <form action="" id="post">
-                <textarea type="textfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></textarea>
+                <textarea type="texfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></textarea>
                 <div>
                 <button id="save-post">Publicar</button>
                 <button id="cancel-post">Cancelar</button>
@@ -38,144 +38,177 @@ let Home = {
     const inputWritePost=document.getElementById("input-write-post");
     const savePostButton=document.getElementById("save-post");
     //Crea las colecciones en Cloud Firestore//
-    const profiles= db.collection("profile");
+    // const profiles= db.collection("profile");
     const posts=db.collection("posts");
-    const likes=db.collection("likes");
-    const comentarios=document.getElementById("comentarios");
-
+    // const likes=db.collection("likes");
+    // const comentarios=document.getElementById("comentarios");
 
     function renderPost(doc){
         // const postBody=document.getElementById("post-body");
 
         //Show-post container 
         const showPost = document.getElementById('show-post');
-        showPost.appendChild(divContainerPost); //Adjunta el hijo (divContainerPost) al padre (showPost)
 
         //container-post
         const divContainerPost = document.createElement('div');
         divContainerPost.setAttribute("class","container-post");
-        divContainerPost.appendChild(userPost, commentPost); //2 hijos?
+        showPost.appendChild(divContainerPost); 
 
         //user-post
         const userPost = document.createElement('div');
         userPost.setAttribute("class","user-post");
-        userPost.appendChild(postHeader, postBody, postFooter);
+        divContainerPost.appendChild(userPost);
+
 
         //post-header
         const postHeader = document.createElement('div');
         postHeader.setAttribute("class","post-header");
-        postHeader.appendChild(userName, edit);
+        userPost.appendChild(postHeader);
+
+        //post-body
+        const postBody = document.createElement('div');
+        postBody.setAttribute("class","post-body");
+        userPost.appendChild(postBody);
 
         //user-name
         const userName = document.createElement('div');
         userName.setAttribute("class","user-name");
-        userName.appendChild(userPhoto, userNamePost);
+        postHeader.appendChild(userName);
 
         //user-photo
         const userPhoto = document.createElement('img');
-        userPhoto.setAttribute('src','img/default-photo.svg');//Reemplazar con función
+        userPhoto.setAttribute('class',"user-image");
+        userPhoto.setAttribute('src',doc.data().photoURL);//Reemplazar con función
+        userName.appendChild(userPhoto);
         
         //user-name-post
-        const userNamePost = document.createElement('h2');
+        const userNamePost = document.createElement('h3');
+        const textNamePost = document.createTextNode(doc.data().name);
+        userNamePost.appendChild(textNamePost);
         userNamePost.setAttribute('class','user-name-post');
+        userName.appendChild(userNamePost);
 
         //edit
         const edit = document.createElement('div');
         edit.setAttribute("class","edit");
-        edit.appendChild(editButton);
+        postHeader.appendChild(edit);
 
         //edit-button
         const editButton = document.createElement('a');
-        editButton.setAttribute('href');
-        editButton.appendChild(editIcon);
-
+        // editButton.setAttribute('href');
+        edit.appendChild(editButton);
+        
         //edit-icon
         const editIcon = document.createElement('i');
         editIcon.setAttribute('class','fas fa-comment');
+        // deleteIcon.setAttribute("src",);
+        editButton.appendChild(editIcon);
 
-        //post-body
 
-        const postBody = document.createElement('div');
-        postBody.setAttribute("class","post-body");
-        postBody.appendChild(textTarea); 
-
-     //textarea
-        const textTarea = document.createElement('textarea');
-        const textPostNode = document.createTextNode(doc.data().postText); //Post hecho
-        textTarea.setAttribute("class","post-content");
-        textTarea.appendChild(textPostNode);
+        //delete
+        const deleteB = document.createElement('div');
+        deleteB.setAttribute("class","delete");
+        postHeader.appendChild(deleteB);
+  
+        //delete-button
+        const deleteButton = document.createElement('a');
+        // deleteButton.setAttribute('href');
+        deleteB.appendChild(deleteButton);
+          
+        //delete-icon
+        const deleteIcon = document.createElement('i');
+        deleteIcon.setAttribute('class','fas fa-comment');
+        // deleteIcon.setAttribute("src",);
+        deleteButton.appendChild(deleteIcon);
         
 
+     
+        //textarea
+        const textTarea = document.createElement('textarea');
+        // const textPostNode = document.createTextNode(doc.data().postText); //Post hecho
+        const textPostNode = document.createTextNode(doc.data().postText); // doc.data().postText;
+        textTarea.setAttribute("class","post-content");
+        textTarea.setAttribute("disabled","true")
+        textTarea.appendChild(textPostNode);
+        postBody.appendChild(textTarea);
+        // textTarea.appendChild(textPostNode);??
+        
+        
         //post-footer
         const postFooter = document.createElement('div');
         postFooter.setAttribute('class','post-footer');
-        postFooter.appendChild(likeButton, commentsButton);
+        userPost.appendChild(postFooter);
 
         //btn-like
         const likeButton = document.createElement('button');
+        const likeTitle = document.createTextNode('like');
         likeButton.setAttribute('class','btn-like');
+        likeButton.appendChild(likeTitle);
+        postFooter.appendChild(likeButton);
 
+           
         //comments-button
         const commentsButton = document.createElement('button');
         const commentsBTitle = document.createTextNode('Comentarios');
         commentsButton.appendChild(commentsBTitle);
+        postFooter.appendChild(commentsButton);
+      
 
         //comment-post
         const commentPost = document.createElement('div');
         commentPost.setAttribute('class','comment-post');
-        commentPost.appendChild(desorderListBox, newCommentBox);
+        divContainerPost.appendChild(commentPost);
 
+      
         //desorderListBox
         const desorderListBox = document.createElement('div');
-        desorderListBox.appendChild(allCommentPost);
+        commentPost.appendChild(desorderListBox);
+        
         
         //all-comment-post
 
         const allCommentPost = document.createElement('ul');
         allCommentPost.setAttribute('class','all-comment-post');
-        allCommentPost.appendChild(commentBox);
+        desorderListBox.appendChild(allCommentPost);
+        
 
         //commentbox
         const commentBox = document.createElement('li');
-        commentBox.appendChild(photoComments, comment);
+        allCommentPost.appendChild(commentBox);
 
         //photo comments
         const photoComments = document.createElement('img');
         photoComments.setAttribute('src','img/default-photo.svg');
+        commentBox.appendChild(photoComments);
 
         //comment
         const comment = document.createElement('p');
-        const commentText = document.createTextNode();//Comentarios hechos
+        const commentText = document.createTextNode("Un comentario");//Comentarios hechos
         comment.appendChild(commentText);
+        commentBox.appendChild(comment);
+        
 
         //new-comment
         const newCommentBox = document.createElement('div');
         newCommentBox.setAttribute('class', 'new-comment');
-        newCommentBox.appendChild(formComment);
-
-        const formComment = document.createElement('form');
-        formComment.appendChild(textAreaComment, newCommentButton);
-
-        const textAreaComment = document.createElement('textarea');
-
-        const newCommentButton = document.createElement('button');
-        newCommentButton.appendChild(newCommentBTitle);
-
-        const newCommentBTitle = document.createTextNode('Comentar');
-        
-       
-
-
-
-
-
-        
-
-
+        commentPost.appendChild(newCommentBox);
       
 
+        const formComment = document.createElement('form');
+        newCommentBox.appendChild(formComment);
+
+        const textAreaComment = document.createElement('textarea');
+        formComment.appendChild(textAreaComment);
+
+        const newCommentButton = document.createElement('button');
+        const newCommentBTitle = document.createTextNode("Comentar");//Comentarios hechos
+        newCommentButton.appendChild(newCommentBTitle);
+        formComment.appendChild(newCommentButton);
+
     }
+
     
+ 
  
     // //Añade el perfil del usuario a cloud firestone //
     // profiles.add({
@@ -228,10 +261,17 @@ let Home = {
     //     console.log("Error getting documents: ", error);
     // });
 
-
-    posts.onSnapshot(snapshot => {
+    //Listener para la coleccion posts//
+    //Si la coleccion posts cambia (editar, borrar,crear) se activa el metodo onsnapshot
+    //el metodo onsnapshot adjunta un oyente para eventos QuerySnapshot. 
+    //querysnapshot contiene los resultados(docsnapshot objects) de una consulta
+    posts.onSnapshot(snapshot => {  
+        console.log(snapshot);
         let changes = snapshot.docChanges();
+        console.log(changes);
         changes.forEach(change => {
+            console.log(change);
+            console.log(change.doc);
             console.log(change.doc.data());
             if(change.type == 'added'){
                 renderPost(change.doc);
@@ -241,18 +281,19 @@ let Home = {
 
     //Guarda un post en Cloud Firestone //  
     savePostButton.addEventListener("click", ()=>{
-        const textPost= inputWritePost.value;
+        let textPost= inputWritePost.value;
         console.log(textPost);
         //Añade un post a Cloud Firestone
         posts.add({
             postText:textPost,
             email: user.email,
             name: user.displayName,
-            uidUser: user.uid
+            uidUser: user.uid,
+            photoURL: user.photoURL
         })
     
-        .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
+        .then(function(doc) {
+            console.log("Document written with ID: ", doc.id);
         })
         // Manejo de errores
         .catch(function(error) {
