@@ -122,8 +122,34 @@ nav .sidenav-trigger {
 }
 
 #sos {
-    margin-top: 20vh;
+    margin-top: 18vh;
 }
+
+#divider-final {
+    margin-top: 26vh;
+}
+
+.card, #modal-add {
+    border-radius: 6px;
+}
+
+.collection {
+    border: transparent;
+}
+
+.collection .collection-item.avatar {
+    min-height: 70px;
+}
+
+.collection .collection-item.avatar .title {
+    color: black;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.card-reveal {
+    overflow-y: hidden !important;
+}
+
 
 /* IMÁGENES */
 

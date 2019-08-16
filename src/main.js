@@ -49,6 +49,7 @@ import Utils from "./services/Utils.js";
   
     let page = routes[parsedURL] ? routes[parsedURL] : error404;
     sectionContainer.innerHTML = await page.render();
+  await page.after_render();
   };
 
 
@@ -71,23 +72,9 @@ import Utils from "./services/Utils.js";
 
    let page = routes[parsedURL] ? routes[parsedURL] : error404;
   sectionContainer.innerHTML = await page.render();
-
-    //Inicializando sidebar
-    const btnCollapse = document.querySelectorAll(".sidenav");
-    M.Sidenav.init(btnCollapse);
-    
-    //Inicializando modales   
-    const modals = document.querySelectorAll('.modal');
-    M.Modal.init(modals);
-
-/*     Inicializando post-textarea
-   $('#textarea-post').val('New Text');
-   M.textareaAutoResize($('#textarea-post')); */
-
-    document.getElementById("sign-out").addEventListener("click", () => {
-      console.log('click');
-      firebase.auth().signOut();
-    });
+  await sidebar.after_render();
+  await sidebar.after_render();
+  await page.after_render();
   };
 
   //funcion para comprobar estado de usuario

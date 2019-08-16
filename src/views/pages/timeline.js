@@ -1,76 +1,15 @@
-//import elementLI from "../components/elementLI.js";
+import elementLI from "../components/elementLI.js";
 //import Utils from "../../services/Utils.js";
 
 const timeline = {
   render: async () => {
-    /*     db.collection("posts").onSnapshot.((querySnapshot) => {
-          querySnapshot.forEach((post) => {
-              console.log(`${post.id} => ${post.textPost()}`);
-          });
-      }); */
+      let LI = await elementLI.render();
 
     return `
 <section>
-
-<!-- Post target -->
-<div class="col s12 m7">
-            <h5>Publicaciones</h5>
-            <div class="card horizontal" style="overflow: visible;">
-
-              <div class="card-image waves-effect waves-block waves-light">
-              <img src="https://lorempixel.com/100/190/nature/6">
-              </div>
-
-              <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-             <p>Texto de publicación</p>
-                <div class="card-action section">
-                <i class="material-icons right">home</i>
-                </div>
-                </div>
-
-
-      
-              <div class="card-reveal" style="display: none; transform: translateY(0%);">
-              
-              <li class=" card-title">
-              <span class="title"></span>
-                <i class="material-icons right">close</i>
-              </li>
-              <ul class="collection">
-                <li class="">
-                <span class="title">Editar</span>
-                  <a href="#/timeline" class="secondary-content">
-                    <i class="material-icons">edit</i>
-                  </a>
-                </li>
-                <li class="">
-                <span class="title">Eliminar</span>
-                  <a href="#/timeline" class="secondary-content">
-                    <i class="material-icons">delete</i>
-                  </a>
-                </li>
-  </ul>
-              </div>
-
-
-</div>
-</div>
-          
-
-
-
-
-
-
-
-
-
-
-
-
+${LI}
     <!-- Modal add Trigger -->
-    <a id="add-btn" class="btn-floating btn-large waves-effect waves-light btn modal-trigger teal" href="#modal-add"><i class="material-icons">add</i></a>
+    <a id="add-btn" class="btn-floating btn-large waves-effect waves-light btn modal-trigger teal right" href="#modal-add"><i class="material-icons">add</i></a>
   
     <!-- Modal add Structure -->
     <div id="modal-add" class="modal modal-fixed-footer">
@@ -90,43 +29,27 @@ const timeline = {
     </section>
 
 
-
-    <!-- Modal More Trigger-->
-    <div id="more-btn" class="right-align">
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal-more"><i
-          class="material-icons">more_vert</i></a>
-    </div>
-    
-    <!-- Modal More Structure-->
-    <div id="modal-more" class="modal bottom-sheet">
+    <!-- Modal Confirmation-delete Trigger -->
+  
+    <!-- Modal Confirmation-delete Structure -->
+    <div id="confirmation-delete" class="modal">
       <div class="modal-content">
-        <h3 class="header">Opciones</h3>
-        <ul class="collection">
-          <li class="collection-item avatar">
-            <i class="material-icons circle green">edit</i>
-            <span class="title">Editar</span>
-            <p>Editar</p>
-            <a href="#!" class="secondary-content">
-              <i class="material-icons">edit</i>
-            </a>
-          </li>
-          <li class="collection-item avatar">
-            <i class="material-icons circle red">delete</i>
-            <span class="title">Eliminar</span>
-            <p>Eliminar</p>
-            <a href="#!" class="secondary-content">
-              <i class="material-icons">delete</i>
-            </a>
-          </li>
-        </ul>
+        <h4>Cofirmación de Eliminar</h4>
+        <p>¿Estás seguro de querer eliminar esta publicación?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+        <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
       </div>
     </div>
 
-
-
         `;
   },
-  after_render: () => {},
+  after_render: () => {
+  //Inicializando modales   
+    const modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
+  },
 };
 
 export default timeline;
