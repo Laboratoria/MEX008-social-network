@@ -29,8 +29,7 @@ ${LI}
     </section>
 
 
-    <!-- Modal Confirmation-delete Trigger -->
-  
+   
     <!-- Modal Confirmation-delete Structure -->
     <div id="confirmation-delete" class="modal">
       <div class="modal-content">

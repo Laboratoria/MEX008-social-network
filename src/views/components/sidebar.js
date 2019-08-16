@@ -1,11 +1,12 @@
 const sidebar = {
   render: async () => {
     let user = firebase.auth().currentUser;
-    let name, email;
+    let name, email, photoURL;
     
     if (user != null) {
       name = user.displayName;
       email = user.email;
+      photoUrl = user.photoURL;
     }
 
 
@@ -20,7 +21,7 @@ const sidebar = {
           <div class="background">
             <!-- <img src="img/bike-day.jpg">-->
           </div>
-          <a><img class="circle" src="img/readme/ramona.png"></a>
+          <a><img class="circle" src="${photoURLnp}"></a>
           <a><span class="white-text name">${name}</span></a>
           <a><span class="white-text email">${email}</span></a>
         </div>

@@ -31,6 +31,7 @@ const elementLI = {
                     
                     <ul class="collection">
                                         <li class="collection-item avatar">
+                                        <!-- Modal-add Trigger -->
                                         <a class="modal-trigger" href="#modal-add">
                     <span class="title">Editar</span>
     <i class="material-icons circle yellow">edit</i>
@@ -39,6 +40,7 @@ const elementLI = {
                    
 
                     <li class="collection-item avatar">
+                    <!-- Modal Confirmation-delete Trigger -->
                     <a class="modal-trigger" href="#confirmation-delete">
                     <span class="title">Eliminar</span>
     <i class="material-icons circle red">delete</i>
