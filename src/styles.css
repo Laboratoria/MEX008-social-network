@@ -240,14 +240,22 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
 .container-post {
   display:flex;
   flex-direction: column;
+  margin:1.5rem auto;
 }
 
 .user-post {
   background-color: #ffffff;
 }
 
+.user-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .user-name-post {
   font-size: 1rem;
+  padding-left: 1rem;
 }
 
 .post-header, .post-body, .post-footer {
@@ -273,7 +281,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
-.all-comments-post li {
+.all-comment-post li {
   display: flex;
   align-items: flex-start;
   width: 100%;
