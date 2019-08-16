@@ -7,7 +7,7 @@ let Home = {
         <div id="new-post" class="card">
             <h3>Crear publicación</h3>
             <form action="" id="post">
-                <textarea type="textfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></textarea>
+                <textarea type="texfield" id="input-write-post" placeholder="¿Que hay de nuevo?"></textarea>
                 <div>
                 <button id="save-post">Publicar</button>
                 <button id="cancel-post">Cancelar</button>
@@ -86,47 +86,46 @@ let Home = {
     const inputWritePost=document.getElementById("input-write-post");
     const savePostButton=document.getElementById("save-post");
     //Crea las colecciones en Cloud Firestore//
-    const profiles= db.collection("profile");
+    // const profiles= db.collection("profile");
     const posts=db.collection("posts");
-    const likes=db.collection("likes");
-    const comentarios=document.getElementById("comentarios");
+    // const likes=db.collection("likes");
+    
+    ////Funcion que crea los nodos en el div show-post
+    function renderPost(doc){
+        // const postBody=document.getElementById("post-body");
+
+        const divContainerPost = document.createElement('div');
+        divContainerPost.setAttribute("class","container-post")
 
 
-    // function renderPost(doc){
-    //     // const postBody=document.getElementById("post-body");
 
-    //     const divContainerPost = document.createElement('div');
-    //     divContainerPost.setAttribute("class","container-post")
+        const userPost = document.createElement('div');
+        userPost.setAttribute("class","user-post")
 
+        const postHeader = document.createElement('div');
+        postHeader.setAttribute("class","post-header")
 
-
-    //     const userPost = document.createElement('div');
-    //     userPost.setAttribute("class","user-post")
-
-    //     const postHeader = document.createElement('div');
-    //     postHeader.setAttribute("class","post-header")
-
-    //     const userName = document.createElement('div');
-    //     userName.setAttribute("class","user-name")
+        const userName = document.createElement('div');
+        userName.setAttribute("class","user-name")
 
 
-    //     const edit = document.createElement('div');
-    //     edit.setAttribute("class","edit");
+        const edit = document.createElement('div');
+        edit.setAttribute("class","edit");
 
 
-    //     const postBody = document.createElement('div');
-    //     postBody.setAttribute("class","post-body");    
+        const postBody = document.createElement('div');
+        postBody.setAttribute("class","post-body");    
 
      
-    //     const textTarea = document.createElement('textarea');
-    //     textTarea.setAttribute("class","post-content");
+        const textTarea = document.createElement('textarea');
+        textTarea.setAttribute("class","post-content");
         
 
-    //     let text=document.createTextNode(doc.data().postText);
-    //     // li.setAttribute('data-id', doc.id);
+        let text=document.createTextNode(doc.data().postText);
+        // li.setAttribute('data-id', doc.id);
        
-    //     textTarea.appendChild(text);
-    //     postBody.appendChild(textTarea);
+        textTarea.appendChild(text);
+        postBody.appendChild(textTarea);
 
 
 
@@ -137,7 +136,7 @@ let Home = {
 
       
 
-    // }
+    }
     
  
     // //Añade el perfil del usuario a cloud firestone //
@@ -191,10 +190,17 @@ let Home = {
     //     console.log("Error getting documents: ", error);
     // });
 
-
-    posts.onSnapshot(snapshot => {
+    //Listener para la coleccion posts//
+    //Si la coleccion posts cambia (editar, borrar,crear) se activa el metodo onsnapshot
+    //el metodo onsnapshot adjunta un oyente para eventos QuerySnapshot. 
+    //querysnapshot contiene los resultados(docsnapshot objects) de una consulta
+    posts.onSnapshot(snapshot => {  
+        console.log(snapshot);
         let changes = snapshot.docChanges();
+        console.log(changes);
         changes.forEach(change => {
+            console.log(change);
+            console.log(change.doc);
             console.log(change.doc.data());
             if(change.type == 'added'){
                 renderPost(change.doc);
@@ -204,7 +210,7 @@ let Home = {
 
     //Guarda un post en Cloud Firestone //  
     savePostButton.addEventListener("click", ()=>{
-        const textPost= inputWritePost.value;
+        let textPost= inputWritePost.value;
         console.log(textPost);
         //Añade un post a Cloud Firestone
         posts.add({
@@ -214,8 +220,8 @@ let Home = {
             uidUser: user.uid
         })
     
-        .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
+        .then(function(doc) {
+            console.log("Document written with ID: ", doc.id);
         })
         // Manejo de errores
         .catch(function(error) {
