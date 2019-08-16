@@ -72,9 +72,10 @@ import Utils from "./services/Utils.js";
 
    let page = routes[parsedURL] ? routes[parsedURL] : error404;
   sectionContainer.innerHTML = await page.render();
-  await sidebar.after_render();
+
   await sidebar.after_render();
   await page.after_render();
+  await footer.after_render();
   };
 
   //funcion para comprobar estado de usuario
