@@ -82,6 +82,8 @@ display: flex;
 
 
 #form-register-page, .all-sections {
+  height: auto;
+
 background: #b6d0f2; /* Old browsers */
 background: -moz-linear-gradient(top,  #b6d0f2 0%, #ffffff 68%, #ffffff 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
@@ -244,6 +246,9 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
   background-color: #ffffff;
 }
 
+.user-name-post {
+  font-size: 1rem;
+}
 
 .post-header, .post-body, .post-footer {
   padding: 1rem;
