@@ -44,6 +44,11 @@ button {
 
 }
 
+main {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 .edit i {
   color: rgba(253, 155, 35, 0.8);
 }
@@ -188,6 +193,7 @@ aside {
 
 #show-post {
  background-color: rgba(145, 190,248, 0.5); 
+ min-height: 60vh;
 }
 
 #new-post{
