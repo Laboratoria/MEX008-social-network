@@ -1,10 +1,3 @@
-// Este es el punto de entrada de tu aplicacion
-
-// import { myFunction } from './lib/index.js';
-
-// myFunction();
-// import addPost from "./app.js";
-
 var firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
@@ -67,8 +60,6 @@ let addPost = () => {
     firebase.auth().onAuthStateChanged((user) => {
         // User is signed in.
         if (user.uid) {
-            // Si el uid existe entonces guarda al user que esta logueado en localStorage y convierte el objeto en un string que pueda alojarse en localStorage
-            localStorage.setItem('user', JSON.stringify(user));
             // console.log(user);
             // Declaramos el textArea y obtenemos su valor
             let postTxt = document.getElementById('post-txt').value;
@@ -99,10 +90,22 @@ let addPost = () => {
 
 // creamos una funcion que obtenga actualizaciones en tiempo real
 
-db.collection("post")
+db.collection("post").orderBy('hora')
     .onSnapshot(function(data) {
         printPost(data);
     });
+
+// Si el uid existe entonces guarda al user que esta logueado en localStorage y convierte el objeto en un string que pueda alojarse en localStorage
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log(user);
+    } else {
+        console.log('no hay usuario logueado')
+    }
+})
+
+
 
 // let getPost = (idPost) => {
 //     if (idPost != '') {
