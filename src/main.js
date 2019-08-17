@@ -88,6 +88,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById('section-container').innerHTML = "";
     document.getElementById("sidebar-container").innerHTML = "";
     document.getElementById('footer-nav').innerHTML = "";
+    routerApp();
     console.log('El usuario está fuera de sesión')
   }
 });
