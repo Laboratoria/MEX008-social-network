@@ -10,7 +10,7 @@ var firebaseConfig = {
     authDomain: "superb-ethos-249021.firebaseapp.com",
     databaseURL: "https://superb-ethos-249021.firebaseio.com",
     projectId: "superb-ethos-249021",
-    storageBucket: "superb-ethos-249021.appspot.com",
+    storageBucket: "gs://superb-ethos-249021.appspot.com/",
     messagingSenderId: "900630117910",
     appId: "1:900630117910:web:897141f2088152a4"
 };
@@ -93,7 +93,7 @@ let addPost = (e) => {
     });
 }
 
-
+// Cloud store 
 
 
 // const btnSmt = document.getElementById('print-button');

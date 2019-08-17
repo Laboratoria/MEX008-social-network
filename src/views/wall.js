@@ -21,6 +21,10 @@ let Wall = {
     
             </section>
             <section class="section-timeline">
+
+            <box>
+            <a id="file-button" "waves-effect waves-light btn">button</a>
+            </box>
        
             
     
@@ -32,6 +36,12 @@ let Wall = {
     },
     after_render: async() => {
         document.getElementById('btn-post').addEventListener('click', addPost);
+
+        const fileButton = document.getElementById('file-button');
+        fileButton.addEventListener('change', (event)=> {
+
+        })
+        
     }
 }
 export default Wall;
