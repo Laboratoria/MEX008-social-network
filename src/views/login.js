@@ -69,56 +69,26 @@ let login = {
         return view
     }
     , after_render: async () => {
+      console.log("aqui");
+
+      const mail = document.getElementById("email-login").value;
+      const password = document.getElementById("password-login").value;
+      const btnLogin = document.getElementById("btn-login");
+      const btnGoogle = document.getElementById('btnGoogle');
+
+
+      btnLogin.addEventListener("click",() => {
+        window.functions.functionLogin(mail,password);
+      } );
+
       
-      const ingresar = (e) =>{
-        e.preventDefault();
-        let mail2 = document.getElementById("email-login").value;
-        let password2 = document.getElementById("password-login").value;
-
-          firebase.auth().signInWithEmailAndPassword(mail2, password2)
-          .then((user)=>{
-            sessionStorage.setItem('key', 'true');
-          // console.log("¿El usuario esta verificado?",user.user.emailVerified);
-                 
-          // if(user.user.emailVerified){
-            location.hash = "#/muro";
-          // }
-          // else{
-          //   console.log("aun no has validado tu cuenta, accede a tu correo por favor");
-          //   const alertOne = document.getElementById("alert-one");
-          //   alertOne.innerHTML = `
-          //   <button type="button" class="close" data-dismiss="alert">&times;</button>
-          //   <strong>Atención!</strong> Aun no has validado tu cuenta, accede a tu correo por favor`
-          // }
-        })
-        .catch((error) => {
-          // location.hash = "/login";
-            // Handle Errors here.
-            
-            console.log("Usuario no registrado");
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
-            // ...
-          });
-    }
-
-    document.getElementById("btn-login").addEventListener("click",ingresar);
-
-    const btnGoogle = document.getElementById('btnGoogle');
-    const loginGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then((user) =>{
-      sessionStorage.setItem('key', 'true');
-      alert("Google SignIn");
-      console.log(user);
-      }).catch((error)=>{
-      alert("error");
-      console.log(error);
-      })
-    }
-      btnGoogle.addEventListener("click", loginGoogle);
+      btnGoogle.addEventListener("click", () => window.functions.loginGoogle());
+      
+      
+      
     }
 }
 export default login;
+
+
+
