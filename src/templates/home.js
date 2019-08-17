@@ -197,13 +197,16 @@ let Home = {
         console.log(doc.id);
         posts.doc(doc.id).delete();
     });
-
-
+    
     edit.addEventListener('click',()=>{
         console.log(doc.id);
-        document.querySelector(".post-content").disabled = false;
-    });
+        document.querySelector(".post-content").disabled = false; 
+        const saveEditButton = document.createElement('button');
+        const saveCommentBTitle = document.createTextNode("Guardar");//Comentarios hechos
+        saveEditButton.appendChild(saveCommentBTitle);
+        postBody.appendChild(saveEditButton);
 
+    })
     // editButton.addEventListener('click', () => {
     //     console.log(doc.id);
     //     textTarea.setAttribute('disabled','false');
