@@ -198,6 +198,13 @@ let Home = {
         posts.doc(doc.id).delete();
     });
 
+
+    editButton.addEventListener('click', () => {
+        console.log(doc.id);
+        posts.doc(doc.id).update();
+    });
+
+
     // commentPostButton.addEventListener("click", ()=>{
     //     let textPost= inputWritePost.value;
     //     console.log(textPost);
