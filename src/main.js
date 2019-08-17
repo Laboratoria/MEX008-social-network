@@ -37,6 +37,7 @@ const router = async () => { // function always returns a promise
         + (request.verb ? '/' + request.verb : '');
     
         // Render the header of the page
+        console.log(parsedURL)
         
     if((parsedURL != '/login') && (parsedURL != '/')){
      encabezado.innerHTML = await header.render(); // wait till the promise resolves
@@ -86,13 +87,13 @@ const observadorDeSesion = () =>{
 
           console.log(location.hash)
           
-          if (location.hash === "#/login" || location.hash === "" && user.emailVerified) {
-            location.hash = "#/muro";
-          } 
+          // if (location.hash === "#/login" || location.hash === "" && user.emailVerified) {
+          location.hash = "#/muro";
+          //} 
         //   // ...
 
         } else {
-          location.hash = "#/login";
+          //location.hash = "#/login";
           // User is signed out.
           // ...
           console.log("no exite usuario activo");

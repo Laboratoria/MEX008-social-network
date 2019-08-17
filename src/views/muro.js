@@ -70,60 +70,39 @@ let Muro = {
         return view
     },
     after_render : async () => {
-      // Initialize Cloud Firestore through Firebase
-      var db = firebase.firestore();
-
+      const db = firebase.firestore();
+      
       const btnPublicar = document.getElementById("btn-publicar");
       let publication = document.getElementById("publication");
       let select = document.getElementById("select-publication");
       const printPost = document.getElementById("print-post");
 
-      //Guardar Posts
-      const guardar = () =>{
-        let textPublication = publication.value;
-        let selectPublication = select.value;
-        db.collection("posts").add({
-          post: textPublication,
-          category: selectPublication,
-      })
-      .then((docRef) => {
-          console.log("Document written with ID: ", docRef.id);
-          document.getElementById("publication").value = "";
-          document.getElementById("select-publication").value = "";
-      })
-      .catch((error) => {
-          console.error("Error adding document: ", error);
-      });
-      
-      }
-
+      btnPublicar.addEventListener("click",save(publication,select));
       
       //Lectura de Posts 
       //onSnapshot actualiza en pantalla en tiempo real
       
+        db.collection("posts").onSnapshot((querySnapshot) => {
+          printPost.innerHTML = "";
 
-      db.collection("posts").onSnapshot((querySnapshot) => {
-        printPost.innerHTML = "";
-
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.data().category} => ${doc.data().post}`);
-            printPost.innerHTML += `
-            <div class="posts">
-            <p><strong>${doc.data().category}</strong></p>
-            <p class="text-center">${doc.data().post}</p>
-            <input type="submit" value="eliminar" class="btn btn-eliminar" data-id="${doc.id}">
-            <input type="submit" value="editar" class="btn btn-editar" data-id="${doc.id}">
-            </div>
-            `
-            
+          querySnapshot.forEach((doc) => {
+              console.log(`${doc.data().category} => ${doc.data().post}`);
+              printPost.innerHTML += `
+              <div class="posts">
+              <p><strong>${doc.data().category}</strong></p>
+              <p class="text-center">${doc.data().post}</p>
+              <input type="submit" value="eliminar" class="btn btn-eliminar" data-id="${doc.id}">
+              <input type="submit" value="editar" class="btn btn-editar" data-id="${doc.id}">
+              </div>
+              `     
+          });  
+          console.log("aqui",doc.data().category);
         });
-        
-    });
+      
 
       printPost.addEventListener("click", (e) =>{
         console.log(e.target);
         if(e.target.tagName !== "INPUT" || !e.target.classList.contains("btn-eliminar")){
-          
           return;
         }
         console.log(e.target);
@@ -131,14 +110,7 @@ let Muro = {
       })
 
           
-      //Funcion eliminar post
-      const eliminar = (id) => {
-        db.collection("posts").doc(id).delete().then(function() {
-          console.log("Document successfully deleted!");
-          }).catch(function(error) {
-              console.error("Error removing document: ", error);
-          });
-        }
+      
       
         
         //Funcion editar post
@@ -181,7 +153,7 @@ let Muro = {
 
 
 
-     btnPublicar.addEventListener("click",guardar);
+     
 
     
       const cerrarSesion = () =>{
