@@ -199,10 +199,16 @@ let Home = {
     });
 
 
-    editButton.addEventListener('click', () => {
+    edit.addEventListener('click',()=>{
         console.log(doc.id);
-        posts.doc(doc.id).update();
+        document.querySelector(".post-content").disabled = false;
     });
+
+    // editButton.addEventListener('click', () => {
+    //     console.log(doc.id);
+    //     textTarea.setAttribute('disabled','false');
+    //     posts.doc(doc.id).update({postText: textPostNode});
+    // });
 
 
     // commentPostButton.addEventListener("click", ()=>{
@@ -305,6 +311,9 @@ let Home = {
                 let deletePost = showPost.querySelector('[id=' + change.doc.id + ']');
                 showPost.removeChild(deletePost);
             }
+            // else if (change.type == 'modified'){
+            //     let modifiedPost = textTarea
+            // }
         });
     });
 
