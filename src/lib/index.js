@@ -47,9 +47,8 @@ loginGoogle: () => {
   },
 
  //Function Save Posts
- save: () =>{
-  let textPublication = publication.value;
-  let selectPublication = select.value;
+ save: (textPublication,selectPublication) =>{
+  
   db.collection("posts").add({
     post: textPublication,
     category: selectPublication,

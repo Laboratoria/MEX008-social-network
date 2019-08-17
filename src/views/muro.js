@@ -77,8 +77,11 @@ let Muro = {
       let select = document.getElementById("select-publication");
       const printPost = document.getElementById("print-post");
 
-      btnPublicar.addEventListener("click",save(publication,select));
-      
+      btnPublicar.addEventListener("click",() => {
+        let publication = document.getElementById("publication").value;
+        let select = document.getElementById("select-publication").value;
+        save(publication,select);
+      });
       //Lectura de Posts 
       //onSnapshot actualiza en pantalla en tiempo real
       

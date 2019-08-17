@@ -71,13 +71,14 @@ let login = {
     , after_render: async () => {
       console.log("aqui");
 
-      const mail = document.getElementById("email-login").value;
-      const password = document.getElementById("password-login").value;
+      
       const btnLogin = document.getElementById("btn-login");
       const btnGoogle = document.getElementById('btnGoogle');
 
 
       btnLogin.addEventListener("click",() => {
+        const mail = document.getElementById("email-login").value;
+        const password = document.getElementById("password-login").value;
         window.functions.functionLogin(mail,password);
       } );
 
