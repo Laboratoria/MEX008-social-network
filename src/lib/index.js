@@ -4,8 +4,7 @@ const db = firebase.firestore();
 window.functions = {
 //Function Login
 functionLogin: (mail,password) =>{
-  
-  
+  alert("entra a login");  
     firebase.auth().signInWithEmailAndPassword(mail, password)
     .then(()=>{
       sessionStorage.setItem('key', 'true');
