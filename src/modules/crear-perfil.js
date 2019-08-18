@@ -9,11 +9,11 @@ let CrearPerfil = {
                 <h2>¡Crea tu perfil!</h2>
                 <form class="usario-box">
                 <label for="NombreUsuario">Nombre</label>
-                <input type="text"name="Nombre" id="nombre-usuario">
+                <input type="text"name="Nombre" id="nombreUsuario">
                 <br>
                 <br>
                 <label for="UbicaciónUsiario">Tu Ubicación</label>
-                <input type="text" name="Ubicación" id="ubicación-usuario">
+                <input type="text" name="Ubicación" id="ubicaciónUsuario">
                 <section class="SeleccionarInsignias">
                 <h2>Agrega tus insignias</h2>
                 <input id="experto" type="image" src="../icon/icons8-maleta-480.png" name="viajeroexperto" >
