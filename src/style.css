@@ -1,34 +1,3 @@
-/* LOGIN */
-.conteiner {
-    width: 100%;
-    height: 100vh;
-    /* background-image: url(../icon/fondo2.jpg); */
-    background-image: url(https://github.com/JessicaZetina/MEX008-social-network/blob/master/icon/fondo2.jpg?raw=true);
-    background-size: cover;
-    border:7px solid rgba(0, 0, 0, 0.212);
-}
-.login{
-    width: 320px;
-    height: 420px;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 7px;
-  }
-
-#logo{
-    width: 40%;
-    margin: auto;
-    display: block;
-}
-    
-#loader{
-    text-align: center;
-    font-size: small;
-}
- 
  /* CREAR PERFIL */
 .perfil-box{
     width: 100%;
