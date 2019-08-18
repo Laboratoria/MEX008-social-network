@@ -76,6 +76,38 @@ const Utils = {
         console.error("Error updating document: ", error);
     });
   },
+
+  likePost: (id) => {
+    const postLike = db.collection("posts").doc(id);
+
+    postLike.get().then(function (post) {
+      if (post.exists) {
+        const user = firebase.auth().currentUser;
+        let likesArr = post.data().likes;
+        if (likesArr.indexOf(user.uid) < 0) {
+          likesArr.push(user.uid);
+         } else {
+        const index = likesArr.indexOf(user.uid);
+           likesArr.splice(index, 1);
+          };
+          return postLike.update({
+            likes: likesArr,
+          })
+          .then(function() {
+              console.log("'likes' successfully updated!");
+          })
+          .catch(function(error) {
+              // The document probably doesn't exist.
+              console.error("Error updating 'likes': ", error);
+          });
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }).catch(function (error) {
+  console.log("Error getting document:", error);
+});
+  }
 };
 
 export default Utils;
