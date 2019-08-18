@@ -120,7 +120,8 @@ let Home = {
         // const textPostNode = document.createTextNode(doc.data().postText); //Post hecho
         const textPostNode = document.createTextNode(doc.data().postText); // doc.data().postText;
         textTarea.setAttribute("class","post-content");
-        textTarea.setAttribute("disabled","true")
+        textTarea.setAttribute("disabled","true");
+        textTarea.setAttribute("id","editextarea");
         textTarea.appendChild(textPostNode);
         postBody.appendChild(textTarea);
         // textTarea.appendChild(textPostNode);??
@@ -202,11 +203,22 @@ let Home = {
         console.log(doc.id);
         document.querySelector(".post-content").disabled = false; 
         const saveEditButton = document.createElement('button');
-        const saveCommentBTitle = document.createTextNode("Guardar");//Comentarios hechos
+        const saveCommentBTitle = document.createTextNode("Guardar");
+        saveEditButton.setAttribute('id','save-comment-button');
         saveEditButton.appendChild(saveCommentBTitle);
         postBody.appendChild(saveEditButton);
+        saveEditButton.addEventListener('click',()=>{
+            posts.doc(doc.id).update({postText: editextarea.value});
+            document.querySelector(".post-content").disabled = true; 
+            postBody.removeChild(saveEditButton);
+        })
+        
 
     })
+
+
+  
+
     // editButton.addEventListener('click', () => {
     //     console.log(doc.id);
     //     textTarea.setAttribute('disabled','false');
