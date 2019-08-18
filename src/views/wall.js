@@ -23,7 +23,9 @@ let Wall = {
             <section class="section-timeline">
 
             <box>
-            <a id="file-button" "waves-effect waves-light btn">button</a>
+            <progress value="0" max="100" id="uploader">0%</progress>
+            <input type="file" value="upload" id="fileButton>
+    
             </box>
        
             
@@ -37,8 +39,21 @@ let Wall = {
     after_render: async() => {
         document.getElementById('btn-post').addEventListener('click', addPost);
 
+        //Obteniendo elementos del DOM para storage
+        const uploader = document.getElementById('uploader');
         const fileButton = document.getElementById('file-button');
+
+        //Escuchar la selección del archivo
         fileButton.addEventListener('change', (event)=> {
+            //Obtener archivo
+            let file = e.target.files[0]
+            
+            //Crear una referencia de storage
+            firebase.storage().ref('posted_photos/' + file.name)
+
+            //Subir el archivo
+
+            //Cargar la barra de progreso
 
         })
         
