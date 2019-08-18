@@ -1,7 +1,7 @@
 let Wall = {
     render: async() => {
         let view = `
-            <div class="col s12 m7 box-title-post">
+            <div id="container-post" class="col s12 m7 box-title-post">
                 <h2 class="header">Publica sobre tu amigo</h2>
                 <div class="card horizontal">
                 <div class="card-image">

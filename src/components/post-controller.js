@@ -1,4 +1,4 @@
-let printPost = user => {
+const printPost = user => {
     let rootPost = document.getElementById('wall-posts');
     let userUid = JSON.parse(localStorage.getItem('user'));
     rootPost.innerHTML = '';
