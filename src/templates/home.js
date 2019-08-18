@@ -34,13 +34,12 @@ let Home = {
     //  Declaracion de variables  //
     const inputWritePost=document.getElementById("input-write-post");
     const savePostButton=document.getElementById("save-post");
+    const cancelPostButton=document.getElementById("cancel-post");
     const showPost = document.getElementById('show-post');
 
     //Crea las colecciones en Cloud Firestore//
     const posts=db.collection("posts");
-    // const likes=db.collection("likes");
-    
-
+   
     //Funcion para crear un post en el DOM
     function renderPost(doc){
         //container-post
@@ -72,7 +71,7 @@ let Home = {
         //user-photo
         const userPhoto = document.createElement('img');
         userPhoto.setAttribute('class',"user-image");
-        userPhoto.setAttribute('src',doc.data().photoURL);//Reemplazar con función
+        userPhoto.setAttribute('src',doc.data().photoURL);
         userName.appendChild(userPhoto);
         
         //user-name-post
@@ -82,6 +81,13 @@ let Home = {
         userNamePost.setAttribute('class','user-name-post');
         userName.appendChild(userNamePost);
 
+        //Hour
+        const date = document.createElement('p');
+        const datePost = document.createTextNode(doc.data().hourPost+" : "+doc.data().minutesPost);
+        date.appendChild(datePost);
+        userName.appendChild(date);
+        
+
         //edit
         const edit = document.createElement('div');
         edit.setAttribute("class","edit");
@@ -89,13 +95,11 @@ let Home = {
 
         //edit-button
         const editButton = document.createElement('a');
-        // editButton.setAttribute('href');
         edit.appendChild(editButton);
         
         //edit-icon
         const editIcon = document.createElement('i');
         editIcon.setAttribute('class','fas fa-pen');
-        // deleteIcon.setAttribute("src",);
         editButton.appendChild(editIcon);
 
         //delete
@@ -106,25 +110,20 @@ let Home = {
   
         //delete-button
         const deleteButton = document.createElement('a');
-        // deleteButton.setAttribute('href');
         deleteB.appendChild(deleteButton);
           
         //delete-icon
         const deleteIcon = document.createElement('i');
         deleteIcon.setAttribute('class','fas fa-trash');
-        // deleteIcon.setAttribute("src",);
         deleteButton.appendChild(deleteIcon);
         
         //textarea
         const textTarea = document.createElement('textarea');
-        // const textPostNode = document.createTextNode(doc.data().postText); //Post hecho
-        const textPostNode = document.createTextNode(doc.data().postText); // doc.data().postText;
+        const textPostNode = document.createTextNode(doc.data().postText); 
         textTarea.setAttribute("class","post-content");
-        textTarea.setAttribute("disabled","true");
-        textTarea.setAttribute("id","editextarea");
+        textTarea.setAttribute("disabled","");
         textTarea.appendChild(textPostNode);
         postBody.appendChild(textTarea);
-        // textTarea.appendChild(textPostNode);??
         
         //post-footer
         const postFooter = document.createElement('div');
@@ -133,14 +132,12 @@ let Home = {
 
         //btn-like
         const likeButton = document.createElement('button');
-        const likeTitle = document.createTextNode('like');
+        const likeTitle = document.createTextNode('Me gusta');
         likeButton.setAttribute('class','btn-like');
-
         const sunLike = document.createElement('img');
-        sunLike.setAttribute('src', 'img/sun.svg')
-
+        sunLike.setAttribute('src', 'img/sun.svg');
         likeButton.appendChild(likeTitle);
-        likeButton.appendChild(sunlike);
+        likeButton.appendChild(sunLike);
         postFooter.appendChild(likeButton);
 
         //comments-button
@@ -162,22 +159,34 @@ let Home = {
         const allCommentPost = document.createElement('ul');
         allCommentPost.setAttribute('class','all-comment-post');
         desorderListBox.appendChild(allCommentPost);
-        
-        //commentbox
-        const commentBox = document.createElement('li');
-        allCommentPost.appendChild(commentBox);
 
-        //photo comments
-        const photoComments = document.createElement('img');
-        photoComments.setAttribute('src','img/default-photo.svg');
-        commentBox.appendChild(photoComments);
-
-        //comment
-        const comment = document.createElement('p');
-        const commentText = document.createTextNode("Un comentario");//Comentarios hechos
-        comment.appendChild(commentText);
-        commentBox.appendChild(comment);
-        
+        function commentAdded(doc){
+            //commentbox
+            const commentBox = document.createElement('li');
+            allCommentPost.appendChild(commentBox);
+    
+            //photo comments
+            const photoComments = document.createElement('img');
+            photoComments.setAttribute('class',"user-image");
+            photoComments.setAttribute('src',doc.data().photoURL);
+            commentBox.appendChild(photoComments);
+            
+            //user-name-post
+            const authorNamePost = document.createElement('h8');
+            const authorTextNamePost = document.createTextNode(doc.data().name);
+            authorNamePost.appendChild(authorTextNamePost);
+            commentBox.appendChild(authorNamePost);
+            //Espacio
+            const space = document.createElement('br');
+            commentBox.appendChild(space);
+            //comment
+            const comment = document.createElement('p');
+            // comment.setAttribute("id","comment")
+            const commentText = document.createTextNode(doc.data().commentText);
+            comment.appendChild(commentText);
+            commentBox.appendChild(comment);
+        }
+    
         //new-comment
         const newCommentBox = document.createElement('div');
         newCommentBox.setAttribute('class', 'new-comment');
@@ -206,86 +215,74 @@ let Home = {
     
     edit.addEventListener('click',()=>{
         console.log(doc.id);
-        document.querySelector(".post-content").disabled = false; 
+        let prueba=document.getElementById(doc.id).querySelector(".post-content").disabled = false;
+        console.log(prueba);
+        // 
         const saveEditButton = document.createElement('button');
         const saveCommentBTitle = document.createTextNode("Guardar");
-        saveEditButton.setAttribute('id','save-comment-button');
+        // saveEditButton.setAttribute('id','save-comment-button');
         saveEditButton.appendChild(saveCommentBTitle);
         postBody.appendChild(saveEditButton);
         saveEditButton.addEventListener('click',()=>{
-            posts.doc(doc.id).update({postText: editextarea.value});
-            document.querySelector(".post-content").disabled = true; 
+            posts.doc(doc.id).update({postText: textTarea.value,
+                datePost: new Date(),
+                dayPost: new Date().getDate(),
+                monthPost:  new Date().getMonth(),
+                yearPost: new Date().getFullYear(),
+                hourPost:  new Date().getHours(),
+                minutesPost: new Date().getMinutes()
+            }
+                );
+            document.getElementById(doc.id).querySelector(".post-content").disabled = true;
             postBody.removeChild(saveEditButton);
-        })
-        
-
+        })  
     })
 
 
+    newCommentButton.addEventListener("click", ()=>{
+        let commentTextTarea= textAreaComment.value;
+        console.log(commentTextTarea);
+        //Añade un post a la coleccion posts en la BD utilizando el metodo add
+        posts.doc(doc.id).collection('comments').add({
+            commentText:commentTextTarea,
+            name: user.displayName,
+            uidUser: user.uid,
+            photoURL: user.photoURL,
+            datePost: new Date()
+        })
+        .then(function(doc) {
+            console.log("Document written with ID: ", doc.id);
+            textAreaComment.value="";
+        })
+        // Manejo de errores
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+    })
+
   
-
-    // editButton.addEventListener('click', () => {
-    //     console.log(doc.id);
-    //     textTarea.setAttribute('disabled','false');
-    //     posts.doc(doc.id).update({postText: textPostNode});
-    // });
-
-
-    // commentPostButton.addEventListener("click", ()=>{
-    //     let textPost= inputWritePost.value;
-    //     console.log(textPost);
-    //     //Añade un post a la coleccion posts en la BD utilizando el metodo add
-    //     comments.add({
-    //         postText:textPost,
-    //         email: user.email,
-    //         name: user.displayName,
-    //         uidUser: user.uid,
-    //         photoURL: user.photoURL
-    //     })
-
-    //     .then(function(doc) {
-    //         console.log("Document written with ID: ", doc.id);
-    //     })
-    //     // Manejo de errores
-    //     .catch(function(error) {
-    //         console.error("Error adding document: ", error);
-    //     });
-    // })
-
-
-    
-    
+    posts.doc(doc.id).collection('comments').onSnapshot(snapshot => {  
+        console.log("estoy esuchando los comentarios");
+        let changes = snapshot.docChanges();
+        console.log(changes);
+        changes.forEach(change => {
+            //Ejecuta la funcion si un documento fue añadido a la BD
+            if(change.type == 'added'){
+                commentAdded(change.doc);  
+            } 
+            //Ejecuta la funcion si un documento fue eliminado de la BD
+            // else if (change.type == 'removed'){
+            //     console.log("soy el post borrado"+change.doc.id);
+            //     let deletePost = showPost.querySelector('[id=' + change.doc.id + ']');
+            //     showPost.removeChild(deletePost);
+            // }
+            // else if (change.type == 'modified'){
+            //     let modifiedPost = textTarea
+            // }
+        });
+    });  
 
     }
-    
-    // //Añade el perfil del usuario a cloud firestone //
-    // profiles.add({
-    //     email: user.email,
-    //     name: user.displayName,
-    //     photo:user.photoURL,
-    //     uidUser: user.uid
-    // })
-
-    // .then(function(docRef) {
-    //     console.log("hola soy perfil mucho gusto: ", docRef.id);
-    // })
-    // .catch(function(error) {
-    //     console.error("Error adding document: ", error);
-    // });    
-
-    // //Añade los likes de un usuario a Clud Firestore //
-    // likes.add({
-    //     email: user.email,
-    //     uidUser: user.uid
-    //     /* uidFriend: user .??? */
-    // })
-
-    // .then(function(docRef) {
-    //     console.log("hola soy like mucho gusto: ", docRef.id);
-    // })
-    // .catch(function(error) {
-    //     console.error("Error adding document: ", error);
-    // });  
     
     //Muestra todos los posts de un usuario //
     // posts.where("uidUser", "==", user.uid)
@@ -313,7 +310,7 @@ let Home = {
     //Si la coleccion posts cambia (editar, borrar,crear) se activa el metodo onsnapshot
     //el metodo onsnapshot adjunta un oyente para eventos QuerySnapshot. 
     //Un evento Querysnapshot contiene los resultados(docsnapshot objects) de una consulta(cambio)
-    posts.onSnapshot(snapshot => {  
+    posts.orderBy("datePost","desc").onSnapshot(snapshot => {  
         console.log(snapshot);
         let changes = snapshot.docChanges();
         console.log(changes);
@@ -331,13 +328,10 @@ let Home = {
                 let deletePost = showPost.querySelector('[id=' + change.doc.id + ']');
                 showPost.removeChild(deletePost);
             }
-            // else if (change.type == 'modified'){
-            //     let modifiedPost = textTarea
-            // }
         });
     });
 
-    //Guarda un post en la coleccion posts de la BD //  
+    //Listener para el boton Publicar//  
     savePostButton.addEventListener("click", ()=>{
         let textPost= inputWritePost.value;
         console.log(textPost);
@@ -347,11 +341,19 @@ let Home = {
             email: user.email,
             name: user.displayName,
             uidUser: user.uid,
-            photoURL: user.photoURL
+            photoURL: user.photoURL,
+            datePost: new Date(),
+            dayPost: new Date().getDate(),
+            monthPost:  new Date().getMonth(),
+            yearPost: new Date().getFullYear(),
+            hourPost:  new Date().getHours(),
+            minutesPost: new Date().getMinutes()
+        
         })
 
         .then(function(doc) {
             console.log("Document written with ID: ", doc.id);
+            inputWritePost.value="";
         })
         // Manejo de errores
         .catch(function(error) {
@@ -359,9 +361,10 @@ let Home = {
         });
     })
 
-
-
- 
+    //Listener para el boton Cancelar
+    cancelPostButton.addEventListener("click", ()=>{
+        inputWritePost.value="";
+    })
 
 }
 
