@@ -8,6 +8,8 @@ body .header{
     margin: 0;
     padding: 0;
     height: 6rem;
+    box-shadow: 0 0 5px 0 rgba(8, 228, 198, 0.7);
+    margin-bottom: 5px;
 }
 
 .logo-one{
@@ -137,7 +139,7 @@ h3,
  }
 
  .pantalla-muro .stars {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     height: 5%;
     text-align: right;
@@ -145,8 +147,8 @@ h3,
    }
    .pantalla-muro .stars p {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
    }
    .pantalla-muro .stars label {
     font-size: 0.8rem;
@@ -222,6 +224,8 @@ h3,
    }
    #pantalla-muro{
        height: 490px;
+       background-color:#EEE5E5;
+       
    }
    #pantalla-muro #div-publicar{
        text-align: right;
@@ -231,12 +235,27 @@ h3,
    #print-post{
        overflow:scroll;
        height: 250px;
-       
+       /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5); */
    }
 
    #print-post .posts{
-    background-color: aquamarine;
-    margin: 1rem;
+    
+    margin: 0.5rem 0.5rem;
+    padding: 5px;
+    /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5); */
+    background-color: white;
+   }
+
+   .container-publication{
+    width: 95%;
+    padding: 3px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .5);
+   }
+
+   #pantalla-muro .inputs-filter{
+       margin-top: 7px;
    }
    
 

@@ -2,50 +2,16 @@ let Muro = {
     render : async () => {
         let view = /* html */ `
         <section id="pantalla-muro" class="pantalla-muro">
-        <div class="row">
-          <div class="span12">
-              <div class="input-prepend text-center">
-                  <img src="./imgenes/icon-search.png" class="add-on">
-                  <input type="search" class="input-small search" id="">
-              </div>
-              <div class="input-prepend text-center in-line">
-                  <img src="./imgenes/icono-filter.png" class="add-on">
-                  <select name="categorias" class="input-small filter" id="">
-                    <option value=""></option>
-                    <option value="1">Orientación Psicológica</option>
-                    <option value="2">Orientación Legal</option>
-                    <option value="3">Limpieza Doméstica</option>
-                    <option value="4">Cuidado de niños</option>
-                    <option value="5">Belleza</option>
-                    <option value="6">Ropa y accesorios</option>
-                  </select>
-              </div>
-          </div>
-        </div>
-
-        <div class="row-fluid">
-          <div class="span12">
-              <div class="input-prepend text-center">
-                <img src="./imgenes/perfil-avatar.jpg" class="img-circle add-on" alt="">
-                <form class="stars">
-                    <p class="clasificacion">
-                      <input id="radio1" type="radio" name="estrellas" value="5">
-                        <label for="radio1">★</label>
-                        <input id="radio2" type="radio" name="estrellas" value="4">
-                        <label for="radio2">★</label>
-                        <input id="radio3" type="radio" name="estrellas" value="3">
-                        <label for="radio3">★</label>
-                        <input id="radio4" type="radio" name="estrellas" value="2">
-                      <label for="radio4">★</label>
-                      <input id="radio5" type="radio" name="estrellas" value="1">
-                      <label for="radio5">★</label>
-                    </p>
-                </form>
-              </div>
+        <main class="row-fluid container-publication">
+          <div class="row-fluid">
+            <div class="span12 text-center">
               <input type="text" class="add-on" placeholder="Publica aquí" id="publication">
+            </div>
           </div>
-        </div>
-        <select name="categorias" class="input-small filter" id="select-publication">
+          <div class="row-fluid>
+            <div class="span12">
+              <label for="select-publication"class="in-line">Selecciona la Categoría</label>
+              <select name="categorias" class="input-small filter in-line" id="select-publication">
                     <option value=""></option>
                     <option value="Orientacion Psicologica">Orientación Psicológica</option>
                     <option value="Orientación Legal">Orientación Legal</option>
@@ -53,17 +19,38 @@ let Muro = {
                     <option value="Cuidado de niños">Cuidado de niños</option>
                     <option value="Belleza">Belleza</option>
                     <option value="Ropa y accesorios">Ropa y accesorios</option>
-                  </select>
-        <div class="row" id="div-publicar">
-        <input type="submit" value="PUBLICAR" class="btn-small" id="btn-publicar" disabled>
-        </div>
+              </select>
+              <div class="row" id="div-publicar">
+                <input type="submit" value="PUBLICAR" class="btn-small" id="btn-publicar" disabled>
+              </div>
+            </div>
+          </div>
+        </main>
         
-           
+        <div class="row inputs-filter">
+          <div class="span12">
+            <div class="input-prepend text-center">
+              <img src="./imgenes/icon-search.png" class="add-on">
+              <input type="search" class="input-small search">
+            </div>
+            <div class="input-prepend text-center in-line">
+              <img src="./imgenes/icono-filter.png" class="add-on">
+              <select name="categorias" class="input-small filter" id="">
+                    <option value=""></option>
+                    <option value="1">Orientación Psicológica</option>
+                    <option value="2">Orientación Legal</option>
+                    <option value="3">Limpieza Doméstica</option>
+                    <option value="4">Cuidado de niños</option>
+                    <option value="5">Belleza</option>
+                    <option value="6">Ropa y accesorios</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
               <!--AQUI SE IMPRIMEN LAS PUBLICACIONES-->
               <p id="print-post"></p>
-
-
-          
+        
           <input type="submit" value="CERRAR SESION" class="btn" id="cerrar-sesion-dos">
       </section>
         `
@@ -80,8 +67,9 @@ let Muro = {
       btnPublicar.addEventListener("click",() => {
         let publication = document.getElementById("publication").value;
         let select = document.getElementById("select-publication").value;
-        save(publication,select);
+        window.functions.save(publication,select);
       });
+
       //Lectura de Posts 
       //onSnapshot actualiza en pantalla en tiempo real
       
@@ -92,6 +80,27 @@ let Muro = {
               console.log(`${doc.data().category} => ${doc.data().post}`);
               printPost.innerHTML += `
               <div class="posts">
+              <div class="span12">
+                <div class="input-prepend text-center">
+                    <img src="./imgenes/perfil-avatar.jpg" class="img-circle add-on" alt="">
+                  
+                    <form class="stars">
+                        <p class="clasificacion">
+                          <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                          <label for="radio4">★</label>
+                          <input id="radio5" type="radio" name="estrellas" value="1">
+                          <label for="radio5">★</label>
+                        </p>
+                    </form>
+                    
+                </div>
+              </div>
               <p><strong>${doc.data().category}</strong></p>
               <p class="text-center">${doc.data().post}</p>
               <input type="submit" value="eliminar" class="btn btn-eliminar" data-id="${doc.id}">
@@ -109,7 +118,7 @@ let Muro = {
           return;
         }
         console.log(e.target);
-         eliminar(e.target.dataset.id);
+         window.functions.eliminar(e.target.dataset.id);
       })
 
           

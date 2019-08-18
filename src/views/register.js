@@ -2,6 +2,10 @@ let register = {
     render : async () => {
         let view = /* html */ `
         <div class="pantalla-registro text-center" id="pantalla-registro">
+        <div class="header">
+          <img src="./imgenes/logo-two.png" class="logo-two">
+        </div>
+        
           <h3>Registro</h3>
 
           <form class="form-inline">
@@ -48,6 +52,12 @@ let register = {
     },
     after_render : async () => {
 
+      document.getElementById("btn-registro").addEventListener("click",() => {
+        let mail = document.getElementById("email-registro").value;
+        let password = document.getElementById("password-registro").value;
+        let name = document.getElementById("register-name").value;
+        window.functions.register(name,mail,password);
+      });
     //   const verificar = () =>{
     //     var user = firebase.auth().currentUser;
     //     user.sendEmailVerification()
@@ -66,41 +76,7 @@ let register = {
     //     console.log(error);
     //     });
     // }
-
-
-      const registrar = (e) => {
-        e.preventDefault();
-        
-        console.log("entra a la funcion registrar");
-        let mail = document.getElementById("email-registro").value;
-        let password = document.getElementById("password-registro").value;
-        let name = document.getElementById("register-name").value;
-        
-        if(name != "" & mail != "" & password != ""){
-
-        firebase.auth().createUserWithEmailAndPassword(mail, password)
-        .then(()=>{
-            console.log("Usuario creado");
-            location.hash = '/login';
-        })
-        .catch((error) => {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log("no se pudo crear usuario");
-            console.log(errorCode);
-            console.log(errorMessage);
-            
-          });
-        
-        }
-        else{
-            alert("Debes completar los campos");
-        }
-    }
-    document.getElementById("btn-registro").addEventListener("click",registrar);
-    
-    }
+  }
 }
 
 export default register;

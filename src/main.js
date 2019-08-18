@@ -39,10 +39,10 @@ const router = async () => { // function always returns a promise
         // Render the header of the page
         console.log(parsedURL)
         
-    if((parsedURL != '/login') && (parsedURL != '/')){
-     encabezado.innerHTML = await header.render(); // wait till the promise resolves
-     await header.after_render();
-    }
+    // if(parsedURL === '/register'){
+    //  encabezado.innerHTML = await header.render(); // wait till the promise resolves
+    //  await header.after_render();
+    // }
 
 
     const isLoged = sessionStorage.getItem('key');
@@ -88,7 +88,7 @@ const observadorDeSesion = () =>{
           console.log(location.hash)
           
           // if (location.hash === "#/login" || location.hash === "" && user.emailVerified) {
-          location.hash = "#/muro";
+          //location.hash = "#/muro";
           //} 
         //   // ...
 

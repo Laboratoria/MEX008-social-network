@@ -12,7 +12,7 @@ functionLogin: (mail,password) =>{
     // console.log("¿El usuario esta verificado?",user.user.emailVerified); 
     // if(user.user.emailVerified){
       location.hash = "#/muro";
-      return console.log("Login exitoso");
+      return alert("Login exitoso");
     // }
     // else{
     //   console.log("aun no has validado tu cuenta, accede a tu correo por favor");
@@ -29,7 +29,7 @@ functionLogin: (mail,password) =>{
       var errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
-      return console.log("Usuario no registrado");
+      return alert("Usuario no registrado");
     });
 },
 
@@ -73,6 +73,32 @@ eliminar: (id) => {
   .catch(function(error) {
     return alert("Error al tratar de eliminar publicación: ", error);
     });
-  }
+  },
+
+register: (name,mail,password) => {
+    
+    console.log("entra a la funcion registrar");
+    if(name != "" & mail != "" & password != ""){
+
+    firebase.auth().createUserWithEmailAndPassword(mail, password)
+    .then(()=>{
+        location.hash = '/login';
+        return alert("Usuario creado");
+    })
+    .catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        return alert("no se pudo crear usuario");
+        
+      });
+    
+    }
+    else{
+        alert("Debes completar los campos");
+    }
+}
 
 }
