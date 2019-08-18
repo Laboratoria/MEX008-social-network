@@ -4,14 +4,16 @@
     height: 100vh;
     /* background-image: url(../icon/fondo2.jpg); */
     background-image: url(https://github.com/JessicaZetina/MEX008-social-network/blob/master/icon/fondo2.jpg?raw=true);
-    background-size: cover;
-    border:7px solid rgba(0, 0, 0, 0.212);
+    background-size:100% 100%;
+    background-attachment: fixed;
+    margin: 0;
+    border:7px solid rgba(0, 0, 0, 0.212)
 }
 .login{
     width: 320px;
-    height: 420px;
+    height: auto;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     box-sizing: border-box;
     margin-top: 20px;
@@ -28,7 +30,66 @@
     text-align: center;
     font-size: small;
 }
- 
+
+
+.conteiner  .login-label{
+    color: blanchedalmond;
+    font-size: small;
+    padding: 0;
+    border: none;
+}
+.conteiner  .login-title{
+  color: aqua;
+  font-size: medium;
+  padding: 0;
+  margin-bottom:0;
+  border: none;
+}
+.conteiner  .login-input{
+    background-color: rgb(0,0,0,0.5);
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    color: white;
+}      
+.conteiner  .login-button{
+  background-color: aqua;
+  opacity:0.7;
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+}
+.conteiner .login-button-google{
+  background-color: red;
+  opacity:0.7;
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  color: white; 
+  margin: 8% 0;
+}
+.conteiner .alerta{
+    color:red;
+}
+.conteiner .alerta2{
+    color:red;
+}
+​
+@media only screen
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px)
+{
+    .login{
+        width: 200px;
+        height: auto;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 10px 20px;
+        box-sizing: border-box;
+        margin-top: 20px;
+        border-radius: 7px;
+      }
+}
  /* CREAR PERFIL */
 .perfil-box{
     width: 100%;
@@ -102,27 +163,55 @@
 }
 
 /* MURO */
-.slider{
+
+
+.muroBox{
+    background-image: url(../icon/fotomuro34.svg);
+    background-repeat: round;
+    width: 100%;
+    height: 100vh;
+}
+
+.escribePublicacion{
+    margin: auto;
+    background-size: cover;
+    border:5px solid rgba(233, 134, 20, 0.828);
+    border-radius: 10%;
+    
+    
+}
+.containerPublicaciones{
+    margin: auto;
+    background-size: cover;
+    border:5px solid rgba(233, 134, 20, 0.828);
+    border-radius: 0%; 
+    width: 100%;
+    height: 40vh;  
+}
+
+
+/*.slider{
     width: 50%;
     height: 100%;
     margin: auto;
-    background-color: aqua;
+    background-color: rgb(109, 233, 192);
     overflow: hidden;
-}
+}*/
 
 .slider-img{
-    width: 60%;
+    width: 40%;
     height: 50%;
     margin: auto;
-    background-color: rgba(0, 255, 255, 0.205);
+    background-color: rgba(25, 198, 214, 0.781);
     overflow: hidden;
 }
     
 .slider ul{
     display: flex;
     padding: 5%;
-    width: 600%;
+    width: 850%;
     height: 50%;
+    margin: 1px 3px 1px 1px;
     animation: cambiar 20s infinite alternate; 
 }
     
@@ -136,7 +225,7 @@
 }
     
 @keyframes cambiar{
-    0% { margin-left: 0;}
+    0%  { margin-left: 0;}
     20% { margin-left: 0;}
 
     25% { margin-left: -100% ;}
@@ -145,7 +234,19 @@
     50% { margin-left: -200% ;}
     70% { margin-left: -200% ;}
     
-    75% { margin-left: -300% ;}
-    100% { margin-left: -300%;}
-}
+    75%  { margin-left: -300% ;}
+    100% { margin-left: -300% ;}
 
+    90% { margin-left: -400% ;}
+    120% { margin-left: -400% ;}
+
+    95% { margin-left: -500% ;}
+    145% { margin-left: -500% ;}
+
+    100% { margin-left: -600%;}
+    170% { margin-left: -600%;}
+
+    125% { margin-left: -700% ;}
+    220% { margin-left: -700% ;}
+
+}
