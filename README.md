@@ -19,24 +19,24 @@ En la actualidad existen una gran variedad de redes sociales, las cuales nos per
 Para identificar a nuestros usuarios realizamos una [encuesta](https://docs.google.com/forms/d/e/1FAIpQLSfrE00Zrd1bP4U1lpe1quu_0JCxcAF8DJ79Sr1DW2b4IN_wHA/viewform) la cual nos permitió conocer que la edad de nuestras usuarias es de entre 26 a 40 años. El 42% son solteras, seguido de casadas y unión libre con un 21%,  y un 15% son divorciadas. La mayoría reportó tener por lo menos un hijo.
 Con respecto a la escolaridad de nuestras entrevistadas, más del 50% de ellas cuentan con estudios de licenciatura, seguido de un 21% con preparatoria.
 Más del 70% de las entrevistadas reportaron ser independientes.
-Un dato interesante es que todas las entrevistadas usan por lo menos una red social, específicamente Facebook, sin embargo, la mayoría están interesadas en pertener a una red social que sea únicamente para mujeres. Las encuestadas informaron que utilizarían esta red social para organizar grupos de mujeres con intereses en común, para recibir/publicar anuncios sobre diversas temáticas y para ofrecer un servicio. 
+Un dato interesante es que todas las entrevistadas usan por lo menos una red social, específicamente Facebook, sin embargo, la mayoría están interesadas en pertener a una red social que sea únicamente para mujeres. Las encuestadas informaron que utilizarían esta red social para organizar grupos de mujeres con intereses en común,para recibir/publicar anuncios sobre diversas temáticas y para ofrecer un servicio. 
 Las encuestadas informaron que les gustaría que la red social tuviera un muro de publicaciones y anuncios, y un chat para poder conversar con las personas que les interese.
 
 
 ## 3. UserPersona
 
-<img src="/imgenes/UserPersona.png">
+<img src="src/imgenes/UserPersona.png">
 
 ## 4. WomenBook
 
-<div style="text-align:center"><img src="/imgenes/logo.png"></div>
+<div style="text-align:center"><img src="src/imgenes/logo.png"></div>
 
 WomenBook es una red social que está dirigida únicamente a mujeres que están interesadas en ofrecer y/o buscar algún servicio, orientación, consultoría, anuncio de negocio, grupos con intereses en común, etc., ya que en la actualidad no encontramos alguna red social que cumpla con tales características. 
 Esta red social tiene como objetivo brindar a todas las mujeres una posibilidad de apoyarse tanto en el ámbito económico, al consumir sus servicios y/o productos, como en el ámbito emocional y jurídico.
 
 Una vez que conocimos estas necesidades decidimos diseñar un [prototipo](https://marvelapp.com/648513g) de baja fidelidad, con el fin de realizar un testeo con nuestras potenciales usuarias, donde nos expresaran si la aplicación era intuitiva y contenía todo lo que ellas buscaban en una red social.
 
-Después se decidió realizar un [prototipo](https://www.figma.com/proto/qVVBLcg5U1HEUcTqu5Zaw2/Untitled?node-id=14%3A20&scaling=scale-down) de alta finalidad con el fin de que nuestras potenciales usuarias puedan experimentar los colores, la interfaz con sus funcionalidades y puedieran darnos una opinión más certera sobre si la plataforma cumple o no con sus expectativas.
+Después se decidió realizar un [prototipo](https://www.figma.com/proto/qVVBLcg5U1HEUcTqu5Zaw2/Untitled?node-id=14%3A20&scaling=scale-down) de alta fidelidad con el fin de que nuestras potenciales usuarias puedan experimentar los colores, la interfaz con sus funcionalidades y puedieran darnos una opinión más certera sobre si la plataforma cumple o no con sus expectativas.
 
 
 

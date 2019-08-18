@@ -99,6 +99,19 @@ register: (name,mail,password) => {
     else{
         alert("Debes completar los campos");
     }
+},
+
+cerrarSesion: () =>{
+  firebase.auth().signOut()
+  .then( () => {
+      alert("sesion cerrada");
+      sessionStorage.clear();
+      location.hash = "#/login"
+  })
+  .catch( (error)=>{
+      var errorMessage = error.message;
+      console.log(errorMessage);
+  })
 }
 
 }

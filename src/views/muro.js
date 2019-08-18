@@ -79,7 +79,7 @@ let Muro = {
         return;
       });
 
-      //Lectura de Posts 
+      //LECTURA E IMPRESION EN PANTA DE POST´S 
       //onSnapshot actualiza en pantalla en tiempo real
       
         db.collection("posts").onSnapshot((querySnapshot) => {
@@ -89,7 +89,7 @@ let Muro = {
               console.log(`${doc.data().category} => ${doc.data().post}`);
               printPost.innerHTML += `
               <div class="posts">
-              <div class="span12">
+              
                 <div class="input-prepend text-center">
                     <img src="./imgenes/perfil-avatar.jpg" class="img-circle add-on" alt="">
                   
@@ -108,12 +108,13 @@ let Muro = {
                         </p>
                     </form>
                     
-                </div>
+              
               </div>
-              <p><strong>${doc.data().category}</strong></p>
-              <p class="text-center">${doc.data().post}</p>
-              <input type="submit" value="eliminar" class="btn btn-eliminar" data-id="${doc.id}">
-              <input type="submit" value="editar" class="btn btn-editar" data-id="${doc.id}">
+              <p class="in-line" data-id="${doc.id}"><strong>${doc.data().category}</strong></p>
+              <p class="text-center text-publication" data-id="${doc.id}" value="${doc.id}">${doc.data().post}</p>
+              
+              <button><i class="fas fa-trash-alt btn-eliminar" data-id="${doc.id}"></i></button>
+              <button><i class="far fa-edit btn-editar" data-id="${doc.id}"></i></button>
               </div>
               `     
           });  
@@ -122,63 +123,49 @@ let Muro = {
       
 
       printPost.addEventListener("click", (e) =>{
-        console.log(e.target);
-        if(e.target.tagName !== "INPUT" || !e.target.classList.contains("btn-eliminar")){
+        console.log(e.target.tagName);
+        if(e.target.tagName !== "I" || !e.target.classList.contains("btn-eliminar")){
           return;
         }
         console.log(e.target);
          window.functions.eliminar(e.target.dataset.id);
       })
 
-          
-      
-      
-        
-        //Funcion editar post
-        const editar = (id) =>{
 
-          document.getElementById("select-publication").value = category;
-          document.getElementById("publication").value = post;
+        //Funcion editar post
+        const editar = (id,textPublication) =>{
 
           const washingtonRef = db.collection("posts").doc(id);
             // Set the "capital" field of the city 'DC'
             return washingtonRef.update({
               post: textPublication,
-              category: selectPublication,
+              // category: selectPublication,
             })
-            .then(function() {
+            .then(()=>{
                 console.log("Document successfully updated!");
             })
-            .catch(function(error) {
+            .catch((error) => {
                 // The document probably doesn't exist.
                 console.error("Error updating document: ", error);
             });
         }   
     
       printPost.addEventListener("click", (e) =>{
-        if(e.target.tagName !== "INPUT" || !e.target.classList.contains("btn-editar")){
-          return;
+        console.log("entra a la funcion");
+        if(e.target.tagName !== "I" || !e.target.classList.contains("btn-editar")){
+            return;
         }
-        console.log(!e.target.classList.contains("btn-editar"));
-        editar(e.target.id);
+        console.log("entra a la funcion y funciona");
+        const inputText = document.querySelector(`p.text-publication[data-id='${e.target.dataset.id}']`);
+        console.log(inputText.textContent);
+        // // console.log(!e.target.classList.contains("btn-editar"));
+        // console.log(post.textContent);
+        inputText.contentEditable = true;
+        inputText.focus();
+        editar(e.target.dataset.id,inputText.textContent);
       })
       
-   
-
-    
-      const cerrarSesion = () =>{
-        firebase.auth().signOut()
-        .then( () => {
-            console.log("sesion cerrada");
-            sessionStorage.clear();
-            location.hash = "#/login"
-        })
-        .catch( (error)=>{
-            var errorMessage = error.message;
-            console.log(errorMessage);
-        })
-      }
-      document.getElementById("cerrar-sesion-dos").addEventListener("click",cerrarSesion);
+      document.getElementById("cerrar-sesion-dos").addEventListener("click",() => window.functions.cerrarSesion());
     }
 }
 
