@@ -37,17 +37,6 @@ const routerApp = async () => {
 
   introContainer.innerHTML = await intro.render();
   welcomeContainer.innerHTML = await welcome.render();
-
-  // const request = Utils.pageRequestURL();
-
-  // let parsedURL =
-  //   (request.resource ? `/${request.resource}` : "/") +
-  //   (request.verb ? "/" + request.verb : "") +
-  //   (request.id ? "/:id" : "");
-
-  // let page = routes[parsedURL] ? routes[parsedURL] : error404;
-  // sectionContainer.innerHTML = await page.render();
-  // await page.after_render();
 };
 
 
@@ -77,23 +66,30 @@ const stateChange = async () => {
 };
 
 //funcion para comprobar estado de usuario
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    document.getElementById('signup-signin').classList.add("hide");
-    document.getElementById('intro-container').classList.add("hide");
-    console.log("El usuario ha entrado a sesión");
-    stateChange();
-  } else {
-    document.getElementById('signup-signin').classList.remove("hide");
-    document.getElementById('section-container').innerHTML = "";
-    document.getElementById("sidebar-container").innerHTML = "";
-    document.getElementById('footer-nav').innerHTML = "";
-    routerApp();
-    console.log('El usuario está fuera de sesión')
-  }
-});
+  firebase.auth().onAuthStateChanged( (user) => {
+    if (user) {
+      document.getElementById('signup-signin').classList.add("hide");
+      document.getElementById('intro-container').classList.add("hide");
+      console.log("El usuario ha entrado a sesión");
+      stateChange();
+    } else {
+      document.getElementById('signup-signin').classList.remove("hide");
+      document.getElementById('section-container').innerHTML = "";
+      document.getElementById("sidebar-container").innerHTML = "";
+      document.getElementById('footer-nav').innerHTML = "";
+      routerApp();
+      console.log('El usuario está fuera de sesión')
+    }
+  });
 
 
+
+
+
+
+//  const handleClick = async (e) => {
+//    console.log(e.target.tagName, e.target.classList);  
+// }
 
 
 
@@ -150,9 +146,17 @@ firebase.auth().onAuthStateChanged(function (user) {
         routerApp();
       };*/
 
-window.addEventListener("hashchange", routerApp);
+window.addEventListener("hashchange", () => {
+   const user = firebase.auth().currentUser;
+
+  if (user) {
+    stateChange();
+  } else {
+    routerApp();
+  }
+});
 window.addEventListener("load", routerApp);
 
 setTimeout(() => {
   document.getElementById('intro-container').classList.add("hide");
-}, 1700);
+});

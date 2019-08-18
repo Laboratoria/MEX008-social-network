@@ -13,7 +13,7 @@ const sidebar = {
     return `
     <nav> 
     <a id="side-trigger" href="#" data-target="slide-out" class="sidenav-trigger">
-    <i id="menu" class="material-icons">menu</i></a>
+    <i id="menu" class="material-icons">view_list</i></a>
     </nav>
     <ul id="slide-out" class="sidenav">
       <li>
