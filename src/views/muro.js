@@ -2,12 +2,10 @@ let Muro = {
     render : async () => {
         let view = /* html */ `
         <section id="pantalla-muro" class="pantalla-muro">
-        <main class="row-fluid container-publication">
-          <div class="row-fluid">
-            <div class="span12 text-center">
-              <input type="text" class="add-on" placeholder="Publica aquí" id="publication">
-            </div>
-          </div>
+        <main class="row-fluid container-publication text-center" id="container-publication">
+          
+              <textarea id="publication" contenteditable="true" placeholder="Publica aquí"></textarea>
+            
           <div class="row-fluid>
             <div class="span12">
               <label for="select-publication"class="in-line">Selecciona la Categoría</label>
@@ -60,14 +58,25 @@ let Muro = {
       const db = firebase.firestore();
       
       const btnPublicar = document.getElementById("btn-publicar");
-      let publication = document.getElementById("publication");
       let select = document.getElementById("select-publication");
       const printPost = document.getElementById("print-post");
+      const containerPublication = document.getElementById("container-publication");
 
+      //EVENTO QUE PUBLICA POST
       btnPublicar.addEventListener("click",() => {
-        let publication = document.getElementById("publication").value;
-        let select = document.getElementById("select-publication").value;
+        alert("si entra a la funcion");
+        const publication = document.getElementById("publication").value;
+        const select = document.getElementById("select-publication").value;
         window.functions.save(publication,select);
+        btnPublicar.disabled = true;
+      });
+
+      //EVENTO QUE PERMITE HABILITAR EL BOTON DE PUBLICAR
+      containerPublication.addEventListener("click", (e) =>{
+        if(e.target.tagName === "SELECT" && select != 0){
+          btnPublicar.disabled = false;
+        }
+        return;
       });
 
       //Lectura de Posts 
@@ -108,7 +117,7 @@ let Muro = {
               </div>
               `     
           });  
-          console.log("aqui",doc.data().category);
+          // console.log("aqui",doc.data().category);
         });
       
 
@@ -154,18 +163,7 @@ let Muro = {
         editar(e.target.id);
       })
       
-
-      //pendiente
-      publication.addEventListener("input", () =>{
-        const textPublication = publication.value;
-        if(textPublication.lenght != 0){
-          btnPublicar.disabled = false;
-        }
-     });
-
-
-
-     
+   
 
     
       const cerrarSesion = () =>{

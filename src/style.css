@@ -175,14 +175,16 @@ h3,
    }
 
    #publication{
-       height: 3rem;
+       width: 80%;
+       height: 4rem;
        background-color: rgba(139, 139, 139, .3);
+       margin: 3px auto;
    }
 
-   #publication::-webkit-input-placeholder{
+   /* #publication::-webkit-input-placeholder{
         font-size: 0.7rem;
         color: black;
-   }
+   } */
 
    
 /* FOOTER */
