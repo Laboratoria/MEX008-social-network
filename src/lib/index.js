@@ -4,6 +4,8 @@ const db = firebase.firestore();
 window.functions = {
 //Function Login
 functionLogin: (mail,password) =>{
+  console.log(mail);
+  console.log(password);
   alert("entra a login");  
     firebase.auth().signInWithEmailAndPassword(mail, password)
     .then(()=>{
@@ -28,7 +30,30 @@ functionLogin: (mail,password) =>{
       var errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
-      return alert("Usuario no registrado");
+      const modalErrorLogin = `<!-- Modal de correo y contraseña inválidos -->
+      <header>
+              <div class="textos">
+                  <h1>Atención</h1>
+                  <button id="abrir">Abrir Modal</button>
+              </div>
+          </header>
+          <div id="miModal" class="modal">
+              <div class="flex" id="flex">
+                  <div class="contenido-modal">
+                      <div class="modal-header flex modalTitle">
+                          <h2 class="title-Modal">Atención</h2>
+                          <span class="close" id="close">&times;</span>
+                      </div>
+                      <div class="modal-body">
+                          <p>El correo electrónico o la contraseña que has ingresado no son correctos.
+                          <br>Verifícalos e ingrésalos nuevamente.
+                          </p>            
+                      </div>
+                  </div>
+              </div>
+          </div>`
+          alert("Usuario no registrado");
+      return modalErrorLogin;
     });
 },
 

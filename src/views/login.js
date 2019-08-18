@@ -65,6 +65,7 @@ let login = {
     </div>
     <div class = "alert" id="alert-one"> 
     </div>
+    
     `
         return view
     }
@@ -76,9 +77,10 @@ let login = {
       const btnGoogle = document.getElementById('btnGoogle');
 
 
-      btnLogin.addEventListener("click",() => {
-        const mail = document.getElementById("email-login").value;
-        const password = document.getElementById("password-login").value;
+      btnLogin.addEventListener("click",(e) => {
+        e.preventDefault();
+        let mail = document.getElementById("email-login").value;
+        let password = document.getElementById("password-login").value;
         window.functions.functionLogin(mail,password);
       } );
 

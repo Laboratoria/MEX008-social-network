@@ -114,7 +114,7 @@ let Muro = {
               <p class="text-center text-publication" data-id="${doc.id}" value="${doc.id}">${doc.data().post}</p>
               
               <button><i class="fas fa-trash-alt btn-eliminar" data-id="${doc.id}"></i></button>
-              <button><i class="far fa-edit btn-editar" data-id="${doc.id}"></i></button>
+              <button class="button-save" data-id="${doc.id}"><i class="far fa-edit btn-editar" data-id="${doc.id}"></i></button>
               </div>
               `     
           });  
@@ -157,12 +157,18 @@ let Muro = {
         }
         console.log("entra a la funcion y funciona");
         const inputText = document.querySelector(`p.text-publication[data-id='${e.target.dataset.id}']`);
+        const iconoEditar = document.querySelector(`i.btn-editar[data-id='${e.target.dataset.id}']`);
+        const buttonEditar = document.querySelector(`button.button-save[data-id='${e.target.dataset.id}']`);
         console.log(inputText.textContent);
         // // console.log(!e.target.classList.contains("btn-editar"));
         // console.log(post.textContent);
         inputText.contentEditable = true;
         inputText.focus();
-        editar(e.target.dataset.id,inputText.textContent);
+        if(inputText.contentEditable){
+          iconoEditar.style.display = "none";
+          buttonEditar.innerHTML = `<i class="fas fa-save btn-editar" data-id="${e.target.dataset.id}"></i>`
+        // editar(e.target.dataset.id,inputText.textContent);
+        }
       })
       
       document.getElementById("cerrar-sesion-dos").addEventListener("click",() => window.functions.cerrarSesion());
