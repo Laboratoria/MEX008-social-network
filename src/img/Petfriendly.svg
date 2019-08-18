@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="354.966" height="123.854" viewBox="0 0 354.966 123.854">
+  <g id="Petfriendly" transform="translate(-47.98 -37.587)">
+    <g id="Grupo_54" data-name="Grupo 54" transform="translate(47.98 37.587)">
+      <g id="Grupo_53" data-name="Grupo 53" transform="translate(0 0)">
+        <g id="Grupo_52" data-name="Grupo 52" transform="translate(27.198 49.462)">
+          <path id="Trazado_155" data-name="Trazado 155" d="M147.915,223.491a7.346,7.346,0,0,0,9.582,0c3.235-2.78,8.632-7.7,17.621-16.409,21.112-20.452,19.792-29.248,19.891-30.2,1.473-14.293-10.067-26-22.872-26s-19.431,9.97-19.431,9.97-6.627-9.97-19.431-9.97-24.345,11.707-22.872,26c.1.956-1.221,9.752,19.891,30.2C139.283,215.79,144.681,220.711,147.915,223.491Z" transform="translate(-110.276 -150.878)" fill="#d0e6cd"/>
+        </g>
+        <ellipse id="Elipse_11" data-name="Elipse 11" cx="12.835" cy="16.445" rx="12.835" ry="16.445" transform="translate(0 34.898) rotate(-27.976)" fill="#d0e6cd"/>
+        <ellipse id="Elipse_12" data-name="Elipse 12" cx="16.174" cy="20.723" rx="16.174" ry="20.723" transform="translate(28.603 4.971) rotate(-8.84)" fill="#d0e6cd"/>
+      </g>
+      <path id="Trazado_156" data-name="Trazado 156" d="M220.512,61.074c1.757-11.31,10.34-19.365,19.168-17.994s14.557,11.654,12.8,22.964-10.34,19.365-19.168,17.994S218.755,72.384,220.512,61.074Z" transform="translate(-145.008 -40.596)" fill="#63615b"/>
+      <path id="Trazado_157" data-name="Trazado 157" d="M249.763,176.871c-.1.956,1.223,9.756-19.885,30.2-8.99,8.709-14.389,13.63-17.622,16.413a7.361,7.361,0,0,1-4.794,1.778V160.845s6.628-9.974,19.428-9.974S251.239,162.581,249.763,176.871Z" transform="translate(-137.834 -101.412)" fill="#63615b"/>
+      <path id="Trazado_158" data-name="Trazado 158" d="M316.947,122.724c-4.26,8.02-12.786,11.83-19.049,8.5s-7.88-12.519-3.62-20.539,12.786-11.83,19.049-8.505S321.206,114.7,316.947,122.724Z" transform="translate(-185.407 -73.3)" fill="#63615b"/>
+    </g>
+    <text id="PET_FRIENDLY" data-name="PET FRIENDLY" transform="translate(294.946 127.653)" fill="#63615b" font-size="33" font-family="Roboto-Black, Roboto" font-weight="800"><tspan x="-107.468" y="0">PET FRIENDLY</tspan></text>
+  </g>
+</svg>

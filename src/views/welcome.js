@@ -29,6 +29,8 @@ let Welcome = {
              </div>
          </div>
          </section>
+         
+         
         `
         return view
     },
@@ -39,6 +41,10 @@ let Welcome = {
             //initialize ui config
             ui.start('#firebaseui-auth-container', uiConfig);
         });
+
+       document.getElementById('hamb-menu').style.display = 'none'; 
+
+        
         // //Mostrar Wall y contenido
         // const content = null || document.getElementById('container');
         // content.innerHTML = await window.Wall.render();
