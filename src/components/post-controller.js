@@ -5,7 +5,7 @@ let printPost = user => {
     user.forEach(msj => {
         let post = msj.data();
         if (post.usuario == userUid.uid) {
-            console.log('ya sirvooooo')
+            // console.log('ya sirvooooo')
             let card = `
                             <div class="col s12 m7">
                                 <h2 class="header">post</h2>
@@ -13,7 +13,7 @@ let printPost = user => {
                                 <div class="card-stacked">
                                     <div class="card-content">
                                     <p>${post.nombre}</p>
-                                    <p>${post.hora}</p>
+                                    <!--<p>${post.hora}</p>-->
                                     <p>${post.postContent}</p>
                                     <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
                                     </div>
@@ -21,7 +21,7 @@ let printPost = user => {
                                 </div>
                             </div>
                             `
-            rootPost.insertAdjacentHTML("beforeend", card);
+            rootPost.insertAdjacentHTML("afterbegin", card);
         } else {
             let card = `
                         <div class="col s12 m7">
@@ -30,14 +30,14 @@ let printPost = user => {
                             <div class="card-stacked">
                                 <div class="card-content">
                                 <p>${post.nombre}</p>
-                                <p>${post.hora}</p>
+                                <!--<p>${post.hora}</p>-->
                                 <p>${post.postContent}</p>
                             </div>
                             </div>
                             </div>
                         </div>
                         `
-            rootPost.insertAdjacentHTML("beforeend", card)
+            rootPost.insertAdjacentHTML("afterbegin", card)
         }
     })
 }
