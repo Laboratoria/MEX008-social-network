@@ -16,8 +16,10 @@ const Utils = {
   savePost:  () => {
     const text = document.getElementById('textarea-post').value;
     let user = firebase.auth().currentUser;
+    let edit = '';
     let verified = '';
     let photoUrl = '';
+    let likesArr = [];
     let name;
     
     if (user != null) {
@@ -37,7 +39,8 @@ const Utils = {
       photo: photoUrl,
       emailVerified: verified,
       date: new Date().getTime(),
-      likes: '0',
+      editDate: edit,
+      likes: likesArr,
       status: 'no-like',
   })
   .then(function(post) {

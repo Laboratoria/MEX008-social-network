@@ -75,10 +75,17 @@ const timeline = {
       db.collection("posts").onSnapshot((querySnapshot) => {
         postList.innerHTML = "";
         querySnapshot.forEach((post) => {
-          let d = new Date(post.data().date);
-          let date = d.toDateString();
+          let date = "";
+          if (post.data().editDate !== "") {
+            const editD = new Date(post.data().editDate);
+            const editDate = editD.toDateString();    
+            date = `Editado: ${editDate}`;
+          } else {            
+            const d = new Date(post.data().date);
+            date = d.toDateString();
+          }
           postList.innerHTML += `
-      <div class="card horizontal" style="overflow: visible;">
+      <div class="card horizontal" style="overflow: visible;" data-uid="${post.data().uid}" data-id="${post.id}">
 
           <div class="card-image waves-effect waves-block waves-light">
               <img src="${post.data().photo}">
@@ -89,7 +96,7 @@ const timeline = {
                       class="material-icons">more_vert</i></span>
               <p>${post.data().textPost}</p>
               <div class="card-action section">
-              <a class="waves-effect" href="#/timeline"><i class="material-icons">favorite_border</i>${post.data().likes}</a>      ${date}
+              <a class="waves-effect" href="#/timeline"><i class="material-icons">favorite_border</i>${(post.data().likes).length}</a>      ${date}
               </div>
           </div>
 
@@ -103,7 +110,7 @@ const timeline = {
                   <li class="collection-item avatar">
                       <!-- Modal Form Trigger -->
                       <a class="modal-trigger" href="#modalEdit">
-                          <span class="title edit" data-id="${post.id}" data-uid="${post.data().uid}">Editar</span>
+                          <span class="title edit" data-id="${post.id}">Editar</span>
                           <i class="material-icons waves-effect waves-light circle orange">edit</i>
                       </a>
                   </li>
@@ -111,7 +118,7 @@ const timeline = {
                   <li class="collection-item avatar">
                       <!-- Modal Confirmation-delete Trigger -->
                       <a class="modal-trigger" href="#modalConfirmation">
-                          <span class="title delete" data-id="${post.id}" data-uid="${post.data().uid}">Eliminar</span>
+                          <span class="title delete" data-id="${post.id}">Eliminar</span>
                           <i class="material-icons circle red">delete</i>
                       </a>
                   </li>
@@ -135,7 +142,7 @@ const timeline = {
 
           postEdit.get().then(function (post) {
               if (post.exists) {
-                document.getElementById('textarea-edit').value = post.data().textPost;
+                textareaEdit.value = post.data().textPost;
             } else {
               // doc.data() will be undefined in this case
               console.log("No such document!");
@@ -169,6 +176,29 @@ const timeline = {
 
     //agregando "chismosas para post-list"
     postList.addEventListener('click', handleClick)
+
+
+/*        const postToEdit = db.collection("posts").doc('OqaTwUnen0u8ozc5Tluq');
+      const posTEdit = db.collection("posts").doc('RvXJbY20LPexbqRBwowr');
+      const posTEdi = db.collection("posts").doc('ciVTZM1Z0V4RrtT3Nph9');
+      const edDate = '';
+
+      const updatePost = (post) => {
+        return post.update({
+        editDate: edDate,
+      })
+      .then(function() {
+          console.log("Document successfully updated!");
+      })
+      .catch(function(error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+      });
+    }; 
+
+     updatePost(postToEdit);
+    updatePost(posTEdit);
+    updatePost(posTEdi);  */
   },
 };
 

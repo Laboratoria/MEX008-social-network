@@ -38,7 +38,7 @@ const sidebar = {
       <li><a class="subheader">Directorio</a></li>
       <li><a class="waves-effect" href="#/shops"><i class="material-icons">loyalty</i>Tiendas</a></li>
       <li><a class="waves-effect" href="#/workshops"><i class="material-icons">build</i>Talleres de reparación</a></li>
-      <li class="waves-effect right"><a id="sos" class="waves-effect right-align" href="#/sos"><i class="material-icons">report_problem</i>S.O.S.</a></li>     
+      <li class="right"><a id="sos" class="waves-effect right-align" href="#/sos"><i class="material-icons">report_problem</i>S.O.S.</a></li>     
       <li id="divider-final">
         <div class="divider"></div>
       </li>
