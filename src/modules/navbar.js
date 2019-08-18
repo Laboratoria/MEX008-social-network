@@ -1,7 +1,7 @@
 let Navbar = {    
     render : async () => { 
         let view = /*html*/`
-        <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -11,9 +11,12 @@ let Navbar = {
             </button>
             <a class="navbar-brand"></a>
           </div>
+        <div>
+        <div>
+        </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-             <li class="active"><img src="https://github.com/JessicaZetina/MEX008-social-network/blob/master/icon/FAVORITO.png?raw=true"></li>
+             <li class="active"><img src="../icon/FAVORITO.png"></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Selecciona tus Insignias <span class="caret"></span></a>
                 <ul class="dropdown-menu">
