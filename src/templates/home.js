@@ -135,7 +135,12 @@ let Home = {
         const likeButton = document.createElement('button');
         const likeTitle = document.createTextNode('like');
         likeButton.setAttribute('class','btn-like');
+
+        const sunLike = document.createElement('img');
+        sunLike.setAttribute('src', 'img/sun.svg')
+
         likeButton.appendChild(likeTitle);
+        likeButton.appendChild(sunlike);
         postFooter.appendChild(likeButton);
 
         //comments-button
