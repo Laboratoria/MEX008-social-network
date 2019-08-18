@@ -89,8 +89,7 @@ const timeline = {
                       class="material-icons">more_vert</i></span>
               <p>${post.data().textPost}</p>
               <div class="card-action section">
-              <p>${date}</p>
-              <a class="waves-effect" href="#/timeline"><i class="material-icons">favorite_border</i>${post.data().likes}</a>
+              <a class="waves-effect" href="#/timeline"><i class="material-icons">favorite_border</i>${post.data().likes}</a>      ${date}
               </div>
           </div>
 

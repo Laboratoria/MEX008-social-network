@@ -43,9 +43,7 @@ const profile = {
       </div>
       </div>
       <br>
-      <h6>Hola soy Ramona Díaz, actualmente  soy estudiante de Diseño en UAM Azcapotzalco
-      me considero una persona alegre, decidida y que en su tiempo libre, ama rodar
-      por la ciudad de México</h6>
+      <h6></h6>
     </section>
           `;
     },

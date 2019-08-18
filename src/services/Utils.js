@@ -36,7 +36,7 @@ const Utils = {
       textPost: text,
       photo: photoUrl,
       emailVerified: verified,
-      date: `${new Date().getTime()}`,
+      date: new Date().getTime(),
       likes: '0',
       status: 'no-like',
   })
@@ -63,7 +63,7 @@ const Utils = {
     // Set the "capital" field of the city 'DC'
     return post.update({
       textPost: postEdited,
-      editDate: `${new Date().getTime()}`,
+      editDate: new Date().getTime(),
     })
     .then(function() {
         console.log("Document successfully updated!");
