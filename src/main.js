@@ -1,10 +1,3 @@
-// Este es el punto de entrada de tu aplicacion
-
-// import { myFunction } from './lib/index.js';
-
-// myFunction();
-// import addPost from "./app.js";
-
 var firebaseConfig = {
     apiKey: "AIzaSyAqOeJJsfipJhhu3xonhhh2G4XYmog8lvI",
     authDomain: "superb-ethos-249021.firebaseapp.com",
@@ -20,6 +13,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var db = firebase.firestore();
 var storage = firebase.storage();
 // var storageRef = firebase.storage().ref('posted_photos/' + file.name);
+
 // UI
 ui.start('#firebaseui-auth-container', {
     signInOptions: [
@@ -34,6 +28,12 @@ ui.start('#firebaseui-auth-container', {
 var uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            db.collection("post").orderBy('hora')
+                .onSnapshot(function(data) {
+                    // console.log('bvgjvg');
+
+                    printPost(data);
+                });
             // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
@@ -62,38 +62,92 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
-// let postTxt = document.getElementById('textarea');
 
 
-
-
-
-
-let addPost = (e) => {
+// Funcion que crea el post y guarda al usuario logueado en una variable que podemos manipular despues
+let addPost = () => {
+    // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
     firebase.auth().onAuthStateChanged((user) => {
-        if (user.uid != '') {
-            e.preventDefault();
+        // User is signed in.
+        if (user.uid) {
+            // console.log(user);
+            // Declaramos el textArea y obtenemos su valor
             let postTxt = document.getElementById('post-txt').value;
-            console.log(user);
-            db.collection("post").add({
-                    usuario: user.uid,
-                    nombre: user.displayName,
-                    postContent: postTxt
-                })
-                .then(function(docRef) {
-                    console.log("Document written with ID: ", docRef.id);
-                })
-                .catch(function(error) {
-                    console.error("Error adding document: ", error);
-                });
+            if (postTxt != '') {
+                let issueRoot = document.getElementById('issue-root');
+                issueRoot.innerHTML = '';
+                //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+                db.collection("post").add({
+                        usuario: user.uid,
+                        nombre: user.displayName,
+                        postContent: postTxt,
+                        hora: new Date()
+                    }).then(function(docRef) {
+                        console.log("Document written with ID: ", docRef.id);
+                        document.getElementById('post-form').reset();
+                        db.collection("post").doc(docRef.id).update({
+                                postId: docRef.id
+                            }).then(function(docRef) {
+                                console.log("Document successfully updated!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
+                    })
+                    .catch(function(error) {
+                        console.error("Error writing document: ", error);
+                    });
+            } else {
+                const issueRoot = document.getElementById('issue-root');
+                issueRoot.innerHTML = 'Por favor escribe algo';
+            }
 
-            // User is signed in.
+
         } else {
-            console.log("no hay usuario logeado")
-                // No user is signed in.
+            // No user is signed in.
+            console.log("no hay usuario logueado")
+
         }
     });
 }
+
+
+
+// creamos una funcion que obtenga actualizaciones en tiempo real
+db.collection("post").orderBy('hora')
+    .onSnapshot(function(data) {
+        // console.log('bvgjvg');
+
+        printPost(data);
+    });
+
+// Si el uid existe entonces guarda al user que esta logueado en localStorage y convierte el objeto en un string que pueda alojarse en localStorage
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        // console.log(user);
+    } else {
+        console.log('no hay usuario logueado')
+    }
+})
+
+
+
+// let getPost = (idPost) => {
+//     if (idPost != '') {
+//         actualPost = db.collection("post").doc(idPost);
+//         actualPost.get().then(function(doc) {
+//             if (doc.exists) {
+//                 console.log("Document data:", doc.data());
+//             } else {
+//                 // doc.data() will be undefined in this case
+//                 console.log("No such document!");
+//             }
+//         }).catch(function(error) {
+//             console.log("Error getting document:", error);
+//         });
+//     }
+// }
 
 
 

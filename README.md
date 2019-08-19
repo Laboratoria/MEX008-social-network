@@ -22,11 +22,18 @@ Historias de usuario
 
 -Yo como usuario quiero crear una cuenta de usuario y logearme con correo y contraseña o con mis cuentas de google y facebook.
 
+-Yo como usuario quiero publicar un post y poder editarlo.
+
+-Yo como usuario quiero subir fotografias en mi post.
+
+-Yo como usuario quiero subir comentarios y reviews y poder likear.
+
 -Yo como usuario quiero completar un perfil, donde sea opcional especificar, si soy dueño o rescatista y si quiero adoptar, y puedo elegir añadir una descripción.
 
 -Yo como usuario quiero postear acerca de una mascota perdida.
 
 -Yo como usuario, quiero poder cerrar sesión después de acceder a la plataforma. 
+
 
 ¿Qué ofrece Pet Friendly?
 En Facebook, Twitter e Instagram, las redes sociales de mayor impacto, existen grupos y páginas enfocados en atender las necesidades de los dueños de mascotas, sin embargo no están centralizados en cuando información se requiere o por el contrario, están muy focalizados por zona barrial o colonia, lo cual implica un sesgo en búsqueda y rescate. Para ilustrar el problema: si una persona pierde a su perro, debe publicar su foto en diversos grupos porque al perderse los perros se mueven grandes distancias, buscando comida o intentando volver a su hogar, con lo que disminuye sus posibilidades de ser encontrado. 

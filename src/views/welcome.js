@@ -1,14 +1,11 @@
 let Welcome = {
     render: async() => {
         let view = /* html */ `
-        <!-- <header class="header-body">
-        <!--Comienza header-->
-          <!-- Aquí va el logo <figure>
-          <img src="./img/logo-pet.png" alt="logo pet" width="200" height="50px">
-      </figure>
-    </header>-->
-        <section class="section-welcome">
+                <section class="section-welcome">
          <!--Sección 1-->
+         <figure class="box-logo-welc">
+         <img id="logo-head" src="../img/petfriendly.svg">
+         </figure>
          <box class="welc-text">
              <!--Caja que contiene el texto de bienvenida-->
              <p>¡Únete a la comunidad más completa de animal lovers!</p>
@@ -56,11 +53,10 @@ let Welcome = {
             //initialize ui config
             ui.start('#firebaseui-auth-container', uiConfig);
         });
-
        document.getElementById('hamb-menu').style.display = 'none'; 
        document.getElementById('nomobile-menu-hamb').style.display = 'none'; 
 
-        
+
         // //Mostrar Wall y contenido
         // const content = null || document.getElementById('container');
         // content.innerHTML = await window.Wall.render();
