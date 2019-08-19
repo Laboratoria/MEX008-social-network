@@ -1,3 +1,4 @@
+
 let login = {
 
     render : async () => {
@@ -93,6 +94,11 @@ let login = {
       
       
       btnGoogle.addEventListener("click", () => window.functions.loginGoogle());
+
+      document.getElementById("navbar-login").style.display = "none";
+      document.getElementById("header-login").style.display = "none";
+
+    
       
       
       

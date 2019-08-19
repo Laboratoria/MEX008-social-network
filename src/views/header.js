@@ -2,7 +2,7 @@ let header = {
 
     render : async () => {
         const view =  /*html*/`
-        <div class="header">
+        <div class="header" id="header-login">
           <img src="./imgenes/logo-two.png" class="logo-two">
         </div>
         `

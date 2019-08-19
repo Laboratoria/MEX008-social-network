@@ -1,7 +1,7 @@
 let navbar = {
     render : async () => {
         let view = /* html */ `
-        <div class="row">
+        <div class="row" id="navbar-login">
         <div class="span12">
           <div class="footer" id="footer">
                 <ul class="navegacion">

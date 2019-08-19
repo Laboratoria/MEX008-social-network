@@ -64,7 +64,7 @@ let Muro = {
 
       //EVENTO QUE PUBLICA POST
       btnPublicar.addEventListener("click",() => {
-        alert("si entra a la funcion");
+       
         const publication = document.getElementById("publication").value;
         const select = document.getElementById("select-publication").value;
         window.functions.save(publication,select);
@@ -132,23 +132,7 @@ let Muro = {
       })
 
 
-        //Funcion editar post
-        const editar = (id,textPublication) =>{
-
-          const washingtonRef = db.collection("posts").doc(id);
-            // Set the "capital" field of the city 'DC'
-            return washingtonRef.update({
-              post: textPublication,
-              // category: selectPublication,
-            })
-            .then(()=>{
-                console.log("Document successfully updated!");
-            })
-            .catch((error) => {
-                // The document probably doesn't exist.
-                console.error("Error updating document: ", error);
-            });
-        }   
+        
     
       printPost.addEventListener("click", (e) =>{
         console.log("entra a la funcion");
@@ -156,7 +140,7 @@ let Muro = {
             return;
         }
         console.log("entra a la funcion y funciona");
-        const inputText = document.querySelector(`p.text-publication[data-id='${e.target.dataset.id}']`);
+        let inputText = document.querySelector(`p.text-publication[data-id='${e.target.dataset.id}']`);
         const iconoEditar = document.querySelector(`i.btn-editar[data-id='${e.target.dataset.id}']`);
         const buttonEditar = document.querySelector(`button.button-save[data-id='${e.target.dataset.id}']`);
         console.log(inputText.textContent);
@@ -166,9 +150,19 @@ let Muro = {
         inputText.focus();
         if(inputText.contentEditable){
           iconoEditar.style.display = "none";
-          buttonEditar.innerHTML = `<i class="fas fa-save btn-editar" data-id="${e.target.dataset.id}"></i>`
-        // editar(e.target.dataset.id,inputText.textContent);
+          buttonEditar.innerHTML = `<i class="fas fa-save btn-save" data-id="${e.target.dataset.id}"></i>`
+          //editar(e.target.dataset.id,inputText.textContent);
         }
+      });
+
+      printPost.addEventListener("click", (e) =>{
+        let inputText = document.querySelector(`p.text-publication[data-id='${e.target.dataset.id}']`);
+        console.log(e.target.tagName);
+        if(e.target.tagName !== "I" || !e.target.classList.contains("btn-save")){
+          return;
+        }
+        console.log(e.target);
+         window.functions.editar(e.target.dataset.id,inputText.textContent);
       })
       
       document.getElementById("cerrar-sesion-dos").addEventListener("click",() => window.functions.cerrarSesion());

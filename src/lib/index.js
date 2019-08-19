@@ -135,6 +135,24 @@ register: (name,mail,password) => {
     }
 },
 
+//Funcion editar post
+editar: (id,textPublication) =>{
+
+  const washingtonRef = db.collection("posts").doc(id);
+    // Set the "capital" field of the city 'DC'
+    return washingtonRef.update({
+      post: textPublication,
+      // category: selectPublication,
+    })
+    .then(()=>{
+        console.log("Document successfully updated!");
+    })
+    .catch((error) => {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+},
+
 cerrarSesion: () =>{
   firebase.auth().signOut()
   .then( () => {
