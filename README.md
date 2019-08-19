@@ -1,3 +1,73 @@
+##PetHub 
+
+https://superb-ethos-249021.firebaseapp.com
+superb-ethos-249021.web.app
+
+Preámbulo
+Actualmente la población de animales en situación de calle aumenta en cifras considerables cada día, en parte porque al perder a una mascota no contamos con un medio centralizado donde buscarla.
+Así pues nace Pet Friendly, una red social pensada como una herramienta que permita subir publicaciones de mascotas perdidas y encontradas, o en adopción.
+
+El proyecto: 
+
+Research
+¿Qué son las redes sociales? 
+Son medios de comunicación digitales orientados a conectar a las personas a través de plataformas definidas dentro de parámetros de afinidad e interés. 
+
+
+¿Quiénes son los usuarios de las redes sociales?
+Como lo señala WeAreSocial, en enero de 2019 Facebook contó con cerca de 2.271 millones de usuarios activos al mes, Instagram más de 1.000 millones y Twitter 326 millones de usuarios activos.
+¿Quienes son los principales usuarios de Pethub?
+¿Cómo descubrimos las necesidades de los usuarios?
+Formulario
+https://docs.google.com/forms/d/1WCvGcCqC3GCX-mgp440iqrOhd97kUV_NbpbToAvUOWg/edit#responses
+
+Historias de usuario
+
+-Yo como usuario quiero crear una cuenta de usuario y logearme con correo y contraseña o con mis cuentas de google y facebook.
+
+-Yo como usuario quiero publicar un post y poder editarlo.
+
+-Yo como usuario quiero subir fotografias en mi post.
+
+-Yo como usuario quiero subir comentarios y reviews y poder likear.
+
+-Yo como usuario quiero completar un perfil, donde sea opcional especificar, si soy dueño o rescatista y si quiero adoptar, y puedo elegir añadir una descripción.
+
+-Yo como usuario quiero postear acerca de una mascota perdida.
+
+-Yo como usuario, quiero poder cerrar sesión después de acceder a la plataforma. 
+
+
+¿Qué ofrece Pet Friendly?
+En Facebook, Twitter e Instagram, las redes sociales de mayor impacto, existen grupos y páginas enfocados en atender las necesidades de los dueños de mascotas, sin embargo no están centralizados en cuando información se requiere o por el contrario, están muy focalizados por zona barrial o colonia, lo cual implica un sesgo en búsqueda y rescate. Para ilustrar el problema: si una persona pierde a su perro, debe publicar su foto en diversos grupos porque al perderse los perros se mueven grandes distancias, buscando comida o intentando volver a su hogar, con lo que disminuye sus posibilidades de ser encontrado. 
+
+¿Quienes son los principales usuarios para Pet Friendly?
+Personas dueñas de mascotas, personas cuya mascota se extravió, personas que realizan rescate animal y/o necesitan encontrar a dueños de mascotas encontradas y también personas que quieren adoptar una mascota de manera segura a través de refugios y rescatistas.
+
+¿Cómo descubrimos las necesidades de los usuarios? 
+Realizamos una encuesta general que nos arrojó datos importantes hacia donde dirigir nuestro planteamiento. El formulario es este: https://docs.google.com/forms/d/1WCvGcCqC3GCX-mgp440iqrOhd97kUV_NbpbToAvUOWg/edit#responses 
+
+Benchmarking
+Nuestros referentes en el mercado para orientar nuestro proyecto son aquellas páginas que aparecen entre los primeros resultados de los buscadores, al ser las más populares y utilizadas. 
+PetHub. Red social de origen estadounidense. Su impacto en el rescate de mascotas lo resumen de la siguiente manera: “El 96% de las mascotas recuperadas de PetHub están en casa en 24 horas o menos, uniendo a los miembros de la familia de 4 patas más rápido y ahorrando miles de dólares mensuales en los refugios”. Sitio https://www.pethub.com/
+Mascotea. Red social española, su enfoque principal está orientado a que los dueños de mascotas compartan experiencias. También provee de información sobre proveedores de servicios y con sociedades protectoras (para voluntariado, donaciones, etc). Sitio http://www.mascotea.net/es
+Facepets. También española, es una especie de Instagram para mascotas en el que los usuarios pueden compartir fotos y también promover adopciones. Sitio http://www.facepets.es/ 
+ 
+Sketching
+Nuestro prototipado de baja fidelidad se puede consultar en Marvel en el siguiente enlace: https://marvelapp.com/id4gfij
+
+Presentación: https://www.canva.com/design/DADjCTDAJPM/un8Qwi_2KCXG6-BoUY7ybg/edit?category=tACFasDnyEQ
+
+Herramientas
+Utilizamos los siguientes recursos para construir nuestra red social:
+HTML5
+CSS3
+Vanilla Javascript
+Materialize
+Firebase
+
+
+
 # Creando una Red Social
 
 ## Índice
