@@ -16,7 +16,7 @@ let Welcome = {
          </box>
          <!--Caja que contiene el botón de "Inicia sesión"-->
          <box>
-             <a id="btn-login" class="waves-effect waves-light btn modal-trigger" href="#modal1">Inicia sesión</a>
+             <a id="btn-login" class="waves-effect waves-light btn modal-trigger" href="#modal1">Inicia sesión o regístrate</a>
          </box>
          <!--Inicia la estructura del modal de inicio de sesión-->
          <div id="modal1" class="modal">
@@ -35,6 +35,11 @@ let Welcome = {
              </div>
          </div>
          </section>
+         <section class="marketing-section">
+         <div id="brand-text">
+         </div>
+        
+         </section>
          
          
         `
@@ -49,6 +54,7 @@ let Welcome = {
         });
 
        document.getElementById('hamb-menu').style.display = 'none'; 
+       document.getElementById('nomobile-menu-hamb').style.display = 'none'; 
 
         
         // //Mostrar Wall y contenido

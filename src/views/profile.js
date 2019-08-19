@@ -58,13 +58,14 @@ let Profile = {
  </div>
         </box>
         
+        
     </section> `
     return view 
     },
     after_render: async () => {
            var elems = document.querySelectorAll('.carousel');
             var instances = M.Carousel.init(elems);
-     //     });
+        
 
     }
 }

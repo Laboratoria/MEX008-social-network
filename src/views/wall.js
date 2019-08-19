@@ -1,5 +1,5 @@
 let Wall = {
-    render: async() => {
+    render: async () => {
         let view = `
         <section class="section-timeline">
         <div class="col s12 m7 box-title-post">
@@ -12,9 +12,14 @@ let Wall = {
             <textarea class="textarea post-form" name="post" id="post-txt" cols="30" rows="3" placeholder="¡Cuéntanos algo sobre ti!"></textarea>
             <button id="btn-post" class="btn waves-effect waves-light" type="submit" name="action">Publicar
     </button>
-            </form>
+    <box>
+  </form>
             </div>
-        </div>
+            <progress value="0" max="100" id="uploader">0%</progress>
+            <input type="file" accept="image/*" id="image-file">
+            
+        
+           
         </div>
     </div>
             
@@ -22,11 +27,7 @@ let Wall = {
             </section>
             <section class="section-timeline">
 
-            <box>
-            <progress value="0" max="100" id="uploader">0%</progress>
-            <input type="file" value="upload" id="fileButton>
-    
-            </box>
+
        
             
     
@@ -36,26 +37,115 @@ let Wall = {
             `
         return view
     },
-    after_render: async() => {
+    after_render: async () => {
         document.getElementById('btn-post').addEventListener('click', addPost);
 
-        //Obteniendo elementos del DOM para storage
-        const uploader = document.getElementById('uploader');
-        const fileButton = document.getElementById('file-button');
+        const savingPhotoFirebase = (chargeimg) => {
+            const addImageFur = chargeimg.target.files[0];
+            const refStorage = storageService.ref().child(`imagenesdemascotas/${addImageFur.name}`);
+            const uploadTask = refStorage.put(addImageFur)
+            .then(() => console.log('Uploaded file!'))
+            .then(() => 
+            refStorage.getDownloadURL()
+            ).then((url) => {
+                const urlPhoto = url;
+                console.log(urlPhoto);
+                return urlPhoto;
+            })
+            .cath(err => {
+                console.log('Error:')
+                console.log(err)
+            });
+        }
 
-        //Escuchar la selección del archivo
-        fileButton.addEventListener('change', (event)=> {
-            //Obtener archivo
-            let file = e.target.files[0]
-            
-            //Crear una referencia de storage
-            firebase.storage().ref('posted_photos/' + file.name)
+        savingPhotoFirebase.addEventListener('change', (chargeimg) => {
+            console.log('Subiendo fotos')
+            const urlPhotoResult = savingPhotoFirebase(chargeimg);
+        });
 
-            //Subir el archivo
+        
+        
+        
+        // const btnUpload = document.getElementById('upload-image');
+        // btnUpload.addEventListener('click' async (ev) => {
+        //     ev.preventDefault();
+        //     const inputFile = document.getElementById('image-file');
+        //     const file = inputFile.file[0];
+        //     const storageRef = firebase.storage().ref();
+        //     const imageRef = storageRef.child('images/file3.jpg');
+        //     const snapshot = await imageRef.put(file);
+        //     const url = await snapshot.ref.getDownloadURL();
+        //     document.getElementById('contenido').innerHTML = '<img src="' + url '"/>';
 
-            //Cargar la barra de progreso
+        // })
+        
+        // const btnUpload = document.getElementById('upload-image');
+        // btnUpload.addEventListener('click' async (ev) => {
+        //     ev.preventDefault();
+        //     const inputFile = document.getElementById('image-file');
+        //     const file = inputFile.file[0];
+        //     const storageRef = firebase.storage().ref();
+        //     const imageRef = storageRef.child('images/file3.jpg');
+        //     imageRef.put(file).then(function(snapshot){
+        //         console.log ('uploaded a blob or file');
+        //         snapshot.ref.getDownloadURL().then(function(url){
+        //             console.log('file available at', url);
+        //             document.getElementById('contenido').innerHTML = '<img src="' + url '"/>';
+        //         });
 
-        })
+        //     });
+
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //         // Cloud storage
+// //Obteniendo elementos del DOM para storage
+// const uploader = document.getElementById('uploader');
+// const fileButton = document.getElementById('fileButton');
+// //Escuchar la selección del archivo
+// fileButton.addEventListener('change', async (event) => {
+// event.preventDefault();
+//     //Obtener archivo
+//  let file = e.target.files[0];
+
+//     //Crear una referencia de storage
+//     let storageRef = firebase.storage().ref('posted_photos/' + file.name);
+
+//     //Subir el archivo
+//     let task = storageRef.put(file);
+
+//     //Cargar la barra de progreso
+//     task.on('state_changed',
+//         function progress(snapshot) {
+//             let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//             uploader.value = percentage;
+
+//         },
+//         function error(err) {
+
+//         },
+//         function complete() {
+
+//         });
+
+// })
+
+
         
     }
 }

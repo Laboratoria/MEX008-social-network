@@ -2,11 +2,23 @@ let Error404 = {
 
     render: async() => {
         let view = /*html*/ `
-           <h1>Error</h1>
+        <section class="error-section">
+        <box>
+        <h1> There was a small mistake </h1>
+        </box>
+        <video src="./img/Closeup_of_Cat.mp4" autoplay loop muted>
+        
+        </video>
+        
+
+        </section>
+
         `
         return view
     },
-    after_render: async() => {}
+    after_render: async() => {
+        document.getElementById('hamb-menu').style.display = 'none'; 
+    }
 }
 export default Error404;
 
