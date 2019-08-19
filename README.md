@@ -2,95 +2,45 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Evaluación](#8-evaluación)
-* [9. Pistas, tips y lecturas complementarias](#9-pistas-tips-y-lecturas-complementarias)
+* [1. Introducción](#1-Introducción)
+* [2. Datos Generales](#2-Datos-generales)
+* [3. UserPersona](#3-UserPersona)
+* [4. WomenBook](#4-WomenBook)
+
 
 ***
 
-## 1. Preámbulo
+## 1. Introducción
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
+En la actualidad existen una gran variedad de redes sociales, las cuales nos permiten generar un intercambio de información, publicidad, amistades, servicios, etc.; sin embargo no existe una red social que sea únicamente de mujeres y que tenga como objetivo ofrecer/buscar servicios, apoyos, orientación o información que permitan que las mujeres se apoyen de manera mutua, ya sea utilizando los servicios que ofrecen, consumiendo los productos que ellas ofrecen y/o ofrecer sus servicios, información, anunciarse, etc.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+## 2. Datos Generales
 
-## 2. Resumen del proyecto
+Para identificar a nuestros usuarios realizamos una [encuesta](https://docs.google.com/forms/d/e/1FAIpQLSfrE00Zrd1bP4U1lpe1quu_0JCxcAF8DJ79Sr1DW2b4IN_wHA/viewform) la cual nos permitió conocer que la edad de nuestras usuarias es de entre 26 a 40 años. El 42% son solteras, seguido de casadas y unión libre con un 21%,  y un 15% son divorciadas. La mayoría reportó tener por lo menos un hijo.
+Con respecto a la escolaridad de nuestras entrevistadas, más del 50% de ellas cuentan con estudios de licenciatura, seguido de un 21% con preparatoria.
+Más del 70% de las entrevistadas reportaron ser independientes.
+Un dato interesante es que todas las entrevistadas usan por lo menos una red social, específicamente Facebook, sin embargo, la mayoría están interesadas en pertener a una red social que sea únicamente para mujeres. Las encuestadas informaron que utilizarían esta red social para organizar grupos de mujeres con intereses en común,para recibir/publicar anuncios sobre diversas temáticas y para ofrecer un servicio. 
+Las encuestadas informaron que les gustaría que la red social tuviera un muro de publicaciones y anuncios, y un chat para poder conversar con las personas que les interese.
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), o de lo que sea.
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
-acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+## 3. UserPersona
 
-## 3. Objetivos de aprendizaje
+<img src="src/imgenes/UserPersona.png">
 
-El objetivo principal de aprendizaje de este proyecto es construir una
-**[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application), 
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)**
- (con más de una vista / página) en la que podamos **leer y escribir datos.**
+## 4. WomenBook
 
-## 4. Consideraciones generales
+<div style="text-align:center"><img src="src/imgenes/logo.png"></div>
 
-* Este proyecto se debe trabajar en equipos de tres.
+WomenBook es una red social que está dirigida únicamente a mujeres que están interesadas en ofrecer y/o buscar algún servicio, orientación, consultoría, anuncio de negocio, grupos con intereses en común, etc., ya que en la actualidad no encontramos alguna red social que cumpla con tales características. 
+Esta red social tiene como objetivo brindar a todas las mujeres una posibilidad de apoyarse tanto en el ámbito económico, al consumir sus servicios y/o productos, como en el ámbito emocional y jurídico.
 
-* La lógica del proyecto debe estar implementada completamente en JavaScript
-  (ES6+), HTML y CSS :smiley:. Para este proyecto **no está permitido** utilizar
-  _frameworks_ o librerías de CSS y JS.
+Una vez que conocimos estas necesidades decidimos diseñar un [prototipo](https://marvelapp.com/648513g) de baja fidelidad, con el fin de realizar un testeo con nuestras potenciales usuarias, donde nos expresaran si la aplicación era intuitiva y contenía todo lo que ellas buscaban en una red social.
 
-* La división y organización del trabajo debe permitir, sin excepciones, que
-  **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
-  en **cada historia**. _Eviten dividirse el trabajo como en una fábrica._
-  - ¿Sientes hasta momento que has avanzado en tus proyectos con cierta fluidez 
-    y sin mayores  problemas? Sé generosa con tus compañeras, permíteles aprender
-    y practicar sin restricciones, aunque tome un poco más de tiempo. Aproveha para
-    _coachearlas_, hacer _pair programming_. Una de las mejores maneras de
-    aprender es explicando verbalmente lo que has aprendido.
+Después se decidió realizar un [prototipo](https://www.figma.com/proto/qVVBLcg5U1HEUcTqu5Zaw2/Untitled?node-id=14%3A20&scaling=scale-down) de alta fidelidad con el fin de que nuestras potenciales usuarias puedan experimentar los colores, la interfaz con sus funcionalidades y puedieran darnos una opinión más certera sobre si la plataforma cumple o no con sus expectativas.
 
-  - ¿Se te está haciendo difícil y te cuesta un poco más avanzar? No te quedes
-    con las partes "fáciles" del proyecto, conversa, negocia, exige tu oportunidad
-    para practicar y aprender lo que se te hace más difícil.
 
-  - Prioricen el aprendizaje.
 
-* Solamente pueden trabajar en una única historia por vez, no pueden avanzar a
-  la siguiente sin haber completado la anterior. La historia se completa cuando
-  se cumplen **todos** sus Criterios de Aceptación + **toda** su Definición
-  de Terminado.
-
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-### 5.1 Boilerplate
-
-Este proyecto no incluye un _boilerplate_, así es que tendrás que definir la
-estructura de carpetas y escribir tus propias Pruebas Unitarias (_tests_). Para
-hacerlo, puedes guiarte de los proyectos anteriores.
-
-### 5.2 Definición del producto
-
-En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
-usuarios y cómo llegaste a la definición final de tu producto. Es importante
-que detalles:
-
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
-
-### 5.3 Historias de usuario
+### 4.2 Historias de usuario
 
 Una vez que entiendas las necesidades de tus usuarixs, escribe las Historias de
 Usuario que representen todo lo que necesitan hacer/ver en la Red Social. Cada
@@ -114,8 +64,6 @@ una de tus Historias de Usuario debe tener:
     usuarios como mejoras.
   - Desplegaron su aplicación y etiquetaron la versión (git tag).
 
-* Te dejamos un ejemplo de una historia de Usuario, pero va a depender de lo
-  que encuentren durante su investigación.
     
 
     > Como usuario nuevo debo poder crear una cuenta con email y password para 
@@ -140,7 +88,7 @@ una de tus Historias de Usuario debe tener:
     >   consideró necesario.
 
 
-### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
+<!-- ### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
 Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
 y, con eso, diseña la Interfaz de Usuario (UI por sus siglas en inglés) que
@@ -347,4 +295,4 @@ Otras:
 * [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
 * [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
 * [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
+* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/) -->
