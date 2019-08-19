@@ -58,6 +58,8 @@ let Home = {
         postHeader.setAttribute("class","post-header");
         userPost.appendChild(postHeader);
 
+
+
         //post-body
         const postBody = document.createElement('div');
         postBody.setAttribute("class","post-body");
@@ -81,17 +83,14 @@ let Home = {
         userNamePost.setAttribute('class','user-name-post');
         userName.appendChild(userNamePost);
 
-        //Hour
-        const date = document.createElement('p');
-        const datePost = document.createTextNode(doc.data().hourPost+" : "+doc.data().minutesPost);
-        date.appendChild(datePost);
-        userName.appendChild(date);
-        
+        const editdeletediv = document.createElement('div');
+        editdeletediv.setAttribute('class','div-edit-delete');
+        postHeader.appendChild(editdeletediv);
 
         //edit
         const edit = document.createElement('div');
         edit.setAttribute("class","edit");
-        postHeader.appendChild(edit);
+        editdeletediv.appendChild(edit);
 
         //edit-button
         const editButton = document.createElement('a');
@@ -104,9 +103,9 @@ let Home = {
 
         //delete
         const deleteB = document.createElement('div');
-        deleteB.setAttribute("class","delete");
+        deleteB.setAttribute("class","delete ");
         deleteB.setAttribute("id","delete");
-        postHeader.appendChild(deleteB);
+        editdeletediv.appendChild(deleteB);
   
         //delete-button
         const deleteButton = document.createElement('a');
@@ -114,9 +113,23 @@ let Home = {
           
         //delete-icon
         const deleteIcon = document.createElement('i');
-        deleteIcon.setAttribute('class','fas fa-trash');
+        deleteIcon.setAttribute('class','fas fa-trash ');
         deleteButton.appendChild(deleteIcon);
-        
+
+        //Space
+         const space= document.createElement('div');
+        //   space.setAttribute("class","row");
+        userPost.appendChild(space);
+    
+
+         //Hour
+        const date = document.createElement('p');
+        const datePost =document.createTextNode(doc.data().dayPost+"/"+doc.data().monthPost+"/"+doc.data().yearPost+" - "+doc.data().hourPost+" : "+doc.data().minutesPost);
+        date.setAttribute('class','hour ');
+        date.appendChild(datePost);
+        space.appendChild(date);          
+
+
         //textarea
         const textTarea = document.createElement('textarea');
         const textPostNode = document.createTextNode(doc.data().postText); 
