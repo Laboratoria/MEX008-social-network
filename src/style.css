@@ -396,10 +396,12 @@
     height: 40%;
 }
 
+#issue-edit-post,
 #issue-root {
     color: red;
     font-size: x-small;
     text-align: center;
+    height: 5vh;
 }
 
 .section-timeline {

@@ -84,15 +84,11 @@ let addPost = () => {
                                 console.error("Error writing document: ", error);
                             });
                     })
-                    // .then(function() {
-                    //     console.log("Document successfully written!");
-                    //     document.getElementById('post-form').reset();
-                    // })
                     .catch(function(error) {
                         console.error("Error writing document: ", error);
                     });
             } else {
-                let issueRoot = document.getElementById('issue-root');
+                const issueRoot = document.getElementById('issue-root');
                 issueRoot.innerHTML = 'Por favor escribe algo';
             }
 

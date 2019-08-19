@@ -15,7 +15,10 @@ const printPost = user => {
                                     <div class="card-content posttxtcont">
                                     <p class="disp-name">${post.nombre}</p>
                                     <!--<p>${post.hora}</p>-->
-                                    <div id="posttxt"class="posttxt"><input id="post-txt-edit" placeholder="Editar post">${post.postContent}</input></div>
+                                    <div id="posttxt"class="posttxt">
+                                    <input id="post-txt-edit" placeholder="Editar post">${post.postContent}</input>
+                                    <p id="issue-edit-post"></p>
+                                    </div>
                                     <div class="admin-post"><a data-target="modal2" id="btn-edit"><i class="material-icons">edit</i></a>
                                     </div>
                                     </div>
@@ -62,23 +65,30 @@ let editPost = () => {
             // console.log(user);
             // Declaramos el input de edicion y obtenemos su valor
             let postTxt = document.getElementById('post-txt-edit').value;
-            let docRef = db.collection("post").doc("mipost");
-            docRef.get().then(function(doc) {
-                if (doc.exists) {
-                    console.log("Document data:", doc.data());
-                    //creamos una funcion que actualice el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
-                    db.collection("post").doc("mipost").update({
-                            usuario: user.uid,
-                            nombre: user.displayName,
-                            postContent: postTxt,
-                            hora: new Date(),
-                            edit: 'Editado'
-                        }).then(function(docRef) {
-                            console.log("Document successfully updated!");
-                        })
-                        .catch(function(error) {
-                            console.error("Error writing document: ", error);
-                        });
+            let getPost = db.collection("post").doc("mipost");
+            getPost.get().then(function(doc) {
+                let postId = doc.data().postId;
+                if (doc.exists, postId) {
+                    if (postTxt != '') {
+                        // console.log(doc.data().postId);
+                        console.log("Document data:", doc.data());
+                        //creamos una funcion que actualice el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+                        db.collection("post").doc(postId).update({
+                                usuario: user.uid,
+                                nombre: user.displayName,
+                                postContent: postTxt,
+                                hora: new Date(),
+                                edit: 'Editado'
+                            }).then(function(docRef) {
+                                console.log("Document successfully updated!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
+                    } else {
+                        const issueEditRoot = document.getElementById('issue-edit-post');
+                        issueEditRoot.innerHTML = 'Por favor escribe algo';
+                    }
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
