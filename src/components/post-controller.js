@@ -63,14 +63,14 @@ let editPost = () => {
             let postTxt = document.getElementById('post-txt-edit').value;
             // console.log(postTxt);
             //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
-            db.collection("post").doc("mipost").set({
+            db.collection("post").doc("mipost").update({
                     usuario: user.uid,
                     nombre: user.displayName,
                     postContent: postTxt,
                     hora: new Date(),
                     edit: 'Editado'
                 }).then(function() {
-                    console.log("Document successfully written!");
+                    console.log("Document successfully updated!");
                 })
                 .catch(function(error) {
                     console.error("Error writing document: ", error);
@@ -78,6 +78,33 @@ let editPost = () => {
         }
     });
 }
+
+//este es el que sirve let editPost = () => {
+//     // console.log('funcion editando')
+//     // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
+//     firebase.auth().onAuthStateChanged((user) => {
+//         // User is signed in.
+//         if (user.uid) {
+//             // console.log(user);
+//             // Declaramos el input de edicion y obtenemos su valor
+//             let postTxt = document.getElementById('post-txt-edit').value;
+//             // console.log(postTxt);
+//             //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+//             db.collection("post").doc("mipost").set({
+//                     usuario: user.uid,
+//                     nombre: user.displayName,
+//                     postContent: postTxt,
+//                     hora: new Date(),
+//                     edit: 'Editado'
+//                 }).then(function() {
+//                     console.log("Document successfully written!");
+//                 })
+//                 .catch(function(error) {
+//                     console.error("Error writing document: ", error);
+//                 });
+//         }
+//     });
+// }
 
 
 // let editPost = () => {
