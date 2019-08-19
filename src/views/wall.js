@@ -9,8 +9,9 @@ let Wall = {
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                    <form class="post-form">
-                    <textarea class="textarea post-form" name="post" id="post-txt" cols="30" rows="3" placeholder="¡Cuéntanos algo sobre ti!"></textarea>
+                    <form id="post-form" class="post-form">
+                    <textarea class="textarea post-form" name="post" id="post-txt" cols="30" rows="3" placeholder="Hoy Fido..."></textarea>
+                    <p id="issue-root"></p>
                     <a id="btn-post" class="waves-effect waves-light btn">Publicar</a>
                     </form>
                     </div>
