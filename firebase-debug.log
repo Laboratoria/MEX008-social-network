@@ -215,3 +215,57 @@
 [debug] [2019-08-18T02:20:23.570Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-18T18:11:27.377Z] ----------------------------------------------------------------------
+[debug] [2019-08-18T18:11:27.380Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-08-18T18:11:27.380Z] CLI Version:   7.2.2
+[debug] [2019-08-18T18:11:27.380Z] Platform:      linux
+[debug] [2019-08-18T18:11:27.380Z] Node Version:  v10.16.2
+[debug] [2019-08-18T18:11:27.380Z] Time:          Sun Aug 18 2019 13:11:27 GMT-0500 (GMT-05:00)
+[debug] [2019-08-18T18:11:27.380Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-18T18:11:27.389Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-18T18:11:27.390Z] > authorizing via signed-in user
+[debug] [2019-08-18T18:11:27.390Z] [iam] checking project red-social-270ac for permissions ["firebase.projects.get"]
+[debug] [2019-08-18T18:11:27.392Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-270ac:testIamPermissions  
+
+[debug] [2019-08-18T18:11:27.891Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-18T18:11:27.895Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac  
+ 
+[debug] [2019-08-18T18:11:28.181Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/rebe_laboratoria/Rebeca_repositorios/MEX008-social-network'...
+[info] 
+[debug] [2019-08-18T18:11:28.186Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac/webApps/-/config  
+ 
+[debug] [2019-08-18T18:11:28.548Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-08-18T19:41:54.222Z] ----------------------------------------------------------------------
+[debug] [2019-08-18T19:41:54.224Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2019-08-18T19:41:54.224Z] CLI Version:   7.2.2
+[debug] [2019-08-18T19:41:54.224Z] Platform:      linux
+[debug] [2019-08-18T19:41:54.224Z] Node Version:  v10.16.2
+[debug] [2019-08-18T19:41:54.228Z] Time:          Sun Aug 18 2019 14:41:54 GMT-0500 (GMT-05:00)
+[debug] [2019-08-18T19:41:54.229Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-18T19:41:54.237Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-18T19:41:54.237Z] > authorizing via signed-in user
+[debug] [2019-08-18T19:41:54.237Z] [iam] checking project red-social-270ac for permissions ["firebase.projects.get"]
+[debug] [2019-08-18T19:41:54.239Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-18T19:41:54.239Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-18T19:41:54.452Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-18T19:41:54.457Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-270ac:testIamPermissions  
+
+[debug] [2019-08-18T19:41:54.841Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-18T19:41:54.847Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac  
+ 
+[debug] [2019-08-18T19:41:55.168Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/rebe_laboratoria/Rebeca_repositorios/MEX008-social-network'...
+[info] 
+[debug] [2019-08-18T19:41:55.175Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-270ac/webApps/-/config  
+ 
+[debug] [2019-08-18T19:41:55.395Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
