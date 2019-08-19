@@ -11,14 +11,14 @@ let Wall = {
                     <div class="card-content">
                     <form class="post-form">
                     <textarea class="textarea post-form" name="post" id="post-txt" cols="30" rows="3" placeholder="¡Cuéntanos algo sobre ti!"></textarea>
-                    <a id="btn-post" class="waves-effect waves-light btn">Publicar<i class="material-icons left">cloud</i></a>
-            </button>
+                    <a id="btn-post" class="waves-effect waves-light btn">Publicar</a>
                     </form>
                     </div>
                 </div>
                 </div>
             </div>
             <div id="wall-posts"></div>
+            
             `
         return view
     },
