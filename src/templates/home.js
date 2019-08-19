@@ -185,7 +185,7 @@ let Home = {
             commentBox.appendChild(photoComments);
             
             //user-name-post
-            const authorNamePost = document.createElement('h8');
+            const authorNamePost = document.createElement('h2');
             const authorTextNamePost = document.createTextNode(doc.data().name);
             authorNamePost.appendChild(authorTextNamePost);
             commentBox.appendChild(authorNamePost);
