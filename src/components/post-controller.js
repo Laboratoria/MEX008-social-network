@@ -5,7 +5,7 @@ const printPost = user => {
     user.forEach(msj => {
         let post = msj.data();
         if (post.usuario == userUid.uid) {
-            // console.log('ya sirvooooo')
+            console.log(post.postId)
             let card = `
                             <div class="col s12 m7 box-post">
                              <div class="head-post">
@@ -15,8 +15,13 @@ const printPost = user => {
                                     <div class="card-content posttxtcont">
                                     <p class="disp-name">${post.nombre}</p>
                                     <!--<p>${post.hora}</p>-->
-                                    <div id="posttxt"class="posttxt"><input id="post-txt-edit" placeholder="Editar post">${post.postContent}</input></div>
-                                    <div class="admin-post"><a data-target="modal2" id="btn-edit"><i class="material-icons">edit</i></a>
+                                    <div id="posttxt"class="posttxt">
+                                    <input id="${post.postId}" placeholder="Editar post">${post.postContent}</input>
+                                    <p id="issue-edit-post"></p>
+                                    </div>
+                                    <div class="admin-post">
+                                    <a class="btns-edit btn-edit" id="${post.postId}"><i id="${post.postId}" class="material-icons">edit</i></a>
+                                    <a id="btn-delete"><i class="material-icons">delete</i></a>
                                     </div>
                                     </div>
                                 </div>
@@ -24,8 +29,9 @@ const printPost = user => {
                             </div>
                             `
             rootPost.insertAdjacentHTML("afterbegin", card);
-            btnEdit = document.getElementById('btn-edit');
-            btnEdit.addEventListener('click', editPost);
+            // btnEdit = document.getElementById('btn-edit');
+            // btnEdit.addEventListener('click', editPost);
+
 
             // btnEdit.addEventListener('DOMContentLoaded', function() {
             //     console.log('modal')
@@ -51,8 +57,18 @@ const printPost = user => {
             rootPost.insertAdjacentHTML("afterbegin", card)
         }
     })
+    const btnsEdit = document.getElementsByClassName('btns-edit');
+
+    for (let i = 0; i < btnsEdit.length; i++) {
+        btnsEdit[i].addEventListener('click', () => {
+            let postId = event.target.id
+            editPost(postId);
+        })
+    }
+
 }
-let editPost = () => {
+
+let editPost = (postId) => {
     // console.log('funcion editando')
     // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
     firebase.auth().onAuthStateChanged((user) => {
@@ -60,24 +76,143 @@ let editPost = () => {
         if (user.uid) {
             // console.log(user);
             // Declaramos el input de edicion y obtenemos su valor
-            let postTxt = document.getElementById('post-txt-edit').value;
+            let postTxt = document.getElementById(postId).value;
+            let getPost = db.collection("post").doc(postId);
+            getPost.get().then(function(doc) {
+                if (doc.exists) {
+                    if (postTxt != '') {
+                        // console.log(doc.data().postId);
+                        console.log("Document data:", doc.data());
+                        //creamos una funcion que actualice el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+                        db.collection("post").doc(postId).update({
+                                usuario: user.uid,
+                                nombre: user.displayName,
+                                postContent: postTxt,
+                                hora: new Date(),
+                                edit: 'Editado'
+                            }).then(function(docRef) {
+                                console.log("Document successfully updated!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
+                    } else {
+                        const issueEditRoot = document.getElementById('issue-edit-post');
+                        issueEditRoot.innerHTML = 'Por favor escribe algo';
+                    }
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
             // console.log(postTxt);
-            //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
-            db.collection("post").doc("mipost").set({
-                    usuario: user.uid,
-                    nombre: user.displayName,
-                    postContent: postTxt,
-                    hora: new Date(),
-                    edit: 'Editado'
-                }).then(function() {
-                    console.log("Document successfully written!");
-                })
-                .catch(function(error) {
-                    console.error("Error writing document: ", error);
-                });
+
         }
     });
 }
+
+let deletePost = () => {
+    // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
+    firebase.auth().onAuthStateChanged((user) => {
+        // User is signed in.
+        if (user.uid) {
+            // console.log(user);
+            // Declaramos el input de edicion y obtenemos su valor
+            let postTxt = document.getElementById('post-txt-edit').value;
+            let getPost = db.collection("post").doc("mipost");
+            getPost.get().then(function(doc) {
+                let postId = doc.data().postId;
+                if (doc.exists, postId) {
+                    if (postTxt != '') {
+                        // console.log(doc.data().postId);
+                        console.log("Document data:", doc.data());
+                        //creamos una funcion que actualice el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+                        db.collection("post").doc(postId).update({
+                                usuario: user.uid,
+                                nombre: user.displayName,
+                                postContent: postTxt,
+                                hora: new Date(),
+                                edit: 'Editado'
+                            }).then(function(docRef) {
+                                console.log("Document successfully updated!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
+                    } else {
+                        const issueEditRoot = document.getElementById('issue-edit-post');
+                        issueEditRoot.innerHTML = 'Por favor escribe algo';
+                    }
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
+            });
+            // console.log(postTxt);
+
+        }
+    });
+
+}
+
+
+// metodo update// let editPost = () => {
+//     // console.log('funcion editando')
+//     // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
+//     firebase.auth().onAuthStateChanged((user) => {
+//         // User is signed in.
+//         if (user.uid) {
+//             // console.log(user);
+//             // Declaramos el input de edicion y obtenemos su valor
+//             let postTxt = document.getElementById('post-txt-edit').value;
+//             // console.log(postTxt);
+//             //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+//             db.collection("post").doc("mipost").update({
+//                     usuario: user.uid,
+//                     nombre: user.displayName,
+//                     postContent: postTxt,
+//                     hora: new Date(),
+//                     edit: 'Editado'
+//                 }).then(function() {
+//                     console.log("Document successfully updated!");
+//                 })
+//                 .catch(function(error) {
+//                     console.error("Error writing document: ", error);
+//                 });
+//         }
+//     });
+// }
+
+//metodo set:// let editPost = () => {
+//     // console.log('funcion editando')
+//     // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
+//     firebase.auth().onAuthStateChanged((user) => {
+//         // User is signed in.
+//         if (user.uid) {
+//             // console.log(user);
+//             // Declaramos el input de edicion y obtenemos su valor
+//             let postTxt = document.getElementById('post-txt-edit').value;
+//             // console.log(postTxt);
+//             //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+//             db.collection("post").doc("mipost").set({
+//                     usuario: user.uid,
+//                     nombre: user.displayName,
+//                     postContent: postTxt,
+//                     hora: new Date(),
+//                     edit: 'Editado'
+//                 }).then(function() {
+//                     console.log("Document successfully written!");
+//                 })
+//                 .catch(function(error) {
+//                     console.error("Error writing document: ", error);
+//                 });
+//         }
+//     });
+// }
 
 
 // let editPost = () => {

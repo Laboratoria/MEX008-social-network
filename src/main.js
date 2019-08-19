@@ -67,20 +67,28 @@ let addPost = () => {
                 let issueRoot = document.getElementById('issue-root');
                 issueRoot.innerHTML = '';
                 //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
-                db.collection("post").doc("mipost").set({
+                db.collection("post").add({
                         usuario: user.uid,
                         nombre: user.displayName,
                         postContent: postTxt,
                         hora: new Date()
-                    }).then(function() {
-                        console.log("Document successfully written!");
+                    }).then(function(docRef) {
+                        console.log("Document written with ID: ", docRef.id);
                         document.getElementById('post-form').reset();
+                        db.collection("post").doc(docRef.id).update({
+                                postId: docRef.id
+                            }).then(function(docRef) {
+                                console.log("Document successfully updated!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
                     })
                     .catch(function(error) {
                         console.error("Error writing document: ", error);
                     });
             } else {
-                let issueRoot = document.getElementById('issue-root');
+                const issueRoot = document.getElementById('issue-root');
                 issueRoot.innerHTML = 'Por favor escribe algo';
             }
 
@@ -93,8 +101,8 @@ let addPost = () => {
     });
 }
 
-// creamos una funcion que obtenga actualizaciones en tiempo real
 
+// creamos una funcion que obtenga actualizaciones en tiempo real
 db.collection("post").orderBy('hora')
     .onSnapshot(function(data) {
         printPost(data);
