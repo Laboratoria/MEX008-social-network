@@ -22,11 +22,17 @@ Historias de usuario
 
 -Yo como usuario quiero crear una cuenta de usuario y logearme con correo y contraseña o con mis cuentas de google y facebook.
 
+-Yo como usuario quiero publicar un post y poder editarlo.
+
+-Yo como usuario quiero subir fotografias en mi post.
+
+-Yo como usuario quiero subir comentarios y reviews y poder likear.
+
 -Yo como usuario quiero completar un perfil, donde sea opcional especificar, si soy dueño o rescatista y si quiero adoptar, y puedo elegir añadir una descripción.
 
 -Yo como usuario, quiero poder acceder a una galería dividida en 4 secciones: Perdidos, Encontrados, Adoptables, Presumibles.
 
--Yo como usuario quiero subir comentarios y reviews y poder likear.
+
 
 Consola de firebase y database
 <img src="./src/img/firebase-database.jpg" width="600px">
