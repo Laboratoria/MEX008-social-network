@@ -6,14 +6,14 @@ window.functions = {
 functionLogin: (mail,password) =>{
   console.log(mail);
   console.log(password);
-  alert("entra a login");  
+  
     firebase.auth().signInWithEmailAndPassword(mail, password)
     .then(()=>{
       sessionStorage.setItem('key', 'true');
     // console.log("¿El usuario esta verificado?",user.user.emailVerified); 
     // if(user.user.emailVerified){
       location.hash = "#/muro";
-      return alert("Login exitoso");
+      return ("hola");
     // }
     // else{
     //   console.log("aun no has validado tu cuenta, accede a tu correo por favor");
@@ -26,34 +26,44 @@ functionLogin: (mail,password) =>{
   .catch((error) => {
     // location.hash = "/login";
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      let alertOne = document.getElementById("alert-one");
+      const errorCode = error.code;
+      const errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
       const modalErrorLogin = `<!-- Modal de correo y contraseña inválidos -->
-      <header>
-              <div class="textos">
-                  <h1>Atención</h1>
-                  <button id="abrir">Abrir Modal</button>
-              </div>
-          </header>
           <div id="miModal" class="modal">
-              <div class="flex" id="flex">
-                  <div class="contenido-modal">
+            <div class="flex" id="flex">
+              <div class="contenido-modal">
                       <div class="modal-header flex modalTitle">
-                          <h2 class="title-Modal">Atención</h2>
-                          <span class="close" id="close">&times;</span>
+                          <h4 id="title-Modal">Atención</h4><span class="close" id="close">&times;</span>
+                          
                       </div>
                       <div class="modal-body">
                           <p>El correo electrónico o la contraseña que has ingresado no son correctos.
                           <br>Verifícalos e ingrésalos nuevamente.
                           </p>            
                       </div>
-                  </div>
               </div>
-          </div>`
-          alert("Usuario no registrado");
-      return modalErrorLogin;
+            </div>
+          </div>`          
+        // console.log("Usuario no registrado");
+        alertOne.innerHTML = modalErrorLogin;
+        // Modal de correo y contraseña inválidos
+      const flex = document.getElementById('flex');
+      const cerrar = document.getElementById('close');
+      
+      cerrar.addEventListener('click', (e) =>{
+        e.preventDefault();
+        alertOne.style.display = 'none';
+      });
+      window.addEventListener('click', (e)=>{
+        console.log(e.target);
+        if(e.target == flex){
+          alertOne.style.display = 'none';
+        }
+      });
+        return console.log("Usuario no registrado");
     });
 },
 

@@ -261,5 +261,71 @@ h3,
    }
 
 
+/* MODALES */
+/* body{
+    background: rgba(0, 0, 0, .4);
+    font-family: 'Raleway', sans-serif;
+} */
+.header{
+    width: 100%;
+    height:600px;
+    background: url('Skewed.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-size: 5px;
+}
+.flex, .flex2, .flex3, .flex4, .flex5, .flex6{
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal, .modal2, .modal3, .modal4, .modal5, .modal6{
+    display: block;
+    position: fixed;
+    z-index:1;
+    overflow: auto;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+   background: rgba(0, 0, 0, 0.452);
+   text-align: center;
+}
+.contenido-modal, .contenido-modal2, .contenido-modal3, .contenido-modal4, .contenido-modal5, .contenido-modal6{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    width: 60%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+    animation-name: modal;
+   animation-duration: 1s;
+   text-align: center;
+}
+@keyframes modal{
+    from{top:-330px; opacity:0;}
+    to{top:0; opacity:1;}
+}
+.close, .close2, .close3, .close4, .close5, .close6{
+    color: #0e0c0c;
+    font-size:30px;
+    font-weight: bold;
+}
+.modal-header, .modal-header2, .modal-header3, .modal-header4, .modal-header5, .modal-header6{
+    padding: 8px 16px;
+    background: #00D3B0;
+    color:#f2f2f2;
+    text-align: center;
+    width: 85%;
+}
+
+.modal-body, .modal-body2 .modal-body3, .modal-body4, .modal-body5, .modal-body6{
+   padding: 20px 16px;
+   text-align: center;
+}
+
    
 

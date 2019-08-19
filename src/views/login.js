@@ -63,7 +63,7 @@ let login = {
             
           
     </div>
-    <div class = "alert" id="alert-one"> 
+    <div id="alert-one"> 
     </div>
     
     `
@@ -75,15 +75,22 @@ let login = {
       
       const btnLogin = document.getElementById("btn-login");
       const btnGoogle = document.getElementById('btnGoogle');
-
+      
 
       btnLogin.addEventListener("click",(e) => {
         e.preventDefault();
         let mail = document.getElementById("email-login").value;
         let password = document.getElementById("password-login").value;
+        // let divPrint = document.getElementById("alert-one");
+        // let returnLogin = 
         window.functions.functionLogin(mail,password);
+        // divPrint.innerHTML = returnLogin;
+
+                
       } );
 
+      
+      
       
       btnGoogle.addEventListener("click", () => window.functions.loginGoogle());
       
