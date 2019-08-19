@@ -60,21 +60,30 @@ let addPost = () => {
     firebase.auth().onAuthStateChanged((user) => {
         // User is signed in.
         if (user.uid) {
-            console.log(user);
+            // console.log(user);
             // Declaramos el textArea y obtenemos su valor
             let postTxt = document.getElementById('post-txt').value;
-            //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
-            db.collection("post").doc("mipost").set({
-                    usuario: user.uid,
-                    nombre: user.displayName,
-                    postContent: postTxt,
-                    hora: new Date()
-                }).then(function() {
-                    console.log("Document successfully written!");
-                })
-                .catch(function(error) {
-                    console.error("Error writing document: ", error);
-                });
+            if (postTxt != '') {
+                let issueRoot = document.getElementById('issue-root');
+                issueRoot.innerHTML = '';
+                //creamos una funcion que agregue el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
+                db.collection("post").doc("mipost").set({
+                        usuario: user.uid,
+                        nombre: user.displayName,
+                        postContent: postTxt,
+                        hora: new Date()
+                    }).then(function() {
+                        console.log("Document successfully written!");
+                        document.getElementById('post-form').reset();
+                    })
+                    .catch(function(error) {
+                        console.error("Error writing document: ", error);
+                    });
+            } else {
+                let issueRoot = document.getElementById('issue-root');
+                issueRoot.innerHTML = 'Por favor escribe algo';
+            }
+
 
         } else {
             // No user is signed in.

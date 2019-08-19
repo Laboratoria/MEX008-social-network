@@ -53,8 +53,8 @@ const printPost = user => {
     })
 }
 let editPost = () => {
-    console.log('funcion editando')
-        // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
+    // console.log('funcion editando')
+    // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
     firebase.auth().onAuthStateChanged((user) => {
         // User is signed in.
         if (user.uid) {

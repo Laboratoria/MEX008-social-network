@@ -3,6 +3,9 @@ let Welcome = {
         let view = /* html */ `
                 <section class="section-welcome">
          <!--Sección 1-->
+         <figure class="box-logo-welc">
+            <img id="logo-welc" src="../img/logo-pet.png">
+         </figure>
          <box class="welc-text">
              <!--Caja que contiene el texto de bienvenida-->
              <p>¡Únete a la comunidad más completa de animal lovers!</p>
@@ -42,9 +45,9 @@ let Welcome = {
             ui.start('#firebaseui-auth-container', uiConfig);
         });
 
-       document.getElementById('hamb-menu').style.display = 'none'; 
+        document.getElementById('hamb-menu').style.display = 'none';
 
-        
+
         // //Mostrar Wall y contenido
         // const content = null || document.getElementById('container');
         // content.innerHTML = await window.Wall.render();
