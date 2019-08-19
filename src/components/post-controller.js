@@ -5,7 +5,7 @@ const printPost = user => {
     user.forEach(msj => {
         let post = msj.data();
         if (post.usuario == userUid.uid) {
-            console.log(post.postId)
+            // console.log(post.postId);
             let card = `
                             <div class="col s12 m7 box-post">
                              <div class="head-post">
@@ -21,7 +21,7 @@ const printPost = user => {
                                     </div>
                                     <div class="admin-post">
                                     <a class="btns-edit btn-edit" id="${post.postId}"><i id="${post.postId}" class="material-icons">edit</i></a>
-                                    <a id="btn-delete"><i class="material-icons">delete</i></a>
+                                    <a class="btns-delete btn-delete" id="${post.postId}"><i id="${post.postId}" class="material-icons">delete</i></a>                                    
                                     </div>
                                     </div>
                                 </div>
@@ -63,6 +63,14 @@ const printPost = user => {
         btnsEdit[i].addEventListener('click', () => {
             let postId = event.target.id
             editPost(postId);
+        })
+    }
+    const btnsDelete = document.getElementsByClassName('btns-delete');
+
+    for (let i = 0; i < btnsDelete.length; i++) {
+        btnsDelete[i].addEventListener('click', () => {
+            let postId = event.target.id
+            deletePost(postId);
         })
     }
 
@@ -113,48 +121,37 @@ let editPost = (postId) => {
     });
 }
 
-let deletePost = () => {
+let deletePost = (postId) => {
     // Asignamos un 'Guard' que indique si un usuario esta logueado y toda la informacion que tenemos de el
     firebase.auth().onAuthStateChanged((user) => {
-        // User is signed in.
+        // si el documento existe
         if (user.uid) {
             // console.log(user);
-            // Declaramos el input de edicion y obtenemos su valor
-            let postTxt = document.getElementById('post-txt-edit').value;
-            let getPost = db.collection("post").doc("mipost");
+            // traemos el post y lo guardamos en una variable
+            let getPost = db.collection("post").doc(postId);
             getPost.get().then(function(doc) {
                 let postId = doc.data().postId;
                 if (doc.exists, postId) {
-                    if (postTxt != '') {
-                        // console.log(doc.data().postId);
-                        console.log("Document data:", doc.data());
-                        //creamos una funcion que actualice el post a la base de datos en firestore con los campos: usuario, nombre, post content y hora
-                        db.collection("post").doc(postId).update({
-                                usuario: user.uid,
-                                nombre: user.displayName,
-                                postContent: postTxt,
-                                hora: new Date(),
-                                edit: 'Editado'
-                            }).then(function(docRef) {
-                                console.log("Document successfully updated!");
-                            })
-                            .catch(function(error) {
-                                console.error("Error writing document: ", error);
-                            });
-                    } else {
-                        const issueEditRoot = document.getElementById('issue-edit-post');
-                        issueEditRoot.innerHTML = 'Por favor escribe algo';
-                    }
+                    // console.log(doc.data().postId);
+                    console.log("Document data:", doc.data());
+                    //creamos una funcion que elimine el post de la base de datos en firestore y de la pantalla
+                    db.collection("post").doc(postId).delete().then(function(docRef) {
+                            console.log("Document successfully deleted!");
+                        })
+                        .catch(function(error) {
+                            console.error("Error removing document: ", error);
+                        });
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
-                }
+                };
             }).catch(function(error) {
                 console.log("Error getting document:", error);
             });
-            // console.log(postTxt);
-
         }
+        // console.log(postTxt);
+
+
     });
 
 }

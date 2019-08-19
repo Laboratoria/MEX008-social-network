@@ -18,7 +18,7 @@ let NavBar = {
                 </li>
                 <li>
                     <figure class="box-logo-head">
-                        <img id="logo-head" src="../img/logo-pet.png">
+                        <img id="logo-head" src="../img/petfriendly.svg">
                     </figure>
                 </li>
         </ul>
