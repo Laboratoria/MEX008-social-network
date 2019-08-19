@@ -384,7 +384,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   
   
 #new-post, #show-post {
-  width: 70%;
+  width: 50%;
 }
 
   #img-register-page {
@@ -402,18 +402,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   width: 50px;
   height: 50px;
   border-radius: 150%;
-}
-.hour{
-  font-size: 0.7rem;
-  padding-left: 1rem;
-}
-
-.div-edit-delete{
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#delete , .edit{
-  margin: 9px;
 }
