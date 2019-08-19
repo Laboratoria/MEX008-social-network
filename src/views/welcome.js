@@ -37,6 +37,10 @@ let Welcome = {
          </section>
          <section class="marketing-section">
          <div id="brand-text">
+         <p> PetFriendly es un espacio para compartir información sobre tu mascota perdida </p>
+         <p> En PetFriendly es posible elaborar un perfil y compartir información relacionada
+         con tu pequeñin</p>
+         <p> ¡Unete ya! </p>
          </div>
         
          </section>

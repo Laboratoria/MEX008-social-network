@@ -50,7 +50,7 @@ let Profile = {
      <div class="card blue-grey darken-1">
        <div class="card-content white-text">
          <span class="card-title">Sobre mí</span>
-         <p>Mi nombre es Mariana, tengo veintiocho años y soy médica veterinaria zootecnista. 
+         <p>Mi nombre es Mariana, tengo 26 años y soy médica veterinaria zootecnista. 
          Amo a los animales y también soy rescatista. Hamburguesa es una parte importante de mi mundo.</p>
        </div>
      </div>

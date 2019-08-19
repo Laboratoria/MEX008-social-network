@@ -1,3 +1,4 @@
+   
 // let printPost = ((user) => {
 //     let rootPost = document.getElementById('wall-posts');
 //     let card = `

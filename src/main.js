@@ -110,6 +110,7 @@ let addPost = (e) => {
 
 
 
+
 // //initialize ui config
 // ui.start('#firebaseui-auth-container', uiConfig);
 // //Activa modal

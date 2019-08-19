@@ -16,7 +16,7 @@ let Wall = {
   </form>
             </div>
             <progress value="0" max="100" id="uploader">0%</progress>
-            <input type="file" accept="image/*" id="image-file">
+            <input type="file" value="upload" id="fileButton"/>
             
         
            
@@ -39,29 +39,59 @@ let Wall = {
     },
     after_render: async () => {
         document.getElementById('btn-post').addEventListener('click', addPost);
+        // Cloud storage
+//Obteniendo elementos del DOM para storage
+const uploader = document.getElementById('uploader');
+const fileButton = document.getElementById('fileButton');
+//Escuchar la selección del archivo
+fileButton.addEventListener('change', async (e) => {
+    //Obtener archivo
+ let file = e.target.files[0];
 
-        const savingPhotoFirebase = (chargeimg) => {
-            const addImageFur = chargeimg.target.files[0];
-            const refStorage = storageService.ref().child(`imagenesdemascotas/${addImageFur.name}`);
-            const uploadTask = refStorage.put(addImageFur)
-            .then(() => console.log('Uploaded file!'))
-            .then(() => 
-            refStorage.getDownloadURL()
-            ).then((url) => {
-                const urlPhoto = url;
-                console.log(urlPhoto);
-                return urlPhoto;
-            })
-            .cath(err => {
-                console.log('Error:')
-                console.log(err)
-            });
-        }
+    //Crear una referencia de storage
+    let storageRef = firebase.storage().ref('posted_photos/' + file.name);
 
-        savingPhotoFirebase.addEventListener('change', (chargeimg) => {
-            console.log('Subiendo fotos')
-            const urlPhotoResult = savingPhotoFirebase(chargeimg);
+    //Subir el archivo
+    let task = storageRef.put(file);
+
+    //Cargar la barra de progreso
+    task.on('state_changed',
+        function progress(snapshot) {
+            let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            uploader.value = percentage;
+
+        },
+        function error(err) {
+
+        },
+        function complete() {
+
         });
+
+})
+
+        // const savingPhotoFirebase = (chargeimg) => {
+        //     const addImage = chargeimg.target.files[0];
+        //     const refStorage = storageService.ref().child(`imagenesdemascotas/${addImage.name}`);
+        //     const uploadTask = refStorage.put(addImage)
+        //     .then(() => console.log('Uploaded file!'))
+        //     .then(() => 
+        //     refStorage.getDownloadURL()
+        //     ).then((url) => {
+        //         const urlPhoto = url;
+        //         console.log(urlPhoto);
+        //         return urlPhoto;
+        //     })
+        //     .cath(err => {
+        //         console.log('Error:')
+        //         console.log(err)
+        //     });
+        // }
+
+        // savingPhotoFirebase.addEventListener('change', (chargeimg) => {
+        //     console.log('Subiendo fotos')
+        //     const urlPhotoResult = savingPhotoFirebase(chargeimg);
+        // });
 
         
         
@@ -96,57 +126,6 @@ let Wall = {
         //     });
 
         // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //         // Cloud storage
-// //Obteniendo elementos del DOM para storage
-// const uploader = document.getElementById('uploader');
-// const fileButton = document.getElementById('fileButton');
-// //Escuchar la selección del archivo
-// fileButton.addEventListener('change', async (event) => {
-// event.preventDefault();
-//     //Obtener archivo
-//  let file = e.target.files[0];
-
-//     //Crear una referencia de storage
-//     let storageRef = firebase.storage().ref('posted_photos/' + file.name);
-
-//     //Subir el archivo
-//     let task = storageRef.put(file);
-
-//     //Cargar la barra de progreso
-//     task.on('state_changed',
-//         function progress(snapshot) {
-//             let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-//             uploader.value = percentage;
-
-//         },
-//         function error(err) {
-
-//         },
-//         function complete() {
-
-//         });
-
-// })
-
-
-        
-    }
+ }
 }
 export default Wall;
