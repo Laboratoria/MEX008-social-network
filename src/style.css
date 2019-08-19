@@ -446,7 +446,7 @@
     width: 100%;
 }
 
-#btn-delete,
+.btn-delete,
 .btn-edit {
     /* line-height: 1px; */
     margin: 1%;
