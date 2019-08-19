@@ -1,3 +1,43 @@
+##PetHub 
+
+Preámbulo
+Actualmente la población de animales en situación de calle aumenta en cifras considerables cada día, en parte porque al perder a una mascota no contamos con un medio centralizado donde buscarla.
+Pethub será una red social, dónde puedas crear un perfil y compartir tu vida con tus mejores amigos, pero también ser una herramienta que permita subir publicaciones de mascotas perdidas y encontradas o en adopción, donde podrás filtrar por zona e incluso recomendar los servicios, como el vete o el spa que utilizas y dejar comentarios buenos o malos sobre el servicio que le ofrecieron a tus mejores amigos. Pedimos tu ayuda respondiendo esta breve encuesta, para crear una solución que satisfaga todas estas necesidades.
+
+El proyecto: 
+
+Research
+¿Qué son las redes sociales? 
+Son medios de comunicación digitales orientados a conectar a las personas a través de plataformas definidas dentro de parámetros de afinidad e interés. 
+
+
+¿Quiénes son los usuarios de las redes sociales?
+Como lo señala WeAreSocial, en enero de 2019 Facebook contó con cerca de 2.271 millones de usuarios activos al mes, Instagram más de 1.000 millones y Twitter 326 millones de usuarios activos.
+¿Quienes son los principales usuarios de Pethub?
+¿Cómo descubrimos las necesidades de los usuarios?
+Formulario
+https://docs.google.com/forms/d/1WCvGcCqC3GCX-mgp440iqrOhd97kUV_NbpbToAvUOWg/edit#responses
+
+Historias de usuario
+
+-Yo como usuario quiero crear una cuenta de usuario y logearme con correo y contraseña o con mis cuentas de google y facebook.
+
+-Yo como usuario quiero completar un perfil, donde sea opcional especificar, si soy dueño o rescatista y si quiero adoptar, y puedo elegir añadir una descripción.
+
+-Yo como usuario, quiero poder acceder a una galería dividida en 4 secciones: Perdidos, Encontrados, Adoptables, Presumibles.
+
+-Yo como usuario quiero subir comentarios y reviews y poder likear.
+
+Consola de firebase y database
+<img src="./src/img/firebase-database.jpg" width="600px">
+
+
+
+
+Prototipado de baja fidelidad (sketches)
+https://marvelapp.com/id4gfij
+
+
 # Creando una Red Social
 
 ## Índice
