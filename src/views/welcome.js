@@ -4,7 +4,7 @@ let Welcome = {
                 <section class="section-welcome">
          <!--Sección 1-->
          <figure class="box-logo-welc">
-            <img id="logo-welc" src="../img/logo-pet.png">
+         <img id="logo-head" src="../img/petfriendly.svg">
          </figure>
          <box class="welc-text">
              <!--Caja que contiene el texto de bienvenida-->

@@ -1,4 +1,5 @@
 const printPost = user => {
+    console.log(user)
     let rootPost = document.getElementById('wall-posts');
     let userUid = JSON.parse(localStorage.getItem('user'));
     rootPost.innerHTML = '';
@@ -75,6 +76,7 @@ const printPost = user => {
     }
 
 }
+
 
 let editPost = (postId) => {
     // console.log('funcion editando')

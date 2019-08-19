@@ -25,6 +25,12 @@ ui.start('#firebaseui-auth-container', {
 var uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            db.collection("post").orderBy('hora')
+                .onSnapshot(function(data) {
+                    // console.log('bvgjvg');
+
+                    printPost(data);
+                });
             // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
@@ -36,6 +42,7 @@ var uiConfig = {
             document.getElementById('loader').style.display = 'none';
         }
     },
+
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
     signInSuccessUrl: '/#/wall',
@@ -105,6 +112,8 @@ let addPost = () => {
 // creamos una funcion que obtenga actualizaciones en tiempo real
 db.collection("post").orderBy('hora')
     .onSnapshot(function(data) {
+        // console.log('bvgjvg');
+
         printPost(data);
     });
 
