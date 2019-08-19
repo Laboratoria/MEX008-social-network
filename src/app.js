@@ -3,7 +3,7 @@
 import Welcome from './views/welcome.js';
 import Wall from './views/wall.js';
 import Error404 from './views/error.js';
-import Profile from './views/profile.js';
+// import Profile from './views/profile.js';
 
 // Importando Components
 import NavBar from './components/header.js';
@@ -18,8 +18,8 @@ import Utils from './services/Utils.js';
 
 const routes = {
     '/': Welcome,
-    '/wall': Wall,
-    '/profile': Profile
+    '/wall': Wall
+        // '/profile': Profile
 };
 
 // El código del enrutador. Toma una URL, verifica la lista de rutas admitidas y luego muestra la página de contenido correspondiente.
