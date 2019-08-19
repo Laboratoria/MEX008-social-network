@@ -11,6 +11,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var db = firebase.firestore();
+var storage = firebase.storage();
+// var storageRef = firebase.storage().ref('posted_photos/' + file.name);
+
 // UI
 ui.start('#firebaseui-auth-container', {
     signInOptions: [
@@ -42,7 +45,6 @@ var uiConfig = {
             document.getElementById('loader').style.display = 'none';
         }
     },
-
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
     signInSuccessUrl: '/#/wall',
@@ -60,6 +62,7 @@ var uiConfig = {
     // Privacy policy url.
     privacyPolicyUrl: 'https://ledahuerta.github.io/MEX008-social-network/'
 };
+
 
 // Funcion que crea el post y guarda al usuario logueado en una variable que podemos manipular despues
 let addPost = () => {
@@ -109,6 +112,7 @@ let addPost = () => {
 }
 
 
+
 // creamos una funcion que obtenga actualizaciones en tiempo real
 db.collection("post").orderBy('hora')
     .onSnapshot(function(data) {
@@ -148,6 +152,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 // const btnSmt = document.getElementById('print-button');
+
 
 
 

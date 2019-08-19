@@ -1,7 +1,7 @@
 let NavBar = {
     render: async() => {
         let view = `
-        <header>
+        <header id="main-header">
         <div class="nav-color">
         
         <ul id="hamb-menu" class="menu">
@@ -10,19 +10,30 @@ let NavBar = {
                     <img id="icon-hamb" src="./img/hamb.png" alt="icono menu hamburguesa">
                     </figure>
                     <ul>
-                        <li><a id="profile">Perfil</a></li>
-                        <li><a id="wall">Wall</a></li>
+                       <li><a id="profile-desktop">Perfil</a></li>
+                        <li><a id="wall-desktop">Wall</a></li>
                         <li><a>Búsqueda avanzada</a></li>
-                        <li><a id="sign-out">Cerrar sesión</a></li>
+                        <li><a id="sign-out-desktop">Cerrar sesión</a></li>
                     </ul>
                 </li>
-                <li>
+                 <li>
                     <figure class="box-logo-head">
                         <img id="logo-head" src="../img/petfriendly.svg">
                     </figure>
                 </li>
+
+            </ul>
+           
+            <ul id="nomobile-menu-hamb" class="nomobile-menu">
+            <li><a id="profile">Perfil</a></li>
+            <li><a id="wall">Wall</a></li>
+            <li><a>Búsqueda avanzada</a></li>
+            <li><a id="sign-out">Cerrar sesión</a></li>
+        </ul>
+               
         </ul>
         
+
             </div>
             </header>`
         return view
@@ -42,7 +53,7 @@ let NavBar = {
             }
         }
 
-
+//Menu mobile
 
         const signOutButton = document.getElementById('sign-out');
         signOutButton.addEventListener('click', logOutWithClick);
@@ -54,7 +65,19 @@ let NavBar = {
         const goToWallButton = document.getElementById('wall');
         goToWallButton.addEventListener('click', () => location.hash = '#/wall');
 
+
+//Menu Desktop
+
+const signOutButtonDesktop = document.getElementById('sign-out-desktop');
+signOutButtonDesktop.addEventListener('click', logOutWithClick);
+
+const goToWallButtonDesktop = document.getElementById('wall-desktop');
+goToWallButtonDesktop.addEventListener('click', () => location.hash = '#/wall');
+
+const goToProfileButtonDesktop = document.getElementById('profile-desktop');
+goToProfileButtonDesktop.addEventListener('click', () => location.hash = '#/profile');
+}
+
     }
 
-}
 export default NavBar;
