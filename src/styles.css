@@ -1,0 +1,405 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Box sizing*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+/*GLOBALES*/
+
+/*SELECTOR ETIQUETA*/
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+nav{
+width: 90vw;
+margin: 0 auto;
+padding: 0.5rem 0;
+}
+
+figure {
+  margin-bottom: 0;
+}
+
+button {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  background: #fd9e25; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fd9e25 1%, #ff7600 53%, #ff7600 53%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9e25', endColorstr='#ff7600',GradientType=0 ); /* IE6-9 */
+
+}
+
+main {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.edit i {
+  color: rgba(253, 155, 35, 0.8);
+}
+
+.edit i:hover {
+  cursor: pointer;
+  color: #fd9e25; /* Old browsers */
+  color: -moz-linear-gradient(top,  #fd9e25 1%, #ff7600 53%, #ff7600 53%); /* FF3.6-15 */
+  color: -webkit-linear-gradient(top,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* Chrome10-25,Safari5.1-6 */
+  color: linear-gradient(to bottom,  #fd9e25 1%,#ff7600 53%,#ff7600 53%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd9e25', endColorstr='#ff7600',GradientType=0 ); /* IE6-9 */
+}
+
+#main-aside-container {
+  display: flex;
+}
+
+/*REGISTER*/
+.form-group {
+  margin: 0;
+}
+
+#register-page{
+display: flex;
+
+}
+
+#img-register-page {
+  display: none;
+}
+
+
+#form-register-page, .all-sections {
+  height: auto;
+
+background: #b6d0f2; /* Old browsers */
+background: -moz-linear-gradient(top,  #b6d0f2 0%, #ffffff 68%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #b6d0f2 0%,#ffffff 68%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6d0f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+background-attachment: fixed;
+}
+
+.all-sections {
+  width: 70vw;
+  height: 100vh;
+  padding: 0.5rem 0 ;
+}
+
+#all-forms {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+#login {
+  background-color: #A9BF04;
+  background-attachment: fixed;
+  padding: 2rem 1rem;
+  width: 100%;  
+
+}
+
+#login form input {
+  width: 30%;
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  border: none;
+}
+
+
+
+
+#register {
+  width: 70%;
+  margin: 1rem auto;
+  height: auto;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+-moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.12);
+}
+
+/*ASIDE*/
+
+aside {
+  background-color: #A9BF04;
+  width: 30vw;
+  display: flex;
+  height: 100vh;
+  text-align: left;
+  order: -1;
+}
+
+.lateral-menu {
+  width: 60%;
+  margin: 15% 15% 0 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.lateral-menu a {
+  color: white;
+}
+
+.lateral-menu ul li{
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.lateral-menu a img {
+  max-width: 45px;
+  padding-right: 1rem;
+}
+/**/
+
+.button{
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.google-facebook {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.google-facebook *:hover {
+  cursor: pointer;
+}
+
+#show-post {
+ background-color: rgba(145, 190,248, 0.5); 
+ min-height: 60vh;
+}
+
+#new-post{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#new-post, #show-post {
+  height: auto;
+  width: 90%;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+}
+
+#new-post h3 {
+  font-size: 1rem;
+  padding-bottom: 0.7rem;
+}
+
+#input-write-post {
+  margin-bottom: 1rem;
+  min-height: 4rem;
+  padding: 0 0.5rem;
+}
+
+#post {
+  display: flex;
+  flex-direction: column;
+}
+
+#post div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#post div * {
+  margin-left: 1rem;
+}
+
+.container-post {
+  display:flex;
+  flex-direction: column;
+  margin:1.5rem auto;
+}
+
+.user-post {
+  background-color: #ffffff;
+}
+
+.user-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-name-post {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.post-header, .post-body, .post-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+}
+
+.post-footer{
+  align-items: center;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+10,ffffff+48,ffffff+48,a9bf04+49,a9bf04+49,a9bf04+90 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 10%, #ffffff 48%, #ffffff 48%, #a9bf04 49%, #a9bf04 49%, #a9bf04 90%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ffffff 10%,#ffffff 48%,#ffffff 48%,#a9bf04 49%,#a9bf04 49%,#a9bf04 90%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ffffff 10%,#ffffff 48%,#ffffff 48%,#a9bf04 49%,#a9bf04 49%,#a9bf04 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a9bf04',GradientType=0 ); /* IE6-9 */
+
+}
+
+.all-comments-post {
+  display: flex;
+  width: 95%;
+
+}
+
+.all-comment-post li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  list-style: none;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.all-comment-post h2 {
+  display: block;
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+.all-comments-post a {
+  background-color: none;
+}
+
+.post-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.post-body textarea {
+  height: auto;
+  max-height: 10rem;
+}
+
+.post-content {
+  width: 100%;
+}
+
+.post-footer button {
+  height: 80%;
+
+}
+
+.post-footer .btn-like {
+  background: none;  
+  
+}
+
+.post-footer .btn-like:active {
+  transform: scale(1.1);
+}
+
+.comment-post {
+  background-color: #A9BF04;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.new-comment form{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.new-comment form textarea {
+  width: 80% ;
+  border-radius: 0.2rem;
+}
+
+/*RESPONSIVE*/
+
+@media only screen and (min-width: 576px) {
+
+  #login form {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  #login form input {
+
+
+    margin-right: 1rem;
+  }
+
+  .col-sm-10 {
+    max-width: 100%;
+    margin-right: none;
+  }
+
+  #register {
+    width: 50%;
+
+  }
+
+  #img-register-page, #form-register-page {
+    display: flex;
+    justify-content: flex-start;
+    width: 50vw;
+    height: 100vh;
+  }
+  
+  
+#new-post, #show-post {
+  width: 50%;
+}
+
+  #img-register-page {
+    display: flex;
+    background-image: url(img/orange-register.jpg) ;
+    background-size: cover;
+  }
+  
+.col-sm-2 {
+ max-width: 300px; 
+}
+}
+
+.user-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 150%;
+}
