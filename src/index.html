@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <script type="module" src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>WONDERLUST</title>
+  </head>
+  <body>
+
+    <header id="header-container"> </header>
+    <main id="content-container">
+              <p>Loading...</p>git
+    </main>
+    <footer></footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first 
+    liga inicio de sesión -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script>
+      // Initialize firebase
+      const firebaseConfig = {
+
+        apiKey: "AIzaSyAmmZe7KTWuN95FA9DlAVRZqF1cVADqu_k",
+        authDomain: "wanderlust-acc5a.firebaseapp.com",
+        databaseURL: "https://wanderlust-acc5a.firebaseio.com",
+        projectId: "wanderlust-acc5a",
+        storageBucket: "firebase-veigapp.appspot.com",
+        messagingSenderId: "134852128441",
+        appId: "1:272328701609:web:93f50bd23d7b36b2"
+      };
+
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+    </script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://apis.google.com/js/platform.js"async defer></script>
+    <script type="module" src="app.js"></script>
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.4.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#reserved-urls -->
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="js/basedata.js"></script>
+
+  </body>
 </html>

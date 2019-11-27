@@ -1,4 +1,94 @@
 # Creando una Red Social
+## DECISIÓN DE PROYECTO
+  Para tomar una decisión sobre el proyecto de Red Social, decidimos seleccionar varios temas y realizar una encuesta para tener claro el tema y lo que el usuario busca en una Red Social . Este es el análisis de la encuesta. 
+  La mayoría de nuestros usuarios tiene una edad de entre 19 y 25 años .
+  Entre los temas que sugerimos fueron:
+          *Deportes
+          *Comunidad escolar
+          *Viajes(mochilero)
+          *Citas
+  Donde más del 60% escogió viajero(mochilero).
+  ![](src/../imagenes/readme/tema.png)
+
+En la pregunta donde seleccionaron las razones por las que utilizarías un espacio en el que traten el tema que seleccionaron, más del 70% seleccionó lo utilizarían para informarse, seguido de para conocer a gente con el mismo interés con un 38%.
+![](src/../imagenes/readme/razones.png)
+
+Cuando preguntamos ¿Qué realizas más en una red social?, más del 60% escogió Publicaciones(imágenes, artículos,comentarios), lo cual se pretende agregar estas acciones. 
+![](src/../imagenes/readme/redsocial.png)
+
+También preguntamos sobre las razones por las que dejan de frecuentar alguna red social y un 44% escogió que contienen demasiada información innecesaria o ajena a su interés seguido con un 38% que es aburrido.
+![](src/../imagenes/readme/abandono.png)
+
+## INVESTIGACIÓN 
+Realizamos una investigación primero sobre los temas que nos interesaban para realizar nuestra encuesta. Una vez que tomamos la decisión sobre el tema de nuestra Red Social decidimos investigar sobre cómo queríamos que se llamara nuestra Red Social y encontramos esta información: 
+La etimología de wanderlust nos lleva hasta la lengua germana. Wandern significa “vagar”, mientras que lust lo traducimos como “pasión”. En término anglosajón wanderlust es lo mismo: pasión por viajar.
+
+Somos almas inquietas que siempre están pensando a dónde ir, cuándo será el próximo viaje, qué sitios nuevos conocerán y qué aventuras se encontrarán por el camino. 
+![](src/../imagenes/readme/abandono.png)
+
+Viajar es bueno para la mente. Te abre las puertas del conocimiento y nuevas culturas, mantiene el cerebro activo, mejora tu orientación y tus habilidades para comunicarte con personas que no hablan tu idioma. Viajar no es solo explorar nuevas ciudades, sino que también implica llegar a sitios incógnitos, poco poblados. Viajar es adentrarse en aventuras y retos que jamás te habrías propuesto, como saltar en paracaídas en una ciudad desconocida o bucear por arrecifes únicos en el mundo. Viajar es llevar tus propios límites a lugares inimaginables.
+
+Definicion del producto
+Wanderlust te permite estar en contacto con wanderlusters que comparten sus experiencias de viaje. Podrás consultar y compartir información, pedir recomendaciones, tener notificaciones acerca de vuelos, hospedajes y muchas más información.
+
+##INVESTIGACIÓN 
+Realizamos una investigación primero sobre los temas que nos interesaban para realizar nuestra encuesta. Una vez que tomamos la decisión sobre el tema de nuestra Red Social decidimos investigar sobre cómo queríamos que se llamara nuestra Red Social y encontramos esta información: 
+    *Trip Advisor:es la opción más popular y más sencilla de planificar tu viaje. Ofrece consejos de otros viajeros, una amplia variedad de opciones de viaje y funciones de planificación que te permiten buscar los mejores hoteles y precios de alojamiento. Además, el servicio permite identificar los establecimientos que han sido respaldados y recomendados por las opiniones de los usuarios para que más personas puedan seguir asistiendo a ellos con la seguridad de que encontrarán un buen servicio.
+    *Airbnb:Quizás uno de los aspectos que más gasto genera cuando viajamos es el alojamiento. Y si el alojamiento es el problema, Airbnb es la solución. La comunidad de usuarios inscritos en esta plataforma se convierten en anfitriones que ofrecen alojamiento para viajeros. Entre los anuncios que se publican pueden encontrarse casas completas o habitaciones privadas y compartidas, con una amplia variedad de precios en función del espacio ofrecido. Además los usuarios que ya se han alojado en un sitio pueden dejar comentarios para los futuros huéspedes, creando un círculo de confianza y seguridad.
+    *Foursquare: es una red social que seguro ya conoces y hasta utilizas, pero en cuestión de viajes puede ser de mucha utilidad para descubrir o evitar lugares, hoteles, restaurantes, platillos, o para seguir alguno que otro consejo que los usuarios han dejado, sus funcionalidades son muchísimas y con el nuevo rediseño de su interfaz todo es más sencillo de utilizar. Además puede ser una alternativa muy interesante para dejar rastro del recorrido que haz realizado durante tu viaje y de lo que te han parecido los lugares que has visitado.
+    *Trover:nació a partir de la dificultad que encontraron sus creadores —viajeros también— para capturar y compartir las historias y aventuras que se encontraban en sus viajes. Así que decidieron crear una red a manera de galería de fotos y/o guía turística que permitiera compartir sus experiencias y conectar con otras personas con los mismos intereses. Trover es como un Pinterest de los viajes. En él podrás encontrar inspiración e inspirar a otras personas para descubrir nuevos lugares.
+Nuestra competencia trata de cubrir una necesidad que todo viajero busca. Pero no todas han cumplido con estas preferencias por eso , con base a nuestra investigación pretendemos tomar los puntos más importantes de los usuarios y los algunas ideas de nuestra competencia para formar una Red Social fuerte que apoye a los viajeros pero, lo más importante  que logre unirlos a pesar de las distancias.
+
+## ANÁLISIS DE NUESTRA COMPETENCIA
+![](src/../imagenes/readme/analisis.png)
+
+## OBJETIVO DEL PROYECTO
+Construir una Red Social para viajeros. Nuestra Red Social tendrá que permitir a cualquier usuario crear una cuenta de acceso y loguearse con ella; crear, editar, borrar y "likear" publicaciones. El objetivo principal de aprendizaje de este proyecto es construir una Single-page Application (SPA), responsive (con más de una vista / página) en la que podamos leer y escribir datos.
+## USER PERSONA
+Nombre: Daniela
+Edad 25 años
+Ocupación: Estudiante
+
+Daniela es una estudiante que quiere comenzar a viajar, tiene un bajo presupuesto y quiere conocer gente con el mismo interés que ella  para que compartan información sobre los que  han realizado, que  compartan experiencias y  encontrar referencias para sus próximos viajes.
+
+¿Cuáles son sus aspiraciones?
+Tener un espacio en el que pueda compartir y encontrar información sobre viajes, que se mantenga actualizada y donde otros usuarios igual que ella compartan sus experiencias y recomendaciones, quiere publicar fotos de sus viajes y hacer comentarios.
+
+¿Que le preocupa? ¿Qué piensa?
+Encontrar información verifica y buenas recomendaciones principalmente de viajeros donde la página se mantenga actualizada.
+
+## HISTORIA DE USUARIO
+      *Usuario nuevo se loguea con: correo, nombre contraseña y verifica su contraseña.
+      *Nuestro usuario nuevo se loguea con gmail.
+      *Nuestro usuario nuevo después de loguearse llena los datos básicos de su perfil.
+      *Nuestro usuario registrado ingresa a su cuenta con usuario y contraseña
+      *Nuestro usuario registrado  edita su perfil con nuevos campos (fotos, reseñas, contenido de información básica)
+      *Nuestro usuario registrado publica fotos e historia de sus viajes
+      *Nuestro usuario registrado filtra por experto para más información sobre viajes que tienen 
+      usuarios expertos
+      *Nuestro usuario registrado decide cambiar su estado a (compartir casa) y llena los campos de registro con sus documentos. 
+
+## STORYLINE 
+
+## PROTOTIPO
+  ### Prototipo de baja fidelidad
+![](src/../imagenes/readme/registro.jpg)
+![](src/../imagenes/readme/perfil.jpg)
+![](src/../imagenes/readme/muro.jpg)
+
+[Prototipo Baja fidelidad](https://marvelapp.com/c8gc340)
+
+  ### Prototipo de alta fidelidad  
+![](src/../imagenes/readme/prototipo1.png)
+![](src/../imagenes/readme/prototipo.png)
+[Prototipo Alta fidelidad](https://www.figma.com/file/0w34KPPhZnCUlISQqh5YLL/Untitled?node-id=0%3A1)
+
+
+
+
+
+
+
 
 ## Índice
 
